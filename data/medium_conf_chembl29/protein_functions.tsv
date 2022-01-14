@@ -1,0 +1,5743 @@
+uniprot_id	protein_function
+A0A024AXB9	no_function
+A0A045ISB3	Hydrolase (ester bonds)
+A0A059UE90	Kinase
+A0A060INS8	Enzyme regulator
+A0A060INS8	Peptidase
+A0A060INS8	Transmembrane signaling receptors (other)
+A0A072ZLE6	Transcription regulator
+A0A072ZLE6	DNA binding
+A0A080SPQ8	Transferase (alkyl or aryl groups, no methyl)
+A0A0C5PRQ1	Peptidase
+A0A0C7ACN7	Transferase (acyl groups)
+A0A0E7NXW5	Ligase
+A0A0E7NXW5	DNA binding
+A0A0S4TER9	Oxidoreductase
+A0A0S4TER9	Transferase (one-carbon groups)
+A0A143MHK7	Transferase (phosphorus-containing groups, non-kinase)
+A0A1D8D5K2	Peptidase
+A0A1D8D5K2	Hydrolase (acid anhydrides)
+A0A1D8D5K2	Transferase (phosphorus-containing groups, non-kinase)
+A0A1D8D5K2	Transporter
+A0A286XTF2	G protein-coupled receptor
+A0A2J8P2M1	G protein-coupled receptor
+A0A2S9PM60	Isomerase
+A0A2S9PM60	DNA binding
+A0A380PJR2	Lyase
+A0A3N4B635	no_function
+A0A6L8P2U9	Oxidoreductase
+A0AVT1	Ligase
+A0JN73	Isomerase
+A0JN73	DNA binding
+A0MJA5	Transporter
+A0QNE0	Isomerase
+A0QNE0	DNA binding
+A0R666	DNA binding
+A0SYQ0	Isomerase
+A0SYQ0	Oxidoreductase
+A0SYQ0	Transferase (alkyl or aryl groups, no methyl)
+A0ZX81	Hydrolase (C-N bonds, no peptides)
+A1E3K9	Hydrolase (C-N bonds, no peptides)
+A1XG20	Oxidoreductase
+A1XG20	Transferase (one-carbon groups)
+A1YYP7	Ligase
+A1Z1Q3	Hydrolase (glycosyl bonds)
+A1ZA98	Hydrolase (ester bonds)
+A2AGL3	Transporter
+A2APX8	Transporter
+A2RP81	Hydrolase (C-N bonds, no peptides)
+A3EZJ3	Peptidase
+A3FFR5	Hydrolase (C-N bonds, no peptides)
+A3FPL9	Kinase
+A3FQ79	Kinase
+A3KMY8	Hydrolase (glycosyl bonds)
+A3RGC1	Signaling receptor (not transmembrane)
+A3RGC1	Transcription regulator
+A3RGC1	DNA binding
+A3RLP8	Kinase
+A4HSF7	Oxidoreductase
+A4IFJ5	Hydrolase (ester bonds)
+A4IFJ5	Transferase (acyl groups)
+A4KCT8	Hydrolase (C-N bonds, no peptides)
+A4TVL0	no_function
+A4ZYU9	Hydrolase (C-N bonds, no peptides)
+A5A4K8	G protein-coupled receptor
+A5D7B7	Peptidase
+A5H660	no_function
+A5PKW4	Enzyme regulator
+A5U4N0	Kinase
+A5Z1V5	Hydrolase (acid anhydrides)
+A5Z252	Hydrolase (glycosyl bonds)
+A6NNY8	Peptidase
+A6XA80	Enzyme regulator
+A6XA80	Lyase
+A6XA80	Transferase (other)
+A6YCJ1	Lyase
+A7L861	Oxidoreductase
+A8DS27	Hydrolase (C-N bonds, no peptides)
+A8NS89	Hydrolase (ester bonds)
+A8PUY1	no_function
+A8Q2D1	Peptidase
+A8RR46	Hydrolase (C-N bonds, no peptides)
+A9JQL9	Transferase (alkyl or aryl groups, no methyl)
+A9X4R8	Peptidase
+A9XFY4	Transmembrane signaling receptors (other)
+A9XFY4	Transporter
+B0BNF9	Oxidoreductase
+B0FL73	G protein-coupled receptor
+B0K020	no_function
+B2LUN4	Kinase
+B2RXC2	Kinase
+B2RXH2	Oxidoreductase
+B2ZB02	Oxidoreductase
+B2ZTR6	Hydrolase (C-N bonds, no peptides)
+B3DH72	G protein-coupled receptor
+B3VTJ2	Hydrolase (ester bonds)
+B4EH87	no_function
+B4FS76	Oxidoreductase
+B4URE7	no_function
+B4URF0	Hydrolase (glycosyl bonds)
+B5ATN6	Hydrolase (C-N bonds, no peptides)
+B5DF27	Oxidoreductase
+B5SU02	Lyase
+B5THE3	Hydrolase (glycosyl bonds)
+B6TK44	Isomerase
+B7UUK1	Hydrolase (ester bonds)
+B7VU80	Hydrolase (glycosyl bonds)
+B8Q4Z9	G protein-coupled receptor
+B8R6A5	Hydrolase (C-N bonds, no peptides)
+C0HJB3	Hydrolase (glycosyl bonds)
+C0IX24	Lyase
+C0L093	Transferase (other)
+C3L5T6	Transferase (phosphorus-containing groups, non-kinase)
+C3SIU2	Transcription regulator
+C3SIU2	DNA binding
+C3SWJ7	Transferase (one-carbon groups)
+C3TDZ2	Transferase (acyl groups)
+C3TIE2	Transferase (alkyl or aryl groups, no methyl)
+C4LRQ6	Hydrolase (glycosyl bonds)
+C4LW95	Oxidoreductase
+C5ISA2	Hydrolase (acid anhydrides)
+C7C422	Hydrolase (C-N bonds, no peptides)
+D1MIX9	Hydrolase (C-N bonds, no peptides)
+D2K848	Hydrolase (glycosyl bonds)
+D2SSQ3	Hydrolase (C-N bonds, no peptides)
+D3W065	DNA binding
+D3Z7P3	Hydrolase (C-N bonds, no peptides)
+D3ZDM7	Oxidoreductase
+D3ZFJ0	Kinase
+D3ZGQ2	Kinase
+D3ZNG3	Peptidase
+D3ZUM4	Hydrolase (glycosyl bonds)
+D3ZYL0	Kinase
+D4ADR1	G protein-coupled receptor
+D5FGE8	Transporter
+D5HSX5	Hydrolase (C-N bonds, no peptides)
+D6NSM8	Hydrolase (C-N bonds, no peptides)
+E1BI31	Peptidase
+E1BKU0	G protein-coupled receptor
+E1BN64	Hydrolase (ester bonds)
+E2QDN0	Transferase (one-carbon groups)
+E2QF15	Transferase (phosphorus-containing groups, non-kinase)
+E2R517	G protein-coupled receptor
+E2RDN4	Transferase (acyl groups)
+E3UJZ5	Signaling receptor (not transmembrane)
+E3UJZ5	Transcription regulator
+E3UJZ5	DNA binding
+E5KIY2	no_function
+E9PTA2	Transporter
+E9PU00	Transporter
+E9Q4Z2	Ligase
+F0X4H1	Kinase
+F1KRD8	Oxidoreductase
+F1LNR9	Transporter
+F1MN93	Isomerase
+F1MN93	Kinase
+F1MN93	DNA binding
+F1PRI9	Transferase (acyl groups)
+F1SH20	Peptidase
+F5A8F7	G protein-coupled receptor
+F7HEV7	G protein-coupled receptor
+G1SVH0	Hydrolase (other)
+G3FIN0	Ligase
+G3IAK4	Peptidase
+G3V783	Kinase
+G3V9H8	Transmembrane receptor protein kinase
+G3V9H8	Kinase
+G4VFD7	Oxidoreductase
+G7N604	Transmembrane signaling receptors (other)
+G7N604	Transporter
+H6TY12	Transmembrane signaling receptors (other)
+H6TY12	Transporter
+H9B8T9	Peptidase
+H9FL65	G protein-coupled receptor
+H9YX08	G protein-coupled receptor
+I3LIR5	Hydrolase (glycosyl bonds)
+I3LTK9	Hydrolase (ester bonds)
+I3LTK9	Signaling receptor (not transmembrane)
+I6LNT8	Kinase
+I6YFP0	Ligase
+J7HAW4	Transferase (other)
+K4CF70	Lyase
+K4CF70	Oxidoreductase
+K4JQ36	Hydrolase (ester bonds)
+K7N5L9	Oxidoreductase
+M3VH47	Kinase
+O00141	Kinase
+O00142	Kinase
+O00148	Hydrolase (acid anhydrides)
+O00167	Hydrolase (ester bonds)
+O00182	no_function
+O00206	Hydrolase (glycosyl bonds)
+O00206	Transmembrane signaling receptors (other)
+O00214	no_function
+O00222	G protein-coupled receptor
+O00238	Enzyme regulator
+O00238	Transmembrane receptor protein kinase
+O00238	Kinase
+O00255	DNA binding
+O00257	Transcription regulator
+O00257	Transferase (other)
+O00257	DNA binding
+O00264	no_function
+O00311	Kinase
+O00329	Kinase
+O00337	Transporter
+O00400	Transporter
+O00408	Hydrolase (ester bonds)
+O00418	Kinase
+O00429	Enzyme regulator
+O00429	Hydrolase (acid anhydrides)
+O00443	Kinase
+O00444	Kinase
+O00459	Enzyme regulator
+O00481	no_function
+O00482	Signaling receptor (not transmembrane)
+O00482	Transcription regulator
+O00482	DNA binding
+O00487	Enzyme regulator
+O00487	Peptidase
+O00506	Kinase
+O00519	Hydrolase (C-N bonds, no peptides)
+O00519	Hydrolase (ester bonds)
+O00555	Transporter
+O00571	Enzyme regulator
+O00571	Hydrolase (acid anhydrides)
+O00571	DNA binding
+O00574	G protein-coupled receptor
+O00590	G protein-coupled receptor
+O00625	Oxidoreductase
+O00625	Transcription regulator
+O00748	Hydrolase (ester bonds)
+O00750	Kinase
+O00754	Hydrolase (glycosyl bonds)
+O00763	Ligase
+O00764	Kinase
+O00767	Oxidoreductase
+O02667	G protein-coupled receptor
+O02747	Signaling receptor (not transmembrane)
+O02747	Transcription regulator
+O02747	DNA binding
+O02768	Oxidoreductase
+O02824	G protein-coupled receptor
+O02853	Isomerase
+O07855	Oxidoreductase
+O07911	Kinase
+O08532	Transporter
+O08537	Signaling receptor (not transmembrane)
+O08537	Transcription regulator
+O08537	DNA binding
+O08557	Hydrolase (C-N bonds, no peptides)
+O08562	Transporter
+O08565	G protein-coupled receptor
+O08590	Oxidoreductase
+O08663	Peptidase
+O08689	no_function
+O08725	G protein-coupled receptor
+O08726	G protein-coupled receptor
+O08786	G protein-coupled receptor
+O08790	G protein-coupled receptor
+O08816	no_function
+O08858	G protein-coupled receptor
+O08914	Hydrolase (C-N bonds, no peptides)
+O08914	Hydrolase (ester bonds)
+O08966	Transporter
+O08967	Enzyme regulator
+O09106	Hydrolase (C-N bonds, no peptides)
+O09106	Transcription regulator
+O09106	DNA binding
+O09175	Peptidase
+O13383	Transferase (glycosyl groups)
+O14578	Enzyme regulator
+O14578	Kinase
+O14638	Hydrolase (acid anhydrides)
+O14638	Hydrolase (ester bonds)
+O14640	no_function
+O14649	Transporter
+O14672	Peptidase
+O14684	Isomerase
+O14684	Oxidoreductase
+O14684	Transferase (alkyl or aryl groups, no methyl)
+O14686	Transcription regulator
+O14686	Transferase (one-carbon groups)
+O14686	DNA binding
+O14730	Kinase
+O14733	Kinase
+O14744	Transcription regulator
+O14744	Transferase (one-carbon groups)
+O14744	DNA binding
+O14745	Transporter
+O14746	Transferase (phosphorus-containing groups, non-kinase)
+O14746	DNA binding
+O14757	Kinase
+O14786	Enzyme regulator
+O14786	Transmembrane receptor protein kinase
+O14786	Kinase
+O14788	no_function
+O14815	Peptidase
+O14842	G protein-coupled receptor
+O14843	G protein-coupled receptor
+O14920	Kinase
+O14929	Transferase (acyl groups)
+O14939	Hydrolase (ester bonds)
+O14965	Kinase
+O14966	Hydrolase (acid anhydrides)
+O14975	Ligase
+O14975	Transporter
+O14976	Kinase
+O14980	no_function
+O14983	Transporter
+O15054	Oxidoreductase
+O15054	DNA binding
+O15056	Hydrolase (ester bonds)
+O15075	Kinase
+O15111	Kinase
+O15120	Transferase (acyl groups)
+O15121	Isomerase
+O15121	Oxidoreductase
+O15146	Transmembrane receptor protein kinase
+O15146	Kinase
+O15151	no_function
+O15164	Transcription regulator
+O15164	Kinase
+O15164	DNA binding
+O15197	Transmembrane receptor protein kinase
+O15197	Kinase
+O15229	Oxidoreductase
+O15244	Transporter
+O15245	Transporter
+O15254	Oxidoreductase
+O15264	Kinase
+O15269	Transferase (acyl groups)
+O15270	Transferase (acyl groups)
+O15294	Transferase (glycosyl groups)
+O15296	Oxidoreductase
+O15297	Hydrolase (ester bonds)
+O15297	Kinase
+O15303	G protein-coupled receptor
+O15305	Isomerase
+O15355	Hydrolase (ester bonds)
+O15357	Hydrolase (ester bonds)
+O15379	Hydrolase (C-N bonds, no peptides)
+O15379	Transcription regulator
+O15382	Transferase (other)
+O15392	Enzyme regulator
+O15399	Transmembrane signaling receptors (other)
+O15399	Transporter
+O15427	Transporter
+O15455	Hydrolase (glycosyl bonds)
+O15455	Transmembrane signaling receptors (other)
+O15492	Enzyme regulator
+O15492	Hydrolase (acid anhydrides)
+O15496	Hydrolase (ester bonds)
+O15527	Hydrolase (ester bonds)
+O15527	Hydrolase (glycosyl bonds)
+O15527	Lyase
+O15527	DNA binding
+O15530	Enzyme regulator
+O15530	Kinase
+O15540	no_function
+O15550	Oxidoreductase
+O15550	DNA binding
+O15552	G protein-coupled receptor
+O15554	Transporter
+O15648	Kinase
+O15727	Hydrolase (C-N bonds, no peptides)
+O15727	Hydrolase (glycosyl bonds)
+O18531	Signaling receptor (not transmembrane)
+O18531	Transcription regulator
+O18531	DNA binding
+O19045	Peptidase
+O19175	Kinase
+O23920	Oxidoreductase
+O24163	Oxidoreductase
+O24164	Oxidoreductase
+O26232	Lyase
+O30463	Oxidoreductase
+O31048	Peptidase
+O31272	Hydrolase (C-N bonds, no peptides)
+O32393	Lyase
+O32393	Kinase
+O32449	Peptidase
+O35049	Hydrolase (ester bonds)
+O35078	Oxidoreductase
+O35186	Peptidase
+O35235	no_function
+O35240	Transporter
+O35346	Kinase
+O35433	Transmembrane signaling receptors (other)
+O35433	Transporter
+O35435	Hydrolase (C-N bonds, no peptides)
+O35435	Oxidoreductase
+O35491	Kinase
+O35492	Kinase
+O35493	Kinase
+O35505	Transporter
+O35627	Signaling receptor (not transmembrane)
+O35627	Transcription regulator
+O35627	DNA binding
+O35678	Hydrolase (ester bonds)
+O35760	Isomerase
+O35820	Hydrolase (glycosyl bonds)
+O35854	Transferase (other)
+O35881	G protein-coupled receptor
+O35904	Kinase
+O35921	Transporter
+O35949	Transferase (acyl groups)
+O35956	Transporter
+O41156	Transferase (one-carbon groups)
+O42275	Hydrolase (ester bonds)
+O42392	Signaling receptor (not transmembrane)
+O42392	Transcription regulator
+O42392	DNA binding
+O42713	Oxidoreductase
+O43148	Transferase (one-carbon groups)
+O43175	Oxidoreductase
+O43187	Kinase
+O43193	G protein-coupled receptor
+O43283	Enzyme regulator
+O43283	Kinase
+O43293	Kinase
+O43318	Kinase
+O43353	Kinase
+O43426	Hydrolase (ester bonds)
+O43451	Hydrolase (glycosyl bonds)
+O43463	Transferase (one-carbon groups)
+O43463	DNA binding
+O43497	Transporter
+O43511	Transporter
+O43526	Transporter
+O43570	Lyase
+O43598	Hydrolase (glycosyl bonds)
+O43603	G protein-coupled receptor
+O43613	G protein-coupled receptor
+O43614	G protein-coupled receptor
+O43683	Kinase
+O43739	Enzyme regulator
+O43781	Kinase
+O43791	no_function
+O43826	Transporter
+O43865	no_function
+O43868	Transporter
+O43897	Peptidase
+O43924	Enzyme regulator
+O46128	Transmembrane signaling receptors (other)
+O46128	Transporter
+O46521	Oxidoreductase
+O46635	G protein-coupled receptor
+O46635	Serotonin binding
+O49150	Oxidoreductase
+O54050	Oxidoreductase
+O54698	Transporter
+O54699	Transporter
+O54735	Hydrolase (ester bonds)
+O54754	Oxidoreductase
+O54798	G protein-coupled receptor
+O54814	G protein-coupled receptor
+O54833	Kinase
+O54898	Transporter
+O54908	no_function
+O54912	Transporter
+O54939	Oxidoreductase
+O54967	Kinase
+O54988	Kinase
+O55017	Transporter
+O55143	Transporter
+O55192	Transporter
+O55193	G protein-coupled receptor
+O55234	Peptidase
+O55239	Transferase (one-carbon groups)
+O55242	G protein-coupled receptor
+O57585	G protein-coupled receptor
+O60218	Oxidoreductase
+O60235	Peptidase
+O60259	Peptidase
+O60282	Hydrolase (acid anhydrides)
+O60285	Kinase
+O60307	Kinase
+O60313	Hydrolase (acid anhydrides)
+O60331	Kinase
+O60333	Hydrolase (acid anhydrides)
+O60341	Oxidoreductase
+O60341	Transcription regulator
+O60346	Hydrolase (ester bonds)
+O60361	Kinase
+O60427	Oxidoreductase
+O60502	Hydrolase (glycosyl bonds)
+O60551	Transferase (acyl groups)
+O60563	Enzyme regulator
+O60563	DNA binding
+O60602	Hydrolase (glycosyl bonds)
+O60602	Transmembrane signaling receptors (other)
+O60603	Hydrolase (glycosyl bonds)
+O60603	Transmembrane signaling receptors (other)
+O60658	Hydrolase (ester bonds)
+O60671	Hydrolase (ester bonds)
+O60671	DNA binding
+O60674	Kinase
+O60678	Transferase (one-carbon groups)
+O60725	Transferase (one-carbon groups)
+O60733	Hydrolase (ester bonds)
+O60741	Transporter
+O60755	G protein-coupled receptor
+O60825	Hydrolase (ester bonds)
+O60825	Kinase
+O60841	Hydrolase (acid anhydrides)
+O60882	Peptidase
+O60885	Transcription regulator
+O60885	Kinase
+O60911	Peptidase
+O60928	Transporter
+O60930	Hydrolase (ester bonds)
+O61059	Transporter
+O61142	Peptidase
+O62664	Oxidoreductase
+O62698	Oxidoreductase
+O64411	Oxidoreductase
+O68720	Hydrolase (ester bonds)
+O69002	Oxidoreductase
+O69638	Hydrolase (other)
+O70126	Kinase
+O70174	Transmembrane signaling receptors (other)
+O70174	Acetylcholine binding
+O70174	Transporter
+O70196	Peptidase
+O70199	Oxidoreductase
+O70212	Transmembrane signaling receptors (other)
+O70212	Transporter
+O70276	Hydrolase (ester bonds)
+O70276	Isomerase
+O70276	Oxidoreductase
+O70282	Hydrolase (glycosyl bonds)
+O70305	no_function
+O70342	G protein-coupled receptor
+O70344	Transporter
+O70370	Peptidase
+O70423	Oxidoreductase
+O70444	Kinase
+O70526	G protein-coupled receptor
+O70528	G protein-coupled receptor
+O70536	Transferase (acyl groups)
+O70551	Kinase
+O70594	Transporter
+O75106	Oxidoreductase
+O75116	Kinase
+O75164	Oxidoreductase
+O75173	Peptidase
+O75311	Transmembrane signaling receptors (other)
+O75311	Transporter
+O75355	Hydrolase (acid anhydrides)
+O75356	Hydrolase (acid anhydrides)
+O75365	Hydrolase (ester bonds)
+O75385	Kinase
+O75387	Transporter
+O75460	Hydrolase (ester bonds)
+O75460	Kinase
+O75469	Signaling receptor (not transmembrane)
+O75469	Transcription regulator
+O75469	DNA binding
+O75493	Lyase
+O75530	Enzyme regulator
+O75530	Transferase (one-carbon groups)
+O75581	Enzyme regulator
+O75581	Transmembrane signaling receptors (other)
+O75581	Transporter
+O75582	Kinase
+O75604	Peptidase
+O75608	Hydrolase (ester bonds)
+O75643	Hydrolase (acid anhydrides)
+O75676	Kinase
+O75716	Kinase
+O75716	DNA binding
+O75747	Kinase
+O75751	Transporter
+O75762	Transporter
+O75807	Enzyme regulator
+O75874	Oxidoreductase
+O75907	Transferase (acyl groups)
+O75908	Transferase (acyl groups)
+O75914	Kinase
+O75936	Oxidoreductase
+O76031	Enzyme regulator
+O76031	Hydrolase (acid anhydrides)
+O76039	Kinase
+O76074	Hydrolase (ester bonds)
+O76083	Hydrolase (ester bonds)
+O77078	Transferase (acyl groups)
+O77239	Kinase
+O77636	Peptidase
+O77656	Peptidase
+O77669	Peptidase
+O77746	Hydrolase (ester bonds)
+O77759	Transferase (acyl groups)
+O77760	Transferase (acyl groups)
+O77773	Transporter
+O77823	Hydrolase (ester bonds)
+O78749	Oxidoreductase
+O78749	Transporter
+O78750	Oxidoreductase
+O78750	Transporter
+O85361	Hydrolase (glycosyl bonds)
+O87171	Oxidoreductase
+O88275	Signaling receptor (not transmembrane)
+O88275	Transcription regulator
+O88275	DNA binding
+O88351	Kinase
+O88410	G protein-coupled receptor
+O88420	Transporter
+O88427	Transporter
+O88457	Transporter
+O88508	Transferase (one-carbon groups)
+O88508	DNA binding
+O88509	Transcription regulator
+O88509	Transferase (one-carbon groups)
+O88509	DNA binding
+O88533	Lyase
+O88554	Transferase (glycosyl groups)
+O88554	DNA binding
+O88587	Transferase (one-carbon groups)
+O88643	Kinase
+O88693	Transferase (glycosyl groups)
+O88867	Oxidoreductase
+O88909	Transporter
+O89017	Peptidase
+O89049	Oxidoreductase
+O89085	Hydrolase (ester bonds)
+O92972	Enzyme regulator
+O92972	Peptidase
+O92972	Hydrolase (acid anhydrides)
+O92972	Transferase (phosphorus-containing groups, non-kinase)
+O92972	Transporter
+O93344	Oxidoreductase
+O93874	Oxidoreductase
+O94759	Transporter
+O94760	Hydrolase (C-N bonds, no peptides)
+O94768	Kinase
+O94782	Peptidase
+O94788	Oxidoreductase
+O94804	Kinase
+O94806	Kinase
+O94921	Kinase
+O94925	Hydrolase (C-N bonds, no peptides)
+O94953	Oxidoreductase
+O94956	Transporter
+O94966	Peptidase
+O95050	Transferase (one-carbon groups)
+O95069	Transporter
+O95136	G protein-coupled receptor
+O95180	Transporter
+O95235	Hydrolase (acid anhydrides)
+O95251	Transcription regulator
+O95251	Transferase (acyl groups)
+O95251	DNA binding
+O95259	Transporter
+O95263	Hydrolase (ester bonds)
+O95267	Enzyme regulator
+O95271	Transferase (glycosyl groups)
+O95278	Hydrolase (ester bonds)
+O95278	Transferase (glycosyl groups)
+O95279	Transporter
+O95347	Hydrolase (acid anhydrides)
+O95347	DNA binding
+O95352	Ligase
+O95372	Hydrolase (ester bonds)
+O95382	Kinase
+O95398	Enzyme regulator
+O95436	Transporter
+O95453	Hydrolase (ester bonds)
+O95470	Lyase
+O95544	Kinase
+O95551	Hydrolase (ester bonds)
+O95551	Transcription regulator
+O95551	DNA binding
+O95563	Transporter
+O95602	Transferase (phosphorus-containing groups, non-kinase)
+O95602	DNA binding
+O95630	Peptidase
+O95696	no_function
+O95718	Signaling receptor (not transmembrane)
+O95718	Transcription regulator
+O95718	DNA binding
+O95747	Kinase
+O95749	Transferase (alkyl or aryl groups, no methyl)
+O95819	Kinase
+O95822	Lyase
+O95835	Kinase
+O95848	Hydrolase (acid anhydrides)
+O95864	Oxidoreductase
+O95870	Hydrolase (ester bonds)
+O95931	no_function
+O95932	Transferase (acyl groups)
+O95977	G protein-coupled receptor
+O96013	Kinase
+O96017	Kinase
+O96028	Transferase (one-carbon groups)
+O96028	DNA binding
+O96214	Kinase
+O96394	Hydrolase (C-N bonds, no peptides)
+O96526	Kinase
+O96935	Peptidase
+O97467	Transporter
+O97554	Oxidoreductase
+O97578	Peptidase
+O97972	Transferase (one-carbon groups)
+P00166	Oxidoreductase
+P00325	Oxidoreductase
+P00338	Oxidoreductase
+P00346	Oxidoreductase
+P00349	Oxidoreductase
+P00352	Enzyme regulator
+P00352	Oxidoreductase
+P00371	Oxidoreductase
+P00374	Oxidoreductase
+P00374	Folic acid binding
+P00375	Oxidoreductase
+P00375	Folic acid binding
+P00376	Oxidoreductase
+P00378	Oxidoreductase
+P00380	Oxidoreductase
+P00381	Oxidoreductase
+P00382	Oxidoreductase
+P00387	Oxidoreductase
+P00390	Oxidoreductase
+P00395	Oxidoreductase
+P00395	Transporter
+P00403	Oxidoreductase
+P00403	Transporter
+P00438	Oxidoreductase
+P00439	Oxidoreductase
+P00441	Oxidoreductase
+P00451	Oxidoreductase
+P00469	Transferase (one-carbon groups)
+P00488	Transferase (acyl groups)
+P00489	Transferase (glycosyl groups)
+P00491	Transferase (glycosyl groups)
+P00492	Transferase (glycosyl groups)
+P00516	Kinase
+P00519	Transcription regulator
+P00519	Kinase
+P00519	DNA binding
+P00520	Kinase
+P00520	DNA binding
+P00521	Kinase
+P00523	Kinase
+P00533	Transmembrane receptor protein kinase
+P00533	Kinase
+P00533	DNA binding
+P00558	Oxidoreductase
+P00558	Kinase
+P00563	Kinase
+P00591	Hydrolase (ester bonds)
+P00592	Hydrolase (ester bonds)
+P00599	Hydrolase (ester bonds)
+P00602	Hydrolase (ester bonds)
+P00623	Hydrolase (ester bonds)
+P00630	Hydrolase (ester bonds)
+P00636	Hydrolase (ester bonds)
+P00642	Hydrolase (ester bonds)
+P00642	DNA binding
+P00669	Hydrolase (ester bonds)
+P00669	Lyase
+P00690	Hydrolase (glycosyl bonds)
+P00698	Hydrolase (glycosyl bonds)
+P00720	Hydrolase (glycosyl bonds)
+P00727	Peptidase
+P00730	Peptidase
+P00734	Peptidase
+P00734	Signaling receptor (not transmembrane)
+P00735	Peptidase
+P00736	Peptidase
+P00740	Peptidase
+P00742	Peptidase
+P00743	Peptidase
+P00746	Peptidase
+P00747	Peptidase
+P00748	Peptidase
+P00749	Peptidase
+P00750	Peptidase
+P00751	Peptidase
+P00752	Peptidase
+P00760	Peptidase
+P00761	Peptidase
+P00762	Peptidase
+P00763	Peptidase
+P00766	Peptidase
+P00780	Peptidase
+P00784	Peptidase
+P00786	Enzyme regulator
+P00786	Peptidase
+P00786	Transmembrane signaling receptors (other)
+P00787	Peptidase
+P00791	Peptidase
+P00797	Peptidase
+P00800	Peptidase
+P00807	Hydrolase (C-N bonds, no peptides)
+P00808	Hydrolase (C-N bonds, no peptides)
+P00809	Hydrolase (C-N bonds, no peptides)
+P00813	Hydrolase (C-N bonds, no peptides)
+P00845	Ligase
+P00845	Transporter
+P00883	Lyase
+P00915	Hydrolase (ester bonds)
+P00915	Lyase
+P00918	Hydrolase (ester bonds)
+P00918	Lyase
+P00921	Lyase
+P00939	Isomerase
+P00939	Lyase
+P00970	Ligase
+P01031	Enzyme regulator
+P01103	Transcription regulator
+P01103	DNA binding
+P01106	Transcription regulator
+P01106	DNA binding
+P01116	Hydrolase (acid anhydrides)
+P01256	no_function
+P01275	no_function
+P01375	DNA binding
+P01584	no_function
+P01589	Transmembrane signaling receptors (other)
+P01590	Transmembrane signaling receptors (other)
+P01730	Transmembrane signaling receptors (other)
+P02144	no_function
+P02511	no_function
+P02550	Hydrolase (acid anhydrides)
+P02692	Transporter
+P02699	Enzyme regulator
+P02699	G protein-coupled receptor
+P02708	Transmembrane signaling receptors (other)
+P02708	Acetylcholine binding
+P02708	Transporter
+P02748	no_function
+P02752	Signaling receptor (not transmembrane)
+P02752	Transporter
+P02753	Transporter
+P02754	no_function
+P02766	no_function
+P02774	Transporter
+P02866	no_function
+P02879	Hydrolase (glycosyl bonds)
+P03070	Hydrolase (other)
+P03070	DNA binding
+P03072	Hydrolase (other)
+P03072	DNA binding
+P03120	Transcription regulator
+P03120	DNA binding
+P03126	DNA binding
+P03303	Peptidase
+P03303	Hydrolase (acid anhydrides)
+P03303	Transferase (phosphorus-containing groups, non-kinase)
+P03303	Transporter
+P03313	Peptidase
+P03313	Hydrolase (acid anhydrides)
+P03313	Transferase (phosphorus-containing groups, non-kinase)
+P03313	Transporter
+P03372	Enzyme regulator
+P03372	Signaling receptor (not transmembrane)
+P03372	Transcription regulator
+P03372	DNA binding
+P03428	Transferase (phosphorus-containing groups, non-kinase)
+P03433	Hydrolase (ester bonds)
+P03437	no_function
+P03438	no_function
+P03452	no_function
+P03468	Enzyme regulator
+P03468	Hydrolase (glycosyl bonds)
+P03471	Hydrolase (glycosyl bonds)
+P03887	Oxidoreductase
+P03887	Transporter
+P03951	Peptidase
+P03952	Peptidase
+P03956	Peptidase
+P04014	Hydrolase (acid anhydrides)
+P04014	DNA binding
+P04015	Transcription regulator
+P04015	DNA binding
+P04035	Oxidoreductase
+P04040	Hydrolase (C-N bonds, no peptides)
+P04040	Oxidoreductase
+P04049	Kinase
+P04053	Transferase (phosphorus-containing groups, non-kinase)
+P04053	DNA binding
+P04054	Hydrolase (ester bonds)
+P04055	Hydrolase (ester bonds)
+P04058	Hydrolase (ester bonds)
+P04062	Hydrolase (glycosyl bonds)
+P04062	Transferase (glycosyl groups)
+P04066	Hydrolase (glycosyl bonds)
+P04070	Peptidase
+P04085	no_function
+P04150	Signaling receptor (not transmembrane)
+P04150	Transcription regulator
+P04150	DNA binding
+P04174	Oxidoreductase
+P04177	Oxidoreductase
+P04177	Dopamine binding
+P04181	Transferase (other)
+P04183	Kinase
+P04184	Kinase
+P04185	Peptidase
+P04186	Peptidase
+P04190	Hydrolase (C-N bonds, no peptides)
+P04191	Transporter
+P04201	G protein-coupled receptor
+P04233	Transmembrane signaling receptors (other)
+P04271	no_function
+P04273	Enzyme regulator
+P04273	Signaling receptor (not transmembrane)
+P04274	G protein-coupled receptor
+P04278	no_function
+P04326	Transcription regulator
+P04401	no_function
+P04406	Enzyme regulator
+P04406	Oxidoreductase
+P04406	Transferase (other)
+P04409	Kinase
+P04439	no_function
+P04626	Transmembrane receptor protein kinase
+P04626	Kinase
+P04629	Transmembrane receptor protein kinase
+P04629	Kinase
+P04631	no_function
+P04637	Enzyme regulator
+P04637	Transcription regulator
+P04637	DNA binding
+P04746	Hydrolase (glycosyl bonds)
+P04774	Transporter
+P04775	Transporter
+P04792	Enzyme regulator
+P04818	Folic acid binding
+P04818	Transferase (one-carbon groups)
+P04839	Oxidoreductase
+P04839	Transporter
+P04899	Hydrolase (acid anhydrides)
+P04925	Enzyme regulator
+P04925	Signaling receptor (not transmembrane)
+P05067	Enzyme regulator
+P05067	DNA binding
+P05089	Hydrolase (C-N bonds, no peptides)
+P05091	Hydrolase (ester bonds)
+P05091	Oxidoreductase
+P05121	Enzyme regulator
+P05129	Kinase
+P05141	Transporter
+P05164	Oxidoreductase
+P05186	Hydrolase (acid anhydrides)
+P05186	Hydrolase (ester bonds)
+P05187	Hydrolase (ester bonds)
+P05193	Hydrolase (C-N bonds, no peptides)
+P05227	no_function
+P05231	no_function
+P05307	Isomerase
+P05307	Oxidoreductase
+P05362	Transmembrane signaling receptors (other)
+P05363	G protein-coupled receptor
+P05364	Hydrolase (C-N bonds, no peptides)
+P05369	Transferase (alkyl or aryl groups, no methyl)
+P05412	Enzyme regulator
+P05412	Transcription regulator
+P05412	DNA binding
+P05413	no_function
+P05480	Enzyme regulator
+P05480	Kinase
+P05532	Transmembrane receptor protein kinase
+P05532	Kinase
+P05622	Transmembrane receptor protein kinase
+P05622	Kinase
+P05659	no_function
+P05696	Kinase
+P05771	Transcription regulator
+P05771	Kinase
+P05979	Oxidoreductase
+P05981	Peptidase
+P05982	Oxidoreductase
+P06026	Peptidase
+P06186	Signaling receptor (not transmembrane)
+P06186	Transcription regulator
+P06186	DNA binding
+P06211	Signaling receptor (not transmembrane)
+P06211	Transcription regulator
+P06211	DNA binding
+P06213	Transmembrane receptor protein kinase
+P06213	Kinase
+P06239	Enzyme regulator
+P06239	Hydrolase (ester bonds)
+P06239	Kinase
+P06240	Enzyme regulator
+P06240	Hydrolase (ester bonds)
+P06240	Kinase
+P06241	Enzyme regulator
+P06241	Kinase
+P06276	Hydrolase (ester bonds)
+P06278	Hydrolase (glycosyl bonds)
+P06280	Hydrolase (glycosyl bonds)
+P06281	Peptidase
+P06307	no_function
+P06400	Transcription regulator
+P06400	DNA binding
+P06401	Signaling receptor (not transmembrane)
+P06401	Transcription regulator
+P06401	DNA binding
+P06402	Oxidoreductase
+P06479	Kinase
+P06493	Kinase
+P06494	Transmembrane receptor protein kinase
+P06494	Kinase
+P06494	DNA binding
+P06536	Signaling receptor (not transmembrane)
+P06536	Transcription regulator
+P06536	DNA binding
+P06537	Signaling receptor (not transmembrane)
+P06537	Transcription regulator
+P06537	DNA binding
+P06702	no_function
+P06730	no_function
+P06733	Lyase
+P06733	Transcription regulator
+P06733	DNA binding
+P06737	Transferase (glycosyl groups)
+P06746	Lyase
+P06746	Transferase (phosphorus-containing groups, non-kinase)
+P06746	DNA binding
+P06756	Signaling receptor (not transmembrane)
+P06756	Transporter
+P06760	Hydrolase (glycosyl bonds)
+P06762	Hydrolase (ester bonds)
+P06762	Oxidoreductase
+P06766	Lyase
+P06766	Transferase (phosphorus-containing groups, non-kinase)
+P06766	DNA binding
+P06797	Peptidase
+P06804	DNA binding
+P06821	Transporter
+P06858	Hydrolase (ester bonds)
+P06865	Hydrolase (glycosyl bonds)
+P06865	Transferase (glycosyl groups)
+P06869	Peptidase
+P06870	Peptidase
+P06873	Peptidase
+P06881	no_function
+P06935	Peptidase
+P06935	Hydrolase (acid anhydrides)
+P06935	Transferase (one-carbon groups)
+P06935	Transferase (phosphorus-containing groups, non-kinase)
+P06935	DNA binding
+P07099	Hydrolase (other)
+P07140	Hydrolase (ester bonds)
+P07141	no_function
+P07148	Transporter
+P07154	Peptidase
+P07195	Oxidoreductase
+P07202	Oxidoreductase
+P07237	Isomerase
+P07237	Oxidoreductase
+P07254	Hydrolase (glycosyl bonds)
+P07265	Hydrolase (glycosyl bonds)
+P07288	Peptidase
+P07288	Hydrolase (C-N bonds, no peptides)
+P07293	Transporter
+P07305	DNA binding
+P07308	Oxidoreductase
+P07314	Peptidase
+P07314	Transferase (acyl groups)
+P07327	Oxidoreductase
+P07332	Kinase
+P07333	Transmembrane receptor protein kinase
+P07333	Kinase
+P07339	Peptidase
+P07374	Hydrolase (C-N bonds, no peptides)
+P07382	Oxidoreductase
+P07382	Transferase (one-carbon groups)
+P07384	Peptidase
+P07437	Hydrolase (acid anhydrides)
+P07445	Isomerase
+P07451	Hydrolase (ester bonds)
+P07451	Lyase
+P07477	Peptidase
+P07550	G protein-coupled receptor
+P07607	Folic acid binding
+P07607	Transferase (one-carbon groups)
+P07650	Transferase (glycosyl groups)
+P07683	Hydrolase (glycosyl bonds)
+P07686	Hydrolase (glycosyl bonds)
+P07686	Transferase (glycosyl groups)
+P07711	Peptidase
+P07727	Transmembrane signaling receptors (other)
+P07727	Transporter
+P07741	Transferase (glycosyl groups)
+P07752	Lyase
+P07824	Hydrolase (C-N bonds, no peptides)
+P07858	Peptidase
+P07861	Peptidase
+P07872	Oxidoreductase
+P07900	Enzyme regulator
+P07900	Hydrolase (acid anhydrides)
+P07943	Oxidoreductase
+P07947	Kinase
+P07948	Kinase
+P07949	Transmembrane receptor protein kinase
+P07949	Kinase
+P07996	no_function
+P08001	Peptidase
+P08001	Hydrolase (C-N bonds, no peptides)
+P08049	Peptidase
+P08069	Transmembrane receptor protein kinase
+P08069	Kinase
+P08069	Transporter
+P08104	Transporter
+P08138	Transmembrane signaling receptors (other)
+P08151	Transcription regulator
+P08151	DNA binding
+P08170	Oxidoreductase
+P08172	G protein-coupled receptor
+P08173	G protein-coupled receptor
+P08176	Peptidase
+P08191	no_function
+P08192	Ligase
+P08235	Signaling receptor (not transmembrane)
+P08235	Transcription regulator
+P08235	DNA binding
+P08236	Hydrolase (glycosyl bonds)
+P08238	Enzyme regulator
+P08238	Hydrolase (acid anhydrides)
+P08240	Hydrolase (acid anhydrides)
+P08246	Peptidase
+P08246	Transcription regulator
+P08253	Peptidase
+P08254	Peptidase
+P08294	Oxidoreductase
+P08311	Peptidase
+P08397	Transferase (alkyl or aryl groups, no methyl)
+P08419	Peptidase
+P08424	Peptidase
+P08473	Peptidase
+P08482	G protein-coupled receptor
+P08483	G protein-coupled receptor
+P08483	Acetylcholine binding
+P08485	Enzyme regulator
+P08485	G protein-coupled receptor
+P08487	Hydrolase (ester bonds)
+P08574	Oxidoreductase
+P08574	Transporter
+P08575	Hydrolase (ester bonds)
+P08575	Transmembrane signaling receptors (other)
+P08581	Transmembrane receptor protein kinase
+P08581	Kinase
+P08588	Enzyme regulator
+P08588	G protein-coupled receptor
+P08592	Enzyme regulator
+P08592	DNA binding
+P08631	Kinase
+P08648	no_function
+P08659	Oxidoreductase
+P08689	no_function
+P08709	Peptidase
+P08799	no_function
+P08842	Hydrolase (ester bonds)
+P08908	G protein-coupled receptor
+P08908	Serotonin binding
+P08909	G protein-coupled receptor
+P08909	Serotonin binding
+P08911	G protein-coupled receptor
+P08912	Hydrolase (ester bonds)
+P08912	G protein-coupled receptor
+P08913	G protein-coupled receptor
+P08913	Epinephrine binding
+P08922	Transmembrane receptor protein kinase
+P08922	Kinase
+P09038	Transcription regulator
+P09057	Lyase
+P09086	Transcription regulator
+P09086	DNA binding
+P09172	Oxidoreductase
+P09216	Enzyme regulator
+P09216	Kinase
+P09237	Peptidase
+P09238	Peptidase
+P09242	Hydrolase (acid anhydrides)
+P09242	Hydrolase (ester bonds)
+P09382	no_function
+P09429	Lyase
+P09429	Transcription regulator
+P09429	DNA binding
+P09467	Hydrolase (ester bonds)
+P09470	Peptidase
+P09482	Transmembrane signaling receptors (other)
+P09482	Transporter
+P09483	Transmembrane signaling receptors (other)
+P09483	Acetylcholine binding
+P09483	Transporter
+P09487	Hydrolase (acid anhydrides)
+P09487	Hydrolase (ester bonds)
+P09581	Transmembrane receptor protein kinase
+P09581	Kinase
+P09598	Hydrolase (ester bonds)
+P09601	Hydrolase (ester bonds)
+P09601	Oxidoreductase
+P09610	Oxidoreductase
+P09619	G protein-coupled receptor
+P09619	Transmembrane receptor protein kinase
+P09619	Kinase
+P09651	DNA binding
+P09660	Transmembrane signaling receptors (other)
+P09660	Transporter
+P09668	Enzyme regulator
+P09668	Peptidase
+P09668	Transmembrane signaling receptors (other)
+P09769	Kinase
+P09790	Peptidase
+P09810	Oxidoreductase
+P09811	Transferase (glycosyl groups)
+P09812	Transferase (glycosyl groups)
+P09848	Hydrolase (glycosyl bonds)
+P09871	Peptidase
+P09874	Transferase (glycosyl groups)
+P09874	DNA binding
+P09884	Transferase (phosphorus-containing groups, non-kinase)
+P09884	DNA binding
+P09917	Hydrolase (other)
+P09917	Oxidoreductase
+P09923	Hydrolase (ester bonds)
+P09936	Peptidase
+P09936	Ligase
+P09955	Peptidase
+P09958	Enzyme regulator
+P09958	Peptidase
+P09960	Peptidase
+P0A017	Oxidoreductase
+P0A031	Hydrolase (acid anhydrides)
+P0A0H5	Hydrolase (ester bonds)
+P0A0I7	DNA binding
+P0A0J7	Transporter
+P0A0K8	Isomerase
+P0A0K8	DNA binding
+P0A3M1	Hydrolase (C-N bonds, no peptides)
+P0A6R0	Transferase (acyl groups)
+P0A6W3	Transferase (phosphorus-containing groups, non-kinase)
+P0A749	Transferase (alkyl or aryl groups, no methyl)
+P0A7Y4	Hydrolase (ester bonds)
+P0A8F0	Transferase (glycosyl groups)
+P0A9A6	Hydrolase (acid anhydrides)
+P0A9J6	Kinase
+P0A9J8	Isomerase
+P0A9J8	Lyase
+P0ABQ4	Oxidoreductase
+P0ABQ4	Folic acid binding
+P0AD63	Hydrolase (C-N bonds, no peptides)
+P0AD64	Hydrolase (C-N bonds, no peptides)
+P0AD65	Peptidase
+P0AES6	Isomerase
+P0AES6	DNA binding
+P0AF14	Hydrolase (glycosyl bonds)
+P0C0F4	Oxidoreductase
+P0C0L6	G protein-coupled receptor
+P0C1P9	Hydrolase (ester bonds)
+P0C1P9	Transferase (phosphorus-containing groups, non-kinase)
+P0C1P9	DNA binding
+P0C1S0	Transcription regulator
+P0C1S0	DNA binding
+P0C1S7	Isomerase
+P0C1S7	DNA binding
+P0C1S8	Kinase
+P0C1U8	Peptidase
+P0C1U9	Isomerase
+P0C1U9	DNA binding
+P0C559	Isomerase
+P0C559	DNA binding
+P0C5S6	Hydrolase (ester bonds)
+P0C5S6	Kinase
+P0C6U6	Peptidase
+P0C6U6	Transferase (other)
+P0C6U8	Peptidase
+P0C6U8	Hydrolase (ester bonds)
+P0C6U8	Lyase
+P0C6U8	Transferase (phosphorus-containing groups, non-kinase)
+P0C6X7	Peptidase
+P0C6X7	Hydrolase (acid anhydrides)
+P0C6X7	Hydrolase (ester bonds)
+P0C6X7	Lyase
+P0C6X7	Transferase (one-carbon groups)
+P0C6X7	Transferase (phosphorus-containing groups, non-kinase)
+P0C7A3	Transferase (acyl groups)
+P0CS83	Peptidase
+P0DJD9	Peptidase
+P0DMS8	G protein-coupled receptor
+P0DMS9	Transmembrane signaling receptors (other)
+P0DMV8	Hydrolase (acid anhydrides)
+P0DMV8	Transcription regulator
+P0DP23	Enzyme regulator
+P0DPI0	Peptidase
+P0DPI0	Transporter
+P0DTD1	Peptidase
+P0DTD1	Hydrolase (acid anhydrides)
+P0DTD1	Hydrolase (ester bonds)
+P0DTD1	Lyase
+P0DTD1	Transferase (one-carbon groups)
+P0DTD1	Transferase (phosphorus-containing groups, non-kinase)
+P0DUB6	Hydrolase (glycosyl bonds)
+P10070	Transcription regulator
+P10070	DNA binding
+P10145	no_function
+P10173	Lyase
+P10236	Transferase (phosphorus-containing groups, non-kinase)
+P10253	Hydrolase (glycosyl bonds)
+P10275	Signaling receptor (not transmembrane)
+P10275	Transcription regulator
+P10275	DNA binding
+P10276	Signaling receptor (not transmembrane)
+P10276	Transcription regulator
+P10276	DNA binding
+P10323	Peptidase
+P10323	Hydrolase (C-N bonds, no peptides)
+P10323	DNA binding
+P10398	Kinase
+P10415	Transporter
+P10415	DNA binding
+P10481	Hydrolase (glycosyl bonds)
+P10482	Hydrolase (glycosyl bonds)
+P10499	Transporter
+P10586	Hydrolase (ester bonds)
+P10586	Transmembrane signaling receptors (other)
+P10589	Signaling receptor (not transmembrane)
+P10589	Transcription regulator
+P10589	DNA binding
+P10599	Oxidoreductase
+P10605	Peptidase
+P10608	G protein-coupled receptor
+P10608	Epinephrine binding
+P10619	Enzyme regulator
+P10619	Peptidase
+P10636	DNA binding
+P10686	Hydrolase (ester bonds)
+P10688	Hydrolase (ester bonds)
+P10696	Hydrolase (ester bonds)
+P10721	Transmembrane receptor protein kinase
+P10721	Kinase
+P10760	Hydrolase (other)
+P10809	Hydrolase (acid anhydrides)
+P10809	Isomerase
+P10809	DNA binding
+P10826	Signaling receptor (not transmembrane)
+P10826	Transcription regulator
+P10826	DNA binding
+P10827	Signaling receptor (not transmembrane)
+P10827	Transcription regulator
+P10827	DNA binding
+P10828	Signaling receptor (not transmembrane)
+P10828	Transcription regulator
+P10828	DNA binding
+P10844	Peptidase
+P10844	Transporter
+P10938	Transferase (one-carbon groups)
+P10980	G protein-coupled receptor
+P11021	Hydrolase (acid anhydrides)
+P11064	Hydrolase (ester bonds)
+P11086	Transferase (one-carbon groups)
+P11103	Transferase (glycosyl groups)
+P11103	DNA binding
+P11137	no_function
+P11142	Hydrolase (acid anhydrides)
+P11150	Hydrolase (ester bonds)
+P11152	Hydrolase (ester bonds)
+P11166	Transporter
+P11167	Transporter
+P11168	Transporter
+P11169	Transporter
+P11172	Lyase
+P11172	Transferase (glycosyl groups)
+P11214	Peptidase
+P11216	Transferase (glycosyl groups)
+P11217	Transferase (glycosyl groups)
+P11229	Hydrolase (ester bonds)
+P11229	G protein-coupled receptor
+P11274	Enzyme regulator
+P11274	Kinase
+P11308	Transcription regulator
+P11308	DNA binding
+P11309	Enzyme regulator
+P11309	Kinase
+P11344	Oxidoreductase
+P11362	Transmembrane receptor protein kinase
+P11362	Kinase
+P11387	Isomerase
+P11387	Kinase
+P11387	DNA binding
+P11388	Isomerase
+P11388	DNA binding
+P11413	Oxidoreductase
+P11416	Enzyme regulator
+P11416	Signaling receptor (not transmembrane)
+P11416	Transcription regulator
+P11416	DNA binding
+P11440	Kinase
+P11444	Isomerase
+P11473	Signaling receptor (not transmembrane)
+P11473	Transcription regulator
+P11473	DNA binding
+P11474	Signaling receptor (not transmembrane)
+P11474	Transcription regulator
+P11474	DNA binding
+P11497	Ligase
+P11507	Transporter
+P11541	Hydrolase (ester bonds)
+P11586	Hydrolase (C-N bonds, no peptides)
+P11586	Ligase
+P11586	Oxidoreductase
+P11597	Transporter
+P11678	Oxidoreductase
+P11708	Oxidoreductase
+P11716	Transporter
+P11717	Transmembrane receptor protein kinase
+P11717	Kinase
+P11762	no_function
+P11766	Oxidoreductase
+P11797	Hydrolase (glycosyl bonds)
+P11799	Kinase
+P11802	Enzyme regulator
+P11802	Kinase
+P11838	Peptidase
+P11884	Hydrolase (ester bonds)
+P11884	Oxidoreductase
+P11926	Lyase
+P11940	no_function
+P12004	Enzyme regulator
+P12004	Hydrolase (glycosyl bonds)
+P12004	DNA binding
+P12104	Transporter
+P12236	Transporter
+P12259	no_function
+P12265	Hydrolase (glycosyl bonds)
+P12268	Oxidoreductase
+P12268	DNA binding
+P12276	Hydrolase (ester bonds)
+P12276	Lyase
+P12276	Oxidoreductase
+P12276	Transferase (acyl groups)
+P12276	DNA binding
+P12314	Transmembrane signaling receptors (other)
+P12337	Hydrolase (ester bonds)
+P12389	Transmembrane signaling receptors (other)
+P12389	Transporter
+P12527	Hydrolase (other)
+P12527	Oxidoreductase
+P12530	Oxidoreductase
+P12657	G protein-coupled receptor
+P12711	Oxidoreductase
+P12746	DNA binding
+P12785	Hydrolase (ester bonds)
+P12785	Lyase
+P12785	Oxidoreductase
+P12785	Transferase (acyl groups)
+P12807	Oxidoreductase
+P12821	Peptidase
+P12822	Peptidase
+P12931	Enzyme regulator
+P12931	Kinase
+P12955	Peptidase
+P13051	Hydrolase (glycosyl bonds)
+P13051	DNA binding
+P13053	Signaling receptor (not transmembrane)
+P13053	Transcription regulator
+P13053	DNA binding
+P13100	Transferase (one-carbon groups)
+P13159	Kinase
+P13264	Hydrolase (C-N bonds, no peptides)
+P13497	Peptidase
+P13500	Kinase
+P13516	Oxidoreductase
+P13601	Oxidoreductase
+P13612	Signaling receptor (not transmembrane)
+P13631	Signaling receptor (not transmembrane)
+P13631	Transcription regulator
+P13631	DNA binding
+P13661	Hydrolase (C-N bonds, no peptides)
+P13674	Oxidoreductase
+P13716	Lyase
+P13726	Transmembrane signaling receptors (other)
+P13807	Transferase (glycosyl groups)
+P13807	Transferase (phosphorus-containing groups, non-kinase)
+P13861	Enzyme regulator
+P13864	Transferase (one-carbon groups)
+P13864	DNA binding
+P13866	Transporter
+P13945	G protein-coupled receptor
+P13945	Epinephrine binding
+P13956	Transferase (one-carbon groups)
+P13995	Hydrolase (C-N bonds, no peptides)
+P13995	Oxidoreductase
+P14060	Isomerase
+P14060	Oxidoreductase
+P14061	Oxidoreductase
+P14091	Peptidase
+P14099	Hydrolase (ester bonds)
+P14100	Hydrolase (ester bonds)
+P14142	Transporter
+P14174	Isomerase
+P14207	Signaling receptor (not transmembrane)
+P14207	Folic acid binding
+P14210	no_function
+P14222	Transporter
+P14234	Kinase
+P14270	Hydrolase (ester bonds)
+P14324	Transferase (alkyl or aryl groups, no methyl)
+P14384	Peptidase
+P14410	Hydrolase (glycosyl bonds)
+P14416	G protein-coupled receptor
+P14416	Dopamine binding
+P14422	Hydrolase (ester bonds)
+P14423	Hydrolase (ester bonds)
+P14489	Hydrolase (C-N bonds, no peptides)
+P14550	Oxidoreductase
+P14555	Hydrolase (ester bonds)
+P14598	Enzyme regulator
+P14598	Oxidoreductase
+P14600	G protein-coupled receptor
+P14616	Transmembrane receptor protein kinase
+P14616	Kinase
+P14618	Kinase
+P14625	Hydrolase (acid anhydrides)
+P14672	Transporter
+P14679	Oxidoreductase
+P14735	Peptidase
+P14740	Peptidase
+P14778	Hydrolase (glycosyl bonds)
+P14778	Transmembrane signaling receptors (other)
+P14780	Peptidase
+P14842	G protein-coupled receptor
+P14842	Serotonin binding
+P14859	Transcription regulator
+P14859	DNA binding
+P14867	Transmembrane signaling receptors (other)
+P14867	Transporter
+P14902	Oxidoreductase
+P14920	Oxidoreductase
+P14925	Lyase
+P14925	Oxidoreductase
+P14927	no_function
+P15056	Kinase
+P15085	Peptidase
+P15086	Peptidase
+P15090	Transporter
+P15101	Oxidoreductase
+P15121	Oxidoreductase
+P15127	Transmembrane receptor protein kinase
+P15127	Kinase
+P15144	Peptidase
+P15144	Signaling receptor (not transmembrane)
+P15145	Peptidase
+P15169	Peptidase
+P15207	Signaling receptor (not transmembrane)
+P15207	Transcription regulator
+P15207	DNA binding
+P15208	Transmembrane receptor protein kinase
+P15208	Kinase
+P15273	Hydrolase (ester bonds)
+P15291	Transferase (glycosyl groups)
+P15304	Hydrolase (ester bonds)
+P15319	no_function
+P15328	Signaling receptor (not transmembrane)
+P15328	Folic acid binding
+P15374	Peptidase
+P15381	Transporter
+P15382	Transporter
+P15384	Transporter
+P15385	Transporter
+P15387	Transporter
+P15389	Transporter
+P15390	Transporter
+P15428	Oxidoreductase
+P15428	G protein-coupled receptor
+P15445	Hydrolase (ester bonds)
+P15498	Enzyme regulator
+P15559	Oxidoreductase
+P15589	Hydrolase (ester bonds)
+P15692	no_function
+P15735	Kinase
+P15823	G protein-coupled receptor
+P15840	Transferase (one-carbon groups)
+P15840	DNA binding
+P15907	Transferase (glycosyl groups)
+P15917	Peptidase
+P15944	Peptidase
+P16050	Oxidoreductase
+P16054	Enzyme regulator
+P16054	Kinase
+P16056	Transmembrane receptor protein kinase
+P16056	Kinase
+P16083	Oxidoreductase
+P16092	Transmembrane receptor protein kinase
+P16092	Kinase
+P16109	no_function
+P16116	Oxidoreductase
+P16118	Hydrolase (ester bonds)
+P16118	Kinase
+P16152	Oxidoreductase
+P16154	Peptidase
+P16154	Transferase (glycosyl groups)
+P16177	G protein-coupled receptor
+P16184	Oxidoreductase
+P16232	Oxidoreductase
+P16233	Hydrolase (ester bonds)
+P16234	Transmembrane receptor protein kinase
+P16234	Kinase
+P16235	G protein-coupled receptor
+P16257	Signaling receptor (not transmembrane)
+P16277	Kinase
+P16278	Hydrolase (glycosyl bonds)
+P16296	Peptidase
+P16389	Transporter
+P16390	Transporter
+P16395	G protein-coupled receptor
+P16453	Lyase
+P16455	Transferase (one-carbon groups)
+P16455	DNA binding
+P16469	Oxidoreductase
+P16473	G protein-coupled receptor
+P16499	Hydrolase (ester bonds)
+P16551	Hydrolase (glycosyl bonds)
+P16581	Transmembrane signaling receptors (other)
+P16586	Hydrolase (ester bonds)
+P16591	Kinase
+P16610	G protein-coupled receptor
+P16615	Transporter
+P16638	Transferase (acyl groups)
+P16753	Peptidase
+P16788	Kinase
+P17164	Hydrolase (glycosyl bonds)
+P17174	Lyase
+P17174	Transferase (other)
+P17181	Transmembrane signaling receptors (other)
+P17252	Kinase
+P17405	Hydrolase (ester bonds)
+P17405	Hydrolase (glycosyl bonds)
+P17516	Oxidoreductase
+P17516	Transporter
+P17538	Peptidase
+P17597	Transferase (other)
+P17599	no_function
+P17612	Kinase
+P17655	Peptidase
+P17658	Transporter
+P17659	Transporter
+P17706	Hydrolase (ester bonds)
+P17707	Lyase
+P17712	Kinase
+P17752	Oxidoreductase
+P17764	Transferase (acyl groups)
+P17931	Enzyme regulator
+P17948	Transmembrane receptor protein kinase
+P17948	Kinase
+P18031	Hydrolase (ester bonds)
+P18054	Hydrolase (other)
+P18054	Oxidoreductase
+P18074	Hydrolase (acid anhydrides)
+P18074	DNA binding
+P18089	G protein-coupled receptor
+P18089	Epinephrine binding
+P18090	Enzyme regulator
+P18090	G protein-coupled receptor
+P18130	G protein-coupled receptor
+P18177	Peptidase
+P18177	Transferase (glycosyl groups)
+P18292	Peptidase
+P18292	Signaling receptor (not transmembrane)
+P18405	Oxidoreductase
+P18433	Hydrolase (ester bonds)
+P18433	Transmembrane signaling receptors (other)
+P18493	Transferase (glycosyl groups)
+P18493	DNA binding
+P18510	no_function
+P18669	Hydrolase (other)
+P18669	Isomerase
+P18825	G protein-coupled receptor
+P18825	Epinephrine binding
+P18841	G protein-coupled receptor
+P18858	Ligase
+P18858	DNA binding
+P18886	Transferase (acyl groups)
+P18894	Oxidoreductase
+P18901	G protein-coupled receptor
+P18901	Dopamine binding
+P18911	Signaling receptor (not transmembrane)
+P18911	Transcription regulator
+P18911	DNA binding
+P19020	G protein-coupled receptor
+P19021	Lyase
+P19021	Oxidoreductase
+P19091	Signaling receptor (not transmembrane)
+P19091	Transcription regulator
+P19091	DNA binding
+P19096	Hydrolase (ester bonds)
+P19096	Lyase
+P19096	Oxidoreductase
+P19096	Transferase (acyl groups)
+P19111	Hydrolase (ester bonds)
+P19112	Hydrolase (ester bonds)
+P19120	Hydrolase (acid anhydrides)
+P19156	Transporter
+P19174	Hydrolase (ester bonds)
+P19205	Peptidase
+P19221	Peptidase
+P19221	Signaling receptor (not transmembrane)
+P19320	Oxidoreductase
+P19327	G protein-coupled receptor
+P19327	Serotonin binding
+P19328	G protein-coupled receptor
+P19328	Epinephrine binding
+P19332	DNA binding
+P19357	Transporter
+P19367	Kinase
+P19438	Transmembrane signaling receptors (other)
+P19490	Transmembrane signaling receptors (other)
+P19490	Transporter
+P19491	Transmembrane signaling receptors (other)
+P19491	Transporter
+P19492	Transmembrane signaling receptors (other)
+P19492	Transporter
+P19493	Transmembrane signaling receptors (other)
+P19493	Transporter
+P19525	Enzyme regulator
+P19525	Kinase
+P19602	Peptidase
+P19621	Peptidase
+P19634	Transporter
+P19643	Oxidoreductase
+P19754	Lyase
+P19784	Kinase
+P19785	Signaling receptor (not transmembrane)
+P19785	Transcription regulator
+P19785	DNA binding
+P19793	Signaling receptor (not transmembrane)
+P19793	Transcription regulator
+P19793	DNA binding
+P19801	Oxidoreductase
+P19821	Transferase (phosphorus-containing groups, non-kinase)
+P19821	DNA binding
+P19838	Transcription regulator
+P19838	DNA binding
+P19969	Transmembrane signaling receptors (other)
+P19969	Transporter
+P19971	Transferase (glycosyl groups)
+P20142	Peptidase
+P20151	Peptidase
+P20192	Kinase
+P20231	Peptidase
+P20236	Transmembrane signaling receptors (other)
+P20236	Transporter
+P20272	G protein-coupled receptor
+P20272	Transporter
+P20288	G protein-coupled receptor
+P20292	Enzyme regulator
+P20292	Lyase
+P20292	Oxidoreductase
+P20292	Transferase (alkyl or aryl groups, no methyl)
+P20309	Hydrolase (ester bonds)
+P20309	G protein-coupled receptor
+P20309	Acetylcholine binding
+P20340	Hydrolase (acid anhydrides)
+P20393	Signaling receptor (not transmembrane)
+P20393	Transcription regulator
+P20393	DNA binding
+P20395	G protein-coupled receptor
+P20417	Hydrolase (ester bonds)
+P20444	Kinase
+P20618	Peptidase
+P20701	Transmembrane signaling receptors (other)
+P20749	Transcription regulator
+P20789	G protein-coupled receptor
+P20794	Transcription regulator
+P20794	Kinase
+P20831	Isomerase
+P20831	DNA binding
+P20839	Oxidoreductase
+P20839	DNA binding
+P20917	no_function
+P20918	Peptidase
+P21127	Kinase
+P21146	Kinase
+P21183	Transmembrane signaling receptors (other)
+P21236	Transferase (one-carbon groups)
+P21275	no_function
+P21281	Hydrolase (other)
+P21281	Transporter
+P21396	Oxidoreductase
+P21396	Serotonin binding
+P21397	Oxidoreductase
+P21398	Oxidoreductase
+P21451	G protein-coupled receptor
+P21452	G protein-coupled receptor
+P21453	G protein-coupled receptor
+P21462	G protein-coupled receptor
+P21554	G protein-coupled receptor
+P21554	Transporter
+P21555	G protein-coupled receptor
+P21556	G protein-coupled receptor
+P21575	Hydrolase (acid anhydrides)
+P21588	Hydrolase (ester bonds)
+P21589	Hydrolase (ester bonds)
+P21675	Transferase (acyl groups)
+P21675	Kinase
+P21675	DNA binding
+P21687	Isomerase
+P21687	Oxidoreductase
+P21709	Transmembrane receptor protein kinase
+P21709	Kinase
+P21728	G protein-coupled receptor
+P21728	Dopamine binding
+P21730	G protein-coupled receptor
+P21731	Enzyme regulator
+P21731	G protein-coupled receptor
+P21761	G protein-coupled receptor
+P21802	Transmembrane receptor protein kinase
+P21802	Kinase
+P21836	Hydrolase (ester bonds)
+P21836	Acetylcholine binding
+P21845	Peptidase
+P21860	Enzyme regulator
+P21860	Transmembrane receptor protein kinase
+P21860	Kinase
+P21917	G protein-coupled receptor
+P21917	Dopamine binding
+P21917	Epinephrine binding
+P21918	G protein-coupled receptor
+P21918	Dopamine binding
+P21964	Transferase (one-carbon groups)
+P21980	Peptidase
+P21980	Hydrolase (C-N bonds, no peptides)
+P21980	Transferase (acyl groups)
+P21981	Peptidase
+P21981	Hydrolase (C-N bonds, no peptides)
+P21981	Transferase (acyl groups)
+P22001	Transporter
+P22002	Transporter
+P22079	Oxidoreductase
+P22102	Ligase
+P22102	Transferase (one-carbon groups)
+P22199	Signaling receptor (not transmembrane)
+P22199	Transcription regulator
+P22199	DNA binding
+P22234	Ligase
+P22234	Lyase
+P22303	Hydrolase (ester bonds)
+P22303	Acetylcholine binding
+P22307	Transferase (acyl groups)
+P22307	Transporter
+P22392	Transcription regulator
+P22392	Kinase
+P22392	DNA binding
+P22411	Peptidase
+P22413	Hydrolase (acid anhydrides)
+P22413	Hydrolase (ester bonds)
+P22437	Oxidoreductase
+P22449	Hydrolase (ester bonds)
+P22449	Signaling receptor (not transmembrane)
+P22449	Transcription regulator
+P22449	DNA binding
+P22455	Transmembrane receptor protein kinase
+P22455	Kinase
+P22459	Transporter
+P22460	Transporter
+P22513	Oxidoreductase
+P22518	Kinase
+P22605	Signaling receptor (not transmembrane)
+P22605	Transcription regulator
+P22605	DNA binding
+P22607	Transmembrane receptor protein kinase
+P22607	Kinase
+P22612	Kinase
+P22629	no_function
+P22674	Enzyme regulator
+P22687	Transporter
+P22694	Kinase
+P22734	Transferase (one-carbon groups)
+P22735	Transferase (acyl groups)
+P22736	Signaling receptor (not transmembrane)
+P22736	Transcription regulator
+P22736	DNA binding
+P22748	Lyase
+P22756	Transmembrane signaling receptors (other)
+P22756	Transporter
+P22760	Hydrolase (ester bonds)
+P22771	Transmembrane signaling receptors (other)
+P22771	Transporter
+P22830	Lyase
+P22888	G protein-coupled receptor
+P22894	Peptidase
+P22906	Oxidoreductase
+P22909	G protein-coupled receptor
+P22909	Epinephrine binding
+P22935	no_function
+P22985	Oxidoreductase
+P23097	Peptidase
+P23109	Hydrolase (C-N bonds, no peptides)
+P23141	Hydrolase (ester bonds)
+P23204	Signaling receptor (not transmembrane)
+P23204	Transcription regulator
+P23204	DNA binding
+P23219	Oxidoreductase
+P23280	Lyase
+P23284	Isomerase
+P23298	Kinase
+P23316	Transferase (glycosyl groups)
+P23385	G protein-coupled receptor
+P23415	Transmembrane signaling receptors (other)
+P23415	Transporter
+P23416	Transmembrane signaling receptors (other)
+P23416	Transporter
+P23443	Kinase
+P23458	Kinase
+P23467	Hydrolase (ester bonds)
+P23467	Transmembrane signaling receptors (other)
+P23469	Hydrolase (ester bonds)
+P23469	Transmembrane signaling receptors (other)
+P23470	Hydrolase (ester bonds)
+P23470	Transmembrane signaling receptors (other)
+P23471	Hydrolase (ester bonds)
+P23471	Transmembrane signaling receptors (other)
+P23526	Hydrolase (other)
+P23574	Transmembrane signaling receptors (other)
+P23574	Transporter
+P23576	Transmembrane signaling receptors (other)
+P23576	Transporter
+P23687	Peptidase
+P23711	Oxidoreductase
+P23739	Hydrolase (glycosyl bonds)
+P23743	Kinase
+P23780	Hydrolase (glycosyl bonds)
+P23786	Transferase (acyl groups)
+P23791	Transporter
+P23795	Hydrolase (ester bonds)
+P23804	Ligase
+P23804	Transferase (other)
+P23919	Kinase
+P23921	Oxidoreductase
+P23944	G protein-coupled receptor
+P23945	G protein-coupled receptor
+P23946	Peptidase
+P23975	Transporter
+P23977	Dopamine binding
+P23977	Transporter
+P23978	Transporter
+P23979	Transmembrane signaling receptors (other)
+P23979	Serotonin binding
+P23979	Transporter
+P24008	Oxidoreductase
+P24046	Transmembrane signaling receptors (other)
+P24046	Transporter
+P24062	Transmembrane receptor protein kinase
+P24062	Kinase
+P24062	Transporter
+P24063	Transmembrane signaling receptors (other)
+P24095	Oxidoreductase
+P24158	Peptidase
+P24387	no_function
+P24527	Peptidase
+P24530	G protein-coupled receptor
+P24557	Isomerase
+P24557	Lyase
+P24557	Oxidoreductase
+P24666	Hydrolase (ester bonds)
+P24723	Kinase
+P24822	Hydrolase (ester bonds)
+P24823	Hydrolase (ester bonds)
+P24855	Hydrolase (ester bonds)
+P24855	DNA binding
+P24941	Kinase
+P24942	Transporter
+P24964	Oxidoreductase
+P24964	Transporter
+P25021	G protein-coupled receptor
+P25023	G protein-coupled receptor
+P25024	G protein-coupled receptor
+P25025	G protein-coupled receptor
+P25054	Enzyme regulator
+P25084	Transcription regulator
+P25084	DNA binding
+P25085	no_function
+P25090	G protein-coupled receptor
+P25095	G protein-coupled receptor
+P25098	Kinase
+P25099	G protein-coupled receptor
+P25100	G protein-coupled receptor
+P25101	Hydrolase (ester bonds)
+P25101	G protein-coupled receptor
+P25102	G protein-coupled receptor
+P25103	G protein-coupled receptor
+P25104	G protein-coupled receptor
+P25105	G protein-coupled receptor
+P25106	G protein-coupled receptor
+P25115	G protein-coupled receptor
+P25115	Dopamine binding
+P25116	G protein-coupled receptor
+P25122	Transporter
+P25162	Transmembrane signaling receptors (other)
+P25162	Transporter
+P25440	Kinase
+P25462	Ligase
+P25774	Peptidase
+P25779	Peptidase
+P25805	Peptidase
+P25910	Hydrolase (C-N bonds, no peptides)
+P25911	Kinase
+P25929	G protein-coupled receptor
+P25963	no_function
+P25975	Peptidase
+P26045	Hydrolase (ester bonds)
+P26196	Hydrolase (acid anhydrides)
+P26255	G protein-coupled receptor
+P26255	Epinephrine binding
+P26358	Transferase (one-carbon groups)
+P26358	DNA binding
+P26431	Transporter
+P26433	Transporter
+P26435	Transporter
+P26439	Isomerase
+P26439	Oxidoreductase
+P26572	Transferase (glycosyl groups)
+P26639	Ligase
+P26663	Peptidase
+P26663	Hydrolase (acid anhydrides)
+P26663	Transferase (phosphorus-containing groups, non-kinase)
+P26663	Transporter
+P26684	G protein-coupled receptor
+P26769	Lyase
+P26885	Isomerase
+P26918	Hydrolase (C-N bonds, no peptides)
+P26927	no_function
+P27008	Transferase (glycosyl groups)
+P27008	DNA binding
+P27028	Peptidase
+P27037	Transmembrane receptor protein kinase
+P27037	Kinase
+P27117	Lyase
+P27139	Hydrolase (ester bonds)
+P27139	Lyase
+P27169	Hydrolase (ester bonds)
+P27338	Oxidoreductase
+P27361	Kinase
+P27435	Peptidase
+P27448	Kinase
+P27463	Oxidoreductase
+P27467	Transcription regulator
+P27471	no_function
+P27487	Peptidase
+P27694	DNA binding
+P27695	Hydrolase (ester bonds)
+P27695	Hydrolase (glycosyl bonds)
+P27695	Oxidoreductase
+P27695	Transcription regulator
+P27695	DNA binding
+P27707	Kinase
+P27708	Hydrolase (C-N bonds, no peptides)
+P27708	Ligase
+P27708	Transferase (one-carbon groups)
+P27708	Kinase
+P27732	Transporter
+P27791	Kinase
+P27815	Hydrolase (ester bonds)
+P27867	Oxidoreductase
+P27958	Enzyme regulator
+P27958	Peptidase
+P27958	Hydrolase (acid anhydrides)
+P27958	Transferase (phosphorus-containing groups, non-kinase)
+P27958	Transporter
+P27986	Enzyme regulator
+P27987	Kinase
+P28028	Kinase
+P28062	Peptidase
+P28063	Peptidase
+P28065	Peptidase
+P28074	Peptidase
+P28190	G protein-coupled receptor
+P28221	G protein-coupled receptor
+P28221	Serotonin binding
+P28222	G protein-coupled receptor
+P28222	Serotonin binding
+P28222	Transporter
+P28223	G protein-coupled receptor
+P28223	Serotonin binding
+P28293	Peptidase
+P28300	Oxidoreductase
+P28301	Oxidoreductase
+P28327	Kinase
+P28335	G protein-coupled receptor
+P28335	Serotonin binding
+P28336	G protein-coupled receptor
+P28340	Hydrolase (ester bonds)
+P28340	Transferase (phosphorus-containing groups, non-kinase)
+P28340	DNA binding
+P28347	Transcription regulator
+P28347	DNA binding
+P28472	Transmembrane signaling receptors (other)
+P28472	Transporter
+P28474	Oxidoreductase
+P28476	Transmembrane signaling receptors (other)
+P28476	Transporter
+P28482	Kinase
+P28482	DNA binding
+P28523	Kinase
+P28562	Hydrolase (ester bonds)
+P28564	G protein-coupled receptor
+P28564	Serotonin binding
+P28564	Transporter
+P28565	G protein-coupled receptor
+P28565	Serotonin binding
+P28566	G protein-coupled receptor
+P28566	Serotonin binding
+P28571	Transporter
+P28572	Transporter
+P28593	Oxidoreductase
+P28646	G protein-coupled receptor
+P28647	G protein-coupled receptor
+P28700	Signaling receptor (not transmembrane)
+P28700	Transcription regulator
+P28700	DNA binding
+P28702	Signaling receptor (not transmembrane)
+P28702	Transcription regulator
+P28702	DNA binding
+P28704	Signaling receptor (not transmembrane)
+P28704	Transcription regulator
+P28704	DNA binding
+P28705	Signaling receptor (not transmembrane)
+P28705	Transcription regulator
+P28705	DNA binding
+P28776	Oxidoreductase
+P28827	Hydrolase (ester bonds)
+P28827	Transmembrane signaling receptors (other)
+P28838	Peptidase
+P28839	Peptidase
+P28843	Peptidase
+P28845	Oxidoreductase
+P28867	Enzyme regulator
+P28867	Kinase
+P28907	Hydrolase (glycosyl bonds)
+P28907	Lyase
+P28907	Transferase (other)
+P29033	Transporter
+P29089	G protein-coupled receptor
+P29144	Peptidase
+P29274	G protein-coupled receptor
+P29275	G protein-coupled receptor
+P29276	G protein-coupled receptor
+P29317	Transmembrane receptor protein kinase
+P29317	Kinase
+P29319	Transmembrane receptor protein kinase
+P29319	Kinase
+P29320	Transmembrane receptor protein kinase
+P29320	Kinase
+P29322	Transmembrane receptor protein kinase
+P29322	Kinase
+P29323	Transmembrane receptor protein kinase
+P29323	Kinase
+P29338	no_function
+P29350	Hydrolase (ester bonds)
+P29350	Transmembrane signaling receptors (other)
+P29371	G protein-coupled receptor
+P29372	Hydrolase (glycosyl bonds)
+P29372	DNA binding
+P29373	no_function
+P29375	Oxidoreductase
+P29375	Transcription regulator
+P29375	DNA binding
+P29376	Transmembrane receptor protein kinase
+P29376	Kinase
+P29401	Transferase (other)
+P29410	Kinase
+P29411	Kinase
+P29452	Peptidase
+P29466	Enzyme regulator
+P29466	Peptidase
+P29473	Oxidoreductase
+P29474	Oxidoreductase
+P29475	Oxidoreductase
+P29476	Oxidoreductase
+P29477	Enzyme regulator
+P29477	Oxidoreductase
+P29597	Kinase
+P29598	Peptidase
+P29678	Kinase
+P29853	Hydrolase (glycosyl bonds)
+P29994	Transporter
+P30082	G protein-coupled receptor
+P30083	G protein-coupled receptor
+P30085	Kinase
+P30086	Enzyme regulator
+P30098	G protein-coupled receptor
+P30101	Peptidase
+P30101	Hydrolase (ester bonds)
+P30101	Isomerase
+P30101	Oxidoreductase
+P30122	Hydrolase (ester bonds)
+P30124	Lyase
+P30191	Transmembrane signaling receptors (other)
+P30191	Transporter
+P30291	Kinase
+P30304	Hydrolase (ester bonds)
+P30305	Hydrolase (ester bonds)
+P30307	Hydrolase (ester bonds)
+P30355	Enzyme regulator
+P30355	Lyase
+P30355	Oxidoreductase
+P30355	Transferase (alkyl or aryl groups, no methyl)
+P30411	Hydrolase (ester bonds)
+P30411	G protein-coupled receptor
+P30419	Transferase (acyl groups)
+P30518	G protein-coupled receptor
+P30519	Oxidoreductase
+P30530	Transmembrane receptor protein kinase
+P30530	Kinase
+P30531	Transporter
+P30536	Signaling receptor (not transmembrane)
+P30536	Transporter
+P30542	G protein-coupled receptor
+P30543	G protein-coupled receptor
+P30547	G protein-coupled receptor
+P30550	G protein-coupled receptor
+P30551	G protein-coupled receptor
+P30552	G protein-coupled receptor
+P30553	G protein-coupled receptor
+P30555	G protein-coupled receptor
+P30556	G protein-coupled receptor
+P30557	G protein-coupled receptor
+P30559	G protein-coupled receptor
+P30560	G protein-coupled receptor
+P30561	Signaling receptor (not transmembrane)
+P30561	Transcription regulator
+P30561	DNA binding
+P30613	Kinase
+P30680	G protein-coupled receptor
+P30729	G protein-coupled receptor
+P30729	Dopamine binding
+P30729	Epinephrine binding
+P30730	G protein-coupled receptor
+P30837	Oxidoreductase
+P30838	Oxidoreductase
+P30872	G protein-coupled receptor
+P30874	G protein-coupled receptor
+P30935	G protein-coupled receptor
+P30936	G protein-coupled receptor
+P30939	G protein-coupled receptor
+P30939	Serotonin binding
+P30966	G protein-coupled receptor
+P30966	Serotonin binding
+P30968	G protein-coupled receptor
+P30969	G protein-coupled receptor
+P30987	G protein-coupled receptor
+P30989	G protein-coupled receptor
+P30994	Enzyme regulator
+P30994	G protein-coupled receptor
+P30994	Serotonin binding
+P31152	Kinase
+P31153	Transferase (alkyl or aryl groups, no methyl)
+P31213	Oxidoreductase
+P31214	Oxidoreductase
+P31224	Transporter
+P31228	Oxidoreductase
+P31327	Peptidase
+P31327	Ligase
+P31350	Oxidoreductase
+P31388	G protein-coupled receptor
+P31389	G protein-coupled receptor
+P31389	Transporter
+P31390	G protein-coupled receptor
+P31391	G protein-coupled receptor
+P31421	G protein-coupled receptor
+P31422	G protein-coupled receptor
+P31423	G protein-coupled receptor
+P31424	G protein-coupled receptor
+P31482	Hydrolase (ester bonds)
+P31639	Transporter
+P31641	Transporter
+P31644	Transmembrane signaling receptors (other)
+P31644	Transporter
+P31645	Serotonin binding
+P31645	Transporter
+P31646	Transporter
+P31648	Transporter
+P31649	Transporter
+P31650	Transporter
+P31651	Transporter
+P31652	Serotonin binding
+P31652	Transporter
+P31689	no_function
+P31749	Enzyme regulator
+P31749	Kinase
+P31750	Enzyme regulator
+P31750	Kinase
+P31751	Kinase
+P31938	Enzyme regulator
+P31938	Kinase
+P31939	Hydrolase (C-N bonds, no peptides)
+P31939	Transferase (one-carbon groups)
+P31941	Hydrolase (C-N bonds, no peptides)
+P31944	Peptidase
+P31947	Enzyme regulator
+P32019	Hydrolase (ester bonds)
+P32038	Peptidase
+P32198	Transferase (acyl groups)
+P32238	G protein-coupled receptor
+P32239	Enzyme regulator
+P32239	G protein-coupled receptor
+P32240	G protein-coupled receptor
+P32241	G protein-coupled receptor
+P32244	G protein-coupled receptor
+P32245	G protein-coupled receptor
+P32246	Hydrolase (ester bonds)
+P32246	G protein-coupled receptor
+P32247	G protein-coupled receptor
+P32248	G protein-coupled receptor
+P32249	G protein-coupled receptor
+P32297	Transmembrane signaling receptors (other)
+P32297	Acetylcholine binding
+P32297	Transporter
+P32298	Kinase
+P32300	G protein-coupled receptor
+P32301	G protein-coupled receptor
+P32302	G protein-coupled receptor
+P32304	G protein-coupled receptor
+P32305	G protein-coupled receptor
+P32320	Hydrolase (C-N bonds, no peptides)
+P32322	Oxidoreductase
+P32358	Hydrolase (glycosyl bonds)
+P32745	G protein-coupled receptor
+P32750	Hydrolase (ester bonds)
+P32754	Oxidoreductase
+P32755	Oxidoreductase
+P32871	Enzyme regulator
+P32871	Kinase
+P32897	Transporter
+P32929	Lyase
+P33032	G protein-coupled receptor
+P33033	G protein-coupled receptor
+P33072	Oxidoreductase
+P33176	Hydrolase (acid anhydrides)
+P33316	Hydrolase (acid anhydrides)
+P33434	Peptidase
+P33435	Peptidase
+P33533	G protein-coupled receptor
+P33534	G protein-coupled receptor
+P33535	G protein-coupled receptor
+P33535	Transporter
+P33766	G protein-coupled receptor
+P33905	Transcription regulator
+P33905	DNA binding
+P33981	Kinase
+P33991	Hydrolase (acid anhydrides)
+P33991	DNA binding
+P34021	Signaling receptor (not transmembrane)
+P34021	Transcription regulator
+P34021	DNA binding
+P34884	Isomerase
+P34896	Transferase (one-carbon groups)
+P34897	Transferase (one-carbon groups)
+P34903	Transmembrane signaling receptors (other)
+P34903	Transporter
+P34913	Hydrolase (ester bonds)
+P34914	Hydrolase (ester bonds)
+P34947	Kinase
+P34949	Isomerase
+P34960	Peptidase
+P34960	DNA binding
+P34969	G protein-coupled receptor
+P34970	G protein-coupled receptor
+P34971	Enzyme regulator
+P34971	G protein-coupled receptor
+P34972	G protein-coupled receptor
+P34975	G protein-coupled receptor
+P34976	G protein-coupled receptor
+P34978	G protein-coupled receptor
+P34980	G protein-coupled receptor
+P34995	G protein-coupled receptor
+P34998	G protein-coupled receptor
+P35030	Peptidase
+P35125	Enzyme regulator
+P35125	Peptidase
+P35218	Lyase
+P35222	Transcription regulator
+P35228	Oxidoreductase
+P35236	Hydrolase (ester bonds)
+P35270	Oxidoreductase
+P35327	Transcription regulator
+P35327	DNA binding
+P35342	G protein-coupled receptor
+P35343	G protein-coupled receptor
+P35344	G protein-coupled receptor
+P35346	G protein-coupled receptor
+P35348	G protein-coupled receptor
+P35349	G protein-coupled receptor
+P35351	G protein-coupled receptor
+P35353	G protein-coupled receptor
+P35354	Oxidoreductase
+P35355	Oxidoreductase
+P35364	G protein-coupled receptor
+P35364	Serotonin binding
+P35367	G protein-coupled receptor
+P35368	G protein-coupled receptor
+P35370	G protein-coupled receptor
+P35372	G protein-coupled receptor
+P35372	Transporter
+P35375	G protein-coupled receptor
+P35377	G protein-coupled receptor
+P35383	G protein-coupled receptor
+P35396	Enzyme regulator
+P35396	G protein-coupled receptor
+P35396	Transcription regulator
+P35396	DNA binding
+P35398	Signaling receptor (not transmembrane)
+P35398	Transcription regulator
+P35398	DNA binding
+P35400	Enzyme regulator
+P35400	G protein-coupled receptor
+P35400	Transporter
+P35406	G protein-coupled receptor
+P35408	G protein-coupled receptor
+P35414	G protein-coupled receptor
+P35428	Transcription regulator
+P35428	DNA binding
+P35439	Transmembrane signaling receptors (other)
+P35439	Transporter
+P35462	G protein-coupled receptor
+P35463	G protein-coupled receptor
+P35498	Transporter
+P35499	Transporter
+P35520	Lyase
+P35520	Oxidoreductase
+P35546	Transmembrane receptor protein kinase
+P35546	Kinase
+P35557	Kinase
+P35558	Lyase
+P35558	Kinase
+P35560	Transporter
+P35561	Transporter
+P35563	Transmembrane signaling receptors (other)
+P35563	Serotonin binding
+P35563	Transporter
+P35568	no_function
+P35574	Hydrolase (glycosyl bonds)
+P35574	Transferase (glycosyl groups)
+P35579	no_function
+P35580	no_function
+P35590	Transmembrane receptor protein kinase
+P35590	Kinase
+P35610	Transferase (acyl groups)
+P35626	Kinase
+P35739	Transmembrane receptor protein kinase
+P35739	Kinase
+P35750	Peptidase
+P35790	Hydrolase (ester bonds)
+P35790	Kinase
+P35813	Hydrolase (ester bonds)
+P35821	Hydrolase (ester bonds)
+P35869	Signaling receptor (not transmembrane)
+P35869	Transcription regulator
+P35869	DNA binding
+P35916	Transmembrane receptor protein kinase
+P35916	Kinase
+P35917	Transmembrane receptor protein kinase
+P35917	Kinase
+P35918	Transmembrane receptor protein kinase
+P35918	Kinase
+P35961	no_function
+P35968	Transmembrane receptor protein kinase
+P35968	Kinase
+P35969	Transmembrane receptor protein kinase
+P35969	Kinase
+P35991	Enzyme regulator
+P35991	Kinase
+P36196	Hydrolase (ester bonds)
+P36400	Peptidase
+P36507	Enzyme regulator
+P36507	Kinase
+P36544	Transmembrane signaling receptors (other)
+P36544	Acetylcholine binding
+P36544	Transporter
+P36639	Hydrolase (acid anhydrides)
+P36836	Transporter
+P36888	Transmembrane receptor protein kinase
+P36888	Kinase
+P36894	Enzyme regulator
+P36894	Transmembrane receptor protein kinase
+P36894	Kinase
+P36896	Transmembrane receptor protein kinase
+P36896	Kinase
+P36897	Transmembrane receptor protein kinase
+P36897	Kinase
+P36906	Hydrolase (glycosyl bonds)
+P36969	Oxidoreductase
+P37023	Transmembrane receptor protein kinase
+P37023	Kinase
+P37058	Oxidoreductase
+P37059	Oxidoreductase
+P37136	Hydrolase (ester bonds)
+P37136	Acetylcholine binding
+P37173	Transmembrane receptor protein kinase
+P37173	Kinase
+P37231	G protein-coupled receptor
+P37231	Transcription regulator
+P37231	DNA binding
+P37238	Signaling receptor (not transmembrane)
+P37238	Transcription regulator
+P37238	DNA binding
+P37268	Transferase (alkyl or aryl groups, no methyl)
+P37288	G protein-coupled receptor
+P37289	G protein-coupled receptor
+P37340	Transporter
+P37798	Ligase
+P37840	Enzyme regulator
+P37840	Oxidoreductase
+P37840	DNA binding
+P38024	Ligase
+P38024	Lyase
+P38117	Oxidoreductase
+P38398	Transcription regulator
+P38398	Transferase (other)
+P38398	DNA binding
+P38571	Hydrolase (ester bonds)
+P38605	Isomerase
+P38646	Hydrolase (acid anhydrides)
+P38650	no_function
+P38919	Hydrolase (acid anhydrides)
+P38936	Enzyme regulator
+P38936	Kinase
+P39050	Oxidoreductase
+P39051	Oxidoreductase
+P39052	Hydrolase (acid anhydrides)
+P39086	Transmembrane signaling receptors (other)
+P39086	Transporter
+P39654	Hydrolase (other)
+P39654	Isomerase
+P39654	Oxidoreductase
+P39688	Enzyme regulator
+P39688	Kinase
+P39748	Hydrolase (ester bonds)
+P39748	DNA binding
+P39877	Hydrolase (ester bonds)
+P39898	Peptidase
+P39900	Peptidase
+P39900	DNA binding
+P40136	Peptidase
+P40136	Lyase
+P40145	Lyase
+P40189	Transmembrane signaling receptors (other)
+P40220	no_function
+P40261	Transferase (one-carbon groups)
+P40306	Peptidase
+P40337	Transcription regulator
+P40337	Transferase (other)
+P40763	Signaling receptor (not transmembrane)
+P40763	Transcription regulator
+P40763	DNA binding
+P40818	Peptidase
+P40881	Lyase
+P40925	Oxidoreductase
+P40926	Oxidoreductase
+P40933	no_function
+P41143	G protein-coupled receptor
+P41144	G protein-coupled receptor
+P41145	G protein-coupled receptor
+P41146	G protein-coupled receptor
+P41148	Hydrolase (acid anhydrides)
+P41180	Hydrolase (ester bonds)
+P41180	G protein-coupled receptor
+P41182	Transcription regulator
+P41182	DNA binding
+P41212	Transcription regulator
+P41212	DNA binding
+P41226	Ligase
+P41226	Transferase (other)
+P41229	Oxidoreductase
+P41229	DNA binding
+P41231	G protein-coupled receptor
+P41235	Signaling receptor (not transmembrane)
+P41235	Transcription regulator
+P41235	DNA binding
+P41240	Kinase
+P41245	Peptidase
+P41250	Hydrolase (acid anhydrides)
+P41250	Ligase
+P41250	Transferase (other)
+P41279	Kinase
+P41440	Folic acid binding
+P41440	Transporter
+P41586	G protein-coupled receptor
+P41587	G protein-coupled receptor
+P41593	G protein-coupled receptor
+P41594	Enzyme regulator
+P41594	G protein-coupled receptor
+P41595	Enzyme regulator
+P41595	G protein-coupled receptor
+P41595	Serotonin binding
+P41597	G protein-coupled receptor
+P41738	Signaling receptor (not transmembrane)
+P41738	Transcription regulator
+P41738	DNA binding
+P41743	Kinase
+P41968	G protein-coupled receptor
+P41972	Hydrolase (ester bonds)
+P41972	Ligase
+P42224	Transcription regulator
+P42224	DNA binding
+P42225	Transcription regulator
+P42225	DNA binding
+P42226	Transcription regulator
+P42226	DNA binding
+P42227	Signaling receptor (not transmembrane)
+P42227	Transcription regulator
+P42227	DNA binding
+P42229	Transcription regulator
+P42229	DNA binding
+P42232	Transcription regulator
+P42232	DNA binding
+P42260	Transmembrane signaling receptors (other)
+P42260	Transporter
+P42261	Transmembrane signaling receptors (other)
+P42261	Transporter
+P42262	Transmembrane signaling receptors (other)
+P42262	Transporter
+P42263	Transmembrane signaling receptors (other)
+P42263	Transporter
+P42264	G protein-coupled receptor
+P42264	Transporter
+P42285	Hydrolase (acid anhydrides)
+P42330	Oxidoreductase
+P42336	Enzyme regulator
+P42336	Kinase
+P42337	Enzyme regulator
+P42337	Kinase
+P42338	Kinase
+P42345	Kinase
+P42345	DNA binding
+P42346	Kinase
+P42346	DNA binding
+P42356	Kinase
+P42574	Enzyme regulator
+P42574	Peptidase
+P42575	Peptidase
+P42677	DNA binding
+P42679	Kinase
+P42680	Kinase
+P42681	Kinase
+P42684	Kinase
+P42685	Kinase
+P42785	Peptidase
+P42858	no_function
+P42866	G protein-coupled receptor
+P42866	Transporter
+P42891	Peptidase
+P42892	Peptidase
+P43003	Transporter
+P43004	Transporter
+P43005	Transporter
+P43057	Kinase
+P43088	G protein-coupled receptor
+P43114	G protein-coupled receptor
+P43115	G protein-coupled receptor
+P43116	G protein-coupled receptor
+P43117	G protein-coupled receptor
+P43119	Enzyme regulator
+P43119	G protein-coupled receptor
+P43140	G protein-coupled receptor
+P43143	Transmembrane signaling receptors (other)
+P43143	Transporter
+P43166	Lyase
+P43219	G protein-coupled receptor
+P43220	G protein-coupled receptor
+P43235	Peptidase
+P43236	Peptidase
+P43249	Kinase
+P43250	Kinase
+P43253	G protein-coupled receptor
+P43346	Kinase
+P43351	DNA binding
+P43354	Signaling receptor (not transmembrane)
+P43354	Transcription regulator
+P43354	DNA binding
+P43367	Peptidase
+P43378	Hydrolase (ester bonds)
+P43403	Kinase
+P43404	Kinase
+P43405	Kinase
+P43428	Hydrolase (ester bonds)
+P43428	Transferase (phosphorus-containing groups, non-kinase)
+P43490	Transferase (glycosyl groups)
+P43680	Transcription regulator
+P43680	DNA binding
+P43681	Transmembrane signaling receptors (other)
+P43681	Acetylcholine binding
+P43681	Transporter
+P43686	Hydrolase (acid anhydrides)
+P45446	G protein-coupled receptor
+P45446	Transcription regulator
+P45446	DNA binding
+P45452	Peptidase
+P45880	Transporter
+P45973	no_function
+P45974	Peptidase
+P45983	Enzyme regulator
+P45983	Kinase
+P45984	Kinase
+P45985	Kinase
+P46059	Transporter
+P46063	Hydrolase (acid anhydrides)
+P46063	DNA binding
+P46092	G protein-coupled receptor
+P46093	G protein-coupled receptor
+P46095	G protein-coupled receptor
+P46098	Transmembrane signaling receptors (other)
+P46098	Serotonin binding
+P46098	Transporter
+P46406	Oxidoreductase
+P46406	Transferase (other)
+P46510	Lyase
+P46531	Enzyme regulator
+P46531	Transmembrane signaling receptors (other)
+P46531	Transcription regulator
+P46531	DNA binding
+P46616	G protein-coupled receptor
+P46663	G protein-coupled receptor
+P46734	Kinase
+P46925	Peptidase
+P46934	Transferase (other)
+P46937	Transcription regulator
+P46937	DNA binding
+P46952	Oxidoreductase
+P46953	Oxidoreductase
+P47196	Enzyme regulator
+P47196	Kinase
+P47199	Oxidoreductase
+P47205	Hydrolase (C-N bonds, no peptides)
+P47211	G protein-coupled receptor
+P47712	Hydrolase (ester bonds)
+P47712	Transferase (acyl groups)
+P47745	G protein-coupled receptor
+P47746	G protein-coupled receptor
+P47746	Transporter
+P47747	G protein-coupled receptor
+P47748	G protein-coupled receptor
+P47752	G protein-coupled receptor
+P47806	Transcription regulator
+P47806	DNA binding
+P47811	Kinase
+P47820	Peptidase
+P47824	Transmembrane signaling receptors (other)
+P47824	Transporter
+P47869	Transmembrane signaling receptors (other)
+P47869	Transporter
+P47871	G protein-coupled receptor
+P47895	Oxidoreductase
+P47898	G protein-coupled receptor
+P47898	Serotonin binding
+P47900	G protein-coupled receptor
+P47901	G protein-coupled receptor
+P47929	no_function
+P47936	G protein-coupled receptor
+P47989	Oxidoreductase
+P48039	G protein-coupled receptor
+P48048	Transporter
+P48050	Transporter
+P48052	Peptidase
+P48058	Transmembrane signaling receptors (other)
+P48058	Transporter
+P48061	no_function
+P48065	Transporter
+P48066	Transporter
+P48067	Transporter
+P48145	G protein-coupled receptor
+P48147	Peptidase
+P48163	Lyase
+P48163	Oxidoreductase
+P48169	Transmembrane signaling receptors (other)
+P48169	Transporter
+P48302	G protein-coupled receptor
+P48303	G protein-coupled receptor
+P48426	Kinase
+P48442	G protein-coupled receptor
+P48443	Signaling receptor (not transmembrane)
+P48443	Transcription regulator
+P48443	DNA binding
+P48449	Isomerase
+P48450	Isomerase
+P48544	Transporter
+P48546	G protein-coupled receptor
+P48549	Transporter
+P48729	Kinase
+P48730	Kinase
+P48735	Oxidoreductase
+P48736	Kinase
+P48748	G protein-coupled receptor
+P48763	Transporter
+P48764	Transporter
+P48775	Oxidoreductase
+P48776	Oxidoreductase
+P48974	G protein-coupled receptor
+P48999	Hydrolase (other)
+P48999	Oxidoreductase
+P49019	G protein-coupled receptor
+P49116	Signaling receptor (not transmembrane)
+P49116	Transcription regulator
+P49116	DNA binding
+P49137	Kinase
+P49138	Kinase
+P49146	G protein-coupled receptor
+P49185	Enzyme regulator
+P49185	Kinase
+P49187	Kinase
+P49219	G protein-coupled receptor
+P49238	G protein-coupled receptor
+P49279	Transporter
+P49281	Transporter
+P49286	G protein-coupled receptor
+P49290	Oxidoreductase
+P49327	Hydrolase (ester bonds)
+P49327	Lyase
+P49327	Oxidoreductase
+P49327	Transferase (acyl groups)
+P49336	Kinase
+P49366	Transferase (alkyl or aryl groups, no methyl)
+P49411	Hydrolase (acid anhydrides)
+P49582	Transmembrane signaling receptors (other)
+P49582	Acetylcholine binding
+P49582	Transporter
+P49585	Transferase (phosphorus-containing groups, non-kinase)
+P49589	Ligase
+P49591	Ligase
+P49591	DNA binding
+P49616	Signaling receptor (not transmembrane)
+P49619	Kinase
+P49638	Transporter
+P49652	G protein-coupled receptor
+P49654	Transmembrane signaling receptors (other)
+P49654	Transporter
+P49662	Peptidase
+P49674	Kinase
+P49681	G protein-coupled receptor
+P49682	G protein-coupled receptor
+P49683	G protein-coupled receptor
+P49684	G protein-coupled receptor
+P49721	Peptidase
+P49743	Signaling receptor (not transmembrane)
+P49743	Transcription regulator
+P49743	DNA binding
+P49748	Oxidoreductase
+P49759	Kinase
+P49760	Kinase
+P49761	Kinase
+P49763	no_function
+P49768	Peptidase
+P49768	Transporter
+P49773	Peptidase
+P49773	Hydrolase (C-N bonds, no peptides)
+P49795	Hydrolase (acid anhydrides)
+P49810	Peptidase
+P49840	Kinase
+P49841	Kinase
+P49862	Peptidase
+P49881	Signaling receptor (not transmembrane)
+P49881	Transcription regulator
+P49881	DNA binding
+P49892	G protein-coupled receptor
+P49915	Hydrolase (acid anhydrides)
+P49915	Ligase
+P49916	Ligase
+P49916	DNA binding
+P49917	Ligase
+P49917	DNA binding
+P49959	Hydrolase (ester bonds)
+P49959	DNA binding
+P49961	Hydrolase (acid anhydrides)
+P50052	G protein-coupled receptor
+P50053	Kinase
+P50127	Transferase (glycosyl groups)
+P50128	G protein-coupled receptor
+P50128	Serotonin binding
+P50129	G protein-coupled receptor
+P50130	G protein-coupled receptor
+P50172	Oxidoreductase
+P50233	Oxidoreductase
+P50250	Hydrolase (other)
+P50281	Peptidase
+P50336	Oxidoreductase
+P50391	G protein-coupled receptor
+P50406	G protein-coupled receptor
+P50407	G protein-coupled receptor
+P50416	Transferase (acyl groups)
+P50482	Transporter
+P50554	Transferase (other)
+P50570	Hydrolase (acid anhydrides)
+P50578	Oxidoreductase
+P50579	Peptidase
+P50583	Hydrolase (acid anhydrides)
+P50591	no_function
+P50613	Kinase
+P50637	Signaling receptor (not transmembrane)
+P50747	Ligase
+P50750	Kinase
+P50750	DNA binding
+P50997	Transporter
+P51136	Kinase
+P51149	Hydrolase (acid anhydrides)
+P51159	Hydrolase (acid anhydrides)
+P51160	Hydrolase (ester bonds)
+P51161	no_function
+P51449	Signaling receptor (not transmembrane)
+P51449	Transcription regulator
+P51449	DNA binding
+P51450	Signaling receptor (not transmembrane)
+P51450	Transcription regulator
+P51450	DNA binding
+P51451	Kinase
+P51452	Hydrolase (ester bonds)
+P51511	Enzyme regulator
+P51511	Peptidase
+P51512	Enzyme regulator
+P51512	Peptidase
+P51530	Hydrolase (acid anhydrides)
+P51530	Hydrolase (ester bonds)
+P51530	DNA binding
+P51531	Hydrolase (acid anhydrides)
+P51531	Transcription regulator
+P51531	DNA binding
+P51532	Hydrolase (acid anhydrides)
+P51532	Transcription regulator
+P51532	DNA binding
+P51556	Kinase
+P51570	Kinase
+P51575	Transmembrane signaling receptors (other)
+P51575	Transporter
+P51576	Transmembrane signaling receptors (other)
+P51576	Transporter
+P51577	Transmembrane signaling receptors (other)
+P51577	Transporter
+P51580	Transferase (one-carbon groups)
+P51582	G protein-coupled receptor
+P51617	Enzyme regulator
+P51617	Kinase
+P51635	Oxidoreductase
+P51639	Oxidoreductase
+P51649	Oxidoreductase
+P51656	Oxidoreductase
+P51657	Oxidoreductase
+P51658	Oxidoreductase
+P51661	Oxidoreductase
+P51675	Hydrolase (ester bonds)
+P51675	G protein-coupled receptor
+P51677	G protein-coupled receptor
+P51678	G protein-coupled receptor
+P51679	G protein-coupled receptor
+P51680	G protein-coupled receptor
+P51681	Hydrolase (ester bonds)
+P51681	G protein-coupled receptor
+P51682	G protein-coupled receptor
+P51683	G protein-coupled receptor
+P51684	G protein-coupled receptor
+P51685	G protein-coupled receptor
+P51686	G protein-coupled receptor
+P51692	Transcription regulator
+P51692	DNA binding
+P51784	Peptidase
+P51787	Transporter
+P51812	Enzyme regulator
+P51812	Kinase
+P51813	Kinase
+P51817	Kinase
+P51878	Peptidase
+P51955	Kinase
+P51956	Kinase
+P51957	Kinase
+P51993	Transferase (glycosyl groups)
+P52270	Isomerase
+P52332	Kinase
+P52333	Kinase
+P52564	Enzyme regulator
+P52564	Kinase
+P52565	Enzyme regulator
+P52633	Transcription regulator
+P52633	DNA binding
+P52663	Hydrolase (C-N bonds, no peptides)
+P52699	Hydrolase (C-N bonds, no peptides)
+P52700	Hydrolase (C-N bonds, no peptides)
+P52702	G protein-coupled receptor
+P52732	no_function
+P52789	Kinase
+P52895	Oxidoreductase
+P53041	Hydrolase (ester bonds)
+P53350	Kinase
+P53355	Kinase
+P53396	Transferase (acyl groups)
+P53539	Transcription regulator
+P53539	DNA binding
+P53582	Peptidase
+P53624	Hydrolase (glycosyl bonds)
+P53634	Enzyme regulator
+P53634	Peptidase
+P53667	Kinase
+P53669	Kinase
+P53671	Kinase
+P53778	Kinase
+P53779	Kinase
+P53790	Transporter
+P53792	Transporter
+P53816	Hydrolase (ester bonds)
+P53816	Transferase (acyl groups)
+P53985	Transporter
+P53987	Transporter
+P54098	Hydrolase (ester bonds)
+P54098	Transferase (phosphorus-containing groups, non-kinase)
+P54098	DNA binding
+P54132	Hydrolase (acid anhydrides)
+P54132	DNA binding
+P54219	Transporter
+P54252	Peptidase
+P54289	Transporter
+P54290	Transporter
+P54292	Signaling receptor (not transmembrane)
+P54292	Transcription regulator
+P54292	DNA binding
+P54577	Ligase
+P54578	Enzyme regulator
+P54578	Peptidase
+P54619	Enzyme regulator
+P54619	Kinase
+P54646	Kinase
+P54652	Hydrolase (acid anhydrides)
+P54687	Transferase (other)
+P54690	Transferase (other)
+P54697	no_function
+P54750	Hydrolase (ester bonds)
+P54753	Transmembrane receptor protein kinase
+P54753	Kinase
+P54756	Transmembrane receptor protein kinase
+P54756	Kinase
+P54760	Transmembrane receptor protein kinase
+P54760	Kinase
+P54762	Transmembrane receptor protein kinase
+P54762	Kinase
+P54763	Transmembrane receptor protein kinase
+P54763	Kinase
+P54764	Transmembrane receptor protein kinase
+P54764	Kinase
+P54803	Hydrolase (glycosyl bonds)
+P54819	Kinase
+P54829	Hydrolase (ester bonds)
+P54833	G protein-coupled receptor
+P54904	Oxidoreductase
+P55011	Transporter
+P55055	Signaling receptor (not transmembrane)
+P55055	Transcription regulator
+P55055	DNA binding
+P55072	Enzyme regulator
+P55072	Hydrolase (acid anhydrides)
+P55085	G protein-coupled receptor
+P55097	Peptidase
+P55157	Transporter
+P55201	Enzyme regulator
+P55201	DNA binding
+P55210	Peptidase
+P55211	Enzyme regulator
+P55211	Peptidase
+P55212	Peptidase
+P55263	Kinase
+P55786	Peptidase
+P55859	Transferase (glycosyl groups)
+P55926	Transporter
+P56192	Ligase
+P56373	Transmembrane signaling receptors (other)
+P56373	Transporter
+P56450	G protein-coupled receptor
+P56470	no_function
+P56481	G protein-coupled receptor
+P56483	G protein-coupled receptor
+P56485	G protein-coupled receptor
+P56524	Hydrolase (C-N bonds, no peptides)
+P56524	Transferase (other)
+P56524	DNA binding
+P56526	Hydrolase (glycosyl bonds)
+P56528	Hydrolase (glycosyl bonds)
+P56528	Lyase
+P56528	Transferase (other)
+P56545	Oxidoreductase
+P56545	Transcription regulator
+P56560	Oxidoreductase
+P56658	Hydrolase (C-N bonds, no peptides)
+P56677	Peptidase
+P56690	Hydrolase (ester bonds)
+P56690	Ligase
+P56704	Transcription regulator
+P56718	G protein-coupled receptor
+P56719	G protein-coupled receptor
+P56726	G protein-coupled receptor
+P56730	Peptidase
+P56740	Isomerase
+P56740	Lyase
+P56817	Peptidase
+P56818	Peptidase
+P56819	Peptidase
+P56937	Oxidoreductase
+P56950	Transferase (other)
+P57059	Kinase
+P57078	Kinase
+P57764	Transporter
+P57771	Enzyme regulator
+P57771	Hydrolase (acid anhydrides)
+P58022	Oxidoreductase
+P58154	Transmembrane signaling receptors (other)
+P58154	Transporter
+P58215	Oxidoreductase
+P58295	Transporter
+P58307	G protein-coupled receptor
+P58308	G protein-coupled receptor
+P58406	G protein-coupled receptor
+P58681	Hydrolase (glycosyl bonds)
+P58681	Transmembrane signaling receptors (other)
+P58735	Transporter
+P58801	Kinase
+P59264	Hydrolase (ester bonds)
+P59538	G protein-coupled receptor
+P59540	G protein-coupled receptor
+P59722	Oxidoreductase
+P60033	no_function
+P60484	Hydrolase (ester bonds)
+P60487	Hydrolase (ester bonds)
+P60568	Enzyme regulator
+P60842	Hydrolase (acid anhydrides)
+P60843	Hydrolase (acid anhydrides)
+P61026	Hydrolase (acid anhydrides)
+P61073	G protein-coupled receptor
+P61077	Transferase (other)
+P61081	Transferase (other)
+P61088	Transferase (other)
+P61158	no_function
+P61160	no_function
+P61168	G protein-coupled receptor
+P61168	Dopamine binding
+P61169	G protein-coupled receptor
+P61169	Dopamine binding
+P61244	Transcription regulator
+P61244	DNA binding
+P61316	no_function
+P61431	Oxidoreductase
+P61586	Hydrolase (acid anhydrides)
+P61794	G protein-coupled receptor
+P61813	G protein-coupled receptor
+P61814	G protein-coupled receptor
+P61823	Hydrolase (ester bonds)
+P61823	Lyase
+P61922	Transferase (other)
+P61964	no_function
+P61981	Enzyme regulator
+P62136	Hydrolase (ester bonds)
+P62157	Enzyme regulator
+P62166	Transporter
+P62344	Kinase
+P62508	Signaling receptor (not transmembrane)
+P62508	Transcription regulator
+P62508	DNA binding
+P62509	Signaling receptor (not transmembrane)
+P62509	Transcription regulator
+P62509	DNA binding
+P62575	Hydrolase (glycosyl bonds)
+P62593	Hydrolase (C-N bonds, no peptides)
+P62744	no_function
+P62813	Transmembrane signaling receptors (other)
+P62813	Transporter
+P62826	Hydrolase (acid anhydrides)
+P62937	Isomerase
+P62942	Isomerase
+P62965	no_function
+P62993	no_function
+P63000	Hydrolase (acid anhydrides)
+P63001	Hydrolase (acid anhydrides)
+P63073	no_function
+P63085	Kinase
+P63085	DNA binding
+P63086	Kinase
+P63086	DNA binding
+P63104	no_function
+P63116	Transporter
+P63142	Transporter
+P63146	Transferase (other)
+P63165	no_function
+P63252	Transporter
+P63279	Transferase (other)
+P63319	Kinase
+P67827	Kinase
+P67870	Enzyme regulator
+P67870	Kinase
+P67871	Enzyme regulator
+P67871	Kinase
+P68104	Hydrolase (acid anhydrides)
+P68106	Isomerase
+P68135	no_function
+P68400	Kinase
+P68402	Hydrolase (ester bonds)
+P68402	Transferase (acyl groups)
+P68403	Transcription regulator
+P68403	Kinase
+P68404	Transcription regulator
+P68404	Kinase
+P68826	Hydrolase (C-N bonds, no peptides)
+P68849	Ligase
+P69328	Hydrolase (glycosyl bonds)
+P69560	Oxidoreductase
+P69834	Transferase (phosphorus-containing groups, non-kinase)
+P70172	Transporter
+P70174	G protein-coupled receptor
+P70174	Transporter
+P70263	G protein-coupled receptor
+P70313	Oxidoreductase
+P70349	Peptidase
+P70349	Hydrolase (C-N bonds, no peptides)
+P70453	Hydrolase (ester bonds)
+P70496	Hydrolase (ester bonds)
+P70536	G protein-coupled receptor
+P70579	G protein-coupled receptor
+P70596	G protein-coupled receptor
+P70597	G protein-coupled receptor
+P70604	Transporter
+P70605	Transporter
+P70606	Transporter
+P70623	Transporter
+P70658	G protein-coupled receptor
+P70682	Oxidoreductase
+P70699	Hydrolase (glycosyl bonds)
+P71716	Ligase
+P71716	Transferase (phosphorus-containing groups, non-kinase)
+P72355	Peptidase
+P76558	Lyase
+P76558	Oxidoreductase
+P76558	Transferase (acyl groups)
+P78352	no_function
+P78356	Kinase
+P78362	Kinase
+P78368	Kinase
+P78508	Transporter
+P78527	Kinase
+P78527	DNA binding
+P78536	Peptidase
+P78540	Hydrolase (C-N bonds, no peptides)
+P78549	Hydrolase (ester bonds)
+P78549	Hydrolase (glycosyl bonds)
+P78549	Lyase
+P78549	DNA binding
+P78600	Ligase
+P79074	Hydrolase (glycosyl bonds)
+P79208	Oxidoreductase
+P79218	G protein-coupled receptor
+P79227	Peptidase
+P79248	no_function
+P79293	no_function
+P79350	G protein-coupled receptor
+P79350	Transporter
+P79394	G protein-coupled receptor
+P80025	Oxidoreductase
+P80067	Enzyme regulator
+P80067	Peptidase
+P80147	Transferase (other)
+P80192	Kinase
+P80209	Peptidase
+P80276	Oxidoreductase
+P80299	Hydrolase (ester bonds)
+P80365	Oxidoreductase
+P80366	Hydrolase (ester bonds)
+P80370	no_function
+P80404	Transferase (other)
+P80456	Oxidoreductase
+P80457	Oxidoreductase
+P81072	Hydrolase (C-N bonds, no peptides)
+P81123	Kinase
+P81172	no_function
+P81425	Peptidase
+P81721	Transporter
+P81908	Hydrolase (ester bonds)
+P83512	Peptidase
+P84022	Transcription regulator
+P84022	DNA binding
+P87108	Transporter
+P88142	Peptidase
+P88142	Hydrolase (ester bonds)
+P88142	Transferase (phosphorus-containing groups, non-kinase)
+P88142	DNA binding
+P90518	Ligase
+P90584	Kinase
+P93836	Oxidoreductase
+P93841	Kinase
+P94451	Hydrolase (glycosyl bonds)
+P94958	Hydrolase (C-N bonds, no peptides)
+P95276	Hydrolase (other)
+P96471	no_function
+P96830	Hydrolase (ester bonds)
+P96878	Lyase
+P96878	Transporter
+P97266	G protein-coupled receptor
+P97266	Transporter
+P97287	no_function
+P97313	Kinase
+P97313	DNA binding
+P97321	Peptidase
+P97391	Hydrolase (ester bonds)
+P97449	Peptidase
+P97468	G protein-coupled receptor
+P97477	Kinase
+P97480	Hydrolase (ester bonds)
+P97504	Kinase
+P97520	G protein-coupled receptor
+P97571	Peptidase
+P97583	G protein-coupled receptor
+P97612	Hydrolase (C-N bonds, no peptides)
+P97612	Hydrolase (ester bonds)
+P97639	G protein-coupled receptor
+P97687	Hydrolase (acid anhydrides)
+P97689	Transporter
+P97696	Enzyme regulator
+P97717	G protein-coupled receptor
+P97772	G protein-coupled receptor
+P97793	Transmembrane receptor protein kinase
+P97793	Kinase
+P97821	Enzyme regulator
+P97821	Peptidase
+P97879	no_function
+P98073	Peptidase
+P98139	Peptidase
+P98170	Enzyme regulator
+P98170	Transferase (other)
+P9WFR9	Transferase (one-carbon groups)
+P9WG47	Hydrolase (acid anhydrides)
+P9WG47	Isomerase
+P9WG47	DNA binding
+P9WG57	Transferase (one-carbon groups)
+P9WGR1	Oxidoreductase
+P9WGR1	Transferase (acyl groups)
+P9WH09	Oxidoreductase
+P9WHE9	Transferase (alkyl or aryl groups, no methyl)
+P9WHH1	Oxidoreductase
+P9WHV7	Kinase
+P9WI81	Enzyme regulator
+P9WI81	Kinase
+P9WIA1	Hydrolase (ester bonds)
+P9WIB9	Isomerase
+P9WIC1	Isomerase
+P9WID5	Kinase
+P9WIJ3	Hydrolase (C-N bonds, no peptides)
+P9WIL5	Ligase
+P9WJF1	Oxidoreductase
+P9WJM9	Ligase
+P9WJN1	Hydrolase (C-N bonds, no peptides)
+P9WJN3	Hydrolase (C-N bonds, no peptides)
+P9WKD7	Isomerase
+P9WKE1	Kinase
+P9WKG5	Lyase
+P9WKK7	Lyase
+P9WMC1	Transcription regulator
+P9WMC1	DNA binding
+P9WMN1	Transferase (glycosyl groups)
+P9WN95	Hydrolase (acid anhydrides)
+P9WNG3	Transferase (acyl groups)
+P9WNP5	Lyase
+P9WNS1	Oxidoreductase
+P9WNS3	Transferase (other)
+P9WNV1	Ligase
+P9WNX1	Oxidoreductase
+P9WP01	Transferase (glycosyl groups)
+P9WP25	Lyase
+P9WP55	Lyase
+P9WP55	Transferase (alkyl or aryl groups, no methyl)
+P9WPJ7	Lyase
+P9WPJ9	Lyase
+P9WPX7	Lyase
+P9WQ77	Transferase (other)
+P9WQA3	Lyase
+P9WQD7	Transferase (acyl groups)
+P9WQN9	Transferase (acyl groups)
+P9WQP7	Isomerase
+P9WQP7	Oxidoreductase
+Q00194	Transporter
+Q00342	Transmembrane receptor protein kinase
+Q00342	Kinase
+Q00496	Peptidase
+Q00496	Transporter
+Q00526	Kinase
+Q00532	Kinase
+Q00534	Kinase
+Q00535	Kinase
+Q00535	Transporter
+Q00536	Kinase
+Q00537	Kinase
+Q00610	no_function
+Q00613	Transcription regulator
+Q00613	DNA binding
+Q00688	Isomerase
+Q00688	Signaling receptor (not transmembrane)
+Q00788	G protein-coupled receptor
+Q00959	Transmembrane signaling receptors (other)
+Q00959	Transporter
+Q00960	Transmembrane signaling receptors (other)
+Q00960	Transporter
+Q00961	Transmembrane signaling receptors (other)
+Q00961	Transporter
+Q00975	Transporter
+Q00987	Ligase
+Q00987	Transferase (other)
+Q01062	Hydrolase (ester bonds)
+Q01063	Hydrolase (ester bonds)
+Q01064	Hydrolase (ester bonds)
+Q01097	Transmembrane signaling receptors (other)
+Q01097	Transporter
+Q01118	Transporter
+Q01158	Oxidoreductase
+Q01177	Peptidase
+Q01279	Enzyme regulator
+Q01279	Transmembrane receptor protein kinase
+Q01279	Kinase
+Q01432	Hydrolase (C-N bonds, no peptides)
+Q01469	Transporter
+Q01538	Transcription regulator
+Q01538	DNA binding
+Q01558	Oxidoreductase
+Q01650	Transporter
+Q01668	Transporter
+Q01693	Peptidase
+Q01705	Enzyme regulator
+Q01705	Transmembrane signaling receptors (other)
+Q01705	Transcription regulator
+Q01705	DNA binding
+Q01717	G protein-coupled receptor
+Q01726	G protein-coupled receptor
+Q01727	G protein-coupled receptor
+Q01776	G protein-coupled receptor
+Q01782	Oxidoreductase
+Q01812	Transmembrane signaling receptors (other)
+Q01812	Transporter
+Q01813	Kinase
+Q01815	Transporter
+Q01827	Transporter
+Q01959	Dopamine binding
+Q01959	Transporter
+Q01HZ7	Ligase
+Q02083	Hydrolase (C-N bonds, no peptides)
+Q02110	Oxidoreductase
+Q02111	Kinase
+Q02127	Hydrolase (C-N bonds, no peptides)
+Q02127	Oxidoreductase
+Q02156	Enzyme regulator
+Q02156	Kinase
+Q02224	no_function
+Q02241	Hydrolase (acid anhydrides)
+Q02294	Transporter
+Q02401	Hydrolase (glycosyl bonds)
+Q02401	Transferase (other)
+Q02440	no_function
+Q02485	Transporter
+Q02563	Transporter
+Q02750	Enzyme regulator
+Q02750	Kinase
+Q02759	Hydrolase (other)
+Q02759	Isomerase
+Q02759	Oxidoreductase
+Q02763	Transmembrane receptor protein kinase
+Q02763	Kinase
+Q02765	Peptidase
+Q02769	Transferase (alkyl or aryl groups, no methyl)
+Q02779	Transcription regulator
+Q02779	Kinase
+Q02790	Isomerase
+Q02844	Peptidase
+Q02880	Isomerase
+Q02880	DNA binding
+Q02974	Kinase
+Q03111	no_function
+Q03137	Transmembrane receptor protein kinase
+Q03137	Kinase
+Q03142	Transmembrane receptor protein kinase
+Q03142	Kinase
+Q03145	Transmembrane receptor protein kinase
+Q03145	Kinase
+Q03164	Transferase (one-carbon groups)
+Q03164	DNA binding
+Q03181	Signaling receptor (not transmembrane)
+Q03181	Transcription regulator
+Q03181	DNA binding
+Q03311	Hydrolase (ester bonds)
+Q03393	Lyase
+Q03431	G protein-coupled receptor
+Q03469	Isomerase
+Q03732	DNA binding
+Q04206	Transcription regulator
+Q04206	DNA binding
+Q04207	Transcription regulator
+Q04207	DNA binding
+Q04400	Lyase
+Q04609	Peptidase
+Q04721	Signaling receptor (not transmembrane)
+Q04750	Isomerase
+Q04750	Kinase
+Q04750	DNA binding
+Q04756	Peptidase
+Q04759	Kinase
+Q04760	Lyase
+Q04771	Transmembrane receptor protein kinase
+Q04771	Kinase
+Q04828	Oxidoreductase
+Q04844	Transmembrane signaling receptors (other)
+Q04844	Transporter
+Q04912	Transmembrane receptor protein kinase
+Q04912	Kinase
+Q04998	no_function
+Q05030	Transmembrane receptor protein kinase
+Q05030	Kinase
+Q05193	Hydrolase (acid anhydrides)
+Q05209	Hydrolase (ester bonds)
+Q05320	no_function
+Q05343	Signaling receptor (not transmembrane)
+Q05343	Transcription regulator
+Q05343	DNA binding
+Q05397	Kinase
+Q05469	Hydrolase (ester bonds)
+Q05513	Kinase
+Q05516	Transcription regulator
+Q05516	DNA binding
+Q05586	Transmembrane signaling receptors (other)
+Q05586	Transporter
+Q05639	Hydrolase (acid anhydrides)
+Q05655	Enzyme regulator
+Q05655	Kinase
+Q05769	Oxidoreductase
+Q05823	Hydrolase (ester bonds)
+Q05823	Kinase
+Q05940	Transporter
+Q05941	Transmembrane signaling receptors (other)
+Q05941	Acetylcholine binding
+Q05941	Transporter
+Q05BA5	Transcription regulator
+Q05BA5	Transferase (acyl groups)
+Q05BQ5	no_function
+Q06000	Hydrolase (ester bonds)
+Q06124	Hydrolase (ester bonds)
+Q06187	Enzyme regulator
+Q06187	Kinase
+Q06241	Peptidase
+Q06278	Oxidoreductase
+Q06347	Peptidase
+Q06347	Hydrolase (ester bonds)
+Q06347	Transferase (phosphorus-containing groups, non-kinase)
+Q06418	Transmembrane receptor protein kinase
+Q06418	Kinase
+Q06486	Kinase
+Q06495	Transporter
+Q06496	Transporter
+Q06518	Enzyme regulator
+Q06518	Oxidoreductase
+Q06609	DNA binding
+Q06806	Transmembrane receptor protein kinase
+Q06806	Kinase
+Q06830	Oxidoreductase
+Q07002	Kinase
+Q07071	Enzyme regulator
+Q07075	Peptidase
+Q07108	Transmembrane signaling receptors (other)
+Q07343	Hydrolase (ester bonds)
+Q07422	Oxidoreductase
+Q07422	Transferase (one-carbon groups)
+Q07440	no_function
+Q07523	Oxidoreductase
+Q07806	Peptidase
+Q07806	Transferase (glycosyl groups)
+Q07812	Transporter
+Q07817	no_function
+Q07820	Transporter
+Q07869	Signaling receptor (not transmembrane)
+Q07869	Transcription regulator
+Q07869	DNA binding
+Q07889	Enzyme regulator
+Q07889	DNA binding
+Q07912	Enzyme regulator
+Q07912	Kinase
+Q07969	Signaling receptor (not transmembrane)
+Q07969	Transporter
+Q08188	Transferase (acyl groups)
+Q08257	Oxidoreductase
+Q08345	Transmembrane receptor protein kinase
+Q08345	Kinase
+Q08357	Signaling receptor (not transmembrane)
+Q08357	Transporter
+Q08397	Oxidoreductase
+Q08493	Hydrolase (ester bonds)
+Q08499	Hydrolase (ester bonds)
+Q08642	Hydrolase (C-N bonds, no peptides)
+Q08752	Isomerase
+Q08828	Lyase
+Q08881	Kinase
+Q09013	Enzyme regulator
+Q09013	Kinase
+Q09137	Kinase
+Q09327	Transferase (glycosyl groups)
+Q09470	Transporter
+Q09472	Transcription regulator
+Q09472	Transferase (acyl groups)
+Q09472	DNA binding
+Q0GMK6	Kinase
+Q0PJ46	Oxidoreductase
+Q0PXQ5	Hydrolase (C-N bonds, no peptides)
+Q0VC81	G protein-coupled receptor
+Q0VTR6	Hydrolase (C-N bonds, no peptides)
+Q0VTR8	Hydrolase (C-N bonds, no peptides)
+Q0VTS0	Hydrolase (C-N bonds, no peptides)
+Q10469	Transferase (glycosyl groups)
+Q10471	Transferase (glycosyl groups)
+Q11128	Transferase (glycosyl groups)
+Q11130	Transferase (glycosyl groups)
+Q11201	Transferase (glycosyl groups)
+Q11203	Transferase (glycosyl groups)
+Q12772	Transcription regulator
+Q12772	DNA binding
+Q12830	DNA binding
+Q12834	Enzyme regulator
+Q12840	Hydrolase (acid anhydrides)
+Q12851	Kinase
+Q12852	Enzyme regulator
+Q12852	Kinase
+Q12866	Transmembrane receptor protein kinase
+Q12866	Kinase
+Q12879	Transmembrane signaling receptors (other)
+Q12879	Transporter
+Q12884	Peptidase
+Q12888	Transcription regulator
+Q12888	DNA binding
+Q12908	Transporter
+Q12913	Hydrolase (ester bonds)
+Q12923	Hydrolase (ester bonds)
+Q12931	Hydrolase (acid anhydrides)
+Q12974	Hydrolase (ester bonds)
+Q13002	Transmembrane signaling receptors (other)
+Q13002	Transporter
+Q13003	G protein-coupled receptor
+Q13003	Transporter
+Q13043	Enzyme regulator
+Q13043	Kinase
+Q13057	Kinase
+Q13085	Ligase
+Q13093	Hydrolase (ester bonds)
+Q13107	Peptidase
+Q13118	Transcription regulator
+Q13118	DNA binding
+Q13123	no_function
+Q13126	Transferase (glycosyl groups)
+Q13131	Kinase
+Q13133	Signaling receptor (not transmembrane)
+Q13133	Transcription regulator
+Q13133	DNA binding
+Q13148	DNA binding
+Q13153	Kinase
+Q13155	no_function
+Q13163	Kinase
+Q13164	Kinase
+Q13177	Enzyme regulator
+Q13177	Kinase
+Q13183	Transporter
+Q13188	Enzyme regulator
+Q13188	Kinase
+Q13224	Transmembrane signaling receptors (other)
+Q13224	Transporter
+Q13231	Hydrolase (glycosyl bonds)
+Q13233	Kinase
+Q13237	Kinase
+Q13255	G protein-coupled receptor
+Q13258	G protein-coupled receptor
+Q13285	Signaling receptor (not transmembrane)
+Q13285	Transcription regulator
+Q13285	DNA binding
+Q13304	G protein-coupled receptor
+Q13315	Kinase
+Q13315	DNA binding
+Q13324	G protein-coupled receptor
+Q13332	Hydrolase (ester bonds)
+Q13336	Transporter
+Q13370	Hydrolase (ester bonds)
+Q13393	Hydrolase (ester bonds)
+Q13418	Kinase
+Q13443	Peptidase
+Q13451	Isomerase
+Q13464	Enzyme regulator
+Q13464	Kinase
+Q13470	Kinase
+Q13480	no_function
+Q13489	Enzyme regulator
+Q13489	Transferase (other)
+Q13490	Enzyme regulator
+Q13490	Transcription regulator
+Q13490	Transferase (other)
+Q13507	Transporter
+Q13509	Hydrolase (acid anhydrides)
+Q13510	Hydrolase (C-N bonds, no peptides)
+Q13510	Transcription regulator
+Q13523	Kinase
+Q13526	Isomerase
+Q13535	Kinase
+Q13535	DNA binding
+Q13546	Kinase
+Q13547	Hydrolase (C-N bonds, no peptides)
+Q13547	Transcription regulator
+Q13547	DNA binding
+Q13554	Kinase
+Q13555	Hydrolase (ester bonds)
+Q13555	Kinase
+Q13557	Kinase
+Q13564	Ligase
+Q13574	Kinase
+Q13609	Hydrolase (ester bonds)
+Q13609	DNA binding
+Q13619	Transferase (other)
+Q13627	Transcription regulator
+Q13627	Kinase
+Q13639	G protein-coupled receptor
+Q13639	Serotonin binding
+Q13705	Transmembrane receptor protein kinase
+Q13705	Kinase
+Q13822	Hydrolase (acid anhydrides)
+Q13822	Hydrolase (ester bonds)
+Q13873	Enzyme regulator
+Q13873	Transmembrane receptor protein kinase
+Q13873	Kinase
+Q13882	Kinase
+Q13887	Transcription regulator
+Q13887	DNA binding
+Q13936	Transporter
+Q13946	Hydrolase (ester bonds)
+Q13951	Transcription regulator
+Q13951	DNA binding
+Q13976	Kinase
+Q14004	Kinase
+Q14012	Kinase
+Q14123	Hydrolase (ester bonds)
+Q14145	no_function
+Q14164	Enzyme regulator
+Q14164	Kinase
+Q14188	Transcription regulator
+Q14188	DNA binding
+Q14191	Hydrolase (acid anhydrides)
+Q14191	Hydrolase (ester bonds)
+Q14191	DNA binding
+Q14240	Hydrolase (acid anhydrides)
+Q14242	no_function
+Q14289	Transmembrane signaling receptors (other)
+Q14289	Kinase
+Q14289	Transporter
+Q14330	G protein-coupled receptor
+Q14376	Isomerase
+Q14397	Enzyme regulator
+Q14416	G protein-coupled receptor
+Q14432	Hydrolase (ester bonds)
+Q14451	no_function
+Q14524	Transporter
+Q14642	Hydrolase (ester bonds)
+Q14674	Peptidase
+Q14680	Kinase
+Q14683	Hydrolase (acid anhydrides)
+Q14683	DNA binding
+Q14694	Peptidase
+Q14703	Peptidase
+Q14790	Peptidase
+Q14831	Enzyme regulator
+Q14831	G protein-coupled receptor
+Q14832	G protein-coupled receptor
+Q14833	G protein-coupled receptor
+Q14839	Hydrolase (acid anhydrides)
+Q14839	DNA binding
+Q14849	Transporter
+Q14940	Transporter
+Q14957	Transmembrane signaling receptors (other)
+Q14957	Transporter
+Q14973	Transporter
+Q14994	Signaling receptor (not transmembrane)
+Q14994	Transcription regulator
+Q14994	DNA binding
+Q14995	Signaling receptor (not transmembrane)
+Q14995	Transcription regulator
+Q14995	DNA binding
+Q15040	Peptidase
+Q15046	Ligase
+Q15046	Transferase (phosphorus-containing groups, non-kinase)
+Q15047	Transferase (one-carbon groups)
+Q15047	DNA binding
+Q15056	no_function
+Q15058	Hydrolase (acid anhydrides)
+Q15059	no_function
+Q15067	Oxidoreductase
+Q15077	G protein-coupled receptor
+Q15084	Isomerase
+Q15084	Oxidoreductase
+Q15109	Transmembrane signaling receptors (other)
+Q15116	no_function
+Q15118	Kinase
+Q15119	Kinase
+Q15120	Kinase
+Q15125	Isomerase
+Q15131	Kinase
+Q15139	Kinase
+Q15149	no_function
+Q15165	Hydrolase (ester bonds)
+Q15166	Hydrolase (ester bonds)
+Q15208	Kinase
+Q15256	Hydrolase (ester bonds)
+Q15256	Transmembrane signaling receptors (other)
+Q15257	Enzyme regulator
+Q15257	Isomerase
+Q15303	Transmembrane receptor protein kinase
+Q15303	Kinase
+Q15303	DNA binding
+Q15349	Kinase
+Q15375	Transmembrane receptor protein kinase
+Q15375	Kinase
+Q15391	G protein-coupled receptor
+Q15392	Oxidoreductase
+Q15393	no_function
+Q15399	Hydrolase (glycosyl bonds)
+Q15399	Transmembrane signaling receptors (other)
+Q15418	Enzyme regulator
+Q15418	Kinase
+Q15465	Peptidase
+Q15466	Transcription regulator
+Q15544	Transcription regulator
+Q15544	DNA binding
+Q15561	Transcription regulator
+Q15561	DNA binding
+Q15569	Kinase
+Q15573	DNA binding
+Q15652	Oxidoreductase
+Q15652	Transcription regulator
+Q15652	DNA binding
+Q15661	Peptidase
+Q15678	Hydrolase (ester bonds)
+Q15678	Transcription regulator
+Q15717	no_function
+Q15722	G protein-coupled receptor
+Q15743	G protein-coupled receptor
+Q15746	Kinase
+Q15758	Signaling receptor (not transmembrane)
+Q15758	Transporter
+Q15759	Kinase
+Q15761	G protein-coupled receptor
+Q15831	Enzyme regulator
+Q15831	Kinase
+Q15835	Kinase
+Q15843	no_function
+Q15858	Transporter
+Q15910	Transcription regulator
+Q15910	Transferase (one-carbon groups)
+Q15910	DNA binding
+Q16236	Transcription regulator
+Q16236	DNA binding
+Q16288	Transmembrane receptor protein kinase
+Q16288	Kinase
+Q16348	Transporter
+Q16445	Transmembrane signaling receptors (other)
+Q16445	Transporter
+Q16478	Transmembrane signaling receptors (other)
+Q16478	Transporter
+Q16512	Transcription regulator
+Q16512	Kinase
+Q16513	Kinase
+Q16539	Kinase
+Q16548	no_function
+Q16566	Kinase
+Q16572	Transporter
+Q16581	G protein-coupled receptor
+Q16584	Kinase
+Q16602	G protein-coupled receptor
+Q16620	Transmembrane receptor protein kinase
+Q16620	Kinase
+Q16621	Transcription regulator
+Q16621	DNA binding
+Q16644	Kinase
+Q16647	Isomerase
+Q16647	Lyase
+Q16647	Oxidoreductase
+Q16651	Peptidase
+Q16654	Kinase
+Q16658	no_function
+Q16659	Kinase
+Q16665	Transcription regulator
+Q16665	DNA binding
+Q16690	Hydrolase (ester bonds)
+Q16706	Hydrolase (glycosyl bonds)
+Q16719	Hydrolase (other)
+Q16739	Transferase (glycosyl groups)
+Q16740	Peptidase
+Q16762	Transferase (other)
+Q16769	Peptidase
+Q16769	Transferase (acyl groups)
+Q16773	Lyase
+Q16773	Transferase (other)
+Q16790	Lyase
+Q16816	Kinase
+Q16819	Peptidase
+Q16820	Peptidase
+Q16827	Hydrolase (ester bonds)
+Q16827	Transmembrane signaling receptors (other)
+Q16828	Hydrolase (ester bonds)
+Q16831	Transferase (glycosyl groups)
+Q16832	Transmembrane receptor protein kinase
+Q16832	Kinase
+Q16853	Oxidoreductase
+Q16873	Enzyme regulator
+Q16873	Lyase
+Q16873	Oxidoreductase
+Q16873	Transferase (alkyl or aryl groups, no methyl)
+Q16875	Hydrolase (ester bonds)
+Q16875	Kinase
+Q16877	Hydrolase (ester bonds)
+Q16877	Kinase
+Q16881	Oxidoreductase
+Q17066	Kinase
+Q17339	no_function
+Q17SB2	Peptidase
+Q194T1	Hydrolase (glycosyl bonds)
+Q197X6	Transferase (alkyl or aryl groups, no methyl)
+Q1A7N1	Transporter
+Q1HEC0	Ligase
+Q1W675	Oxidoreductase
+Q20MD3	Hydrolase (glycosyl bonds)
+Q25615	Hydrolase (glycosyl bonds)
+Q25856	Oxidoreductase
+Q25917	Kinase
+Q26710	Oxidoreductase
+Q27546	Hydrolase (glycosyl bonds)
+Q27552	Oxidoreductase
+Q27552	Transferase (one-carbon groups)
+Q27686	Kinase
+Q27757	Oxidoreductase
+Q27963	Transporter
+Q27YN9	Transporter
+Q28039	Transporter
+Q28044	G protein-coupled receptor
+Q28156	Hydrolase (ester bonds)
+Q28175	Hydrolase (ester bonds)
+Q28175	Isomerase
+Q28175	Oxidoreductase
+Q28263	Hydrolase (ester bonds)
+Q28309	G protein-coupled receptor
+Q28641	no_function
+Q28731	Peptidase
+Q28998	Enzyme regulator
+Q28998	G protein-coupled receptor
+Q29010	G protein-coupled receptor
+Q29092	Hydrolase (acid anhydrides)
+Q29463	Peptidase
+Q29550	Hydrolase (ester bonds)
+Q29571	Peptidase
+Q2AC31	G protein-coupled receptor
+Q2HPH0	Isomerase
+Q2HPH0	DNA binding
+Q2HXR2	Transferase (glycosyl groups)
+Q2HY42	no_function
+Q2KHZ8	Hydrolase (glycosyl bonds)
+Q2KHZ8	Transferase (glycosyl groups)
+Q2KIM0	Hydrolase (glycosyl bonds)
+Q2KJ64	Hydrolase (C-N bonds, no peptides)
+Q2L8D9	no_function
+Q2LFS1	Hydrolase (glycosyl bonds)
+Q2M2I8	Kinase
+Q2NL51	Kinase
+Q2NL67	Transferase (glycosyl groups)
+Q2NNR5	G protein-coupled receptor
+Q2PCB5	Lyase
+Q2Q167	no_function
+Q2TA32	Transferase (one-carbon groups)
+Q2TB90	Kinase
+Q2TU57	Isomerase
+Q2V0Q7	G protein-coupled receptor
+Q2WGM0	G protein-coupled receptor
+Q2XPY6	Hydrolase (C-N bonds, no peptides)
+Q2XUH7	G protein-coupled receptor
+Q31945	Oxidoreductase
+Q31FD6	Lyase
+Q32MK0	Kinase
+Q32ZE1	Peptidase
+Q32ZE1	Hydrolase (acid anhydrides)
+Q32ZE1	Transferase (one-carbon groups)
+Q32ZE1	Transferase (phosphorus-containing groups, non-kinase)
+Q36792	Peptidase
+Q37001	Lyase
+Q37001	Transferase (other)
+Q38720	no_function
+Q38854	Transferase (other)
+Q38860	Transferase (acyl groups)
+Q39829	Oxidoreductase
+Q39830	Hydrolase (acid anhydrides)
+Q3B7M2	Hydrolase (ester bonds)
+Q3BCU0	G protein-coupled receptor
+Q3HTL5	Peptidase
+Q3I4V7	Lyase
+Q3MIX3	Kinase
+Q3S340	Hydrolase (glycosyl bonds)
+Q3S5C3	Transporter
+Q3SAW3	Hydrolase (C-N bonds, no peptides)
+Q3SYC2	Transferase (acyl groups)
+Q3SZX4	Lyase
+Q3T905	Peptidase
+Q3TBT3	no_function
+Q3TRM4	Hydrolase (ester bonds)
+Q3U3Q1	Kinase
+Q3U6B2	G protein-coupled receptor
+Q3UES3	Transferase (glycosyl groups)
+Q3UP87	Peptidase
+Q3UP87	Transcription regulator
+Q3UR32	Transmembrane signaling receptors (other)
+Q3UR32	Transporter
+Q3UVX5	G protein-coupled receptor
+Q3UXZ9	Oxidoreductase
+Q3UXZ9	Transcription regulator
+Q3UXZ9	DNA binding
+Q3V4E6	Ligase
+Q3Y5H1	Peptidase
+Q3ZAV1	Transporter
+Q3ZCJ8	Peptidase
+Q3ZKN1	Peptidase
+Q42656	Hydrolase (glycosyl bonds)
+Q42840	Oxidoreductase
+Q42950	Ligase
+Q43077	Oxidoreductase
+Q43191	Oxidoreductase
+Q43445	Transferase (one-carbon groups)
+Q43760	Ligase
+Q44079	Hydrolase (C-N bonds, no peptides)
+Q46085	Peptidase
+Q460N3	Transcription regulator
+Q460N3	Transferase (glycosyl groups)
+Q460N5	Transcription regulator
+Q460N5	Transferase (glycosyl groups)
+Q46991	Hydrolase (C-N bonds, no peptides)
+Q48435	Hydrolase (C-N bonds, no peptides)
+Q48935	Hydrolase (C-N bonds, no peptides)
+Q49PX0	no_function
+Q4AE59	Hydrolase (glycosyl bonds)
+Q4CXJ6	Transferase (alkyl or aryl groups, no methyl)
+Q4E657	Kinase
+Q4FZB7	Transferase (one-carbon groups)
+Q4FZV0	Hydrolase (glycosyl bonds)
+Q4G017	no_function
+Q4G0J3	no_function
+Q4KLH9	G protein-coupled receptor
+Q4L144	G protein-coupled receptor
+Q4Q5S8	Transferase (acyl groups)
+Q4Q5W4	Transferase (alkyl or aryl groups, no methyl)
+Q4QBL1	Transferase (alkyl or aryl groups, no methyl)
+Q4QE15	Kinase
+Q4QEW7	Oxidoreductase
+Q4QQW4	Hydrolase (C-N bonds, no peptides)
+Q4QQW4	Transcription regulator
+Q4QQW4	DNA binding
+Q4QYD9	Transporter
+Q4TVR4	Hydrolase (C-N bonds, no peptides)
+Q4U254	Peptidase
+Q4U254	Hydrolase (acid anhydrides)
+Q4U254	Transferase (phosphorus-containing groups, non-kinase)
+Q4U2R8	Transporter
+Q4VQ11	G protein-coupled receptor
+Q50565	Lyase
+Q50H31	no_function
+Q52WX2	Kinase
+Q533H1	G protein-coupled receptor
+Q53729	Peptidase
+Q53729	Transferase (glycosyl groups)
+Q53EL6	no_function
+Q53GL7	Transcription regulator
+Q53GL7	Transferase (glycosyl groups)
+Q53I59	Hydrolase (ester bonds)
+Q53I60	Hydrolase (ester bonds)
+Q54A96	Oxidoreductase
+Q56950	Ligase
+Q56A73	no_function
+Q56D28	G protein-coupled receptor
+Q56UN5	Kinase
+Q571F8	Hydrolase (C-N bonds, no peptides)
+Q58D55	Hydrolase (glycosyl bonds)
+Q58F21	Transcription regulator
+Q58FF8	Hydrolase (acid anhydrides)
+Q58HT5	Transferase (acyl groups)
+Q59388	Lyase
+Q59401	Hydrolase (C-N bonds, no peptides)
+Q59643	Lyase
+Q59H18	Kinase
+Q5A7N4	Transferase (phosphorus-containing groups, non-kinase)
+Q5BJF2	no_function
+Q5CYL9	Kinase
+Q5CZ29	Kinase
+Q5DUH8	Hydrolase (glycosyl bonds)
+Q5FB27	Oxidoreductase
+Q5FVF5	Kinase
+Q5FVP8	Transferase (acyl groups)
+Q5FVR2	Transferase (glycosyl groups)
+Q5GIT4	Transmembrane receptor protein kinase
+Q5GIT4	Kinase
+Q5HEN6	Peptidase
+Q5HYI8	Hydrolase (acid anhydrides)
+Q5J463	Hydrolase (C-N bonds, no peptides)
+Q5JUX0	no_function
+Q5KTC7	Hydrolase (C-N bonds, no peptides)
+Q5L478	Peptidase
+Q5L478	Hydrolase (acid anhydrides)
+Q5L478	Transferase (phosphorus-containing groups, non-kinase)
+Q5M848	Transporter
+Q5MAI5	Kinase
+Q5MY95	Hydrolase (acid anhydrides)
+Q5NGQ3	Oxidoreductase
+Q5NGQ3	Transferase (acyl groups)
+Q5NUL3	G protein-coupled receptor
+Q5QD14	G protein-coupled receptor
+Q5QJU3	Hydrolase (C-N bonds, no peptides)
+Q5QJU3	Hydrolase (glycosyl bonds)
+Q5R387	Hydrolase (ester bonds)
+Q5RJP0	Oxidoreductase
+Q5S007	Enzyme regulator
+Q5S007	Hydrolase (acid anhydrides)
+Q5S007	Hydrolase (ester bonds)
+Q5S007	Kinase
+Q5SC61	Kinase
+Q5SIY4	Oxidoreductase
+Q5SK48	Transferase (alkyl or aryl groups, no methyl)
+Q5SWA1	Enzyme regulator
+Q5SWU9	Ligase
+Q5T2D3	Peptidase
+Q5TC84	Signaling receptor (not transmembrane)
+Q5TCX8	Kinase
+Q5TCY1	Kinase
+Q5TKS0	Transferase (acyl groups)
+Q5TU56	Lyase
+Q5U3Y7	no_function
+Q5U5Z8	Peptidase
+Q5U9J1	no_function
+Q5VLE3	Transferase (one-carbon groups)
+Q5VT25	Kinase
+Q5VTY9	Transferase (acyl groups)
+Q5VV17	Peptidase
+Q5VVQ6	Peptidase
+Q5VWQ8	Enzyme regulator
+Q5XJA0	Hydrolase (ester bonds)
+Q5XJA0	DNA binding
+Q5XX84	Oxidoreductase
+Q5XXA6	Transporter
+Q5YLN7	Transporter
+Q60457	Transferase (acyl groups)
+Q60484	G protein-coupled receptor
+Q60490	Isomerase
+Q60492	no_function
+Q60493	DNA binding
+Q60612	G protein-coupled receptor
+Q60613	G protein-coupled receptor
+Q60614	G protein-coupled receptor
+Q60714	Ligase
+Q60714	Transporter
+Q60737	Enzyme regulator
+Q60737	Kinase
+Q60748	G protein-coupled receptor
+Q60751	Transmembrane receptor protein kinase
+Q60751	Kinase
+Q60751	Transporter
+Q60825	Transporter
+Q60855	Kinase
+Q60857	Serotonin binding
+Q60857	Transporter
+Q61009	Signaling receptor (not transmembrane)
+Q61091	G protein-coupled receptor
+Q61096	Peptidase
+Q61125	G protein-coupled receptor
+Q61143	Transporter
+Q61180	Transporter
+Q61214	Transcription regulator
+Q61214	Kinase
+Q61241	Kinase
+Q61263	Transferase (acyl groups)
+Q61327	Dopamine binding
+Q61327	Transporter
+Q61391	Peptidase
+Q61586	Transferase (acyl groups)
+Q61606	G protein-coupled receptor
+Q61614	G protein-coupled receptor
+Q61618	G protein-coupled receptor
+Q61851	Transmembrane receptor protein kinase
+Q61851	Kinase
+Q62053	G protein-coupled receptor
+Q62120	Kinase
+Q62137	Kinase
+Q62190	Transmembrane receptor protein kinase
+Q62190	Kinase
+Q62205	Transporter
+Q62226	no_function
+Q62463	G protein-coupled receptor
+Q62600	Oxidoreductase
+Q62633	Transporter
+Q62645	Transmembrane signaling receptors (other)
+Q62645	Transporter
+Q62666	Transporter
+Q62668	Transporter
+Q62689	Kinase
+Q62730	Oxidoreductase
+Q62758	G protein-coupled receptor
+Q62758	Serotonin binding
+Q62773	Transporter
+Q62805	G protein-coupled receptor
+Q62868	Kinase
+Q62928	G protein-coupled receptor
+Q62968	Transporter
+Q62976	Transporter
+Q62986	Signaling receptor (not transmembrane)
+Q62986	Transcription regulator
+Q62986	DNA binding
+Q63008	Transporter
+Q63009	Transferase (one-carbon groups)
+Q63009	DNA binding
+Q63010	Hydrolase (ester bonds)
+Q63016	Transporter
+Q63088	Peptidase
+Q63207	Peptidase
+Q63272	Kinase
+Q63273	Transmembrane signaling receptors (other)
+Q63273	Transporter
+Q63341	Peptidase
+Q63341	DNA binding
+Q63380	Transporter
+Q63384	G protein-coupled receptor
+Q63424	Transporter
+Q63449	Signaling receptor (not transmembrane)
+Q63449	Transcription regulator
+Q63449	DNA binding
+Q63470	Transcription regulator
+Q63470	Kinase
+Q63474	Transmembrane receptor protein kinase
+Q63474	Kinase
+Q63495	Signaling receptor (not transmembrane)
+Q63633	Transporter
+Q63634	G protein-coupled receptor
+Q63644	Enzyme regulator
+Q63644	Kinase
+Q63704	Transferase (acyl groups)
+Q63707	Hydrolase (C-N bonds, no peptides)
+Q63707	Oxidoreductase
+Q63881	Transporter
+Q63921	Oxidoreductase
+Q63931	G protein-coupled receptor
+Q64077	G protein-coupled receptor
+Q64133	Oxidoreductase
+Q64133	Serotonin binding
+Q64264	G protein-coupled receptor
+Q64264	Serotonin binding
+Q64346	Hydrolase (ester bonds)
+Q64518	Enzyme regulator
+Q64518	Transporter
+Q64560	Peptidase
+Q64578	Transporter
+Q64602	Transferase (other)
+Q64610	Hydrolase (acid anhydrides)
+Q64610	Hydrolase (ester bonds)
+Q64640	Kinase
+Q64663	Enzyme regulator
+Q64663	Transmembrane signaling receptors (other)
+Q64663	Transporter
+Q64725	Kinase
+Q64729	Transmembrane receptor protein kinase
+Q64729	Kinase
+Q64737	Ligase
+Q64737	Transferase (one-carbon groups)
+Q670S6	Hydrolase (C-N bonds, no peptides)
+Q673L6	Transferase (phosphorus-containing groups, non-kinase)
+Q673L6	DNA binding
+Q67BT3	Transporter
+Q690N0	Signaling receptor (not transmembrane)
+Q690N0	Transcription regulator
+Q690N0	DNA binding
+Q69422	Peptidase
+Q69422	Hydrolase (acid anhydrides)
+Q69422	Transferase (phosphorus-containing groups, non-kinase)
+Q69422	Transporter
+Q69422	DNA binding
+Q69ZF3	Hydrolase (glycosyl bonds)
+Q69ZF3	Transferase (glycosyl groups)
+Q6A2E2	Hydrolase (ester bonds)
+Q6AYQ3	Ligase
+Q6B0I6	Oxidoreductase
+Q6B0I6	DNA binding
+Q6B4J2	Oxidoreductase
+Q6B856	Hydrolase (acid anhydrides)
+Q6DE08	Kinase
+Q6DLS0	Peptidase
+Q6DLW5	Peptidase
+Q6DMN0	Peptidase
+Q6DT37	Kinase
+Q6E213	Transferase (acyl groups)
+Q6GG09	Kinase
+Q6GI75	Oxidoreductase
+Q6GI75	Transferase (acyl groups)
+Q6GMR7	Hydrolase (C-N bonds, no peptides)
+Q6GQQ9	Peptidase
+Q6GQQ9	DNA binding
+Q6GWS8	Hydrolase (C-N bonds, no peptides)
+Q6IE75	Peptidase
+Q6IQ55	Kinase
+Q6IYF9	G protein-coupled receptor
+Q6J4K2	Transporter
+Q6JP75	Hydrolase (C-N bonds, no peptides)
+Q6JQN1	Oxidoreductase
+Q6L709	Kinase
+Q6N021	Oxidoreductase
+Q6N021	DNA binding
+Q6NSN2	Oxidoreductase
+Q6NXK8	Transporter
+Q6P179	Peptidase
+Q6P1E0	Kinase
+Q6P1M0	Ligase
+Q6P1M0	Transporter
+Q6P2M8	Kinase
+Q6P3R8	Kinase
+Q6P5Z2	Kinase
+Q6P7A9	Hydrolase (glycosyl bonds)
+Q6P7S1	Hydrolase (C-N bonds, no peptides)
+Q6P988	Hydrolase (ester bonds)
+Q6PCB7	Ligase
+Q6PCB7	Transporter
+Q6PFX9	Transferase (glycosyl groups)
+Q6PHR2	Kinase
+Q6PIU2	Hydrolase (ester bonds)
+Q6PL18	Hydrolase (acid anhydrides)
+Q6PRC7	Peptidase
+Q6Q253	G protein-coupled receptor
+Q6Q793	Hydrolase (glycosyl bonds)
+Q6QA75	Transferase (other)
+Q6QIY3	Transporter
+Q6QLK5	Transcription regulator
+Q6R3M4	Transferase (phosphorus-containing groups, non-kinase)
+Q6R3M4	DNA binding
+Q6R5A3	Transmembrane signaling receptors (other)
+Q6R5A3	Transporter
+Q6R6M4	Peptidase
+Q6R7Z5	Peptidase
+Q6RI86	Transmembrane signaling receptors (other)
+Q6RI86	Transporter
+Q6RY99	no_function
+Q6S4V9	Kinase
+Q6S996	Hydrolase (ester bonds)
+Q6SA08	Kinase
+Q6SZW1	Hydrolase (glycosyl bonds)
+Q6T3U3	Transporter
+Q6T755	Transferase (one-carbon groups)
+Q6TEK4	Oxidoreductase
+Q6TUJ4	Hydrolase (C-N bonds, no peptides)
+Q6UB75	Hydrolase (ester bonds)
+Q6UCJ9	Oxidoreductase
+Q6UCJ9	Transferase (acyl groups)
+Q6URW6	no_function
+Q6V1X1	Peptidase
+Q6VAB6	Kinase
+Q6VVP7	Oxidoreductase
+Q6W5P4	G protein-coupled receptor
+Q6W9J1	Hydrolase (C-N bonds, no peptides)
+Q6WQJ1	Hydrolase (other)
+Q6XEC0	Hydrolase (C-N bonds, no peptides)
+Q6XKD3	G protein-coupled receptor
+Q6XQN6	Ligase
+Q6XQN6	Transferase (glycosyl groups)
+Q6XUX3	Kinase
+Q6YP21	Lyase
+Q6YP21	Transferase (other)
+Q6ZMT4	Oxidoreductase
+Q6ZMT4	Transcription regulator
+Q6ZQW0	Oxidoreductase
+Q6ZSR9	no_function
+Q6ZWH5	Kinase
+Q700B8	Hydrolase (glycosyl bonds)
+Q704V1	no_function
+Q704Y3	Transmembrane signaling receptors (other)
+Q704Y3	Transporter
+Q709F0	Oxidoreductase
+Q70CQ3	Peptidase
+Q70EL2	Peptidase
+Q70I53	Hydrolase (other)
+Q70YI1	Isomerase
+Q72547	Peptidase
+Q72547	Hydrolase (ester bonds)
+Q72547	Transferase (phosphorus-containing groups, non-kinase)
+Q72874	Peptidase
+Q75NA5	Transmembrane signaling receptors (other)
+Q75NA5	Transporter
+Q75VQ4	Hydrolase (glycosyl bonds)
+Q75ZY9	Transmembrane receptor protein kinase
+Q75ZY9	Kinase
+Q76129	no_function
+Q76270	no_function
+Q76I76	Hydrolase (ester bonds)
+Q76LX8	Peptidase
+Q76MJ5	Hydrolase (ester bonds)
+Q76MJ5	Kinase
+Q76NL8	Peptidase
+Q789A4	no_function
+Q78DX7	Transmembrane receptor protein kinase
+Q78DX7	Kinase
+Q79EC5	Enzyme regulator
+Q79MP6	Hydrolase (C-N bonds, no peptides)
+Q7DHH4	Peptidase
+Q7DHH4	Transferase (glycosyl groups)
+Q7JHP9	Transporter
+Q7K6A1	Hydrolase (C-N bonds, no peptides)
+Q7KQK5	no_function
+Q7KZI7	Enzyme regulator
+Q7KZI7	Kinase
+Q7L2E3	Hydrolase (acid anhydrides)
+Q7L7X3	Enzyme regulator
+Q7L7X3	Kinase
+Q7L8S5	Peptidase
+Q7LBC6	Oxidoreductase
+Q7LBC6	Transcription regulator
+Q7LBC6	DNA binding
+Q7M0F8	Transferase (acyl groups)
+Q7M3D2	Peptidase
+Q7RTN6	Enzyme regulator
+Q7T3S7	Hydrolase (ester bonds)
+Q7TMA4	G protein-coupled receptor
+Q7TMR0	Peptidase
+Q7TQN8	G protein-coupled receptor
+Q7TQN9	G protein-coupled receptor
+Q7TQP3	G protein-coupled receptor
+Q7X1P7	Isomerase
+Q7X1P7	DNA binding
+Q7X575	Hydrolase (C-N bonds, no peptides)
+Q7YWJ9	Hydrolase (ester bonds)
+Q7Z2W7	Transporter
+Q7Z3E1	Transferase (glycosyl groups)
+Q7Z3E1	DNA binding
+Q7Z406	no_function
+Q7Z418	Transporter
+Q7Z478	Hydrolase (acid anhydrides)
+Q7Z5Q5	Transferase (phosphorus-containing groups, non-kinase)
+Q7Z5Q5	DNA binding
+Q7Z5W3	Transferase (one-carbon groups)
+Q7ZJM1	Hydrolase (ester bonds)
+Q7ZJM1	Transferase (phosphorus-containing groups, non-kinase)
+Q80SS6	G protein-coupled receptor
+Q80SU6	Transporter
+Q80UJ1	Transporter
+Q80W94	Transferase (acyl groups)
+Q80WQ2	Enzyme regulator
+Q80XI6	Kinase
+Q80Z29	Transferase (glycosyl groups)
+Q80Z39	G protein-coupled receptor
+Q81258	Peptidase
+Q81258	Hydrolase (acid anhydrides)
+Q81258	Transferase (phosphorus-containing groups, non-kinase)
+Q81258	Transporter
+Q81R22	Oxidoreductase
+Q81RP3	Hydrolase (C-N bonds, no peptides)
+Q81RP3	Ligase
+Q81VW8	Transferase (alkyl or aryl groups, no methyl)
+Q82122	Peptidase
+Q82122	Hydrolase (acid anhydrides)
+Q82122	Transferase (phosphorus-containing groups, non-kinase)
+Q82122	Transporter
+Q83TT7	no_function
+Q83YP9	Hydrolase (C-N bonds, no peptides)
+Q84406	Oxidoreductase
+Q84HF5	Oxidoreductase
+Q865E1	G protein-coupled receptor
+Q869C3	Hydrolase (ester bonds)
+Q86GS5	Hydrolase (C-N bonds, no peptides)
+Q86SG6	Kinase
+Q86SK9	Oxidoreductase
+Q86TI2	Peptidase
+Q86TP1	Hydrolase (acid anhydrides)
+Q86TP1	Hydrolase (ester bonds)
+Q86TW2	Kinase
+Q86U86	DNA binding
+Q86UE8	Kinase
+Q86UX6	Kinase
+Q86V24	Signaling receptor (not transmembrane)
+Q86V86	Kinase
+Q86VL8	Transporter
+Q86VZ5	Kinase
+Q86W56	Hydrolase (glycosyl bonds)
+Q86WV6	no_function
+Q86X55	Transcription regulator
+Q86X55	Transferase (one-carbon groups)
+Q86X55	DNA binding
+Q86XP3	Hydrolase (acid anhydrides)
+Q86Y07	Kinase
+Q86Y97	Transferase (one-carbon groups)
+Q86YT5	Transporter
+Q86YV6	Kinase
+Q86Z02	Kinase
+Q873X9	Hydrolase (glycosyl bonds)
+Q8AYA1	Oxidoreductase
+Q8BGY9	Transporter
+Q8BH82	Hydrolase (ester bonds)
+Q8BLA8	Transmembrane signaling receptors (other)
+Q8BLA8	Transporter
+Q8BLF1	Hydrolase (ester bonds)
+Q8BRU6	Transporter
+Q8BUD0	G protein-coupled receptor
+Q8BVQ5	Hydrolase (ester bonds)
+Q8BW75	Oxidoreductase
+Q8BZ21	Transcription regulator
+Q8BZ21	Transferase (acyl groups)
+Q8BZ21	DNA binding
+Q8C078	Kinase
+Q8C6L5	Transferase (phosphorus-containing groups, non-kinase)
+Q8C6L5	DNA binding
+Q8CA95	Hydrolase (ester bonds)
+Q8CFK4	Kinase
+Q8CGM4	G protein-coupled receptor
+Q8CHN6	Lyase
+Q8CI15	G protein-coupled receptor
+Q8CI15	Transferase (acyl groups)
+Q8CI15	Kinase
+Q8CI15	DNA binding
+Q8CIP4	Kinase
+Q8CJ44	Transporter
+Q8CM62	Peptidase
+Q8G2R2	Oxidoreductase
+Q8GDC1	no_function
+Q8HY88	Transporter
+Q8HYC3	G protein-coupled receptor
+Q8HZR1	Oxidoreductase
+Q8I2J3	Peptidase
+Q8I2S7	Oxidoreductase
+Q8I2S7	Transferase (acyl groups)
+Q8I3X4	Transferase (glycosyl groups)
+Q8I6E4	Hydrolase (C-N bonds, no peptides)
+Q8I6E4	Transferase (glycosyl groups)
+Q8IBS5	Hydrolase (ester bonds)
+Q8IBS5	Kinase
+Q8IEK1	Peptidase
+Q8IHZ9	Kinase
+Q8IL04	Lyase
+Q8IL04	Oxidoreductase
+Q8IL11	Peptidase
+Q8ILP4	Kinase
+Q8IU80	Peptidase
+Q8IU85	Kinase
+Q8IV61	Enzyme regulator
+Q8IVH8	Kinase
+Q8IVT5	Kinase
+Q8IVW4	Kinase
+Q8IW41	Kinase
+Q8IWQ3	Kinase
+Q8IWU9	Oxidoreductase
+Q8IXJ6	Hydrolase (C-N bonds, no peptides)
+Q8IXJ6	Transferase (glycosyl groups)
+Q8IY84	Kinase
+Q8IYD1	Hydrolase (acid anhydrides)
+Q8IYL9	G protein-coupled receptor
+Q8IYT8	Kinase
+Q8IZL9	Kinase
+Q8IZX4	Transferase (acyl groups)
+Q8IZX4	Kinase
+Q8IZX4	DNA binding
+Q8JXU8	Peptidase
+Q8JXU8	Transferase (phosphorus-containing groups, non-kinase)
+Q8JZL2	G protein-coupled receptor
+Q8K0H1	Transporter
+Q8K3T4	G protein-coupled receptor
+Q8K3Y3	no_function
+Q8K418	G protein-coupled receptor
+Q8K4R8	Transporter
+Q8K4Z4	G protein-coupled receptor
+Q8K4Z6	G protein-coupled receptor
+Q8K5E0	G protein-coupled receptor
+Q8MHZ5	G protein-coupled receptor
+Q8MI13	G protein-coupled receptor
+Q8MJW8	G protein-coupled receptor
+Q8MMZ4	no_function
+Q8MMZ8	Kinase
+Q8MTZ4	Hydrolase (acid anhydrides)
+Q8MTZ4	Transporter
+Q8N130	Transporter
+Q8N1Q1	Lyase
+Q8N2K0	Hydrolase (ester bonds)
+Q8N3A8	Transferase (glycosyl groups)
+Q8N474	Peptidase
+Q8N4C8	Kinase
+Q8N543	Oxidoreductase
+Q8N568	Kinase
+Q8N5K1	no_function
+Q8N5S9	Kinase
+Q8N5Y8	Enzyme regulator
+Q8N5Y8	Transferase (glycosyl groups)
+Q8N5Z0	Transferase (other)
+Q8N6M0	Peptidase
+Q8N6T7	Hydrolase (C-N bonds, no peptides)
+Q8N6T7	Transcription regulator
+Q8N6T7	Transferase (glycosyl groups)
+Q8N752	Kinase
+Q8N884	Transferase (phosphorus-containing groups, non-kinase)
+Q8N884	DNA binding
+Q8N8U2	Transcription regulator
+Q8NA19	no_function
+Q8NB16	Kinase
+Q8NB78	Oxidoreductase
+Q8NBP7	Peptidase
+Q8NCG7	Hydrolase (ester bonds)
+Q8NE63	Kinase
+Q8NEB9	Kinase
+Q8NEC5	Transporter
+Q8NER1	Transmembrane signaling receptors (other)
+Q8NER1	Transporter
+Q8NET8	Transporter
+Q8NEV4	Kinase
+Q8NFD2	Kinase
+Q8NFI3	Hydrolase (glycosyl bonds)
+Q8NFU5	Kinase
+Q8NFU7	Oxidoreductase
+Q8NFU7	DNA binding
+Q8NFV4	Hydrolase (other)
+Q8NG66	Kinase
+Q8NHM5	Oxidoreductase
+Q8NHM5	Transcription regulator
+Q8NHM5	DNA binding
+Q8NHU3	Kinase
+Q8NI60	Kinase
+Q8NUQ6	Oxidoreductase
+Q8R0V5	Oxidoreductase
+Q8R0X7	Lyase
+Q8R180	Oxidoreductase
+Q8R2Y0	Hydrolase (ester bonds)
+Q8R431	Hydrolase (ester bonds)
+Q8R455	Transporter
+Q8R4B8	DNA binding
+Q8R4D5	Transporter
+Q8R4K2	Kinase
+Q8RL90	Hydrolase (C-N bonds, no peptides)
+Q8RLA6	Hydrolase (C-N bonds, no peptides)
+Q8SPQ9	Oxidoreductase
+Q8SPZ1	G protein-coupled receptor
+Q8ST54	Kinase
+Q8T6J6	Lyase
+Q8T6T2	Oxidoreductase
+Q8T8E7	Peptidase
+Q8T8E9	Isomerase
+Q8T9Z7	Transferase (glycosyl groups)
+Q8TAC2	Peptidase
+Q8TAX0	Transcription regulator
+Q8TAX0	DNA binding
+Q8TB45	no_function
+Q8TBC4	Ligase
+Q8TBC4	Transferase (other)
+Q8TBE9	Hydrolase (ester bonds)
+Q8TBX8	Kinase
+Q8TCC7	Transporter
+Q8TCD5	Hydrolase (ester bonds)
+Q8TCT0	Kinase
+Q8TCT1	Hydrolase (acid anhydrides)
+Q8TCT1	Hydrolase (ester bonds)
+Q8TCT7	Peptidase
+Q8TCT8	Peptidase
+Q8TCW9	G protein-coupled receptor
+Q8TD08	Kinase
+Q8TD19	Kinase
+Q8TD43	Transporter
+Q8TDB8	Transporter
+Q8TDC3	Kinase
+Q8TDR2	Kinase
+Q8TDS4	G protein-coupled receptor
+Q8TDS5	G protein-coupled receptor
+Q8TDU6	G protein-coupled receptor
+Q8TDV5	G protein-coupled receptor
+Q8TDX5	Hydrolase (other)
+Q8TDX5	Lyase
+Q8TDX6	Transferase (glycosyl groups)
+Q8TDX7	Kinase
+Q8TE04	Kinase
+Q8TEK3	Transcription regulator
+Q8TEK3	Transferase (one-carbon groups)
+Q8TEK3	DNA binding
+Q8TF76	Kinase
+Q8VC69	Transporter
+Q8VCT4	Hydrolase (ester bonds)
+Q8VD38	Transporter
+Q8VD48	Oxidoreductase
+Q8VH25	G protein-coupled receptor
+Q8VH26	G protein-coupled receptor
+Q8VH27	G protein-coupled receptor
+Q8VH37	Hydrolase (C-N bonds, no peptides)
+Q8VHL0	Transporter
+Q8VHW5	Transporter
+Q8VIH9	G protein-coupled receptor
+Q8VIJ5	Hydrolase (glycosyl bonds)
+Q8VIJ5	Transferase (acyl groups)
+Q8VNN2	Hydrolase (glycosyl bonds)
+Q8WMX0	G protein-coupled receptor
+Q8WN72	Transporter
+Q8WQX9	Hydrolase (ester bonds)
+Q8WS26	Transferase (alkyl or aryl groups, no methyl)
+Q8WSF8	Transmembrane signaling receptors (other)
+Q8WSF8	Transporter
+Q8WTQ7	Kinase
+Q8WTS6	Transferase (one-carbon groups)
+Q8WTV0	Signaling receptor (not transmembrane)
+Q8WTV0	Transporter
+Q8WU08	Kinase
+Q8WUI4	Hydrolase (C-N bonds, no peptides)
+Q8WUI4	Transcription regulator
+Q8WUI4	Transferase (other)
+Q8WUM9	Signaling receptor (not transmembrane)
+Q8WUM9	Transporter
+Q8WVY7	Hydrolase (ester bonds)
+Q8WWR8	Hydrolase (glycosyl bonds)
+Q8WWT9	Transporter
+Q8WXR4	Kinase
+Q8WYB5	Transcription regulator
+Q8WYB5	Transferase (acyl groups)
+Q8WYB5	DNA binding
+Q8WZA2	Enzyme regulator
+Q8Z5I4	Transferase (phosphorus-containing groups, non-kinase)
+Q8ZDW5	Ligase
+Q8ZEY1	Kinase
+Q91H74	Peptidase
+Q91H74	Hydrolase (acid anhydrides)
+Q91H74	Transferase (one-carbon groups)
+Q91H74	Transferase (phosphorus-containing groups, non-kinase)
+Q91VE3	Peptidase
+Q91WC9	Hydrolase (ester bonds)
+Q91WN4	Oxidoreductase
+Q91WR5	Oxidoreductase
+Q91X44	Enzyme regulator
+Q91XA9	Hydrolase (glycosyl bonds)
+Q91ZP4	Transporter
+Q91ZY1	G protein-coupled receptor
+Q91ZY2	G protein-coupled receptor
+Q91ZY3	G protein-coupled receptor
+Q920B6	Transporter
+Q920D2	Oxidoreductase
+Q920D2	Folic acid binding
+Q920E5	Transferase (alkyl or aryl groups, no methyl)
+Q920L1	Oxidoreductase
+Q920L5	Transferase (acyl groups)
+Q920R3	Oxidoreductase
+Q921V5	Transferase (glycosyl groups)
+Q922Z0	Oxidoreductase
+Q923I7	Transporter
+Q923J1	Kinase
+Q923J1	Transporter
+Q923Y8	G protein-coupled receptor
+Q923Y9	G protein-coupled receptor
+Q92499	Hydrolase (acid anhydrides)
+Q92499	Hydrolase (ester bonds)
+Q92499	Transcription regulator
+Q92499	DNA binding
+Q924C3	Hydrolase (acid anhydrides)
+Q924C3	Hydrolase (ester bonds)
+Q924U1	G protein-coupled receptor
+Q92519	Enzyme regulator
+Q92523	Transferase (acyl groups)
+Q92551	Kinase
+Q92560	Peptidase
+Q925H0	Transporter
+Q92630	Kinase
+Q92633	G protein-coupled receptor
+Q92731	Signaling receptor (not transmembrane)
+Q92731	Transcription regulator
+Q92731	DNA binding
+Q92743	Peptidase
+Q92753	G protein-coupled receptor
+Q92753	Transcription regulator
+Q92753	DNA binding
+Q92769	Hydrolase (C-N bonds, no peptides)
+Q92769	DNA binding
+Q92772	Kinase
+Q92793	Transcription regulator
+Q92793	Transferase (acyl groups)
+Q92793	DNA binding
+Q92794	Transcription regulator
+Q92794	Transferase (acyl groups)
+Q92794	DNA binding
+Q92800	Transcription regulator
+Q92800	Transferase (one-carbon groups)
+Q92830	Transcription regulator
+Q92830	Transferase (acyl groups)
+Q92831	Enzyme regulator
+Q92831	Transcription regulator
+Q92831	Transferase (acyl groups)
+Q92831	DNA binding
+Q92841	Hydrolase (acid anhydrides)
+Q92841	Transcription regulator
+Q92843	no_function
+Q92847	G protein-coupled receptor
+Q92851	Peptidase
+Q92876	Peptidase
+Q92905	Peptidase
+Q92905	Transcription regulator
+Q92918	Kinase
+Q92934	Enzyme regulator
+Q92952	Transporter
+Q92993	Transcription regulator
+Q92993	Transferase (acyl groups)
+Q92995	Peptidase
+Q93008	Peptidase
+Q93009	Peptidase
+Q93084	Enzyme regulator
+Q93084	Transporter
+Q93086	Transmembrane signaling receptors (other)
+Q93086	Transporter
+Q93088	Transferase (one-carbon groups)
+Q93096	Hydrolase (ester bonds)
+Q932Y6	Hydrolase (C-N bonds, no peptides)
+Q93LQ9	Hydrolase (C-N bonds, no peptides)
+Q93SQ1	Enzyme regulator
+Q93T40	Hydrolase (C-N bonds, no peptides)
+Q93ZN9	Transferase (other)
+Q94F81	no_function
+Q95136	G protein-coupled receptor
+Q95136	Dopamine binding
+Q95214	Transferase (acyl groups)
+Q95323	Lyase
+Q95J97	Kinase
+Q95PM0	Peptidase
+Q95WR6	Peptidase
+Q96242	Lyase
+Q96242	Oxidoreductase
+Q962Y6	Oxidoreductase
+Q964Q8	Transferase (other)
+Q965D5	Oxidoreductase
+Q965D5	Transferase (acyl groups)
+Q965D6	Oxidoreductase
+Q965D6	Transferase (acyl groups)
+Q965D7	Lyase
+Q965D7	Transferase (acyl groups)
+Q969F8	G protein-coupled receptor
+Q969H4	no_function
+Q969S8	Hydrolase (C-N bonds, no peptides)
+Q969T7	Hydrolase (ester bonds)
+Q969V1	G protein-coupled receptor
+Q96A54	Signaling receptor (not transmembrane)
+Q96AD5	Hydrolase (ester bonds)
+Q96AD5	Transferase (acyl groups)
+Q96B36	no_function
+Q96BR1	Kinase
+Q96C86	Hydrolase (acid anhydrides)
+Q96C86	Hydrolase (ester bonds)
+Q96CA5	Enzyme regulator
+Q96CA5	Transferase (other)
+Q96D31	Transporter
+Q96D53	Hydrolase (acid anhydrides)
+Q96D53	Kinase
+Q96DB2	Hydrolase (C-N bonds, no peptides)
+Q96DC9	Peptidase
+Q96EB6	Hydrolase (C-N bonds, no peptides)
+Q96EB6	Transcription regulator
+Q96EB6	Transferase (acyl groups)
+Q96EB6	DNA binding
+Q96FI4	Hydrolase (glycosyl bonds)
+Q96FI4	Lyase
+Q96FI4	DNA binding
+Q96FJ0	Peptidase
+Q96FL8	Transporter
+Q96G91	G protein-coupled receptor
+Q96GD4	Kinase
+Q96GG9	no_function
+Q96HE7	Oxidoreductase
+Q96IV0	Hydrolase (C-N bonds, no peptides)
+Q96IY4	Peptidase
+Q96JB6	Oxidoreductase
+Q96JH7	Peptidase
+Q96JM7	no_function
+Q96K76	Peptidase
+Q96KB5	Kinase
+Q96KN8	Hydrolase (ester bonds)
+Q96KN8	Transferase (acyl groups)
+Q96KQ7	Transferase (one-carbon groups)
+Q96KQ7	DNA binding
+Q96KS0	Oxidoreductase
+Q96L34	Kinase
+Q96L73	Transcription regulator
+Q96L73	Transferase (one-carbon groups)
+Q96L73	DNA binding
+Q96LA8	Transferase (one-carbon groups)
+Q96LB2	G protein-coupled receptor
+Q96LD8	Peptidase
+Q96NT5	Folic acid binding
+Q96NT5	Transporter
+Q96NX5	Kinase
+Q96P09	Enzyme regulator
+Q96P09	Transferase (other)
+Q96P20	DNA binding
+Q96P65	G protein-coupled receptor
+Q96P68	G protein-coupled receptor
+Q96PC2	Kinase
+Q96PD7	Transferase (acyl groups)
+Q96PF2	Kinase
+Q96PH1	Oxidoreductase
+Q96PH1	Transporter
+Q96PN6	Lyase
+Q96PN8	Kinase
+Q96PY6	Kinase
+Q96Q04	Kinase
+Q96Q15	Kinase
+Q96Q15	DNA binding
+Q96Q83	Oxidoreductase
+Q96Q89	Hydrolase (acid anhydrides)
+Q96QK1	no_function
+Q96QT4	Kinase
+Q96QT4	Transporter
+Q96RG2	Kinase
+Q96RI0	G protein-coupled receptor
+Q96RI1	Signaling receptor (not transmembrane)
+Q96RI1	Transcription regulator
+Q96RI1	DNA binding
+Q96RJ0	G protein-coupled receptor
+Q96RR4	Kinase
+Q96RU2	Peptidase
+Q96S37	Transporter
+Q96S44	Hydrolase (other)
+Q96S44	Kinase
+Q96S53	Kinase
+Q96SB4	Kinase
+Q96SW2	no_function
+Q96T53	Transferase (acyl groups)
+Q96T54	Transporter
+Q96T60	Hydrolase (ester bonds)
+Q96T60	Kinase
+Q96T60	DNA binding
+Q96T88	Transferase (other)
+Q96T88	DNA binding
+Q96W81	Oxidoreductase
+Q96W81	Transferase (one-carbon groups)
+Q96WJ0	Isomerase
+Q98UH1	G protein-coupled receptor
+Q99028	Transferase (one-carbon groups)
+Q99250	Transporter
+Q99466	Signaling receptor (not transmembrane)
+Q99489	Oxidoreductase
+Q99500	G protein-coupled receptor
+Q99504	Hydrolase (ester bonds)
+Q99519	Hydrolase (glycosyl bonds)
+Q99523	Transmembrane signaling receptors (other)
+Q99527	G protein-coupled receptor
+Q99538	Peptidase
+Q99558	Enzyme regulator
+Q99558	Kinase
+Q99570	Kinase
+Q99571	Transmembrane signaling receptors (other)
+Q99571	Transporter
+Q99572	Transmembrane signaling receptors (other)
+Q99572	Transporter
+Q99640	Kinase
+Q99661	Hydrolase (acid anhydrides)
+Q99661	DNA binding
+Q99677	G protein-coupled receptor
+Q99683	Kinase
+Q99685	Hydrolase (ester bonds)
+Q99705	G protein-coupled receptor
+Q99707	Transferase (one-carbon groups)
+Q99720	G protein-coupled receptor
+Q99755	Kinase
+Q99759	Kinase
+Q99788	G protein-coupled receptor
+Q99808	Transporter
+Q99814	Transcription regulator
+Q99814	DNA binding
+Q99835	G protein-coupled receptor
+Q99836	Hydrolase (glycosyl bonds)
+Q99873	Transferase (one-carbon groups)
+Q99873	DNA binding
+Q99884	Transporter
+Q99952	Hydrolase (ester bonds)
+Q99972	no_function
+Q99986	Kinase
+Q99KQ4	Transferase (glycosyl groups)
+Q99LR1	Hydrolase (ester bonds)
+Q99MI5	Transferase (alkyl or aryl groups, no methyl)
+Q99N23	Lyase
+Q99N57	Enzyme regulator
+Q99N57	Kinase
+Q99P50	G protein-coupled receptor
+Q99P97	no_function
+Q99R76	Oxidoreductase
+Q9AH50	Oxidoreductase
+Q9AIU7	Ligase
+Q9AIU7	DNA binding
+Q9AQH7	Hydrolase (acid anhydrides)
+Q9AQH7	DNA binding
+Q9BDQ5	G protein-coupled receptor
+Q9BDS8	G protein-coupled receptor
+Q9BEG3	Oxidoreductase
+Q9BHT9	Oxidoreductase
+Q9BJF5	Kinase
+Q9BPW0	Hydrolase (ester bonds)
+Q9BPW9	Isomerase
+Q9BPW9	Oxidoreductase
+Q9BPX1	Oxidoreductase
+Q9BPZ2	no_function
+Q9BQ69	Hydrolase (glycosyl bonds)
+Q9BQB4	no_function
+Q9BQB6	Oxidoreductase
+Q9BQF6	Peptidase
+Q9BQI3	Kinase
+Q9BRH5	Transferase (acyl groups)
+Q9BRS2	Hydrolase (other)
+Q9BRS2	Kinase
+Q9BRX8	no_function
+Q9BTU6	Kinase
+Q9BU89	Oxidoreductase
+Q9BUB5	Kinase
+Q9BUL5	no_function
+Q9BV23	Hydrolase (ester bonds)
+Q9BV47	Hydrolase (ester bonds)
+Q9BV86	Transferase (one-carbon groups)
+Q9BVJ7	Hydrolase (ester bonds)
+Q9BVS4	Kinase
+Q9BW19	Hydrolase (acid anhydrides)
+Q9BW60	Transferase (acyl groups)
+Q9BW91	Hydrolase (acid anhydrides)
+Q9BWU1	Kinase
+Q9BXA5	G protein-coupled receptor
+Q9BXA6	Kinase
+Q9BXA7	Kinase
+Q9BXF3	no_function
+Q9BXU1	Kinase
+Q9BY08	Isomerase
+Q9BY32	Hydrolase (acid anhydrides)
+Q9BY41	Hydrolase (C-N bonds, no peptides)
+Q9BYF1	Peptidase
+Q9BYP7	Kinase
+Q9BYT3	Kinase
+Q9BYW2	Transferase (one-carbon groups)
+Q9BZ11	Peptidase
+Q9BZ23	Kinase
+Q9BZE4	Hydrolase (acid anhydrides)
+Q9BZL6	Kinase
+Q9BZM2	Hydrolase (ester bonds)
+Q9BZP6	Hydrolase (glycosyl bonds)
+Q9BZX2	Kinase
+Q9C000	Enzyme regulator
+Q9C000	Peptidase
+Q9C000	Hydrolase (acid anhydrides)
+Q9C000	DNA binding
+Q9C098	Kinase
+Q9C0B1	Oxidoreductase
+Q9C0B1	Transferase (other)
+Q9C0H9	no_function
+Q9CAK8	Lyase
+Q9CPU0	Lyase
+Q9CQ65	Transferase (glycosyl groups)
+Q9CYK2	Peptidase
+Q9CYK2	Transferase (acyl groups)
+Q9D358	Hydrolase (ester bonds)
+Q9D4B1	Kinase
+Q9D6N1	Lyase
+Q9D7Q1	Hydrolase (glycosyl bonds)
+Q9D8T2	Transporter
+Q9DC28	Kinase
+Q9DDE3	Hydrolase (ester bonds)
+Q9DDV6	Hydrolase (acid anhydrides)
+Q9EP66	G protein-coupled receptor
+Q9EPB1	Peptidase
+Q9EPK8	Transmembrane signaling receptors (other)
+Q9EPK8	Transporter
+Q9EPX4	G protein-coupled receptor
+Q9EQ16	G protein-coupled receptor
+Q9EQ60	Transporter
+Q9EQC5	Kinase
+Q9EQU3	Hydrolase (glycosyl bonds)
+Q9EQU3	Transmembrane signaling receptors (other)
+Q9EQU3	DNA binding
+Q9ERD9	Oxidoreductase
+Q9ERM3	Transferase (acyl groups)
+Q9ERQ8	Lyase
+Q9ERT1	G protein-coupled receptor
+Q9ERZ4	G protein-coupled receptor
+Q9ERZ8	Transmembrane signaling receptors (other)
+Q9ERZ8	Transporter
+Q9ES08	Transporter
+Q9ESG6	G protein-coupled receptor
+Q9EST2	Transferase (one-carbon groups)
+Q9ET64	Hydrolase (ester bonds)
+Q9EXV5	Hydrolase (C-N bonds, no peptides)
+Q9F663	Hydrolase (C-N bonds, no peptides)
+Q9FBC5	Oxidoreductase
+Q9FBC5	Transferase (acyl groups)
+Q9FBI2	Hydrolase (glycosyl bonds)
+Q9FD53	Lyase
+Q9FD53	Kinase
+Q9FD70	Oxidoreductase
+Q9FD70	Transferase (acyl groups)
+Q9FG87	Transferase (acyl groups)
+Q9FUJ3	Oxidoreductase
+Q9FV53	Hydrolase (C-N bonds, no peptides)
+Q9FYV8	Oxidoreductase
+Q9GJT6	Dopamine binding
+Q9GJT6	Transporter
+Q9GME2	Oxidoreductase
+Q9GPG0	Hydrolase (ester bonds)
+Q9GPQ4	Hydrolase (glycosyl bonds)
+Q9GRG6	Hydrolase (ester bonds)
+Q9GRG7	Oxidoreductase
+Q9GUA8	Hydrolase (C-N bonds, no peptides)
+Q9GZQ6	G protein-coupled receptor
+Q9GZR1	Peptidase
+Q9GZT4	Isomerase
+Q9GZT4	Lyase
+Q9GZT9	Oxidoreductase
+Q9GZU7	Hydrolase (ester bonds)
+Q9GZV3	Transporter
+Q9H093	Kinase
+Q9H0E9	Transcription regulator
+Q9H0J9	Transferase (glycosyl groups)
+Q9H0K1	Kinase
+Q9H160	DNA binding
+Q9H1C0	G protein-coupled receptor
+Q9H1D0	Transporter
+Q9H1R2	Hydrolase (ester bonds)
+Q9H1R3	Kinase
+Q9H227	Hydrolase (glycosyl bonds)
+Q9H228	G protein-coupled receptor
+Q9H237	Transferase (acyl groups)
+Q9H244	Enzyme regulator
+Q9H244	G protein-coupled receptor
+Q9H2G2	Kinase
+Q9H2J7	Transporter
+Q9H2K2	Transferase (glycosyl groups)
+Q9H2K8	Enzyme regulator
+Q9H2K8	Kinase
+Q9H2M3	Transferase (one-carbon groups)
+Q9H2S1	Transporter
+Q9H2X6	Transcription regulator
+Q9H2X6	Kinase
+Q9H2X9	Transporter
+Q9H3M9	Peptidase
+Q9H3N8	G protein-coupled receptor
+Q9H3R0	Oxidoreductase
+Q9H3Y6	Kinase
+Q9H422	Kinase
+Q9H4A3	Enzyme regulator
+Q9H4A3	Kinase
+Q9H4A4	Peptidase
+Q9H4B4	Kinase
+Q9H5I1	Transferase (one-carbon groups)
+Q9H5I1	DNA binding
+Q9H5J4	Transferase (acyl groups)
+Q9H665	no_function
+Q9H6Z9	Oxidoreductase
+Q9H773	Hydrolase (acid anhydrides)
+Q9H792	Kinase
+Q9H7B4	Transferase (one-carbon groups)
+Q9H7B4	DNA binding
+Q9H7Z6	Transcription regulator
+Q9H7Z6	Transferase (acyl groups)
+Q9H7Z7	Isomerase
+Q9H7Z7	Lyase
+Q9H7Z7	Oxidoreductase
+Q9H7Z7	DNA binding
+Q9H8M2	no_function
+Q9H903	Hydrolase (C-N bonds, no peptides)
+Q9H903	Oxidoreductase
+Q9H999	Kinase
+Q9H9B1	Transferase (one-carbon groups)
+Q9H9Z2	no_function
+Q9HAS3	Transporter
+Q9HAU4	Transferase (other)
+Q9HAZ1	Kinase
+Q9HB03	Transferase (acyl groups)
+Q9HB21	no_function
+Q9HBA0	Transmembrane signaling receptors (other)
+Q9HBA0	Transporter
+Q9HBH1	Hydrolase (C-N bonds, no peptides)
+Q9HBH9	Kinase
+Q9HBK9	Transferase (one-carbon groups)
+Q9HBW0	G protein-coupled receptor
+Q9HBY8	Kinase
+Q9HC16	Hydrolase (C-N bonds, no peptides)
+Q9HC29	Signaling receptor (not transmembrane)
+Q9HC52	Enzyme regulator
+Q9HC62	Peptidase
+Q9HC97	G protein-coupled receptor
+Q9HC98	Kinase
+Q9HCE7	Transferase (other)
+Q9HCG7	Hydrolase (glycosyl bonds)
+Q9HCG7	Transferase (glycosyl groups)
+Q9HCL2	Transferase (acyl groups)
+Q9HCN6	Transmembrane signaling receptors (other)
+Q9HCP0	Kinase
+Q9HCR9	Hydrolase (ester bonds)
+Q9HCX4	Transporter
+Q9HD36	no_function
+Q9HVB9	Lyase
+Q9HYN5	no_function
+Q9HZK0	Hydrolase (glycosyl bonds)
+Q9I9R4	Peptidase
+Q9IGQ6	Hydrolase (glycosyl bonds)
+Q9IQ47	Hydrolase (ester bonds)
+Q9JHG7	Kinase
+Q9JHI9	Transporter
+Q9JI10	Kinase
+Q9JI35	G protein-coupled receptor
+Q9JIA7	G protein-coupled receptor
+Q9JIA7	Kinase
+Q9JII9	G protein-coupled receptor
+Q9JIM1	Transporter
+Q9JIS4	Transporter
+Q9JJF9	Peptidase
+Q9JJJ7	Transferase (acyl groups)
+Q9JJX6	Transmembrane signaling receptors (other)
+Q9JJX6	Transporter
+Q9JKC1	Hydrolase (ester bonds)
+Q9JL21	G protein-coupled receptor
+Q9JLN9	Kinase
+Q9JLN9	DNA binding
+Q9JLS3	Kinase
+Q9JLY8	Hydrolase (ester bonds)
+Q9JLY8	G protein-coupled receptor
+Q9JM51	Isomerase
+Q9JM51	Oxidoreductase
+Q9JM51	Transferase (alkyl or aryl groups, no methyl)
+Q9JMD7	Transporter
+Q9JN24	Hydrolase (C-N bonds, no peptides)
+Q9JZ55	Transferase (alkyl or aryl groups, no methyl)
+Q9K2N0	no_function
+Q9L4P2	Hydrolase (other)
+Q9L4Q3	Isomerase
+Q9LGC6	Hydrolase (glycosyl bonds)
+Q9M629	Oxidoreductase
+Q9MYJ9	Hydrolase (ester bonds)
+Q9MYJ9	G protein-coupled receptor
+Q9MYM4	Hydrolase (glycosyl bonds)
+Q9MYW9	G protein-coupled receptor
+Q9MYW9	Transporter
+Q9MYX0	Serotonin binding
+Q9MYX0	Transporter
+Q9N1E2	Isomerase
+Q9N1N9	Hydrolase (ester bonds)
+Q9N2B7	G protein-coupled receptor
+Q9N2B7	Serotonin binding
+Q9N6S8	Peptidase
+Q9NAW2	Peptidase
+Q9NAW4	Peptidase
+Q9NBA7	Peptidase
+Q9NBD4	Peptidase
+Q9NFS5	Transferase (alkyl or aryl groups, no methyl)
+Q9NG02	G protein-coupled receptor
+Q9NJH6	Hydrolase (ester bonds)
+Q9NNX6	no_function
+Q9NP56	Hydrolase (ester bonds)
+Q9NP59	Transporter
+Q9NP77	Hydrolase (ester bonds)
+Q9NPA2	Peptidase
+Q9NPB1	Hydrolase (ester bonds)
+Q9NPC1	G protein-coupled receptor
+Q9NPC2	Transporter
+Q9NPD5	Transporter
+Q9NPH5	Oxidoreductase
+Q9NPI1	Transcription regulator
+Q9NPI1	DNA binding
+Q9NQ90	Transporter
+Q9NQC7	Peptidase
+Q9NQR1	Transcription regulator
+Q9NQR1	Transferase (one-carbon groups)
+Q9NQS5	G protein-coupled receptor
+Q9NQU5	Kinase
+Q9NQW7	Peptidase
+Q9NQZ5	no_function
+Q9NR19	Ligase
+Q9NR20	Kinase
+Q9NR21	Transferase (glycosyl groups)
+Q9NR22	Transferase (one-carbon groups)
+Q9NR48	Transferase (one-carbon groups)
+Q9NR48	DNA binding
+Q9NR71	Hydrolase (C-N bonds, no peptides)
+Q9NR96	Hydrolase (glycosyl bonds)
+Q9NR96	Transmembrane signaling receptors (other)
+Q9NR96	DNA binding
+Q9NR97	Hydrolase (glycosyl bonds)
+Q9NR97	Transmembrane signaling receptors (other)
+Q9NR97	DNA binding
+Q9NRA0	G protein-coupled receptor
+Q9NRA0	Kinase
+Q9NRA2	Transporter
+Q9NRC8	Hydrolase (C-N bonds, no peptides)
+Q9NRC8	Transcription regulator
+Q9NRC8	Transferase (acyl groups)
+Q9NRE1	Peptidase
+Q9NRG4	Transferase (one-carbon groups)
+Q9NRH2	Kinase
+Q9NRM7	Kinase
+Q9NRP7	Kinase
+Q9NRR2	Peptidase
+Q9NRS4	Peptidase
+Q9NRW4	Hydrolase (ester bonds)
+Q9NS61	Transporter
+Q9NS75	Enzyme regulator
+Q9NS75	G protein-coupled receptor
+Q9NS86	no_function
+Q9NS87	Hydrolase (acid anhydrides)
+Q9NSA0	Transporter
+Q9NSD5	Transporter
+Q9NSD7	G protein-coupled receptor
+Q9NSD9	Ligase
+Q9NSE4	Hydrolase (ester bonds)
+Q9NSE4	Ligase
+Q9NSI6	no_function
+Q9NSY1	Enzyme regulator
+Q9NSY1	Kinase
+Q9NTG7	Hydrolase (C-N bonds, no peptides)
+Q9NTG7	Transferase (glycosyl groups)
+Q9NTG7	DNA binding
+Q9NTK5	Hydrolase (acid anhydrides)
+Q9NU22	Hydrolase (acid anhydrides)
+Q9NUW8	Hydrolase (ester bonds)
+Q9NUW8	DNA binding
+Q9NV35	Hydrolase (acid anhydrides)
+Q9NVM4	Transferase (one-carbon groups)
+Q9NVS9	Oxidoreductase
+Q9NWM0	Oxidoreductase
+Q9NWT6	Oxidoreductase
+Q9NWW9	Hydrolase (ester bonds)
+Q9NWW9	Transferase (acyl groups)
+Q9NWZ3	Kinase
+Q9NX74	Enzyme regulator
+Q9NX74	Oxidoreductase
+Q9NXA8	Hydrolase (C-N bonds, no peptides)
+Q9NXA8	Transferase (glycosyl groups)
+Q9NXB9	Transferase (acyl groups)
+Q9NXG6	Oxidoreductase
+Q9NXS2	Peptidase
+Q9NXS2	Transferase (acyl groups)
+Q9NY33	Peptidase
+Q9NY46	Transporter
+Q9NY57	Kinase
+Q9NY59	Hydrolase (ester bonds)
+Q9NY64	Transporter
+Q9NY91	Transporter
+Q9NYA1	G protein-coupled receptor
+Q9NYA1	Transferase (acyl groups)
+Q9NYA1	Kinase
+Q9NYA1	DNA binding
+Q9NYK1	Hydrolase (glycosyl bonds)
+Q9NYK1	Transmembrane signaling receptors (other)
+Q9NYL2	Kinase
+Q9NYP7	Transferase (acyl groups)
+Q9NYQ3	Oxidoreductase
+Q9NYV4	Kinase
+Q9NYV7	G protein-coupled receptor
+Q9NYV8	G protein-coupled receptor
+Q9NYW2	G protein-coupled receptor
+Q9NYY3	Kinase
+Q9NZ08	Peptidase
+Q9NZ45	no_function
+Q9NZJ5	Kinase
+Q9NZK7	Hydrolase (ester bonds)
+Q9NZM1	no_function
+Q9NZN5	Enzyme regulator
+Q9NZQ7	no_function
+Q9NZQ8	Transporter
+Q9NZV8	Transporter
+Q9P0G3	Peptidase
+Q9P0J0	Oxidoreductase
+Q9P0J0	Transporter
+Q9P0L2	Kinase
+Q9P0U3	Peptidase
+Q9P0X4	Transporter
+Q9P1W9	Kinase
+Q9P1Z3	Transporter
+Q9P275	Peptidase
+Q9P286	Kinase
+Q9P289	Kinase
+Q9P2H5	Peptidase
+Q9P2J5	Enzyme regulator
+Q9P2J5	Hydrolase (ester bonds)
+Q9P2J5	Ligase
+Q9P2K8	Kinase
+Q9P2R7	Ligase
+Q9P2T1	Oxidoreductase
+Q9P8Q7	Lyase
+Q9PTN2	Signaling receptor (not transmembrane)
+Q9PTN2	Transcription regulator
+Q9PTN2	DNA binding
+Q9QLI9	Hydrolase (ester bonds)
+Q9QNF7	Kinase
+Q9QUK6	Hydrolase (glycosyl bonds)
+Q9QUK6	Transmembrane signaling receptors (other)
+Q9QUL3	Hydrolase (ester bonds)
+Q9QUN7	Hydrolase (glycosyl bonds)
+Q9QUN7	Transmembrane signaling receptors (other)
+Q9QUQ5	Transporter
+Q9QUR6	Peptidase
+Q9QVP9	Transmembrane signaling receptors (other)
+Q9QVP9	Kinase
+Q9QVP9	Transporter
+Q9QWJ9	Enzyme regulator
+Q9QWJ9	Transmembrane receptor protein kinase
+Q9QWJ9	Kinase
+Q9QX29	Transporter
+Q9QXD6	Hydrolase (ester bonds)
+Q9QXI6	Transporter
+Q9QXX3	Hydrolase (ester bonds)
+Q9QYJ6	Hydrolase (ester bonds)
+Q9QYM2	Hydrolase (glycosyl bonds)
+Q9QYN8	G protein-coupled receptor
+Q9QZN9	G protein-coupled receptor
+Q9QZT4	Hydrolase (ester bonds)
+Q9QZX7	Isomerase
+Q9QZX7	Lyase
+Q9R0C9	G protein-coupled receptor
+Q9R117	Kinase
+Q9R155	Transporter
+Q9R1C8	G protein-coupled receptor
+Q9R1E6	Hydrolase (acid anhydrides)
+Q9R1E6	Hydrolase (ester bonds)
+Q9R1L2	G protein-coupled receptor
+Q9R1T3	Peptidase
+Q9R297	G protein-coupled receptor
+Q9RMS5	DNA binding
+Q9S446	Peptidase
+Q9SMJ3	Oxidoreductase
+Q9TSW7	G protein-coupled receptor
+Q9TSZ1	Peptidase
+Q9TT92	Peptidase
+Q9TU16	G protein-coupled receptor
+Q9TVW2	Kinase
+Q9U638	Transferase (one-carbon groups)
+Q9UBB5	DNA binding
+Q9UBC3	Transcription regulator
+Q9UBC3	Transferase (one-carbon groups)
+Q9UBC3	DNA binding
+Q9UBE0	Enzyme regulator
+Q9UBE0	Ligase
+Q9UBE8	Kinase
+Q9UBF8	Kinase
+Q9UBL9	Transmembrane signaling receptors (other)
+Q9UBL9	Transporter
+Q9UBM7	Oxidoreductase
+Q9UBN4	Transporter
+Q9UBN7	Hydrolase (C-N bonds, no peptides)
+Q9UBN7	DNA binding
+Q9UBR2	Peptidase
+Q9UBS0	Kinase
+Q9UBS5	G protein-coupled receptor
+Q9UBT6	Transferase (phosphorus-containing groups, non-kinase)
+Q9UBT6	DNA binding
+Q9UBX1	Peptidase
+Q9UBY0	Transporter
+Q9UBY5	G protein-coupled receptor
+Q9UBZ9	Transferase (phosphorus-containing groups, non-kinase)
+Q9UBZ9	DNA binding
+Q9UDY8	Peptidase
+Q9UDY8	Transferase (other)
+Q9UEE5	Kinase
+Q9UEW8	Kinase
+Q9UF33	Transmembrane receptor protein kinase
+Q9UF33	Kinase
+Q9UGC6	Enzyme regulator
+Q9UGC6	Hydrolase (acid anhydrides)
+Q9UGI6	Transporter
+Q9UGJ0	Enzyme regulator
+Q9UGJ0	Kinase
+Q9UGL1	Oxidoreductase
+Q9UGL1	Transcription regulator
+Q9UGL1	DNA binding
+Q9UGN5	Transferase (glycosyl groups)
+Q9UGN5	DNA binding
+Q9UGP5	Lyase
+Q9UGP5	Transferase (phosphorus-containing groups, non-kinase)
+Q9UGP5	DNA binding
+Q9UH17	Hydrolase (C-N bonds, no peptides)
+Q9UH92	Transcription regulator
+Q9UH92	DNA binding
+Q9UHC3	Transporter
+Q9UHC9	no_function
+Q9UHD2	Kinase
+Q9UHD8	Hydrolase (acid anhydrides)
+Q9UHF0	no_function
+Q9UHH9	Kinase
+Q9UHI8	Peptidase
+Q9UHJ3	Transcription regulator
+Q9UHL4	Peptidase
+Q9UHP3	Peptidase
+Q9UI32	Hydrolase (C-N bonds, no peptides)
+Q9UI33	Transporter
+Q9UI42	Peptidase
+Q9UIF8	DNA binding
+Q9UIF9	DNA binding
+Q9UIG0	Kinase
+Q9UIK4	Kinase
+Q9UIQ6	Peptidase
+Q9UIV1	Hydrolase (ester bonds)
+Q9UIV1	Transcription regulator
+Q9UJM8	Oxidoreductase
+Q9UK17	Transporter
+Q9UK32	Kinase
+Q9UK80	Peptidase
+Q9UK80	Transcription regulator
+Q9UKE5	Kinase
+Q9UKI8	Kinase
+Q9UKK3	Transferase (glycosyl groups)
+Q9UKK3	DNA binding
+Q9UKK9	Hydrolase (acid anhydrides)
+Q9UKK9	Transferase (phosphorus-containing groups, non-kinase)
+Q9UKL6	Transporter
+Q9UKM7	Hydrolase (glycosyl bonds)
+Q9UKN7	no_function
+Q9UKP6	G protein-coupled receptor
+Q9UKU6	Peptidase
+Q9UKV0	Hydrolase (C-N bonds, no peptides)
+Q9UKV0	Transcription regulator
+Q9UKX2	no_function
+Q9UL19	Hydrolase (ester bonds)
+Q9UL19	Transferase (acyl groups)
+Q9UL51	Transporter
+Q9UL54	Enzyme regulator
+Q9UL54	Kinase
+Q9UL62	Transporter
+Q9ULC5	Ligase
+Q9ULC6	Hydrolase (C-N bonds, no peptides)
+Q9ULD4	no_function
+Q9ULD8	Transporter
+Q9ULI0	Hydrolase (acid anhydrides)
+Q9ULU4	Transcription regulator
+Q9ULW8	Hydrolase (C-N bonds, no peptides)
+Q9ULX7	Lyase
+Q9ULZ9	Enzyme regulator
+Q9ULZ9	Peptidase
+Q9UM07	Hydrolase (C-N bonds, no peptides)
+Q9UM47	Signaling receptor (not transmembrane)
+Q9UM73	Enzyme regulator
+Q9UM73	Transmembrane receptor protein kinase
+Q9UM73	Kinase
+Q9UNA0	Peptidase
+Q9UNA4	Transferase (phosphorus-containing groups, non-kinase)
+Q9UNA4	DNA binding
+Q9UNH5	Hydrolase (ester bonds)
+Q9UNI1	Peptidase
+Q9UNK4	Hydrolase (ester bonds)
+Q9UPC5	G protein-coupled receptor
+Q9UPE1	Kinase
+Q9UPN9	Transferase (other)
+Q9UPN9	DNA binding
+Q9UPP1	Oxidoreductase
+Q9UPP1	Transcription regulator
+Q9UPS6	Transferase (one-carbon groups)
+Q9UPY5	Transporter
+Q9UPZ9	Kinase
+Q9UQ07	Kinase
+Q9UQ49	Hydrolase (glycosyl bonds)
+Q9UQ88	Kinase
+Q9UQB9	Kinase
+Q9UQD0	Transporter
+Q9UQL6	Hydrolase (C-N bonds, no peptides)
+Q9UQL6	DNA binding
+Q9UQM7	Kinase
+Q9UUP5	Oxidoreductase
+Q9UUZ4	Hydrolase (glycosyl bonds)
+Q9V396	Lyase
+Q9VTU8	Lyase
+Q9VWX8	no_function
+Q9W6Q1	Transporter
+Q9WMX2	Peptidase
+Q9WMX2	Hydrolase (acid anhydrides)
+Q9WMX2	Transferase (phosphorus-containing groups, non-kinase)
+Q9WMX2	Transporter
+Q9WTR1	Transporter
+Q9WTR4	Transporter
+Q9WTU3	Transporter
+Q9WTU6	Enzyme regulator
+Q9WTU6	Kinase
+Q9WTV9	G protein-coupled receptor
+Q9WU19	Oxidoreductase
+Q9WUD2	Transporter
+Q9WUD9	Enzyme regulator
+Q9WUD9	Kinase
+Q9WUI1	Kinase
+Q9WUN2	Kinase
+Q9WUT3	Kinase
+Q9WV26	G protein-coupled receptor
+Q9WV60	Kinase
+Q9WVC5	Transporter
+Q9WVC8	Transporter
+Q9WVF6	Hydrolase (ester bonds)
+Q9WVG5	Hydrolase (ester bonds)
+Q9WVG6	Transcription regulator
+Q9WVG6	Transferase (one-carbon groups)
+Q9WVG6	DNA binding
+Q9X688	Kinase
+Q9X721	Peptidase
+Q9X9I8	Isomerase
+Q9X9I8	Lyase
+Q9XAY4	no_function
+Q9XDB3	Transferase (glycosyl groups)
+Q9XFS9	Oxidoreductase
+Q9XQA6	Oxidoreductase
+Q9XSW7	Hydrolase (ester bonds)
+Q9XTA2	Peptidase
+Q9XYC7	Hydrolase (C-N bonds, no peptides)
+Q9XZT6	Kinase
+Q9Y0I0	Transporter
+Q9Y210	Transporter
+Q9Y223	Hydrolase (glycosyl bonds)
+Q9Y223	Isomerase
+Q9Y223	Kinase
+Q9Y231	Transferase (glycosyl groups)
+Q9Y232	Lyase
+Q9Y232	Transcription regulator
+Q9Y233	Hydrolase (ester bonds)
+Q9Y237	Isomerase
+Q9Y237	DNA binding
+Q9Y239	Enzyme regulator
+Q9Y239	Signaling receptor (not transmembrane)
+Q9Y243	Kinase
+Q9Y251	Hydrolase (glycosyl bonds)
+Q9Y253	Transferase (phosphorus-containing groups, non-kinase)
+Q9Y253	DNA binding
+Q9Y256	Peptidase
+Q9Y259	Kinase
+Q9Y263	Enzyme regulator
+Q9Y265	Hydrolase (acid anhydrides)
+Q9Y265	Transcription regulator
+Q9Y271	G protein-coupled receptor
+Q9Y294	no_function
+Q9Y2D0	Lyase
+Q9Y2H1	Kinase
+Q9Y2I1	no_function
+Q9Y2I7	Hydrolase (acid anhydrides)
+Q9Y2I7	Hydrolase (ester bonds)
+Q9Y2I7	Kinase
+Q9Y2J8	Hydrolase (C-N bonds, no peptides)
+Q9Y2K2	Kinase
+Q9Y2K6	Peptidase
+Q9Y2K7	Oxidoreductase
+Q9Y2K7	Transcription regulator
+Q9Y2K7	DNA binding
+Q9Y2R2	Hydrolase (ester bonds)
+Q9Y2T6	G protein-coupled receptor
+Q9Y2U5	Kinase
+Q9Y2W1	Transcription regulator
+Q9Y2W1	DNA binding
+Q9Y303	Hydrolase (C-N bonds, no peptides)
+Q9Y336	no_function
+Q9Y337	Peptidase
+Q9Y345	Transporter
+Q9Y365	no_function
+Q9Y3Q4	Transporter
+Q9Y3R4	Hydrolase (glycosyl bonds)
+Q9Y3S1	Kinase
+Q9Y463	Transcription regulator
+Q9Y463	Kinase
+Q9Y468	no_function
+Q9Y478	Kinase
+Q9Y496	Hydrolase (acid anhydrides)
+Q9Y4C1	Oxidoreductase
+Q9Y4C1	Transcription regulator
+Q9Y4C1	DNA binding
+Q9Y4D2	Hydrolase (ester bonds)
+Q9Y4E8	Peptidase
+Q9Y4K0	Oxidoreductase
+Q9Y4K3	Transferase (other)
+Q9Y4K4	Kinase
+Q9Y4P1	Peptidase
+Q9Y570	Enzyme regulator
+Q9Y570	Hydrolase (ester bonds)
+Q9Y572	Enzyme regulator
+Q9Y572	Transcription regulator
+Q9Y572	Kinase
+Q9Y5K2	Peptidase
+Q9Y5K5	Enzyme regulator
+Q9Y5K5	Peptidase
+Q9Y5L3	Hydrolase (acid anhydrides)
+Q9Y5N1	G protein-coupled receptor
+Q9Y5R2	Enzyme regulator
+Q9Y5R2	Peptidase
+Q9Y5S1	Transporter
+Q9Y5S2	Kinase
+Q9Y5S8	Oxidoreductase
+Q9Y5S8	Transporter
+Q9Y5T5	Peptidase
+Q9Y5T5	Transcription regulator
+Q9Y5X4	Signaling receptor (not transmembrane)
+Q9Y5X4	Transcription regulator
+Q9Y5X4	DNA binding
+Q9Y5X5	G protein-coupled receptor
+Q9Y5X9	Hydrolase (ester bonds)
+Q9Y5Y4	G protein-coupled receptor
+Q9Y5Y6	Peptidase
+Q9Y5Y9	Transporter
+Q9Y5Z0	Peptidase
+Q9Y616	Kinase
+Q9Y657	no_function
+Q9Y6E0	Kinase
+Q9Y6F1	Transferase (glycosyl groups)
+Q9Y6F8	Transcription regulator
+Q9Y6F8	Transferase (acyl groups)
+Q9Y6I3	no_function
+Q9Y6K0	Transferase (phosphorus-containing groups, non-kinase)
+Q9Y6K1	Transcription regulator
+Q9Y6K1	Transferase (one-carbon groups)
+Q9Y6K1	DNA binding
+Q9Y6L6	Transporter
+Q9Y6L7	Peptidase
+Q9Y6M4	Kinase
+Q9Y6N5	Oxidoreductase
+Q9Y6R4	Kinase
+Q9Y6T7	Kinase
+Q9Y6W6	Hydrolase (ester bonds)
+Q9Y6Y9	Signaling receptor (not transmembrane)
+Q9YGV3	Signaling receptor (not transmembrane)
+Q9YGV3	Transcription regulator
+Q9YGV3	DNA binding
+Q9YGX2	Hydrolase (ester bonds)
+Q9YGX2	Isomerase
+Q9YGX2	Oxidoreductase
+Q9YQ12	Peptidase
+Q9YQ30	Peptidase
+Q9Z0F8	Peptidase
+Q9Z0J4	Oxidoreductase
+Q9Z0J5	Oxidoreductase
+Q9Z0R9	Oxidoreductase
+Q9Z0U4	G protein-coupled receptor
+Q9Z0U5	Oxidoreductase
+Q9Z0Y2	Hydrolase (ester bonds)
+Q9Z0Y8	Transporter
+Q9Z122	Oxidoreductase
+Q9Z1J7	Transporter
+Q9Z1K9	Peptidase
+Q9Z1L0	Kinase
+Q9Z1M0	Enzyme regulator
+Q9Z1M0	Transmembrane signaling receptors (other)
+Q9Z1M0	Transporter
+Q9Z1T6	Hydrolase (acid anhydrides)
+Q9Z1T6	Kinase
+Q9Z1Z1	Kinase
+Q9Z2A7	Transferase (acyl groups)
+Q9Z2J6	G protein-coupled receptor
+Q9Z2V5	Hydrolase (C-N bonds, no peptides)
+Q9Z2V5	DNA binding
+Q9Z2V6	Hydrolase (C-N bonds, no peptides)
+Q9Z2V6	Transcription regulator
+Q9Z2V6	DNA binding
+Q9Z2X8	no_function
+Q9Z7P3	Isomerase
+Q9ZB22	Hydrolase (glycosyl bonds)
+Q9ZHC3	Ligase
+Q9ZLT0	Isomerase
+Q9ZTP8	Hydrolase (C-N bonds, no peptides)
+T1VXA1	Hydrolase (C-N bonds, no peptides)
+T1VXA1	Transferase (other)
+V5TFZ2	Hydrolase (other)
+V5TFZ2	Transferase (one-carbon groups)
+V5TFZ2	Transferase (phosphorus-containing groups, non-kinase)
+V5VCK8	Transferase (alkyl or aryl groups, no methyl)
+V9HWB9	Oxidoreductase
+W8T2T2	Isomerase
+W8T2T2	Oxidoreductase
+X5EH84	Kinase
