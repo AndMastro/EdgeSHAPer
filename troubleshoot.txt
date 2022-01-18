@@ -1,0 +1,28 @@
+For WINDOWS: There may be problems with the windows compiler files for TorchDrug.
+
+TODO:
+
+0. (if command 1 fails) From admin powershell: Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope CurrentUser 
+
+1. Install-Module Pscx -AllowClobber
+2. Install-Module VSSetup
+
+#Set compiler env path
+
+1. Import-VisualStudioVars -Architecture x64
+2. $env:LIB += ";C:\Program Files\Python37\libs" #change path accordingly
+
+The above are for launching from a powershell/anaconda shell
+
+If you are working with a jupyter notebook in vs code:
+
+0. (if the below fails) ! powershell -command "Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope CurrentUser"
+1. ! powershell -command "Import-VisualStudioVars -Architecture x64"
+2. ! powershell -command "$env:LIB += \";C:\Users\Mastro\anaconda3\envs\graphshap_cheminfo\libs\" "
+
+
+#note: conda init from ps creates a ps profile that makes the above command fail due to policies (delete the profile or change the policy in that case)
+
+
+
+

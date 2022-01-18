@@ -1,0 +1,81 @@
+The model used is a GIN with 4 hidden layers
+
+targets: P14416_P42336, no shared
+
+17:00:31   Evaluate on train
+17:00:32   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+17:00:32   auprc [label]: 1
+17:00:32   auroc [label]: 1
+17:00:32   Evaluate on valid
+17:00:32   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+17:00:32   auprc [label]: 0.999807
+17:00:32   auroc [label]: 0.999833
+17:00:32   Evaluate on test
+17:00:33   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+17:00:33   auprc [label]: 0.999902
+17:00:33   auroc [label]: 0.999923
+
+
+targets: P27338_P22303
+
+16:47:00   Evaluate on train
+16:47:00   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+16:47:00   auprc [target1]: 0.996182
+16:47:00   auprc [target2]: 0.996513
+16:47:00   auroc [target1]: 0.995479
+16:47:00   auroc [target2]: 0.996177
+16:47:00   Evaluate on valid
+16:47:00   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+16:47:00   auprc [target1]: 0.985277
+16:47:00   auprc [target2]: 0.987661
+16:47:00   auroc [target1]: 0.986687
+16:47:00   auroc [target2]: 0.983773
+16:47:00   Evaluate on test
+16:47:01   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+16:47:01   auprc [target1]: 0.975778
+16:47:01   auprc [target2]: 0.979865
+16:47:01   auroc [target1]: 0.975021
+16:47:01   auroc [target2]: 0.97912
+
+
+targets: P27338_P29274
+
+16:50:54   Evaluate on train
+16:50:55   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+16:50:55   auprc [target1]: 0.999934
+16:50:55   auprc [target2]: 0.999978
+16:50:55   auroc [target1]: 0.99996
+16:50:55   auroc [target2]: 0.999961
+16:50:55   Evaluate on valid
+16:50:55   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+16:50:55   auprc [target1]: 0.996119
+16:50:55   auprc [target2]: 0.999168
+16:50:55   auroc [target1]: 0.997897
+16:50:55   auroc [target2]: 0.998355
+16:50:55   Evaluate on test
+16:50:55   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+16:50:55   auprc [target1]: 0.995387
+16:50:55   auprc [target2]: 0.999642
+16:50:55   auroc [target1]: 0.997618
+16:50:55   auroc [target2]: 0.999326
+
+
+targets: Q9Y5N1_P31645
+
+16:55:59   Evaluate on train
+16:55:59   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+16:55:59   auprc [target1]: 0.999904
+16:55:59   auprc [target2]: 0.999947
+16:55:59   auroc [target1]: 0.999898
+16:55:59   auroc [target2]: 0.999944
+16:55:59   Evaluate on valid
+16:56:00   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+16:56:00   auprc [target1]: 0.997776
+16:56:00   auprc [target2]: 0.998713
+16:56:00   auroc [target1]: 0.997962
+16:56:00   auroc [target2]: 0.998456
+16:56:00   Evaluate on test
+16:56:00   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+16:56:00   auprc [target1]: 0.998611
+16:56:00   auprc [target2]: 0.996175
+16:56:00   auroc [target1]: 0.998419
