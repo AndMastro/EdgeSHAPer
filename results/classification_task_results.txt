@@ -1,14 +1,27 @@
 The model used is a GCN with 4 hidden layers using PyG
 
 targets: P14416_P42336 target1 vs random cpds
-
 Model 0: Train Acc: 1.0000, Val Acc: 0.9748, Test Acc: 0.9821 (not saved)
 Model 1: Train Acc: 0.9889, Val Acc: 0.9652, Test Acc: 0.9653
 Model 2: Train Acc: 0.9991, Val Acc: 0.9784, Test Acc: 0.9761
 
 targets: P14416_P42336 target2 vs random cpds
-
 Train Acc: 1.0000, Val Acc: 0.9740, Test Acc: 0.9769
+Train Acc: 1.0000, Val Acc: 0.9624 Test Acc: 0.9740 (saved as model 0)
+
+targets vs Q9Y5N1_P31645 dual vs single (180/90/90 samples)
+Model 0: Train Acc: 0.9965, Val Acc: 0.8889, Test Acc: 0.9444 
+
+targets: P27338_P29274 dual vs single (52/26/26 samples)
+Model 0: Train Acc: 1.0000, Val Acc: 0.8000, Test Acc: 1.0000
+
+targets: P27338_P22303 dual vs single (70/35/35)
+Model 0: Epoch: 099, Train Acc: 1.0000, Val Acc: 0.9286 Test Acc: 0.5714
+Model 1: 499, Train Acc: 1.0000, Val Acc: 1.0000 Test Acc: 0.7143 (500 epochs)
+Model 2: Epoch: 999, Train Acc: 1.0000, Val Acc: 1.0000 Test Acc: 0.7143
+
+############################################################
+############################################################
 
 
 The model used is a GIN with 4 hidden layers using TorchDrug
