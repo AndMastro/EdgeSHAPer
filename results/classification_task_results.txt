@@ -1,4 +1,4 @@
-The model used is a GCN with 4 hidden layers
+The model used is a GCN with 4 hidden layers using PyG
 
 targets: P14416_P42336 target1 vs random cpds
 
@@ -11,7 +11,7 @@ targets: P14416_P42336 target2 vs random cpds
 Train Acc: 1.0000, Val Acc: 0.9740, Test Acc: 0.9769
 
 
-The model used is a GIN with 4 hidden layers
+The model used is a GIN with 4 hidden layers using TorchDrug
 
 targets: P14416_P42336, no shared
 
