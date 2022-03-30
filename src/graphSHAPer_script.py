@@ -521,8 +521,8 @@ for test_set_index in test_compounds_indices:
     from matplotlib.pyplot import figure
     import matplotlib.pyplot as plt
 
-    important_edges = np.argsort(phi_edges)
-    print(important_edges)
+    important_edges_ranking = np.argsort(-phi_edges)
+    print(important_edges_ranking)
     sorted_phi_edges = sorted(phi_edges, reverse = True)
     print(sorted_phi_edges)
     print(sum(phi_edges))
