@@ -208,7 +208,7 @@ print(lengths)
 dataset = dataset.shuffle()
 train_data = dataset[:lengths[0]]
 val_data = dataset[lengths[0]+1:lengths[0] + lengths[1]+1]
-test_data = dataset[lengths[0] + lengths[1] : ]
+test_data = dataset[lengths[0] + lengths[1] + 1: ] #we add +1 otherwise the last sample of the validation falls in the test too.
 len(train_data), len(val_data), len(test_data)
 
 
