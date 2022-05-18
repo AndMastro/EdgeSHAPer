@@ -4,6 +4,15 @@ targets: P14416_P42336 target1 vs random cpds
 Model 0: Train Acc: 1.0000, Val Acc: 0.9748, Test Acc: 0.9821 (not saved)
 Model 1: Train Acc: 0.9889, Val Acc: 0.9652, Test Acc: 0.9653
 Model 2: Train Acc: 0.9991, Val Acc: 0.9784, Test Acc: 0.9761
+Model Train FULL 0: Train Acc: 0.9996, Val Acc: 0.9700 Test Acc: 0.9749
+
+Split 0:
+
+Split 1:
+
+Split 2:
+
+
 
 targets: P14416_P42336 target2 vs random cpds
 Train Acc: 1.0000, Val Acc: 0.9740, Test Acc: 0.9769
