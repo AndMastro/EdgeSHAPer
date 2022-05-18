@@ -599,9 +599,9 @@ for test_set_index in test_compounds_indices[:1]:
     labels = nx.get_node_attributes(mol, 'element') 
     nx.draw(mol, with_labels = True, edge_color = edges_color, pos=nx.spring_layout(mol))
     if TRAINING_SET_SPLIT == None:
-        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GraphSHAPer_MC_" + str(M), dpi=300, bbox_inches='tight')
+        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GSHAP_MC_" + str(M), dpi=300, bbox_inches='tight')
     else:
-        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GraphSHAPer_MC_" + str(M) + "training_split_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')
+        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GSHAP_MC_" + str(M) + "train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')
     
     test_mol = Chem.MolFromSmiles(test_cpd.smiles)
     test_mol = Draw.PrepareMolForDrawing(test_mol)
@@ -637,9 +637,9 @@ for test_set_index in test_compounds_indices[:1]:
 
     
     if TRAINING_SET_SPLIT == None:
-        img.save(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GraphSHAPer_MC_" + str(M) + "_heatmap.png")
+        img.save(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GSHAP_MC_" + str(M) + "_heatmap.png")
     else:
-        img.save(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GraphSHAPer_MC_" + str(M) + "training_split_" + str(TRAINING_SET_SPLIT) + "_heatmap.png") 
+        img.save(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GSHAP_MC_" + str(M) + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png") 
     
 
     # ## GNNExplainer
@@ -684,7 +684,7 @@ for test_set_index in test_compounds_indices[:1]:
     if TRAINING_SET_SPLIT == None:
         plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_viz0", dpi=300, bbox_inches='tight')
     else:
-        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_viz0_" + "training_split_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')    
+        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_viz0_" + "train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')    
 
 
     # In[81]:
@@ -728,7 +728,7 @@ for test_set_index in test_compounds_indices[:1]:
     if TRAINING_SET_SPLIT == None:
         plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_viz1", dpi=300, bbox_inches='tight')
     else:
-        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_viz1_" + "training_split_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')
+        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_viz1_" + "train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')
 
 
     rdkit_bonds_GNNExpl_importance = [0]*num_bonds
@@ -751,7 +751,7 @@ for test_set_index in test_compounds_indices[:1]:
     if TRAINING_SET_SPLIT == None:
         img.save(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_" + "heatmap.png")
     else:
-        img.save(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_" + "training_split_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
+        img.save(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_" + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
 
     #pertinet negative
     pertinent_set_indices = []
