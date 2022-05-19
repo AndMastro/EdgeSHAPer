@@ -599,9 +599,9 @@ for test_set_index in test_compounds_indices[:1]:
     labels = nx.get_node_attributes(mol, 'element') 
     nx.draw(mol, with_labels = True, edge_color = edges_color, pos=nx.spring_layout(mol))
     if TRAINING_SET_SPLIT == None:
-        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GSHAP_MC_" + str(M), dpi=300, bbox_inches='tight')
+        plt.savefig(CPD_FOLDER_NAME + "/" + "_GraphSHAPer_MC_" + str(M), dpi=300, bbox_inches='tight')
     else:
-        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GSHAP_MC_" + str(M) + "train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')
+        plt.savefig(CPD_FOLDER_NAME + "/" + "_GraphSHAPer_MC_" + str(M) + "train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')
     
     test_mol = Chem.MolFromSmiles(test_cpd.smiles)
     test_mol = Draw.PrepareMolForDrawing(test_mol)
@@ -637,9 +637,9 @@ for test_set_index in test_compounds_indices[:1]:
 
     
     if TRAINING_SET_SPLIT == None:
-        img.save(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GSHAP_MC_" + str(M) + "_heatmap.png")
+        img.save(CPD_FOLDER_NAME + "/" + "_GraphSHAPer_MC_" + str(M) + "_heatmap.png")
     else:
-        img.save(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GSHAP_MC_" + str(M) + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png") 
+        img.save(CPD_FOLDER_NAME + "/" + "_GraphSHAPer_MC_" + str(M) + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png") 
     
 
     # ## GNNExplainer
@@ -682,9 +682,9 @@ for test_set_index in test_compounds_indices[:1]:
     edge_mask = edge_mask.to("cpu")
     ax, G = explainer.visualize_subgraph(edge_index = edge_index, edge_mask = edge_mask, node_idx = -1, y=None, threshold=threshold)
     if TRAINING_SET_SPLIT == None:
-        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_viz0", dpi=300, bbox_inches='tight')
+        plt.savefig(CPD_FOLDER_NAME + "/" + "_GNNExplainer_viz0", dpi=300, bbox_inches='tight')
     else:
-        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_viz0_" + "train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')    
+        plt.savefig(CPD_FOLDER_NAME + "/" + "_GNNExplainer_viz0_" + "train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')    
 
 
     # In[81]:
@@ -726,9 +726,9 @@ for test_set_index in test_compounds_indices[:1]:
     nx.draw(mol, with_labels = True, edge_color = edges_color, pos=nx.spring_layout(mol))
 
     if TRAINING_SET_SPLIT == None:
-        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_viz1", dpi=300, bbox_inches='tight')
+        plt.savefig(CPD_FOLDER_NAME + "/" + "_GNNExplainer_viz1", dpi=300, bbox_inches='tight')
     else:
-        plt.savefig(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_viz1_" + "train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')
+        plt.savefig(CPD_FOLDER_NAME + "/" + "_GNNExplainer_viz1_" + "train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')
 
 
     rdkit_bonds_GNNExpl_importance = [0]*num_bonds
@@ -749,11 +749,17 @@ for test_set_index in test_compounds_indices[:1]:
     img = transform2png(canvas.GetDrawingText())
 
     if TRAINING_SET_SPLIT == None:
-        img.save(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_" + "heatmap.png")
+        img.save(CPD_FOLDER_NAME + "/" + "_GNNExplainer_" + "heatmap.png")
     else:
-        img.save(CPD_FOLDER_NAME + "/" + test_cpd.smiles + "_GEx_" + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
+        img.save(CPD_FOLDER_NAME + "/" + "_GNNExplainer_" + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
 
-    #pertinet negative
+
+    batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
+    out_log_odds = model(test_cpd.x, test_cpd.edge_index, batch=batch)
+    out_prob = F.softmax(out_log_odds, dim = 1)
+    original_pred_prob = out_prob[0][target_class].item()
+
+    #pertinet negative for GraphSHAPer
     pertinent_set_indices = []
     pertinent_set_edge_index = None
     edge_index = E.to(device)
@@ -774,6 +780,10 @@ for test_set_index in test_compounds_indices[:1]:
         predicted_class = torch.argmax(out_prob[0]).item()
 
         if predicted_class != target_class:
+            pred_prob = out_prob[0][target_class].item()
+            fidelity = original_pred_prob - pred_prob
+            fidelity_values_gs.append(fidelity)
+            print("FID+ using pertinent negative: ", fidelity)
             break
 
     pertinent_set_edge_index = torch.index_select(edge_index, dim = 1, index = torch.LongTensor(pertinent_set_indices).to(device))
@@ -784,9 +794,36 @@ for test_set_index in test_compounds_indices[:1]:
             saveFile.write("\nPertinent Negative Set:\n")
             saveFile.write("Pertinent set indices on edge ranking: " + str(pertinent_set_indices))
             saveFile.write("\nPertinent set edge index: " + str(pertinent_set_edge_index))
+            saveFile.write("\nFID+: " + str(fidelity))
 
+    ####visualize GraphSHAPer pertinent negative set####
 
-    #pertinet positive
+    rdkit_bonds_phi_pertinent_set = [0]*num_bonds
+    for i in range(len(pertinent_set_indices)):
+        
+        init_atom = pertinent_set_edge_index[0][i].item()
+        end_atom = pertinent_set_edge_index[1][i].item()
+        
+        
+        if (init_atom, end_atom) in rdkit_bonds:
+            bond_index = rdkit_bonds[(init_atom, end_atom)]
+            if rdkit_bonds_phi_pertinent_set[bond_index] == 0:
+                rdkit_bonds_phi_pertinent_set[bond_index] += rdkit_bonds_phi[bond_index]
+        if (end_atom, init_atom) in rdkit_bonds:
+            bond_index = rdkit_bonds[(end_atom, init_atom)]
+            if rdkit_bonds_phi_pertinent_set[bond_index] == 0:
+                rdkit_bonds_phi_pertinent_set[bond_index] += rdkit_bonds_phi[bond_index]
+
+    plt.clf()
+    canvas = mapvalues2mol(test_mol, None, rdkit_bonds_phi_pertinent_set, atom_width=0.2, bond_length=0.5, bond_width=0.5)
+    img = transform2png(canvas.GetDrawingText())
+
+    if TRAINING_SET_SPLIT == None:
+        img.save(CPD_FOLDER_NAME + "/" + "_GraphSHAPer_pert_neg_" + "heatmap.png")
+    else:
+        img.save(CPD_FOLDER_NAME + "/" + "_GraphSHAPer_pert_neg_" + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
+
+    #pertinet positive for GraphSHAPer
     for i in range(important_edges_ranking.shape[0]+1):
         reduced_edge_index = torch.index_select(edge_index, dim = 1, index = torch.LongTensor(important_edges_ranking[0:i]).to(device))
         batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
@@ -798,50 +835,153 @@ for test_set_index in test_compounds_indices[:1]:
             print(i)
             print(reduced_edge_index)
             print(out_prob)
+            
+            pred_prob = out_prob[0][target_class].item()
+            infidelity = original_pred_prob-pred_prob
+            infidelity_values_gs.append(infidelity)
+
             with open(CPD_FOLDER_NAME + "/" + INFO_EXPLANATIONS + ".txt", "a") as saveFile:
                 saveFile.write("\n\nPertinent Positive Set:\n")
                 saveFile.write("\nPertinent set edge index: " + str(reduced_edge_index))
+                saveFile.write("\nFID-: " + str(infidelity))
+
+            print("FID- using pertinent positive: ", infidelity)
             break
 
 
-    ####FIDELITI and INFIDELITY COMPUTATION####
+    #Pertinent Negative for GNNExplainer        
+
+    pertinent_set_indices = []
+    pertinent_set_edge_index = None
+    important_gnn_expl_edges_ranking = np.argsort(-np.array(edge_mask))
+    for i in range(important_gnn_expl_edges_ranking.shape[0]):
+        index_of_edge_to_remove = important_gnn_expl_edges_ranking[i]
+        pertinent_set_indices.append(index_of_edge_to_remove)
+
+        reduced_edge_index = torch.index_select(edge_index, dim = 1, index = torch.LongTensor(important_gnn_expl_edges_ranking[i:]).to(device))
+        
+        # all nodes belong to same graph
+        batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
+        out = model(test_cpd.x, reduced_edge_index, batch=batch)
+        out_prob = F.softmax(out, dim = 1)
+        print(out_prob)
+        predicted_class = torch.argmax(out_prob[0]).item()
+
+        if predicted_class != target_class:
+            pred_prob = out_prob[0][target_class].item()
+            fidelity =  original_pred_prob - pred_prob
+            fidelity_values_ge.append(fidelity)
+            print("FID+ using pertinent negative: ", fidelity)
+            break
+
+    pertinent_set_edge_index = torch.index_select(edge_index, dim = 1, index = torch.LongTensor(pertinent_set_indices).to(device))
+    print(pertinent_set_indices)
+    print(pertinent_set_edge_index)
+
+    with open(CPD_FOLDER_NAME + "/" + INFO_EXPLANATIONS + ".txt", "a") as saveFile:
+            saveFile.write("\nPertinent Negative Set GNNExplainer:\n")
+            saveFile.write("Pertinent set indices on edge ranking: " + str(pertinent_set_indices))
+            saveFile.write("\nPertinent set edge index: " + str(pertinent_set_edge_index))
+            saveFile.write("\nFID+: " + str(fidelity))
+
+
+
+    #pertinet positive for GNNExplainer
+    for i in range(important_gnn_expl_edges_ranking.shape[0]+1):
+        reduced_edge_index = torch.index_select(edge_index, dim = 1, index = torch.LongTensor(important_gnn_expl_edges_ranking[0:i]).to(device))
+        batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
+        out = model(test_cpd.x, reduced_edge_index, batch=batch)
+        out_prob = F.softmax(out, dim = 1)
+        # print(out_prob)
+        predicted_class = torch.argmax(out_prob[0]).item()
+        if (predicted_class == target_class):
+            print(i)
+            print(reduced_edge_index)
+            print(out_prob)
+            
+            pred_prob = out_prob[0][target_class].item()
+            infidelity = original_pred_prob-pred_prob
+            infidelity_values_ge.append(infidelity)
+
+            with open(CPD_FOLDER_NAME + "/" + INFO_EXPLANATIONS + ".txt", "a") as saveFile:
+                saveFile.write("\n\nPertinent Positive Set GNNExplainer:\n")
+                saveFile.write("\nPertinent set edge index: " + str(reduced_edge_index))
+                saveFile.write("\nFID-: " + str(infidelity))
+            print("FID- using pertinent positive: ", infidelity)
+            break
+
+    ####FIDELITY and INFIDELITY COMPUTATION####
+    #
     # 
-    # GraphSHAPer ####
-    top_percentage = 0.2
-    num_top_k = round(top_percentage * num_edges)
-    top_k_phis, top_k_phis_indices = torch.topk(torch.FloatTensor(phi_edges), num_top_k)
+     
+    
+    # top_percentage = 0.2
+    # print("Selecting top", str(top_percentage*100), "%" + " of edges")
+    # num_top_k = round(top_percentage * num_edges)
+    # # GraphSHAPer ####
+    
+    # top_k_phis, top_k_phis_indices = torch.topk(torch.FloatTensor(phi_edges), num_top_k)
 
-    print("Selecting top", str(top_percentage*100), "%" + " of edges")
-    # important_edge_mask -> must be mask with 1 if in top_k 0 else
-    important_edge_mask = torch.zeros(num_edges, dtype=torch.bool)
-    important_edge_mask[top_k_phis_indices] = True #1 if edge is in top k important edges
-    explanation_edge_index = edge_index[:,important_edge_mask] #retain important edges
-    unimportant_edge_index = edge_index[:,~important_edge_mask] #mask out important edges
+    # # important_edge_mask -> must be mask with 1 if in top_k 0 else
+    # important_edge_mask = torch.zeros(num_edges, dtype=torch.bool)
+    # important_edge_mask[top_k_phis_indices] = True #1 if edge is in top k important edges
+    # explanation_edge_index = edge_index[:,important_edge_mask] #retain important edges
+    # unimportant_edge_index = edge_index[:,~important_edge_mask] #mask out important edges
 
-    batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
-    out_log_odds = model(test_cpd.x, test_cpd.edge_index, batch=batch)
-    out_prob = F.softmax(out_log_odds, dim = 1)
-    original_pred_prob = out_prob[0][target_class].item()
+    
 
-    batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
-    out_log_odds_important_edges = model(test_cpd.x, explanation_edge_index, batch=batch)
-    out_prob_important_edges = F.softmax(out_log_odds_important_edges, dim = 1)[0][target_class].item()
+    # batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
+    # out_log_odds_important_edges = model(test_cpd.x, explanation_edge_index, batch=batch)
+    # out_prob_important_edges = F.softmax(out_log_odds_important_edges, dim = 1)[0][target_class].item()
 
-    batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
-    out_log_odds_unimportant_edges = model(test_cpd.x, unimportant_edge_index, batch=batch)
-    out_prob_unimportant_edges = F.softmax(out_log_odds_unimportant_edges, dim = 1)[0][target_class].item()
+    # batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
+    # out_log_odds_unimportant_edges = model(test_cpd.x, unimportant_edge_index, batch=batch)
+    # out_prob_unimportant_edges = F.softmax(out_log_odds_unimportant_edges, dim = 1)[0][target_class].item()
 
-    fidelity = original_pred_prob - out_prob_unimportant_edges
-    infidelity = original_pred_prob - out_prob_important_edges
+    # fidelity = original_pred_prob - out_prob_unimportant_edges
+    # infidelity = original_pred_prob - out_prob_important_edges
 
-    fidelity_values_gs.append(fidelity)
-    infidelity_values_gs.append(infidelity)
+    # fidelity_values_gs.append(fidelity)
+    # infidelity_values_gs.append(infidelity)
 
-    print("GraphSHAPer FID+: ", fidelity)
-    print("GraphSHAPer FID-: ", infidelity)
+    # print("GraphSHAPer FID+: ", fidelity)
+    # print("GraphSHAPer FID-: ", infidelity)
+    # print("Important edges: ", explanation_edge_index)
+    # print("Unimportant edges: ", unimportant_edge_index)
 
 
-    ####TODO: GNNExplainer metrics#### 
+    # ####TODO: GNNExplainer metrics####
+
+    # top_k_gnn_expl, top_k_gnn_expl_indices = torch.topk(torch.FloatTensor(edge_mask), num_top_k)
+
+    # # important_edge_mask -> must be mask with 1 if in top_k 0 else
+    # important_edge_mask = torch.zeros(num_edges, dtype=torch.bool)
+    # important_edge_mask[top_k_gnn_expl_indices] = True #1 if edge is in top k important edges
+    # explanation_edge_index = edge_index[:,important_edge_mask] #retain important edges
+    # unimportant_edge_index = edge_index[:,~important_edge_mask] #mask out important edges
+
+    # batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
+    # out_log_odds_important_edges = model(test_cpd.x, explanation_edge_index, batch=batch)
+    # out_prob_important_edges = F.softmax(out_log_odds_important_edges, dim = 1)[0][target_class].item()
+
+    # batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
+    # out_log_odds_unimportant_edges = model(test_cpd.x, unimportant_edge_index, batch=batch)
+    # out_prob_unimportant_edges = F.softmax(out_log_odds_unimportant_edges, dim = 1)[0][target_class].item()
+
+    # fidelity = original_pred_prob - out_prob_unimportant_edges
+    # infidelity = original_pred_prob - out_prob_important_edges
+
+    # fidelity_values_ge.append(fidelity)
+    # infidelity_values_ge.append(infidelity)
+
+    # print("GNNExplainer FID+: ", fidelity)
+    # print("GNNExplainer FID-: ", infidelity)
+    # print("Important edges: ", explanation_edge_index)
+    # print("Unimportant edges: ", unimportant_edge_index)
+
 
 print("Avg GraphSHAPer FID+ ", round(sum(fidelity_values_gs)/len(fidelity_values_gs), 3))
 print("Avg GraphSHAPer FID- ", round(sum(infidelity_values_gs)/len(infidelity_values_gs), 3))
+
+print("Avg GNNExplainer FID+ ", round(sum(fidelity_values_ge)/len(fidelity_values_ge), 3))
+print("Avg GNNExplainer FID- ", round(sum(infidelity_values_ge)/len(infidelity_values_ge), 3))
