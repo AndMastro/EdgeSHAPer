@@ -371,7 +371,7 @@ infidelity_values_gs = []
 fidelity_values_ge = []
 infidelity_values_ge = []
 
-for test_set_index in test_compounds_indices[:1]:
+for test_set_index in tqdm(test_compounds_indices):
 
     print("Explaining test compound: ", test_set_index)
     test_cpd = test_data[test_set_index].to(device)
@@ -385,9 +385,9 @@ for test_set_index in test_compounds_indices[:1]:
     out = model(test_cpd.x, test_cpd.edge_index, batch=batch)
     out_prob = F.softmax(out, dim = 1)
     target_class = torch.argmax(out_prob[0]).item()
-    print("out", out)
-    print("out_prob ", out_prob)
-    print("target_class: ", target_class)
+    # print("out", out)
+    # print("out_prob ", out_prob)
+    # print("target_class: ", target_class)
 
 
     # Creating folder and saving smiles
@@ -411,8 +411,8 @@ for test_set_index in test_compounds_indices[:1]:
     mol_test.visualize(save_file = CPD_FOLDER_NAME + "/" + test_cpd.smiles + ".png")
 
 
-    print(test_cpd.edge_index)
-    print(test_cpd.edge_index.shape)
+    # print(test_cpd.edge_index)
+    # print(test_cpd.edge_index.shape)
 
 
     
@@ -504,8 +504,8 @@ for test_set_index in test_compounds_indices[:1]:
     # In[83]:
 
 
-    print(out_prob)
-    print(phi_edges)
+    # print(out_prob)
+    # print(phi_edges)
 
 
     # In[76]:
@@ -541,23 +541,23 @@ for test_set_index in test_compounds_indices[:1]:
     
 
     important_edges_ranking = np.argsort(-np.array(phi_edges))
-    print(important_edges_ranking)
+    # print(important_edges_ranking)
     sorted_phi_edges = sorted(phi_edges, reverse = True)
-    print(sorted_phi_edges)
-    print(sum(phi_edges))
+    # print(sorted_phi_edges)
+    # print(sum(phi_edges))
 
     threshold = np.median(phi_edges) #to discuss when an edge in important or not
     hard_edge_mask = (torch.FloatTensor(phi_edges) > threshold).to(torch.float) #>=
-    print(hard_edge_mask.shape)
+    # print(hard_edge_mask.shape)
 
     important_edges_index = torch.nonzero(hard_edge_mask == 1)
-    print(important_edges_index)
+    # print(important_edges_index)
 
     edge_index = E.to(device)
     important_edges_index = important_edges_index.to(device)
 
     important_edges = torch.index_select(edge_index, dim = 1, index = important_edges_index.squeeze())
-    print(important_edges)
+    # print(important_edges)
 
     edges_color = []
     mol = read_smiles(test_cpd.smiles)
@@ -599,9 +599,9 @@ for test_set_index in test_compounds_indices[:1]:
     labels = nx.get_node_attributes(mol, 'element') 
     nx.draw(mol, with_labels = True, edge_color = edges_color, pos=nx.spring_layout(mol))
     if TRAINING_SET_SPLIT == None:
-        plt.savefig(CPD_FOLDER_NAME + "/" + "_GraphSHAPer_MC_" + str(M), dpi=300, bbox_inches='tight')
+        plt.savefig(CPD_FOLDER_NAME + "/" + "GraphSHAPer_MC_" + str(M), dpi=300, bbox_inches='tight')
     else:
-        plt.savefig(CPD_FOLDER_NAME + "/" + "_GraphSHAPer_MC_" + str(M) + "train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')
+        plt.savefig(CPD_FOLDER_NAME + "/" + "GraphSHAPer_MC_" + str(M) + "_train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')
     
     test_mol = Chem.MolFromSmiles(test_cpd.smiles)
     test_mol = Draw.PrepareMolForDrawing(test_mol)
@@ -637,9 +637,9 @@ for test_set_index in test_compounds_indices[:1]:
 
     
     if TRAINING_SET_SPLIT == None:
-        img.save(CPD_FOLDER_NAME + "/" + "_GraphSHAPer_MC_" + str(M) + "_heatmap.png")
+        img.save(CPD_FOLDER_NAME + "/" + "GraphSHAPer_MC_" + str(M) + "_heatmap.png")
     else:
-        img.save(CPD_FOLDER_NAME + "/" + "_GraphSHAPer_MC_" + str(M) + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png") 
+        img.save(CPD_FOLDER_NAME + "/" + "GraphSHAPer_MC_" + str(M) + "_train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png") 
     
 
     # ## GNNExplainer
@@ -682,9 +682,9 @@ for test_set_index in test_compounds_indices[:1]:
     edge_mask = edge_mask.to("cpu")
     ax, G = explainer.visualize_subgraph(edge_index = edge_index, edge_mask = edge_mask, node_idx = -1, y=None, threshold=threshold)
     if TRAINING_SET_SPLIT == None:
-        plt.savefig(CPD_FOLDER_NAME + "/" + "_GNNExplainer_viz0", dpi=300, bbox_inches='tight')
+        plt.savefig(CPD_FOLDER_NAME + "/" + "GNNExplainer_viz0", dpi=300, bbox_inches='tight')
     else:
-        plt.savefig(CPD_FOLDER_NAME + "/" + "_GNNExplainer_viz0_" + "train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')    
+        plt.savefig(CPD_FOLDER_NAME + "/" + "GNNExplainer_viz0_" + "_train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')    
 
 
     # In[81]:
@@ -694,13 +694,13 @@ for test_set_index in test_compounds_indices[:1]:
     hard_edge_mask.shape
 
     important_edges_index = torch.nonzero(hard_edge_mask == 1)
-    print(important_edges_index)
+    # print(important_edges_index)
 
     edge_index = edge_index.to(device)
     important_edges_index = important_edges_index.to(device)
 
     important_edges = torch.index_select(edge_index, dim = 1, index = important_edges_index.squeeze())
-    print(important_edges)
+    # print(important_edges)
 
     edges_color = []
     mol = read_smiles(test_cpd.smiles)
@@ -726,9 +726,9 @@ for test_set_index in test_compounds_indices[:1]:
     nx.draw(mol, with_labels = True, edge_color = edges_color, pos=nx.spring_layout(mol))
 
     if TRAINING_SET_SPLIT == None:
-        plt.savefig(CPD_FOLDER_NAME + "/" + "_GNNExplainer_viz1", dpi=300, bbox_inches='tight')
+        plt.savefig(CPD_FOLDER_NAME + "/" + "GNNExplainer_viz1", dpi=300, bbox_inches='tight')
     else:
-        plt.savefig(CPD_FOLDER_NAME + "/" + "_GNNExplainer_viz1_" + "train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')
+        plt.savefig(CPD_FOLDER_NAME + "/" + "GNNExplainer_viz1_" + "_train_" + str(TRAINING_SET_SPLIT), dpi=300, bbox_inches='tight')
 
 
     rdkit_bonds_GNNExpl_importance = [0]*num_bonds
@@ -749,9 +749,9 @@ for test_set_index in test_compounds_indices[:1]:
     img = transform2png(canvas.GetDrawingText())
 
     if TRAINING_SET_SPLIT == None:
-        img.save(CPD_FOLDER_NAME + "/" + "_GNNExplainer_" + "heatmap.png")
+        img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_" + "heatmap.png")
     else:
-        img.save(CPD_FOLDER_NAME + "/" + "_GNNExplainer_" + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
+        img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_" + "_train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
 
 
     batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
@@ -776,7 +776,7 @@ for test_set_index in test_compounds_indices[:1]:
         batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
         out = model(test_cpd.x, reduced_edge_index, batch=batch)
         out_prob = F.softmax(out, dim = 1)
-        print(out_prob)
+        # print(out_prob)
         predicted_class = torch.argmax(out_prob[0]).item()
 
         if predicted_class != target_class:
@@ -787,8 +787,8 @@ for test_set_index in test_compounds_indices[:1]:
             break
 
     pertinent_set_edge_index = torch.index_select(edge_index, dim = 1, index = torch.LongTensor(pertinent_set_indices).to(device))
-    print(pertinent_set_indices)
-    print(pertinent_set_edge_index)
+    # print(pertinent_set_indices)
+    # print(pertinent_set_edge_index)
 
     with open(CPD_FOLDER_NAME + "/" + INFO_EXPLANATIONS + ".txt", "a") as saveFile:
             saveFile.write("\nPertinent Negative Set:\n")
@@ -819,9 +819,9 @@ for test_set_index in test_compounds_indices[:1]:
     img = transform2png(canvas.GetDrawingText())
 
     if TRAINING_SET_SPLIT == None:
-        img.save(CPD_FOLDER_NAME + "/" + "_GraphSHAPer_pert_neg_" + "heatmap.png")
+        img.save(CPD_FOLDER_NAME + "/" + "GraphSHAPer_pert_neg_" + "heatmap.png")
     else:
-        img.save(CPD_FOLDER_NAME + "/" + "_GraphSHAPer_pert_neg_" + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
+        img.save(CPD_FOLDER_NAME + "/" + "GraphSHAPer_pert_neg_" + "_train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
 
     #pertinet positive for GraphSHAPer
     for i in range(important_edges_ranking.shape[0]+1):
@@ -832,9 +832,9 @@ for test_set_index in test_compounds_indices[:1]:
         # print(out_prob)
         predicted_class = torch.argmax(out_prob[0]).item()
         if (predicted_class == target_class):
-            print(i)
-            print(reduced_edge_index)
-            print(out_prob)
+            # print(i)
+            # print(reduced_edge_index)
+            # print(out_prob)
             
             pred_prob = out_prob[0][target_class].item()
             infidelity = original_pred_prob-pred_prob
@@ -847,6 +847,33 @@ for test_set_index in test_compounds_indices[:1]:
 
             print("FID- using pertinent positive: ", infidelity)
             break
+
+    ### viz pertinent positive for graphshaper
+    rdkit_bonds_phi_pertinent_set = [0]*num_bonds
+    pertinent_set_edge_index = reduced_edge_index
+    for i in range(pertinent_set_edge_index.shape[1]):
+        
+        init_atom = pertinent_set_edge_index[0][i].item()
+        end_atom = pertinent_set_edge_index[1][i].item()
+        
+        
+        if (init_atom, end_atom) in rdkit_bonds:
+            bond_index = rdkit_bonds[(init_atom, end_atom)]
+            if rdkit_bonds_phi_pertinent_set[bond_index] == 0:
+                rdkit_bonds_phi_pertinent_set[bond_index] += rdkit_bonds_phi[bond_index]
+        if (end_atom, init_atom) in rdkit_bonds:
+            bond_index = rdkit_bonds[(end_atom, init_atom)]
+            if rdkit_bonds_phi_pertinent_set[bond_index] == 0:
+                rdkit_bonds_phi_pertinent_set[bond_index] += rdkit_bonds_phi[bond_index]
+
+    plt.clf()
+    canvas = mapvalues2mol(test_mol, None, rdkit_bonds_phi_pertinent_set, atom_width=0.2, bond_length=0.5, bond_width=0.5)
+    img = transform2png(canvas.GetDrawingText())
+
+    if TRAINING_SET_SPLIT == None:
+        img.save(CPD_FOLDER_NAME + "/" + "GraphSHAPer_pert_pos_" + "heatmap.png")
+    else:
+        img.save(CPD_FOLDER_NAME + "/" + "GraphSHAPer_pert_pos_" + "_train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
 
 
     #Pertinent Negative for GNNExplainer        
@@ -864,7 +891,7 @@ for test_set_index in test_compounds_indices[:1]:
         batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
         out = model(test_cpd.x, reduced_edge_index, batch=batch)
         out_prob = F.softmax(out, dim = 1)
-        print(out_prob)
+        # print(out_prob)
         predicted_class = torch.argmax(out_prob[0]).item()
 
         if predicted_class != target_class:
@@ -875,8 +902,8 @@ for test_set_index in test_compounds_indices[:1]:
             break
 
     pertinent_set_edge_index = torch.index_select(edge_index, dim = 1, index = torch.LongTensor(pertinent_set_indices).to(device))
-    print(pertinent_set_indices)
-    print(pertinent_set_edge_index)
+    # print(pertinent_set_indices)
+    # print(pertinent_set_edge_index)
 
     with open(CPD_FOLDER_NAME + "/" + INFO_EXPLANATIONS + ".txt", "a") as saveFile:
             saveFile.write("\nPertinent Negative Set GNNExplainer:\n")
@@ -884,7 +911,32 @@ for test_set_index in test_compounds_indices[:1]:
             saveFile.write("\nPertinent set edge index: " + str(pertinent_set_edge_index))
             saveFile.write("\nFID+: " + str(fidelity))
 
+    ####visualize GNNExpl pertinent negative set####
 
+    rdkit_bonds_gnn_expl_pertinent_set = [0]*num_bonds
+    for i in range(len(pertinent_set_indices)):
+        
+        init_atom = pertinent_set_edge_index[0][i].item()
+        end_atom = pertinent_set_edge_index[1][i].item()
+        
+        
+        if (init_atom, end_atom) in rdkit_bonds:
+            bond_index = rdkit_bonds[(init_atom, end_atom)]
+            if rdkit_bonds_gnn_expl_pertinent_set[bond_index] == 0:
+                rdkit_bonds_gnn_expl_pertinent_set[bond_index] += rdkit_bonds_GNNExpl_importance[bond_index]
+        if (end_atom, init_atom) in rdkit_bonds:
+            bond_index = rdkit_bonds[(end_atom, init_atom)]
+            if rdkit_bonds_gnn_expl_pertinent_set[bond_index] == 0:
+                rdkit_bonds_gnn_expl_pertinent_set[bond_index] += rdkit_bonds_GNNExpl_importance[bond_index]
+
+    plt.clf()
+    canvas = mapvalues2mol(test_mol, None, rdkit_bonds_gnn_expl_pertinent_set, atom_width=0.2, bond_length=0.5, bond_width=0.5)
+    img = transform2png(canvas.GetDrawingText())
+
+    if TRAINING_SET_SPLIT == None:
+        img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_pert_neg_" + "heatmap.png")
+    else:
+        img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_pert_neg_" + "_train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
 
     #pertinet positive for GNNExplainer
     for i in range(important_gnn_expl_edges_ranking.shape[0]+1):
@@ -895,9 +947,9 @@ for test_set_index in test_compounds_indices[:1]:
         # print(out_prob)
         predicted_class = torch.argmax(out_prob[0]).item()
         if (predicted_class == target_class):
-            print(i)
-            print(reduced_edge_index)
-            print(out_prob)
+            # print(i)
+            # print(reduced_edge_index)
+            # print(out_prob)
             
             pred_prob = out_prob[0][target_class].item()
             infidelity = original_pred_prob-pred_prob
@@ -910,6 +962,36 @@ for test_set_index in test_compounds_indices[:1]:
             print("FID- using pertinent positive: ", infidelity)
             break
 
+
+    ### viz pertinent positive for GNNExplainer
+    rdkit_bonds_gnn_expl_pertinent_set = [0]*num_bonds
+    pertinent_set_edge_index = reduced_edge_index
+    for i in range(pertinent_set_edge_index.shape[1]):
+        
+        init_atom = pertinent_set_edge_index[0][i].item()
+        end_atom = pertinent_set_edge_index[1][i].item()
+        
+        
+        if (init_atom, end_atom) in rdkit_bonds:
+            bond_index = rdkit_bonds[(init_atom, end_atom)]
+            if rdkit_bonds_gnn_expl_pertinent_set[bond_index] == 0:
+                rdkit_bonds_gnn_expl_pertinent_set[bond_index] += rdkit_bonds_GNNExpl_importance[bond_index]
+        if (end_atom, init_atom) in rdkit_bonds:
+            bond_index = rdkit_bonds[(end_atom, init_atom)]
+            if rdkit_bonds_gnn_expl_pertinent_set[bond_index] == 0:
+                rdkit_bonds_gnn_expl_pertinent_set[bond_index] += rdkit_bonds_GNNExpl_importance[bond_index]
+
+    plt.clf()
+    canvas = mapvalues2mol(test_mol, None, rdkit_bonds_gnn_expl_pertinent_set, atom_width=0.2, bond_length=0.5, bond_width=0.5)
+    img = transform2png(canvas.GetDrawingText())
+
+    if TRAINING_SET_SPLIT == None:
+        img.save(CPD_FOLDER_NAME + "/" + "_GNNExplainer_pert_pos_" + "heatmap.png")
+    else:
+        img.save(CPD_FOLDER_NAME + "/" + "_GNNExplainer_pert_pos_" + "_train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
+
+
+    plt.close("all")
     ####FIDELITY and INFIDELITY COMPUTATION####
     #
     # 
