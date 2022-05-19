@@ -1,0 +1,8 @@
+P14416_P42336 single
+
+Scores over 20 random cpdsfrom test set
+
+Avg GraphSHAPer FID+  0.934
+Avg GraphSHAPer FID-  0.094
+Avg GNNExplainer FID+  0.85
+Avg GNNExplainer FID-  0.041
