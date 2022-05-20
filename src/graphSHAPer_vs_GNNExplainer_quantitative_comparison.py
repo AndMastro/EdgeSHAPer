@@ -70,6 +70,8 @@ TARGET_CPDS = "P14416_P42336"
 DATASET_NAME = "chembl29_predicting_target_" + TARGET_CPDS + "_target_"+ str(TARGET) +"_vs_random_cpds" # "chembl29_dt_cpds_" + TARGET_CPDS + "_balanced" #"chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds"
 CSV_DATA_PATH = "../data/"+ DATASET_NAME + ".csv"
 
+CPD_SELECTION = ["C#Cc1ccc2sc(C(=O)NCCCCN3CCN(c4ccccc4OC)CC3)cc2c1", "Cc1ncsc1-c1nnc(SCCCN2CCC3(CC3c3ccc(C(F)(F)F)cc3)C2)n1C"] #[]
+
 smiles_df = pd.read_csv(CSV_DATA_PATH, sep = ",")
 print(smiles_df.head())
 print(smiles_df.shape)
@@ -319,57 +321,75 @@ print(f'Test Acc: {test_acc:.4f}')
 # for dual target Q9Y5N1_P31645 sample 0 has class 0
 # for dual target P27338_P29274 sample 0 is class 0
 # for dual targe P27338_P22303 sample 4 is class 0
-
-#we randomly sample 10 cmps from class 0 and 10 from class 1
-num_random_samples = 20
-test_compounds_indices_class_0 = []
-test_compounds_indices_class_1 = []
-rng = default_rng(seed = 42)
 model.eval()
+test_compounds_indices =  []
+#we randomly sample 10 cmps from class 0 and 10 from class 1
 
-print("Choosing random samples for target compound...\n")
-while len(test_compounds_indices_class_0) < num_random_samples:
-    random_index = rng.integers(low = 0, high = len(test_data), size = 1)[0]
-    if random_index not in test_compounds_indices_class_0:
-        real_class = test_data[random_index].y
+if len(CPD_SELECTION) == 0: 
+    num_random_samples = 20
+    test_compounds_indices_class_0 = []
+    test_compounds_indices_class_1 = []
+    rng = default_rng(seed = 42)
 
-        if real_class == 0:
-            test_cpd = test_data[random_index].to(device)
 
-            batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
-            out = model(test_cpd.x, test_cpd.edge_index, batch=batch)
-            out_prob = F.softmax(out, dim = 1)
-            target_class = torch.argmax(out_prob[0]).item()
+    print("Choosing random samples for target compound...\n")
+    while len(test_compounds_indices_class_0) < num_random_samples:
+        random_index = rng.integers(low = 0, high = len(test_data), size = 1)[0]
+        if random_index not in test_compounds_indices_class_0:
+            real_class = test_data[random_index].y
 
-            if target_class == 0:
-                test_compounds_indices_class_0.append(random_index)
+            if real_class == 0:
+                test_cpd = test_data[random_index].to(device)
 
-# print("Choosing random samples for random target...\n")
-# while len(test_compounds_indices_class_1) < num_random_samples:
-#     random_index = rng.integers(low = 0, high = len(test_data), size = 1)[0]
-#     if random_index not in test_compounds_indices_class_1:
-#         real_class = test_data[random_index].y
+                batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
+                out = model(test_cpd.x, test_cpd.edge_index, batch=batch)
+                out_prob = F.softmax(out, dim = 1)
+                target_class = torch.argmax(out_prob[0]).item()
 
-#         if real_class == 1:
-#             test_cpd = test_data[random_index].to(device)
+                if target_class == 0:
+                    test_compounds_indices_class_0.append(random_index)
 
-#             batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
-#             out = model(test_cpd.x, test_cpd.edge_index, batch=batch)
-#             out_prob = F.softmax(out, dim = 1)
-#             target_class = torch.argmax(out_prob[0]).item()
+    # print("Choosing random samples for random target...\n")
+    # while len(test_compounds_indices_class_1) < num_random_samples:
+    #     random_index = rng.integers(low = 0, high = len(test_data), size = 1)[0]
+    #     if random_index not in test_compounds_indices_class_1:
+    #         real_class = test_data[random_index].y
 
-#             if target_class == 1:
-#                 test_compounds_indices_class_1.append(random_index)
+    #         if real_class == 1:
+    #             test_cpd = test_data[random_index].to(device)
 
-print("Done!\n")
+    #             batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
+    #             out = model(test_cpd.x, test_cpd.edge_index, batch=batch)
+    #             out_prob = F.softmax(out, dim = 1)
+    #             target_class = torch.argmax(out_prob[0]).item()
 
-test_compounds_indices = test_compounds_indices_class_0 + test_compounds_indices_class_1
+    #             if target_class == 1:
+    #                 test_compounds_indices_class_1.append(random_index)
+
+    print("Done!\n")
+
+    test_compounds_indices = test_compounds_indices_class_0 + test_compounds_indices_class_1
+
+else:
+    for selected_cpd in CPD_SELECTION:
+        for i in range(len(test_data)):
+            if test_data[i].smiles == selected_cpd:
+                test_compounds_indices.append(i)
+                break
+
+    print("Done!\n")
 
 fidelity_values_gs = []
 infidelity_values_gs = []
 
 fidelity_values_ge = []
 infidelity_values_ge = []
+
+num_edges_pert_neg_gs = []
+num_edges_pert_pos_gs = []
+
+num_edges_pert_neg_ge = []
+num_edges_pert_pos_ge = []
 
 for test_set_index in tqdm(test_compounds_indices):
 
@@ -787,6 +807,7 @@ for test_set_index in tqdm(test_compounds_indices):
             break
 
     pertinent_set_edge_index = torch.index_select(edge_index, dim = 1, index = torch.LongTensor(pertinent_set_indices).to(device))
+    num_edges_pert_neg_gs.append(len(pertinent_set_indices))
     # print(pertinent_set_indices)
     # print(pertinent_set_edge_index)
 
@@ -847,6 +868,8 @@ for test_set_index in tqdm(test_compounds_indices):
 
             print("FID- using pertinent positive: ", infidelity)
             break
+    
+    num_edges_pert_pos_gs.append(reduced_edge_index.shape[1])
 
     ### viz pertinent positive for graphshaper
     rdkit_bonds_phi_pertinent_set = [0]*num_bonds
@@ -902,6 +925,7 @@ for test_set_index in tqdm(test_compounds_indices):
             break
 
     pertinent_set_edge_index = torch.index_select(edge_index, dim = 1, index = torch.LongTensor(pertinent_set_indices).to(device))
+    num_edges_pert_neg_ge.append(len(pertinent_set_indices))
     # print(pertinent_set_indices)
     # print(pertinent_set_edge_index)
 
@@ -962,6 +986,7 @@ for test_set_index in tqdm(test_compounds_indices):
             print("FID- using pertinent positive: ", infidelity)
             break
 
+    num_edges_pert_pos_ge.append(reduced_edge_index.shape[1])
 
     ### viz pertinent positive for GNNExplainer
     rdkit_bonds_gnn_expl_pertinent_set = [0]*num_bonds
@@ -986,9 +1011,9 @@ for test_set_index in tqdm(test_compounds_indices):
     img = transform2png(canvas.GetDrawingText())
 
     if TRAINING_SET_SPLIT == None:
-        img.save(CPD_FOLDER_NAME + "/" + "_GNNExplainer_pert_pos_" + "heatmap.png")
+        img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_pert_pos_" + "heatmap.png")
     else:
-        img.save(CPD_FOLDER_NAME + "/" + "_GNNExplainer_pert_pos_" + "_train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
+        img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_pert_pos_" + "_train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
 
 
     plt.close("all")
@@ -1062,8 +1087,16 @@ for test_set_index in tqdm(test_compounds_indices):
     # print("Unimportant edges: ", unimportant_edge_index)
 
 
-print("Avg GraphSHAPer FID+ ", round(sum(fidelity_values_gs)/len(fidelity_values_gs), 3))
-print("Avg GraphSHAPer FID- ", round(sum(infidelity_values_gs)/len(infidelity_values_gs), 3))
+print("Avg GraphSHAPer FID+: ", round(sum(fidelity_values_gs)/len(fidelity_values_gs), 3))
+print("Avg GraphSHAPer FID-: ", round(sum(infidelity_values_gs)/len(infidelity_values_gs), 3))
 
-print("Avg GNNExplainer FID+ ", round(sum(fidelity_values_ge)/len(fidelity_values_ge), 3))
-print("Avg GNNExplainer FID- ", round(sum(infidelity_values_ge)/len(infidelity_values_ge), 3))
+print("Avg GNNExplainer FID+: ", round(sum(fidelity_values_ge)/len(fidelity_values_ge), 3))
+print("Avg GNNExplainer FID-: ", round(sum(infidelity_values_ge)/len(infidelity_values_ge), 3))
+
+print("=========================================================")
+
+print("Avg num edges pertinent neg set GraphSHAPer: ", round(sum(num_edges_pert_neg_gs)/len(num_edges_pert_neg_gs), 3))
+print("Avg num edges pertinent pos set GraphSHAPer: ", round(sum(num_edges_pert_pos_gs)/len(num_edges_pert_pos_gs), 3))
+
+print("Avg num edges pertinent neg set GNNExplainer: ", round(sum(num_edges_pert_neg_ge)/len(num_edges_pert_neg_ge), 3))
+print("Avg num edges pertinent pos set GNNExplainer: ", round(sum(num_edges_pert_pos_ge)/len(num_edges_pert_pos_ge), 3))

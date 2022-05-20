@@ -6,3 +6,15 @@ Avg GraphSHAPer FID+  0.934
 Avg GraphSHAPer FID-  0.094
 Avg GNNExplainer FID+  0.85
 Avg GNNExplainer FID-  0.041
+
+Scores on Christian's CPDS
+
+Avg GraphSHAPer FID+:  0.968
+Avg GraphSHAPer FID-:  0.061
+Avg GNNExplainer FID+:  0.809
+Avg GNNExplainer FID-:  0.048
+=========================================================
+Avg num edges pertinent neg set GraphSHAPer:  5.5
+Avg num edges pertinent pos set GraphSHAPer:  13.0
+Avg num edges pertinent neg set GNNExplainer:  20.5
+Avg num edges pertinent pos set GNNExplainer:  33.0
