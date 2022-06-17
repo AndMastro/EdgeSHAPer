@@ -1,6 +1,6 @@
 P14416_P42336 single
 
-Scores over 20 random cpdsfrom test set
+Scores over 20 random cpdsfrom test set ol code
 
 Avg GraphSHAPer FID+  0.934
 Avg GraphSHAPer FID-  0.094
@@ -24,10 +24,97 @@ Avg num edges pertinent pos set GraphSHAPer:  13.0
 Avg num edges minimal top-k set GNNExplainer:  20.5
 Avg num edges pertinent pos set GNNExplainer:  33.0
 
-Training split 0
+Training split 0 desktop
 
 Avg EdgeSHAPer FID+:  0.886
 Avg EdgeSHAPer FID-:  0.142
 =========================================================
 Avg num edges minimal top-k set EdgeSHAPer:  5.25
 Avg num edges pertinent pos set EdgeSHAPer:  5.1
+
+17 jun 2022
+
+FULL training set
+
+Avg EdgeSHAPer FID+:  0.934
+Avg EdgeSHAPer FID-:  0.137
+Avg GNNExplainer FID+:  0.813
+Avg GNNExplainer FID-:  0.154
+=========================================================
+Avg num edges minimal top-k set EdgeSHAPer:  3.75
+Avg num edges pertinent pos set EdgeSHAPer:  12.85
+Avg num edges minimal top-k set GNNExplainer:  15.55
+Avg num edges pertinent pos set GNNExplainer:  31.1
+
+training split 0
+
+Avg EdgeSHAPer FID+:  0.886
+Avg EdgeSHAPer FID-:  0.108
+Avg GNNExplainer FID+:  0.786
+Avg GNNExplainer FID-:  0.131
+=========================================================
+Avg num edges minimal top-k set EdgeSHAPer:  4.8
+Avg num edges pertinent pos set EdgeSHAPer:  5.5
+Avg num edges minimal top-k set GNNExplainer:  24.3
+Avg num edges pertinent pos set GNNExplainer:  18.35
+
+training split 1
+
+Avg EdgeSHAPer FID+:  0.851
+Avg EdgeSHAPer FID-:  0.245
+Avg GNNExplainer FID+:  0.782
+Avg GNNExplainer FID-:  0.202
+=========================================================
+Avg num edges minimal top-k set EdgeSHAPer:  3.75
+Avg num edges pertinent pos set EdgeSHAPer:  7.2
+Avg num edges minimal top-k set GNNExplainer:  22.35
+Avg num edges pertinent pos set GNNExplainer:  26.3
+
+training split 2
+
+Avg EdgeSHAPer FID+:  0.926
+Avg EdgeSHAPer FID-:  0.12
+Avg GNNExplainer FID+:  0.778
+Avg GNNExplainer FID-:  0.195
+=========================================================
+Avg num edges minimal top-k set EdgeSHAPer:  4.1
+Avg num edges pertinent pos set EdgeSHAPer:  7.45
+Avg num edges minimal top-k set GNNExplainer:  18.85
+Avg num edges pertinent pos set GNNExplainer:  22.55
+
+subsets avg
+
+Avg EdgeSHAPer FID+: 0.888
+Avg EdgeSHAPer FID-:  0.158
+Avg GNNExplainer FID+: 0.782
+Avg GNNExplainer FID-: 0.176
+=========================================================
+Avg num edges minimal top-k set EdgeSHAPer: 
+Avg num edges pertinent pos set EdgeSHAPer:  
+Avg num edges minimal top-k set GNNExplainer:  
+Avg num edges pertinent pos set GNNExplainer: 
+
+
+Paper test CPDs old
+
+Avg GraphSHAPer FID+:  0.968
+Avg GraphSHAPer FID-:  0.061
+Avg GNNExplainer FID+:  0.809
+Avg GNNExplainer FID-:  0.048
+=========================================================
+Avg num edges pertinent neg set GraphSHAPer:  5.5
+Avg num edges pertinent pos set GraphSHAPer:  13.0
+Avg num edges pertinent neg set GNNExplainer:  20.5
+Avg num edges pertinent pos set GNNExplainer:  33.0
+
+FULL training set old code
+
+Avg GraphSHAPer FID+:  0.934
+Avg GraphSHAPer FID-:  0.094
+Avg GNNExplainer FID+:  0.85
+Avg GNNExplainer FID-:  0.041
+=========================================================
+Avg num edges pertinent neg set GraphSHAPer:  3.65
+Avg num edges pertinent pos set GraphSHAPer:  13.35
+Avg num edges pertinent neg set GNNExplainer:  17.1
+Avg num edges pertinent pos set GNNExplainer:  29.35
