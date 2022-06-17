@@ -7,9 +7,9 @@ Avg GraphSHAPer FID-  0.094
 Avg GNNExplainer FID+  0.85
 Avg GNNExplainer FID-  0.041
 
-Avg num edges pertinent neg set GraphSHAPer:  
+Avg num edges minimal top-k set GraphSHAPer:  
 Avg num edges pertinent pos set GraphSHAPer:  
-Avg num edges pertinent neg set GNNExplainer:  
+Avg num edges minimal top-k set GNNExplainer:  
 Avg num edges pertinent pos set GNNExplainer:  
 
 Scores on Christian's CPDS
@@ -19,7 +19,15 @@ Avg GraphSHAPer FID-:  0.061
 Avg GNNExplainer FID+:  0.809
 Avg GNNExplainer FID-:  0.048
 =========================================================
-Avg num edges pertinent neg set GraphSHAPer:  5.5
+Avg num edges minimal top-k set GraphSHAPer:  5.5
 Avg num edges pertinent pos set GraphSHAPer:  13.0
-Avg num edges pertinent neg set GNNExplainer:  20.5
+Avg num edges minimal top-k set GNNExplainer:  20.5
 Avg num edges pertinent pos set GNNExplainer:  33.0
+
+Training split 0
+
+Avg EdgeSHAPer FID+:  0.886
+Avg EdgeSHAPer FID-:  0.142
+=========================================================
+Avg num edges minimal top-k set EdgeSHAPer:  5.25
+Avg num edges pertinent pos set EdgeSHAPer:  5.1

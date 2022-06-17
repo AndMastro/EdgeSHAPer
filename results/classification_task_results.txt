@@ -6,11 +6,11 @@ Model 1: Train Acc: 0.9889, Val Acc: 0.9652, Test Acc: 0.9653
 Model 2: Train Acc: 0.9991, Val Acc: 0.9784, Test Acc: 0.9761
 Model Train FULL 0: Train Acc: 0.9996, Val Acc: 0.9700 Test Acc: 0.9749
 
-Split 0:
+Split 0: 0.9437
 
 Split 1:
 Train Acc: 1.0000, Val Acc: 0.9580
-Test Acc: 0.9545
+Test Acc: 0.9545 (0.9389...)
 
 Split 2:
 

@@ -54,7 +54,7 @@ np.random.seed(42)
 ###parameters###
 DATASET_TYPE = "single" #"single", dual
 TARGET = 1
-TRAINING_SET_SPLIT = 0 #None, FULL, 0, 1, 2
+TRAINING_SET_SPLIT = 1 #None, FULL, 0, 1, 2
 MODEL_NUM = 0 #2 with single targe 1 vs random
 TARGET_CPDS = "P14416_P42336"
 DATASET_NAME = "chembl29_predicting_target_" + TARGET_CPDS + "_target_"+ str(TARGET) +"_vs_random_cpds" # "chembl29_dt_cpds_" + TARGET_CPDS + "_balanced" #"chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds"
@@ -515,7 +515,8 @@ for test_set_index in tqdm(test_compounds_indices):
     
 
     important_edges_ranking = np.argsort(-np.array(phi_edges))
-    
+    edge_index = E.to(device)
+
     test_mol = Chem.MolFromSmiles(test_cpd.smiles)
     test_mol = Draw.PrepareMolForDrawing(test_mol)
 
@@ -870,9 +871,9 @@ if GNNEXPLAINER_USAGE:
 
 print("=========================================================")
 
-print("Avg num edges pertinent neg set EdgeSHAPer: ", round(sum(num_edges_min_top_k_gs)/len(num_edges_min_top_k_gs), 3))
+print("Avg num edges minimal top-k set EdgeSHAPer: ", round(sum(num_edges_min_top_k_gs)/len(num_edges_min_top_k_gs), 3))
 print("Avg num edges pertinent pos set EdgeSHAPer: ", round(sum(num_edges_pert_pos_gs)/len(num_edges_pert_pos_gs), 3))
 
 if GNNEXPLAINER_USAGE:
-    print("Avg num edges pertinent neg set GNNExplainer: ", round(sum(num_edges_min_top_k_ge)/len(num_edges_min_top_k_ge), 3))
+    print("Avg num edges minimal top-k set GNNExplainer: ", round(sum(num_edges_min_top_k_ge)/len(num_edges_min_top_k_ge), 3))
     print("Avg num edges pertinent pos set GNNExplainer: ", round(sum(num_edges_pert_pos_ge)/len(num_edges_pert_pos_ge), 3))
