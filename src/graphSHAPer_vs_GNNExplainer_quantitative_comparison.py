@@ -54,12 +54,12 @@ np.random.seed(42)
 ###parameters###
 DATASET_TYPE = "single" #"single", dual
 TARGET = 1
-TRAINING_SET_SPLIT = 1 #None, FULL, 0, 1, 2
+TRAINING_SET_SPLIT = 2 #None, FULL, 0, 1, 2
 MODEL_NUM = 0 #2 with single targe 1 vs random
 TARGET_CPDS = "P14416_P42336"
 DATASET_NAME = "chembl29_predicting_target_" + TARGET_CPDS + "_target_"+ str(TARGET) +"_vs_random_cpds" # "chembl29_dt_cpds_" + TARGET_CPDS + "_balanced" #"chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds"
 CSV_DATA_PATH = "../data/"+ DATASET_NAME + ".csv"
-GNNEXPLAINER_USAGE = False
+GNNEXPLAINER_USAGE = True
 SEED = 42
 SAVE = True
 M = 100
@@ -612,7 +612,7 @@ for test_set_index in tqdm(test_compounds_indices):
             if TRAINING_SET_SPLIT == None:
                 img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_" + "heatmap.png")
             else:
-                img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_" + "_train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
+                img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_" + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
 
 
     batch = torch.zeros(test_cpd.x.shape[0], dtype=int, device=test_cpd.x.device)
@@ -684,7 +684,7 @@ for test_set_index in tqdm(test_compounds_indices):
         if TRAINING_SET_SPLIT == None:
             img.save(CPD_FOLDER_NAME + "/" + "EdgeSHAPer_min_top_k_" + "heatmap.png")
         else:
-            img.save(CPD_FOLDER_NAME + "/" + "EdgeSHAPer_min_top_k_" + "_train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
+            img.save(CPD_FOLDER_NAME + "/" + "EdgeSHAPer_min_top_k_" + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
 
     #pertinent positive for EdgeSHAPer
     for i in range(important_edges_ranking.shape[0]+1):
@@ -738,7 +738,7 @@ for test_set_index in tqdm(test_compounds_indices):
         if TRAINING_SET_SPLIT == None:
             img.save(CPD_FOLDER_NAME + "/" + "EdgeSHAPer_pert_pos_" + "heatmap.png")
         else:
-            img.save(CPD_FOLDER_NAME + "/" + "EdgeSHAPer_pert_pos_" + "_train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
+            img.save(CPD_FOLDER_NAME + "/" + "EdgeSHAPer_pert_pos_" + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
 
 
     if GNNEXPLAINER_USAGE:
@@ -803,7 +803,7 @@ for test_set_index in tqdm(test_compounds_indices):
             if TRAINING_SET_SPLIT == None:
                 img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_min_top_k_" + "heatmap.png")
             else:
-                img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_min_top_k_" + "_train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
+                img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_min_top_k_" + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
 
         #pertinent positive for GNNExplainer
         for i in range(important_gnn_expl_edges_ranking.shape[0]+1):
@@ -856,7 +856,7 @@ for test_set_index in tqdm(test_compounds_indices):
             if TRAINING_SET_SPLIT == None:
                 img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_pert_pos_" + "heatmap.png")
             else:
-                img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_pert_pos_" + "_train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
+                img.save(CPD_FOLDER_NAME + "/" + "GNNExplainer_pert_pos_" + "train_" + str(TRAINING_SET_SPLIT) + "_heatmap.png")
 
 
     plt.close("all")
