@@ -89,10 +89,10 @@ Avg EdgeSHAPer FID-:  0.158
 Avg GNNExplainer FID+: 0.782
 Avg GNNExplainer FID-: 0.176
 =========================================================
-Avg num edges minimal top-k set EdgeSHAPer: 
-Avg num edges pertinent pos set EdgeSHAPer:  
-Avg num edges minimal top-k set GNNExplainer:  
-Avg num edges pertinent pos set GNNExplainer: 
+Avg num edges minimal top-k set EdgeSHAPer: 4.22
+Avg num edges pertinent pos set EdgeSHAPer: 6.72
+Avg num edges minimal top-k set GNNExplainer:  21.83
+Avg num edges pertinent pos set GNNExplainer: 22.40
 
 
 Paper test CPDs old
