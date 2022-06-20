@@ -4,7 +4,7 @@ This is the official implementation for **EdgeSHAPer: Bond-Centric Shapley Value
 
 The methodology relies on Shapleuy values approximations to determine edge importance for GNN prediction. It finds its application in the context of medicinal chemistry, but begin general-purpose it can be applied to many graph classification GNN-based tasks which require explanability.
 
-The implementation is in PyTorch
+The implementation is done using PyTorch.
 
 We suggest to create/use a Conda environment and install the modules in ```requirements.txt```. Otherwise, we also provide a full conda environment yml file that can be used to create a brand new environment with the needed modules. For visualizations, install [this](https://pages.github.com/) additional module.
 
