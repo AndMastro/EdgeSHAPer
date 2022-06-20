@@ -9,7 +9,7 @@ from numpy.random import default_rng
 from tqdm import tqdm
 
 
-def edgeshaper(model, x, E, num_nodes, M = 100, target_class = 0, P = None, deviation = None, log_odds = False, seed = 42, device = "cpu"):
+def edgeshaper(model, x, E, M = 100, target_class = 0, P = None, deviation = None, log_odds = False, seed = 42, device = "cpu"):
     """ Compute Shapley values approximation for edge importance in GNNs
         Args:
             model (Torch.NN.Module): Torch GNN model used.
@@ -39,6 +39,7 @@ def edgeshaper(model, x, E, num_nodes, M = 100, target_class = 0, P = None, devi
 
     num_nodes = x.shape[0]
     num_edges = E.shape[1]
+    
     if P == None:
         max_num_edges = num_nodes*(num_nodes-1)
         graph_density = num_edges/max_num_edges
