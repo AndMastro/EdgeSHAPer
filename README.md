@@ -6,7 +6,7 @@ The methodology relies on Shapley values approximations to determine edge import
 
 The implementation is done using PyTorch.
 
-We suggest to create/use a Conda environment and install the modules in ```requirements.txt```. Otherwise, we also provide a full conda environment yml file that can be used to create a brand new environment with the needed modules. For visualizations, install [this](https://pages.github.com/) additional module.
+We suggest to create/use a Conda environment. We also provide a full conda environment yml file that can be used to create a brand new environment with the needed modules. For visualizations, install [this](https://pages.github.com/) additional module.
 
 The file ```edgeshaper.py``` contains the method source code.
 
