@@ -2,7 +2,7 @@
 
 This is the official implementation for **EdgeSHAPer: Bond-Centric Shapley Value-Based Explanation Method for Graph Neural Networks**.
 
-The methodology relies on Shapleuy values approximations to determine edge importance for GNN prediction. It finds its application in the context of medicinal chemistry, but begin general-purpose it can be applied to many graph classification GNN-based tasks which require explanability.
+The methodology relies on Shapley values approximations to determine edge importance for GNN prediction. It finds its application in the context of medicinal chemistry, but begin general-purpose it can be applied to many graph classification GNN-based tasks which require explanability.
 
 The implementation is done using PyTorch.
 
