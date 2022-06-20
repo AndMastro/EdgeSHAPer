@@ -30,13 +30,14 @@ def edgeshaper(model, x, E, num_nodes, M = 100, target_class = 0, P = None, devi
         """
     
     if deviation != None:
-        return edgeshaper_deviation(model, x, E, num_nodes, M = M, target_class = target_class, P = P, deviation = deviation, log_odds = log_odds, seed = seed, device=device)
+        return edgeshaper_deviation(model, x, E, M = M, target_class = target_class, P = P, deviation = deviation, log_odds = log_odds, seed = seed, device=device)
 
 
     rng = default_rng(seed = seed)
     model.eval()
     phi_edges = []
 
+    num_nodes = x.shape[0]
     num_edges = E.shape[1]
     if P == None:
         max_num_edges = num_nodes*(num_nodes-1)
@@ -105,7 +106,7 @@ def edgeshaper(model, x, E, num_nodes, M = 100, target_class = 0, P = None, devi
     return phi_edges
 
 
-def edgeshaper_deviation(model, x, E, num_nodes, M = 100, target_class = 0, P = None, deviation = None, log_odds = False, seed = 42, device = "cpu"):
+def edgeshaper_deviation(model, x, E, M = 100, target_class = 0, P = None, deviation = None, log_odds = False, seed = 42, device = "cpu"):
 
     rng = default_rng(seed = seed)
     model.eval()
@@ -113,10 +114,12 @@ def edgeshaper_deviation(model, x, E, num_nodes, M = 100, target_class = 0, P = 
     out = model(x, E, batch=batch)
     out_prob_real = F.softmax(out, dim = 1)[0][target_class].item()
 
-    phi_edges = []
-    phi_edges_current = [0] * num_edges
+    num_nodes = x.shape[0]
     num_edges = E.shape[1]
 
+    phi_edges = []
+    phi_edges_current = [0] * num_edges
+    
     if P == None:
         max_num_edges = num_nodes*(num_nodes-1)
         graph_density = num_edges/max_num_edges
