@@ -1,2 +1,28 @@
-# GraphSHAP_cheminfo
-Repository for the GNNExplainer + Shaply values project in chemoinformatics.
+# EdgeSHAPer: Bond-Centric Shapley Value-Based Explanation Method for Graph Neural Networks
+
+This is the official implementation for **EdgeSHAPer: Bond-Centric Shapley Value-Based Explanation Method for Graph Neural Networks**.
+
+The methodology relies on Shapleuy values approximations to determine edge importance for GNN prediction. It finds its application in the context of medicinal chemistry, but begin general-purpose it can be applied to many graph classification GNN-based tasks which require explanability.
+
+The implementation is in PyTorch
+
+We suggest to create/use a Conda environment and install the modules in ```requirements.txt```.
+
+The file ```edgeshaper.py``` contains the method source code.
+
+In the ```experiments``` folder it is possible to find and reproduce the experiments (along with the visualizations) done in the paper.
+
+If you want to use the EdgeSHAPer as a standalone tool to explain your own model, simply import the file ```edgeshaper.py```.
+
+```python
+from edgeshaper import edgeshaper
+
+model = YOUR_GNN_MODEL
+edge_index = YOUR_GRAPH_EDGE_INDEX
+x = GRAPH_NODES_FEATURES
+device = "cuda" or "cpu"
+
+edges_explanations = edgeshaper(model, x, E, M = 100, device = "cpu")
+```
+
+The code above shows a basic usage of EdgeSHAPer to obtain explanations in terms of Shapley values for the edges of the graph under study. In the source file details of additional parameters can be found. The method works for graph classification tasks, but a node classification extension is planned in the future.
