@@ -15,7 +15,6 @@ def edgeshaper(model, x, E, M = 100, target_class = 0, P = None, deviation = Non
             model (Torch.NN.Module): Torch GNN model used.
             x (tensor): 2D tensor containing node features of the graph to explain
             E (tensor): edge index of the graph to be explained.
-            num_nodes (int): number of nodes in the graph.
             P (float, optional): probablity of an edge to exist in the random graph. Defaults to the original graph density.
             M (int): number of Monte Carlo sampling steps to perform.
             target_class (int, optional): index of the class prediction to explain. Defaults to class 0.
