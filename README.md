@@ -22,7 +22,7 @@ edge_index = YOUR_GRAPH_EDGE_INDEX
 x = GRAPH_NODES_FEATURES
 device = "cuda" or "cpu"
 
-edges_explanations = edgeshaper(model, x, E, M = 100, device = "cpu")
+edges_explanations = edgeshaper(model, x, edge_index, M = 100, device = "cuda")
 ```
 
 The code above shows a basic usage of EdgeSHAPer to obtain explanations in terms of Shapley values for the edges of the graph under study. ```M``` is the number of Monte Carlo sampling steps to perform to obtain an approximation of the Shapley values. 100 is a default value empirically determined, but this can be freely changed at will. In the source file details on additional parameters can be found. 
