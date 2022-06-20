@@ -21,8 +21,9 @@ model = YOUR_GNN_MODEL
 edge_index = YOUR_GRAPH_EDGE_INDEX
 x = GRAPH_NODES_FEATURES
 device = "cuda" or "cpu"
+target_class = TARGET_CLASS #class label for which to perform explanations
 
-edges_explanations = edgeshaper(model, x, edge_index, M = 100, device = "cuda")
+edges_explanations = edgeshaper(model, x, edge_index, M = 100, target_class = TARGET_CLASS, device = "cuda")
 ```
 
 The code above shows a basic usage of EdgeSHAPer to obtain explanations in terms of Shapley values for the edges of the graph under study. ```M``` is the number of Monte Carlo sampling steps to perform to obtain an approximation of the Shapley values. 100 is a default value empirically determined, but this can be freely changed at will. In the source file details on additional parameters can be found. 
