@@ -52,18 +52,19 @@ np.random.seed(42)
 # In[55]:
 
 ###parameters###
-DATASET_TYPE = "single" #"single", dual
+####do not modify those to reproduce paper experiments#####
+DATASET_TYPE = "single" 
 TARGET = 1
-TRAINING_SET_SPLIT = FULL #None, FULL, 0, 1, 2
-MODEL_NUM = 0 #2 with single targe 1 vs random
+TRAINING_SET_SPLIT = "FULL" #None, FULL, 0, 1, 2
+MODEL_NUM = 0 
 TARGET_CPDS = "P14416_P42336"
-DATASET_NAME = "chembl29_predicting_target_" + TARGET_CPDS + "_target_"+ str(TARGET) +"_vs_random_cpds" # "chembl29_dt_cpds_" + TARGET_CPDS + "_balanced" #"chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds"
+DATASET_NAME = "chembl29_predicting_target_" + TARGET_CPDS + "_target_"+ str(TARGET) +"_vs_random_cpds"
 CSV_DATA_PATH = "../data/"+ DATASET_NAME + ".csv"
 GNNEXPLAINER_USAGE = True
 SEED = 42
 SAVE = True
 M = 100
-##############
+##################
 
 CPD_SELECTION = [] #["C#Cc1ccc2sc(C(=O)NCCCCN3CCN(c4ccccc4OC)CC3)cc2c1", "Cc1ncsc1-c1nnc(SCCCN2CCC3(CC3c3ccc(C(F)(F)F)cc3)C2)n1C"] #[]
 
