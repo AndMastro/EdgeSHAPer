@@ -52,7 +52,7 @@ np.random.seed(42)
 # In[55]:
 
 ###parameters###
-####do not modify those to reproduce paper experiments#####
+####do not modify those if you want reproduce paper experiments#####
 DATASET_TYPE = "single" 
 TARGET = 1
 TRAINING_SET_SPLIT = "FULL" #None, FULL, 0, 1, 2
@@ -66,6 +66,7 @@ SAVE = True
 M = 100
 ##################
 
+### uncomment this to use the CPDs shown in the paper ###
 CPD_SELECTION = [] #["C#Cc1ccc2sc(C(=O)NCCCCN3CCN(c4ccccc4OC)CC3)cc2c1", "Cc1ncsc1-c1nnc(SCCCN2CCC3(CC3c3ccc(C(F)(F)F)cc3)C2)n1C"] #[]
 
 smiles_df = pd.read_csv(CSV_DATA_PATH, sep = ",")
@@ -110,7 +111,6 @@ chembl_dataset = ChEMBL(path = CSV_DATA_PATH, smiles_field = "nonstereo_aromatic
 
 # ## Obtain edge index to use with PyG
 
-# Visualize molecules using NetworkX
 
 # In[7]:
     
