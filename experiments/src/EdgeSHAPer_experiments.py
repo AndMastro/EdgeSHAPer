@@ -37,16 +37,6 @@ import os
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 
 
-# ## Reprodicubility Settings
-
-# In[3]:
-
-
-torch.manual_seed(42)
-random.seed(42)
-np.random.seed(42)
-
-
 # ## Data Loading
 
 # In[55]:
@@ -66,7 +56,13 @@ SAVE = True
 M = 100
 ##################
 
-### uncomment this to use the CPDs shown in the paper ###
+### Reprodicubility Settings
+
+torch.manual_seed(SEED)
+random.seed(SEED)
+np.random.seed(SEED)
+
+### uncomment this to use the CPDs shown in the main paper, otherwise keep intact for reproducing the quantitative results of the paper on test CPDs###
 CPD_SELECTION = [] #["C#Cc1ccc2sc(C(=O)NCCCCN3CCN(c4ccccc4OC)CC3)cc2c1", "Cc1ncsc1-c1nnc(SCCCN2CCC3(CC3c3ccc(C(F)(F)F)cc3)C2)n1C"] #[]
 
 smiles_df = pd.read_csv(CSV_DATA_PATH, sep = ",")
