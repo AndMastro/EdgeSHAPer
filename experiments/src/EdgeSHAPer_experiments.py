@@ -389,10 +389,10 @@ for test_set_index in tqdm(test_compounds_indices):
     CPD_FOLDER_NAME = FOLDER_NAME + "/" + test_cpd.smiles
 
     if not os.path.exists(FOLDER_NAME):
-        os.mkdir(FOLDER_NAME)
+        os.makedirs(FOLDER_NAME)
 
     if not os.path.exists(CPD_FOLDER_NAME):
-        os.mkdir(CPD_FOLDER_NAME)
+        os.makedirs(CPD_FOLDER_NAME)
 
 
     mol_test.visualize(save_file = CPD_FOLDER_NAME + "/" + test_cpd.smiles + ".png")
