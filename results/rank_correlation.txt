@@ -1,0 +1,19 @@
+Rank correlation coefficients between bond rankings: EdgeSHAPer vs TreeExplainer
+Full ranking:
+Spearman:  0.097
+Pearson:  0.097
+Kendall tau:  0.07
+Top 25'%' of bonds:
+Spearman:  0.013
+Pearson:  0.055
+Kendall tau:  0.022
+
+Rank correlation coefficients between bond rankings: EdgeSHAPer vs GNNExplainer
+Full ranking:
+Spearman:  -0.01
+Pearson:  -0.01
+Kendall tau:  -0.004
+Top 25'%' of bonds:
+Spearman:  0.012
+Pearson:  0.012
+Kendall tau:  0.016

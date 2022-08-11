@@ -413,8 +413,8 @@ for test_set_index in tqdm(test_compounds_indices):
     if not os.path.exists(CPD_FOLDER_NAME):
         os.makedirs(CPD_FOLDER_NAME)
 
-
-    mol_test.visualize(save_file = CPD_FOLDER_NAME + "/" + test_cpd.smiles + ".png")
+    if SAVE:
+        mol_test.visualize(save_file = CPD_FOLDER_NAME + "/" + test_cpd.smiles + ".png")
 
 
     E = test_cpd.edge_index
