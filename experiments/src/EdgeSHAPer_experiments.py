@@ -50,7 +50,7 @@ MODEL_NUM = 0
 TARGET_CPDS = "P14416_P42336"
 DATASET_NAME = "chembl29_predicting_target_" + TARGET_CPDS + "_target_"+ str(TARGET) +"_vs_random_cpds"
 CSV_DATA_PATH = "../data/"+ DATASET_NAME + ".csv"
-GNNEXPLAINER_USAGE = True
+GNNEXPLAINER_USAGE = False
 SEED = 42
 SAVE = True
 M = 100
@@ -63,7 +63,7 @@ random.seed(SEED)
 np.random.seed(SEED)
 
 ### uncomment this to use the CPDs shown in the main paper, otherwise keep intact for reproducing the quantitative results of the paper on test CPDs###
-CPD_SELECTION = [] #["C#Cc1ccc2sc(C(=O)NCCCCN3CCN(c4ccccc4OC)CC3)cc2c1", "Cc1ncsc1-c1nnc(SCCCN2CCC3(CC3c3ccc(C(F)(F)F)cc3)C2)n1C"] #[]
+CPD_SELECTION = ["C#Cc1ccc2sc(C(=O)NCCCCN3CCN(c4ccccc4OC)CC3)cc2c1"] #["C#Cc1ccc2sc(C(=O)NCCCCN3CCN(c4ccccc4OC)CC3)cc2c1", "Cc1ncsc1-c1nnc(SCCCN2CCC3(CC3c3ccc(C(F)(F)F)cc3)C2)n1C"] #[]
 
 smiles_df = pd.read_csv(CSV_DATA_PATH, sep = ",")
 print(smiles_df.head())
