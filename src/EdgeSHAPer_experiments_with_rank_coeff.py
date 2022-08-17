@@ -15,6 +15,7 @@ import numpy as np
 import random
 from numpy.random import default_rng
 import pickle
+import sys
 
 from scipy.stats import spearmanr
 from scipy.stats import pearsonr
@@ -69,7 +70,7 @@ random.seed(SEED)
 np.random.seed(SEED)
 
 ### uncomment this to use the CPDs shown in the main paper, otherwise keep intact for reproducing the quantitative results of the paper on test CPDs###
-CPD_SELECTION = [] #["C#Cc1ccc2sc(C(=O)NCCCCN3CCN(c4ccccc4OC)CC3)cc2c1", "Cc1ncsc1-c1nnc(SCCCN2CCC3(CC3c3ccc(C(F)(F)F)cc3)C2)n1C"] #[]
+CPD_SELECTION = ["Cc1ncsc1-c1nnc(SCCCN2CCC3(CC3c3ccc(C(F)(F)F)cc3)C2)n1C"] #["C#Cc1ccc2sc(C(=O)NCCCCN3CCN(c4ccccc4OC)CC3)cc2c1", "Cc1ncsc1-c1nnc(SCCCN2CCC3(CC3c3ccc(C(F)(F)F)cc3)C2)n1C"] #[]
 
 smiles_df = pd.read_csv(CSV_DATA_PATH, sep = ",")
 print(smiles_df.head())
@@ -384,6 +385,8 @@ for test_set_index in tqdm(test_compounds_indices):
 
     print("Explaining test compound: ", test_set_index)
     test_cpd = test_data[test_set_index].to(device)
+    print(test_cpd.edge_index)
+    sys.exit()
     print("SMILES: ", test_cpd.smiles)
     mol_test = data.Molecule.from_smiles(test_cpd.smiles, with_hydrogen=False)
     
