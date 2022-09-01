@@ -6,7 +6,7 @@ This is the official implementation for [**EdgeSHAPer: Bond-Centric Shapley Valu
 
 The methodology relies on Shapley values approximations to determine edge importance for GNN prediction. It finds its application in the context of medicinal chemistry, but begin general-purpose it can be applied to many graph classification GNN-based tasks which require explanability.
 
-EdgeSHAPer relies on PyTorch. I was tested with Python 3.8, PyTorch 1.10, CUDA 10.2 and PyTorch Geometric 2.0. We believe different vesions are fine as well, but we cannot fully guarantee it.
+EdgeSHAPer relies on PyTorch. It was tested with Python 3.8, PyTorch 1.10, CUDA 10.2 and PyTorch Geometric 2.0. We believe different vesions are fine as well, but we cannot fully guarantee it.
 
 We suggest to create/use a Conda environment. If needed, we also provide a full conda config .yml file that can be used to create a brand new environment with the needed modules. For visualizations, [this](https://github.com/c-feldmann/rdkit_heatmaps) additional module is needed.
 
