@@ -33,3 +33,11 @@ The code above shows a basic usage of EdgeSHAPer to obtain explanations in terms
 The method works for graph classification tasks, but a node classification extension is planned in the future.
 
 For any clarification on how to use the tool, feel free to drop an [email](mailto:mastropietro@diag.uniroma1.it).
+
+## Citation
+
+If you use our work, please cite our paper 😊
+
+Mastropietro, A., Pasculli, G., Feldmann, C., Rodríguez-Pérez, R., Bajorath,
+J., EdgeSHAPer: Bond-Centric Shapley Value-Based Explanation Method for Graph Neural Networks,
+ISCIENCE (2022), doi: https://doi.org/10.1016/j.isci.2022.105043
