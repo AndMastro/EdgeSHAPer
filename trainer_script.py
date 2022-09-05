@@ -4,7 +4,7 @@ import argparse
 import random
 import sys
 import os
-import datetime
+from datetime import datetime
 
 import pandas as pd
 import numpy as np
@@ -26,7 +26,6 @@ from pysmiles import read_smiles
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-print(device)
 
 
 def print_usage():
@@ -91,7 +90,7 @@ def set_all_seeds(SEED):
     '''
     torch.manual_seed(SEED)
     torch.cuda.manual_seed(SEED)
-    #torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.deterministic = True
     np.random.seed(SEED)
     random.seed(SEED)
 
@@ -104,9 +103,35 @@ def load_data(DATA_PATH, SMILES_FIELD_NAME, LABEL_FIELD_NAME):
     
     return df_data
 
+
+def save_model(model, MODEL_SAVE_PATH):
+    '''
+    Save the trained model.
+    '''
+    now = datetime.now()
+    current_time = now.strftime("%Y_%m_%d-%H_%M_%S")
+
+    if not os.path.exists(MODEL_SAVE_PATH):
+        os.makedirs(MODEL_SAVE_PATH)
+
+    MODEL_PATH = MODEL_SAVE_PATH + "/model_" + current_time + ".pt"
+    torch.save(model.state_dict(), MODEL_PATH)
+
+def create_edge_index(mol):
+    """
+    Create edge index for a molecule.
+    """
+    adj = nx.to_scipy_sparse_matrix(mol).tocoo()
+    row = torch.from_numpy(adj.row.astype(np.int64)).to(torch.long)
+    col = torch.from_numpy(adj.col.astype(np.int64)).to(torch.long)
+    edge_index = torch.stack([row, col], dim=0)
+    return edge_index
+
 @R.register("datasets.ChEMBL")
 class ChEMBL(data.MoleculeDataset):
-    
+    '''
+    Class for the molecule dataset.
+    '''
     def __init__(self, path, smiles_field, target_fields, verbose=1, **kwargs):
     
         self.path = path
@@ -117,6 +142,9 @@ class ChEMBL(data.MoleculeDataset):
                     verbose=verbose, **kwargs)
 
 class ChEMBLDatasetPyG(InMemoryDataset):
+    '''
+    Class for the PyG version of the dataset.
+    '''
     def __init__(self, root, transform=None, pre_transform=None, pre_filter=None, data_list = None):
         super().__init__(root, transform, pre_transform, pre_filter)
         
@@ -133,6 +161,9 @@ class ChEMBLDatasetPyG(InMemoryDataset):
         self.data, self.slices = self.collate(data_list)
 
 class GCN(torch.nn.Module):
+    '''
+    4-layer GCN model class.
+    '''
     def __init__(self, hidden_channels):
         super(GCN, self).__init__()
         # torch.manual_seed(12345)
@@ -144,7 +175,7 @@ class GCN(torch.nn.Module):
 
     def forward(self, x, edge_index, batch):
         # 1. Obtain node embeddings 
-        x = self.conv1(x, edge_index)
+        x = self.conv1(x.float(), edge_index)
         x = x.relu()
         x = self.conv2(x, edge_index)
         x = x.relu()
@@ -159,29 +190,6 @@ class GCN(torch.nn.Module):
         x = self.lin(x)
         
         return x
-
-def save_model(model, MODEL_SAVE_PATH):
-    '''
-    Save the trained model.
-    '''
-    now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
-
-    if not os.path.exists("MODEL_SAVE_PATH"):
-        os.makedirs("MODEL_SAVE_PATH")
-
-    MODEL_PATH = os.path.join(MODEL_SAVE_PATH, "model_" + current_time + ".pt")
-    torch.save(model.state_dict(), MODEL_PATH)
-
-def create_edge_index(mol):
-    """
-    Create edge index for a molecule.
-    """
-    adj = nx.to_scipy_sparse_matrix(mol).tocoo()
-    row = torch.from_numpy(adj.row.astype(np.int64)).to(torch.long)
-    col = torch.from_numpy(adj.col.astype(np.int64)).to(torch.long)
-    edge_index = torch.stack([row, col], dim=0)
-    return edge_index
 
 if __name__ == "__main__":
     args = parse_args()
@@ -271,7 +279,7 @@ if __name__ == "__main__":
 
     #model instantiation
     model = GCN(hidden_channels=256).to(device)
-
+    
     #training the network
     lr = lr=1e-3
 
