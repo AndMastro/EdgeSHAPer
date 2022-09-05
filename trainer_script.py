@@ -114,7 +114,7 @@ def save_model(model, MODEL_SAVE_PATH):
     if not os.path.exists(MODEL_SAVE_PATH):
         os.makedirs(MODEL_SAVE_PATH)
 
-    MODEL_PATH = MODEL_SAVE_PATH + "/model_" + current_time + ".pt"
+    MODEL_PATH = MODEL_SAVE_PATH + "/model_" + current_time + ".ckpt"
     torch.save(model.state_dict(), MODEL_PATH)
 
 def create_edge_index(mol):
