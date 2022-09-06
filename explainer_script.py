@@ -38,7 +38,7 @@ def print_usage():
     print('    default: False')
 
     print('SAVE_PATH: path in which the explanations will be saved.')
-    print('    default: "TBD"')
+    print('    default: "results"')
 
     print('SAMPLING_STEPS: number of Monte Carlo sampling steps to perform.')
     print('    default: 100')
