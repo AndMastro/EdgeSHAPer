@@ -1,6 +1,8 @@
 ### run this script to obtain explanations for given molecules using a pretrained model ###
 import argparse
 import os
+import sys
+import yaml
 
 import torch
 from torch_geometric.data import  Data
@@ -93,30 +95,49 @@ if __name__ == "__main__":
 
     # parse arguments
 
-    args = parse_args()
+    # args = parse_args()
 
-    MODEL_PATH = args.MODEL_PATH
-    DATA_PATH = args.DATA_PATH
-    MOLECULES_TO_EXPLAIN = args.MOLECULES_TO_EXPLAIN
-    TARGET_CLASS = args.TARGET_CLASS
-    SMILES_FIELD_NAME = args.SMILES_FIELD_NAME
-    LABEL_FIELD_NAME = args.LABEL_FIELD_NAME
-    MINIMAL_SETS = args.MINIMAL_SETS
-    SAVE_PATH = args.SAVE_PATH
-    SAMPLING_STEPS = args.SAMPLING_STEPS
-    VISUALIZATION = args.VISUALIZATION
-    TOLERANCE = args.TOLERANCE
-    SEED = args.SEED
+    # MODEL_PATH = args.MODEL_PATH
+    # DATA_PATH = args.DATA_PATH
+    # MOLECULES_TO_EXPLAIN = args.MOLECULES_TO_EXPLAIN
+    # TARGET_CLASS = args.TARGET_CLASS
+    # SMILES_FIELD_NAME = args.SMILES_FIELD_NAME
+    # LABEL_FIELD_NAME = args.LABEL_FIELD_NAME
+    # MINIMAL_SETS = args.MINIMAL_SETS
+    # SAVE_PATH = args.SAVE_PATH
+    # SAMPLING_STEPS = args.SAMPLING_STEPS
+    # VISUALIZATION = args.VISUALIZATION
+    # TOLERANCE = args.TOLERANCE
+    # SEED = args.SEED
+    args = None
+    with open("parameters.yml") as paramFile:
+    # The FullLoader parameter handles the conversion from YAML
+    # scalar values to Python the dictionary format
+        args = yaml.load(paramFile, Loader=yaml.FullLoader)
 
+
+    MODEL_PATH = args["explainer"]["MODEL_PATH"]
+    DATA_PATH = args["explainer"]["DATA_PATH"]
+    MOLECULES_TO_EXPLAIN = args["explainer"]["MOLECULES_TO_EXPLAIN"]
+    TARGET_CLASS = args["explainer"]["TARGET_CLASS"]
+    SMILES_FIELD_NAME = args["explainer"]["SMILES_FIELD_NAME"]
+    LABEL_FIELD_NAME = args["explainer"]["LABEL_FIELD_NAME"]
+    MINIMAL_SETS = args["explainer"]["MINIMAL_SETS"]
+    SAVE_PATH = args["explainer"]["SAVE_PATH"]
+    SAMPLING_STEPS = args["explainer"]["SAMPLING_STEPS"]
+    VISUALIZATION = args["explainer"]["VISUALIZATION"]
+    TOLERANCE = args["explainer"]["TOLERANCE"]
+    SEED = args["explainer"]["SEED"]
+    
     # if not len(sys.argv) > 1:
     #     print_usage()
     #     print('ERROR: Not enough arguments provided.')
     #     sys.exit(1)
 
-    # if MODEL_PATH is None:
-    #     print_usage()
-    #     print('ERROR: No model path provided.')
-    #     sys.exit(1)
+    if MODEL_PATH is None:
+        print_usage()
+        print('ERROR: No model path provided.')
+        sys.exit(1)
     
     if SEED is not None:
         set_all_seeds(SEED)

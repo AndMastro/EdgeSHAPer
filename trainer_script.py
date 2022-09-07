@@ -1,6 +1,6 @@
 #import needed libraries
 import argparse
-
+import yaml
 import sys
 
 from tqdm import tqdm
@@ -75,20 +75,25 @@ def parse_args():
 
 
 if __name__ == "__main__":
-    args = parse_args()
+    args = None
+    with open("parameters.yml") as paramFile:
+    # The FullLoader parameter handles the conversion from YAML
+    # scalar values to Python the dictionary format
+        args = yaml.load(paramFile, Loader=yaml.FullLoader)
 
-    DATA_PATH       = args.DATA_PATH
-    TRAIN_DATA_PATH = args.TRAIN_DATA_PATH
-    VALIDATION_DATA_PATH    = args.VALIDATION_DATA_PATH
-    TEST_DATA_PATH       = args.TEST_DATA_PATH
-    TRAIN_DATA_PATH = args.TRAIN_DATA_PATH
-    SMILES_FIELD_NAME    = args.SMILES_FIELD_NAME
-    LABEL_FIELD_NAME       = args.LABEL_FIELD_NAME
-    MODEL_SAVE_PATH = args.MODEL_SAVE_PATH
-    HIDDEN_CHANNELS = args.HIDDEN_CHANNELS
-    BATCH_SIZE = args.BATCH_SIZE
-    EPOCHS = args.EPOCHS
-    SEED    = args.SEED
+
+    DATA_PATH       = args["trainer"]["DATA_PATH"]
+    TRAIN_DATA_PATH = args["trainer"]["TRAIN_DATA_PATH"]
+    VALIDATION_DATA_PATH    = args["trainer"]["VALIDATION_DATA_PATH"]
+    TEST_DATA_PATH       = args["trainer"]["TEST_DATA_PATH"]
+    SMILES_FIELD_NAME    = args["trainer"]["SMILES_FIELD_NAME"]
+    LABEL_FIELD_NAME       = args["trainer"]["LABEL_FIELD_NAME"]
+    MODEL_SAVE_PATH = args["trainer"]["MODEL_SAVE_PATH"]
+    HIDDEN_CHANNELS = args["trainer"]["HIDDEN_CHANNELS"]
+    BATCH_SIZE = args["trainer"]["BATCH_SIZE"]
+    EPOCHS = args["trainer"]["EPOCHS"]
+    SEED    = args["trainer"]["SEED"]
+
 
     if not len(sys.argv) > 1:
         print_usage()

@@ -73,7 +73,7 @@ class Edgeshaper():
                 list: list of Shapley values for the edges computed by EdgeSHAPer. The order of the edges is the same as in ```self.edge_index```.
         """
 
-        if deviation != None:
+        if deviation is not None:
             return self.explain_with_deviation(M = M, target_class = target_class, P = P, deviation = deviation, log_odds = log_odds, seed = seed, device=self.device)
 
         E = self.edge_index
@@ -155,14 +155,14 @@ class Edgeshaper():
 
 
     def explain_with_deviation(self, M = 100, target_class = 0, P = None, deviation = None, log_odds = False, seed = None, device = "cpu"):
-
+        
         rng = default_rng(seed = seed)
         self.model.eval()
         batch = torch.zeros(self.x.shape[0], dtype=int, device=self.x.device)
+        E = self.edge_index
         out = self.model(self.x, E, batch=batch)
         out_prob_real = F.softmax(out, dim = 1)[0][target_class].item()
 
-        E = self.edge_index
         num_nodes = self.x.shape[0]
         num_edges = E.shape[1]
 
