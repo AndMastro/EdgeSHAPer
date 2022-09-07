@@ -6,9 +6,422 @@ import torch.nn.functional as F
 import numpy as np
 from numpy.random import default_rng
 
+import matplotlib.pyplot as plt
 from tqdm import tqdm
 
+from rdkit import Chem
+from rdkit.Chem import Draw
+from rdkit_heatmaps import mapvalues2mol
+from rdkit_heatmaps.utils import transform2png
 
+###EdgeSHAPer as a class###
+
+class Edgeshaper():
+    """ EdgeSHAPer class for Shaplay value approximation for edge importance in GNNs
+        
+            P (float, optional): probablity of an edge to exist in the random graph. Defaults to the original graph density.
+            M (int): number of Monte Carlo sampling steps to perform.
+            target_class (int, optional): index of the class prediction to explain. Defaults to class 0.
+            deviation (float, optional): deviation gap from sum of Shapley values and predicted output prob. If ```None```, M sampling
+                steps are computed, otherwise the procedure stops when the desired approxiamtion ```deviation``` is reached. However, after M steps
+                the procedure always terminates.
+            log_odds (bool, optional). Default is ```False```. If ```True```, use log odds instead of probabilty as Value for Shaply values approximation.
+            seed (float, optional): seed used for the random number generator.
+            device (string, optional): states if using ```cuda``` or ```cpu```.
+        Returns:
+                list: list of Shapley values for the edges computed by EdgeSHAPer. The order of the edges is the same as in ```E```.
+    """
+
+    def __init__(self, model, x, edge_index, device = "cpu"):
+        """ Args:
+            model (Torch.NN.Module): Torch GNN model used.
+            x (tensor): 2D tensor containing node features of the graph to explain
+            E (tensor): edge index of the graph to be explained.
+            device (string, optional): states if using ```cuda``` or ```cpu```.
+        """
+        super(Edgeshaper, self).__init__()
+        # torch.manual_seed(12345)
+        self.model = model
+        self.model.to(device)
+        self.x = x
+        self.edge_index = edge_index
+        self.device = device
+
+        self.phi_edges = None
+        
+        self.target_class = None
+        self.explained = False
+
+        self.pertinent_positve = None
+        self.minimal_top_k = None
+        self.fidelity = None
+        self.infidelity = None
+
+        self.original_pred_prob = None
+
+    def explain(self, M = 100, target_class = 0, P = None, deviation = None, log_odds = False, seed = None):
+        """ Compute edge importance using EdgeSHAPer algorithm.
+            M (int): number of Monte Carlo sampling steps to perform.
+            target_class (int, optional): index of the class prediction to explain. Defaults to class 0.
+            P (float, optional): probablity of an edge to exist in the random graph. Defaults to the original graph density.
+            deviation (float, optional): deviation gap from sum of Shapley values and predicted output prob. If ```None```, M sampling
+                steps are computed, otherwise the procedure stops when the desired approxiamtion ```deviation``` is reached. However, after M steps
+                the procedure always terminates.
+            log_odds (bool, optional). Default is ```False```. If ```True```, use log odds instead of probabilty as Value for Shapley values approximation.
+            seed (float, optional): seed used for the random number generator.
+        Returns:
+                list: list of Shapley values for the edges computed by EdgeSHAPer. The order of the edges is the same as in ```self.edge_index```.
+        """
+
+        if deviation != None:
+            return self.explain_with_deviation(M = M, target_class = target_class, P = P, deviation = deviation, log_odds = log_odds, seed = seed, device=self.device)
+
+        E = self.edge_index
+        rng = default_rng(seed = seed)
+        self.model.eval()
+        phi_edges = []
+
+        num_nodes = self.x.shape[0]
+        num_edges = E.shape[1]
+        
+        if P == None:
+            max_num_edges = num_nodes*(num_nodes-1)
+            graph_density = num_edges/max_num_edges
+            P = graph_density
+
+        for j in tqdm(range(num_edges)):
+            marginal_contrib = 0
+            for i in range(M):
+                E_z_mask = rng.binomial(1, P, num_edges)
+                E_mask = torch.ones(num_edges)
+                pi = torch.randperm(num_edges)
+
+                E_j_plus_index = torch.ones(num_edges, dtype=torch.int)
+                E_j_minus_index = torch.ones(num_edges, dtype=torch.int)
+                selected_edge_index = np.where(pi == j)[0].item()
+                for k in range(num_edges):
+                    if k <= selected_edge_index:
+                        E_j_plus_index[pi[k]] = E_mask[pi[k]]
+                    else:
+                        E_j_plus_index[pi[k]] = E_z_mask[pi[k]]
+
+                for k in range(num_edges):
+                    if k < selected_edge_index:
+                        E_j_minus_index[pi[k]] = E_mask[pi[k]]
+                    else:
+                        E_j_minus_index[pi[k]] = E_z_mask[pi[k]]
+
+
+                #we compute marginal contribs
+                
+                # with edge j
+                retained_indices_plus = torch.LongTensor(torch.nonzero(E_j_plus_index).tolist()).to(self.device).squeeze()
+                E_j_plus = torch.index_select(E, dim = 1, index = retained_indices_plus)
+
+                batch = torch.zeros(self.x.shape[0], dtype=int, device=self.x.device)
+                
+                out = self.model(self.x, E_j_plus, batch=batch)
+                out_prob = None
+
+                if not log_odds:
+                    out_prob = F.softmax(out, dim = 1)
+                else:
+                    out_prob = out #out prob variable now containts log_odds
+                
+                V_j_plus = out_prob[0][target_class].item()
+
+                # without edge j
+                retained_indices_minus = torch.LongTensor(torch.nonzero(E_j_minus_index).tolist()).to(self.device).squeeze()
+                E_j_minus = torch.index_select(E, dim = 1, index = retained_indices_minus)
+
+                batch = torch.zeros(self.x.shape[0], dtype=int, device=self.x.device)
+                out = self.model(self.x, E_j_minus, batch=batch)
+
+                if not log_odds:
+                    out_prob = F.softmax(out, dim = 1)
+                else:
+                    out_prob = out
+                
+                V_j_minus = out_prob[0][target_class].item()
+
+                marginal_contrib += (V_j_plus - V_j_minus)
+
+            phi_edges.append(marginal_contrib/M)
+
+        self.target_class = target_class
+        self.explained = True    
+        self.phi_edges = phi_edges
+        return phi_edges
+
+
+    def explain_with_deviation(self, M = 100, target_class = 0, P = None, deviation = None, log_odds = False, seed = None, device = "cpu"):
+
+        rng = default_rng(seed = seed)
+        self.model.eval()
+        batch = torch.zeros(self.x.shape[0], dtype=int, device=self.x.device)
+        out = self.model(self.x, E, batch=batch)
+        out_prob_real = F.softmax(out, dim = 1)[0][target_class].item()
+
+        E = self.edge_index
+        num_nodes = self.x.shape[0]
+        num_edges = E.shape[1]
+
+        phi_edges = []
+        phi_edges_current = [0] * num_edges
+        
+        if P == None:
+            max_num_edges = num_nodes*(num_nodes-1)
+            graph_density = num_edges/max_num_edges
+            P = graph_density
+
+        for i in tqdm(range(M)):
+        
+            for j in range(num_edges):
+                
+                
+                E_z_mask = rng.binomial(1, P, num_edges)
+                E_mask = torch.ones(num_edges)
+                pi = torch.randperm(num_edges)
+
+                E_j_plus_index = torch.ones(num_edges, dtype=torch.int)
+                E_j_minus_index = torch.ones(num_edges, dtype=torch.int)
+                selected_edge_index = np.where(pi == j)[0].item()
+                for k in range(num_edges):
+                    if k <= selected_edge_index:
+                        E_j_plus_index[pi[k]] = E_mask[pi[k]]
+                    else:
+                        E_j_plus_index[pi[k]] = E_z_mask[pi[k]]
+
+                for k in range(num_edges):
+                    if k < selected_edge_index:
+                        E_j_minus_index[pi[k]] = E_mask[pi[k]]
+                    else:
+                        E_j_minus_index[pi[k]] = E_z_mask[pi[k]]
+
+
+                #we compute marginal contribs
+                
+                # with edge j
+                retained_indices_plus = torch.LongTensor(torch.nonzero(E_j_plus_index).tolist()).to(device).squeeze()
+                E_j_plus = torch.index_select(E, dim = 1, index = retained_indices_plus)
+
+                batch = torch.zeros(self.xx.shape[0], dtype=int, device=self.x.device)
+                
+                out = self.model(self.xx, E_j_plus, batch=batch)
+                out_prob = None
+
+                if not log_odds:
+                    out_prob = F.softmax(out, dim = 1)
+                else:
+                    out_prob = out #out prob variable now containts log_odds
+                
+                V_j_plus = out_prob[0][target_class].item()
+
+                # without edge j
+                retained_indices_minus = torch.LongTensor(torch.nonzero(E_j_minus_index).tolist()).to(device).squeeze()
+                E_j_minus = torch.index_select(E, dim = 1, index = retained_indices_minus)
+
+                batch = torch.zeros(self.x.shape[0], dtype=int, device=self.x.device)
+                out = self.model(self.x, E_j_minus, batch=batch)
+
+                if not log_odds:
+                    out_prob = F.softmax(out, dim = 1)
+                else:
+                    out_prob = out
+                
+                V_j_minus = out_prob[0][target_class].item()
+
+                phi_edges_current[j] += (V_j_plus - V_j_minus)
+
+            
+            phi_edges = [elem / (i+1) for elem in phi_edges_current]
+            print(sum(phi_edges))
+            if abs(out_prob_real - sum(phi_edges)) <= deviation:
+                break
+
+        self.phi_edges = phi_edges
+        return phi_edges
+
+    def compute_original_predicted_probability(self):
+        self.model.eval()
+        batch = torch.zeros(self.x.shape[0], dtype=int, device=self.x.device)
+        out_log_odds = self.model(self.x, self.edge_index, batch=batch)
+        out_prob = F.softmax(out_log_odds, dim = 1)
+        original_pred_prob = out_prob[0][self.target_class].item()
+
+        self.original_pred_prob = original_pred_prob
+
+    def compute_pertinent_positivite_set(self, verbose = False):
+        assert(self.explained) #make sure that the explanation has been computed
+        
+        if self.original_pred_prob is None:
+            self.compute_original_predicted_probability()
+
+        self.model.eval()
+        important_edges_ranking = np.argsort(-np.array(self.phi_edges))
+        for i in range(1, important_edges_ranking.shape[0]+1):
+            reduced_edge_index = torch.index_select(self.edge_index, dim = 1, index = torch.LongTensor(important_edges_ranking[0:i]).to(self.device))
+            batch = torch.zeros(self.x.shape[0], dtype=int, device=self.x.device)
+            out = self.model(self.x, reduced_edge_index, batch=batch)
+            out_prob = F.softmax(out, dim = 1)
+            # print(out_prob)
+            predicted_class = torch.argmax(out_prob[0]).item()
+            if (predicted_class == self.target_class):
+                
+                
+                pred_prob = out_prob[0][self.target_class].item()
+                infidelity = self.original_pred_prob-pred_prob
+
+                if verbose:
+                    print("FID- using pertinent positive set: ", infidelity)
+                break
+
+        self.pertinent_positive_set = reduced_edge_index
+        self.infidelity = infidelity
+        return reduced_edge_index, infidelity
+        
+    def compute_minimal_top_k_set(self, verbose = False):
+        assert(self.explained) #make sure that the explanation has been computed
+        
+        if self.original_pred_prob is None:
+            self.compute_original_predicted_probability()
+
+        self.model.eval()
+        pertinent_set_indices = []
+        pertinent_set_edge_index = None
+        important_edges_ranking = np.argsort(-np.array(self.phi_edges))
+        for i in range(important_edges_ranking.shape[0]):
+            index_of_edge_to_remove = important_edges_ranking[i]
+            pertinent_set_indices.append(index_of_edge_to_remove)
+
+            reduced_edge_index = torch.index_select(self.edge_index, dim = 1, index = torch.LongTensor(important_edges_ranking[i:]).to(self.device))
+            
+            # all nodes belong to same graph
+            batch = torch.zeros(self.x.shape[0], dtype=int, device=self.x.device)
+            out = self.model(self.x, reduced_edge_index, batch=batch)
+            out_prob = F.softmax(out, dim = 1)
+            # print(out_prob)
+            predicted_class = torch.argmax(out_prob[0]).item()
+
+            if predicted_class != self.target_class:
+                pred_prob = out_prob[0][self.target_class].item()
+                fidelity = self.original_pred_prob - pred_prob
+                if verbose:
+                    print("FID+ using minimal top-k set: ", fidelity)
+                break
+
+        pertinent_set_edge_index = torch.index_select(self.edge_index, dim = 1, index = torch.LongTensor(pertinent_set_indices).to(self.device))
+        
+        self.minimal_top_k_set = pertinent_set_edge_index
+        self.fidelity = fidelity
+
+        return pertinent_set_edge_index, fidelity
+
+    def visualize_molecule_explanations(self, smiles, save_path=None, pertinent_positive = False, minimal_top_k = False):
+        assert(self.explained) #make sure that the explanation has been computed
+
+        img_expl = None
+        img_pert_pos = None
+        img_min_top_k = None
+
+        edge_index = self.edge_index.to("cpu")
+
+        test_mol = Chem.MolFromSmiles(smiles)
+        test_mol = Draw.PrepareMolForDrawing(test_mol)
+
+        num_bonds = len(test_mol.GetBonds())
+
+        rdkit_bonds = {}
+
+        for i in range(num_bonds):
+            init_atom = test_mol.GetBondWithIdx(i).GetBeginAtomIdx()
+            end_atom = test_mol.GetBondWithIdx(i).GetEndAtomIdx()
+            
+            rdkit_bonds[(init_atom, end_atom)] = i
+
+        rdkit_bonds_phi = [0]*num_bonds
+        for i in range(len(self.phi_edges)):
+            phi_value = self.phi_edges[i]
+            init_atom = edge_index[0][i].item()
+            end_atom = edge_index[1][i].item()
+            
+            if (init_atom, end_atom) in rdkit_bonds:
+                bond_index = rdkit_bonds[(init_atom, end_atom)]
+                rdkit_bonds_phi[bond_index] += phi_value
+            if (end_atom, init_atom) in rdkit_bonds:
+                bond_index = rdkit_bonds[(end_atom, init_atom)]
+                rdkit_bonds_phi[bond_index] += phi_value
+
+        plt.clf()
+        canvas = mapvalues2mol(test_mol, None, rdkit_bonds_phi, atom_width=0.2, bond_length=0.5, bond_width=0.5) #TBD: only one direction for edges? bonds weights is wrt rdkit bonds order?
+        img_expl = transform2png(canvas.GetDrawingText())
+
+        if save_path is not None:
+            img_expl.save(save_path + "/" + "EdgeSHAPer_explanations_heatmap.png", dpi = (300,300))
+
+        if pertinent_positive:
+            assert(self.pertinent_positive_set is not None)
+
+            rdkit_bonds_phi_pertinent_set = [0]*num_bonds
+            pertinent_set_edge_index = self.pertinent_positive_set
+            for i in range(pertinent_set_edge_index.shape[1]):
+                
+                init_atom = pertinent_set_edge_index[0][i].item()
+                end_atom = pertinent_set_edge_index[1][i].item()
+                
+                
+                if (init_atom, end_atom) in rdkit_bonds:
+                    bond_index = rdkit_bonds[(init_atom, end_atom)]
+                    if rdkit_bonds_phi_pertinent_set[bond_index] == 0:
+                        rdkit_bonds_phi_pertinent_set[bond_index] += rdkit_bonds_phi[bond_index]
+                if (end_atom, init_atom) in rdkit_bonds:
+                    bond_index = rdkit_bonds[(end_atom, init_atom)]
+                    if rdkit_bonds_phi_pertinent_set[bond_index] == 0:
+                        rdkit_bonds_phi_pertinent_set[bond_index] += rdkit_bonds_phi[bond_index]
+
+            plt.clf()
+            canvas = mapvalues2mol(test_mol, None, rdkit_bonds_phi_pertinent_set, atom_width=0.2, bond_length=0.5, bond_width=0.5)
+            img_pert_pos = transform2png(canvas.GetDrawingText())
+
+            if save_path is not None:
+
+                img_pert_pos.save(save_path + "/" + "EdgeSHAPer_pertinent_positive_set_heatmap.png", dpi = (300,300))
+
+        if minimal_top_k:
+            assert(self.minimal_top_k_set is not None)
+
+            rdkit_bonds_phi_pertinent_set = [0]*num_bonds
+            pertinent_set_edge_index = self.minimal_top_k_set
+            for i in range(pertinent_set_edge_index.shape[0]):
+                
+                init_atom = pertinent_set_edge_index[0][i].item()
+                end_atom = pertinent_set_edge_index[1][i].item()
+                
+                
+                if (init_atom, end_atom) in rdkit_bonds:
+                    bond_index = rdkit_bonds[(init_atom, end_atom)]
+                    if rdkit_bonds_phi_pertinent_set[bond_index] == 0:
+                        rdkit_bonds_phi_pertinent_set[bond_index] += rdkit_bonds_phi[bond_index]
+                if (end_atom, init_atom) in rdkit_bonds:
+                    bond_index = rdkit_bonds[(end_atom, init_atom)]
+                    if rdkit_bonds_phi_pertinent_set[bond_index] == 0:
+                        rdkit_bonds_phi_pertinent_set[bond_index] += rdkit_bonds_phi[bond_index]
+
+            plt.clf()
+            canvas = mapvalues2mol(test_mol, None, rdkit_bonds_phi_pertinent_set, atom_width=0.2, bond_length=0.5, bond_width=0.5)
+            img_min_top_k = transform2png(canvas.GetDrawingText())
+
+            if save_path is not None:
+                img_min_top_k.save(save_path + "/" + "EdgeSHAPer_minimal_top_k_set_heatmap.png", dpi = (300,300))
+
+        plt.clf()
+        return img_expl, img_pert_pos, img_min_top_k    
+
+
+    
+
+
+###EdgeSHAPer as a function###
 def edgeshaper(model, x, E, M = 100, target_class = 0, P = None, deviation = None, log_odds = False, seed = 42, device = "cpu"):
     """ Compute Shapley values approximation for edge importance in GNNs
         Args:

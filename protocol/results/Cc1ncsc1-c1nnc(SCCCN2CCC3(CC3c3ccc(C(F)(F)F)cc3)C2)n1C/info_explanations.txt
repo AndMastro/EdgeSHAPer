@@ -1,78 +1,92 @@
 Explaining class 0 for compound: Cc1ncsc1-c1nnc(SCCCN2CCC3(CC3c3ccc(C(F)(F)F)cc3)C2)n1C
 Shapley values for edges:
-(tensor(0, device='cuda:0'),tensor(1, device='cuda:0')): -0.002087935183392384
-(tensor(1, device='cuda:0'),tensor(0, device='cuda:0')): -0.010580150413699608
-(tensor(1, device='cuda:0'),tensor(2, device='cuda:0')): 0.014373626541310792
-(tensor(1, device='cuda:0'),tensor(5, device='cuda:0')): -0.02543459727458338
-(tensor(2, device='cuda:0'),tensor(1, device='cuda:0')): -0.027095185808603244
-(tensor(2, device='cuda:0'),tensor(3, device='cuda:0')): -0.021699615191970282
-(tensor(3, device='cuda:0'),tensor(2, device='cuda:0')): -0.01584789577278841
-(tensor(3, device='cuda:0'),tensor(4, device='cuda:0')): 0.010403732670093802
-(tensor(4, device='cuda:0'),tensor(3, device='cuda:0')): -0.009705057545712943
-(tensor(4, device='cuda:0'),tensor(5, device='cuda:0')): -0.03785984200106236
-(tensor(5, device='cuda:0'),tensor(1, device='cuda:0')): 0.006577929090843538
-(tensor(5, device='cuda:0'),tensor(4, device='cuda:0')): 0.0332330807512805
-(tensor(5, device='cuda:0'),tensor(6, device='cuda:0')): -0.0026954474198682354
-(tensor(6, device='cuda:0'),tensor(5, device='cuda:0')): 0.017790683805449944
-(tensor(6, device='cuda:0'),tensor(7, device='cuda:0')): -0.059262332069949755
-(tensor(6, device='cuda:0'),tensor(31, device='cuda:0')): -0.005605280077565445
-(tensor(7, device='cuda:0'),tensor(6, device='cuda:0')): 0.004651277230739479
-(tensor(7, device='cuda:0'),tensor(8, device='cuda:0')): -0.017326806008717853
-(tensor(8, device='cuda:0'),tensor(7, device='cuda:0')): 0.015015512501740078
-(tensor(8, device='cuda:0'),tensor(9, device='cuda:0')): 0.05046788517783859
-(tensor(9, device='cuda:0'),tensor(8, device='cuda:0')): -0.0731123796401148
-(tensor(9, device='cuda:0'),tensor(10, device='cuda:0')): 0.032210935942081985
-(tensor(9, device='cuda:0'),tensor(31, device='cuda:0')): 0.007913298961217981
-(tensor(10, device='cuda:0'),tensor(9, device='cuda:0')): 0.006248981640082168
-(tensor(10, device='cuda:0'),tensor(11, device='cuda:0')): -0.031210631496591815
-(tensor(11, device='cuda:0'),tensor(10, device='cuda:0')): 0.09977071371374507
-(tensor(11, device='cuda:0'),tensor(12, device='cuda:0')): -0.013509083151426696
-(tensor(12, device='cuda:0'),tensor(11, device='cuda:0')): 0.04260291170450616
-(tensor(12, device='cuda:0'),tensor(13, device='cuda:0')): 0.028072802793001173
-(tensor(13, device='cuda:0'),tensor(12, device='cuda:0')): 0.034824718054735235
-(tensor(13, device='cuda:0'),tensor(14, device='cuda:0')): 0.054180331402390855
-(tensor(14, device='cuda:0'),tensor(13, device='cuda:0')): 0.08496786253429611
-(tensor(14, device='cuda:0'),tensor(15, device='cuda:0')): 0.15788031754931267
-(tensor(14, device='cuda:0'),tensor(30, device='cuda:0')): 0.12581619725884996
-(tensor(15, device='cuda:0'),tensor(14, device='cuda:0')): 0.015454723858682722
-(tensor(15, device='cuda:0'),tensor(16, device='cuda:0')): 0.04485329032256155
-(tensor(16, device='cuda:0'),tensor(15, device='cuda:0')): 0.006371365983452929
-(tensor(16, device='cuda:0'),tensor(17, device='cuda:0')): 0.015971780792662968
-(tensor(17, device='cuda:0'),tensor(16, device='cuda:0')): 0.0934134066203699
-(tensor(17, device='cuda:0'),tensor(18, device='cuda:0')): -0.008031260301896864
-(tensor(17, device='cuda:0'),tensor(19, device='cuda:0')): -0.02941589599917352
-(tensor(17, device='cuda:0'),tensor(30, device='cuda:0')): 0.018279762582004467
-(tensor(18, device='cuda:0'),tensor(17, device='cuda:0')): 0.031696676390331566
-(tensor(18, device='cuda:0'),tensor(19, device='cuda:0')): 0.007391706892746437
-(tensor(19, device='cuda:0'),tensor(17, device='cuda:0')): 0.03886631041564664
-(tensor(19, device='cuda:0'),tensor(18, device='cuda:0')): 0.04089881179438778
-(tensor(19, device='cuda:0'),tensor(20, device='cuda:0')): -0.018817141272501184
-(tensor(20, device='cuda:0'),tensor(19, device='cuda:0')): 0.006326745519445164
-(tensor(20, device='cuda:0'),tensor(21, device='cuda:0')): 7.760180552113138e-05
-(tensor(20, device='cuda:0'),tensor(29, device='cuda:0')): 0.008178328659166787
-(tensor(21, device='cuda:0'),tensor(20, device='cuda:0')): -0.022019595916479683
-(tensor(21, device='cuda:0'),tensor(22, device='cuda:0')): 0.0015712692610697224
-(tensor(22, device='cuda:0'),tensor(21, device='cuda:0')): 9.048549349431464e-05
-(tensor(22, device='cuda:0'),tensor(23, device='cuda:0')): 0.04049867240562796
-(tensor(23, device='cuda:0'),tensor(22, device='cuda:0')): -0.021313293492063706
-(tensor(23, device='cuda:0'),tensor(24, device='cuda:0')): 0.0020787944828173583
-(tensor(23, device='cuda:0'),tensor(28, device='cuda:0')): -0.0036080323737536736
-(tensor(24, device='cuda:0'),tensor(23, device='cuda:0')): 0.03362449993840076
-(tensor(24, device='cuda:0'),tensor(25, device='cuda:0')): -0.00918686900390361
-(tensor(24, device='cuda:0'),tensor(26, device='cuda:0')): -0.022786621311149825
-(tensor(24, device='cuda:0'),tensor(27, device='cuda:0')): -0.00827954004934297
-(tensor(25, device='cuda:0'),tensor(24, device='cuda:0')): 0.005210312700426855
-(tensor(26, device='cuda:0'),tensor(24, device='cuda:0')): 0.007970282194572962
-(tensor(27, device='cuda:0'),tensor(24, device='cuda:0')): 0.009845460992027962
-(tensor(28, device='cuda:0'),tensor(23, device='cuda:0')): 0.037299786513027074
-(tensor(28, device='cuda:0'),tensor(29, device='cuda:0')): -0.0052260455569348
-(tensor(29, device='cuda:0'),tensor(20, device='cuda:0')): -0.01498072776512543
-(tensor(29, device='cuda:0'),tensor(28, device='cuda:0')): -0.006794219002613549
-(tensor(30, device='cuda:0'),tensor(14, device='cuda:0')): 0.08867108030889488
-(tensor(30, device='cuda:0'),tensor(17, device='cuda:0')): 0.03513443989490887
-(tensor(31, device='cuda:0'),tensor(6, device='cuda:0')): -0.010204899684333978
-(tensor(31, device='cuda:0'),tensor(9, device='cuda:0')): 0.01044093842538353
-(tensor(31, device='cuda:0'),tensor(32, device='cuda:0')): 0.06980833236127051
-(tensor(32, device='cuda:0'),tensor(31, device='cuda:0')): 0.04901558985566223
+(0,1): -0.0020879356449880304
+(1,0): -0.010580152351923697
+(1,2): 0.014373629790548308
+(1,5): -0.025434599865137648
+(2,1): -0.02709518183264365
+(2,3): -0.021699617642116954
+(3,2): -0.015847895522204346
+(3,4): 0.010403733842359517
+(4,3): -0.009705060055832347
+(4,5): -0.03785983817397068
+(5,1): 0.00657792817282855
+(5,4): 0.03323308227595674
+(5,6): -0.002695441608312467
+(6,5): 0.017790683595793038
+(6,7): -0.05926232960003084
+(6,31): -0.0056052777858738405
+(7,6): 0.004651276352344709
+(7,8): -0.01732680335955906
+(8,7): 0.015015513042247446
+(8,9): 0.05046788588916959
+(9,8): -0.07311237647396898
+(9,10): 0.032210934886568995
+(9,31): 0.007913299238143491
+(10,9): 0.006248982284994462
+(10,11): -0.031210630216925633
+(11,10): 0.09977071082614195
+(11,12): -0.013509083746895184
+(12,11): 0.042602912453116606
+(12,13): 0.02807279953093601
+(13,12): 0.03482472143515106
+(13,14): 0.054180330853209356
+(14,13): 0.08496786128785175
+(14,15): 0.15788031487875495
+(14,30): 0.12581619392332463
+(15,14): 0.015454724774725745
+(15,16): 0.044853289673000764
+(16,15): 0.006371369215274945
+(16,17): 0.015971780164911503
+(17,16): 0.09341340255459965
+(17,18): -0.008031256184606542
+(17,19): -0.02941589892346812
+(17,30): 0.018279767005225964
+(18,17): 0.03169667337900729
+(18,19): 0.007391707658609117
+(19,17): 0.03886631208062284
+(19,18): 0.040898808464894264
+(19,20): -0.018817140558111997
+(20,19): 0.006326747725083253
+(20,21): 7.760303660767853e-05
+(20,29): 0.008178328000108887
+(21,20): -0.022019595380384845
+(21,22): 0.0015712694402076272
+(22,21): 9.048613880068988e-05
+(22,23): 0.04049867167915277
+(23,22): -0.021313297441371733
+(23,24): 0.0020787951148599853
+(23,28): -0.0036080319077280406
+(24,23): 0.03362450029619345
+(24,25): -0.009186869818464082
+(24,26): -0.022786621847138165
+(24,27): -0.008279541726888676
+(25,24): 0.005210313921542864
+(26,24): 0.007970281319123772
+(27,24): 0.00984545693222067
+(28,23): 0.03729978678190241
+(28,29): -0.005226048392353513
+(29,20): -0.014980729521693827
+(29,28): -0.006794219198528755
+(30,14): 0.08867107702505071
+(30,17): 0.03513444283275503
+(31,6): -0.010204899440813804
+(31,9): 0.01044094044683335
+(31,32): 0.06980832847133513
+(32,31): 0.049015592766068684
 
-Sum of Shapley values: 1.012346875002761
+Sum of Shapley values: 1.0123468772362243
+Minimal top k set edge index:
+tensor([[14, 14, 11, 17, 30, 14, 31],
+        [15, 30, 10, 16, 14, 13, 32]], device='cuda:0')
+
+FID+: 0.9829971995204687
+
+
+Pertinent positive set edge index:
+tensor([[14, 14, 11, 17, 30, 14, 31, 13,  8, 32],
+        [15, 30, 10, 16, 14, 13, 32, 14,  9, 31]], device='cuda:0')
+
+FID-: 0.28261011838912964
+
+

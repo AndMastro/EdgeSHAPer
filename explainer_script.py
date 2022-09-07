@@ -180,8 +180,9 @@ if __name__ == "__main__":
         print("Explaining test compound: ", dataset[test_index].smiles)
         test_cpd = dataset[test_index].to(device)
 
-        phi_edges = edgeshaper(model, test_cpd.x, test_cpd.edge_index, M = SAMPLING_STEPS, target_class = TARGET_CLASS, P = None, deviation = TOLERANCE, log_odds = False, seed = SEED, device = device)
-        
+        # phi_edges = edgeshaper(model, test_cpd.x, test_cpd.edge_index, M = SAMPLING_STEPS, target_class = TARGET_CLASS, P = None, deviation = TOLERANCE, log_odds = False, seed = SEED, device = device)
+        edgeshaper_explainer = Edgeshaper(model, test_cpd.x, test_cpd.edge_index, device = device)
+        phi_edges = edgeshaper_explainer.explain(M = SAMPLING_STEPS, target_class = TARGET_CLASS, P = None, deviation = TOLERANCE, log_odds = False, seed = SEED)
         # print("Shapley values for edges: ", phi_edges)
 
         if SAVE_PATH is not None:
@@ -196,14 +197,29 @@ if __name__ == "__main__":
 
                 saveFile.write("Shapley values for edges:\n")
                 for i in range(len(phi_edges)):
-                    saveFile.write("(" + str(test_cpd.edge_index[0][i]) + "," + str(test_cpd.edge_index[1][i]) + "): " + str(phi_edges[i]) + "\n")
+                    saveFile.write("(" + str(test_cpd.edge_index[0][i].item()) + "," + str(test_cpd.edge_index[1][i].item()) + "): " + str(phi_edges[i]) + "\n")
 
-                saveFile.write("\nSum of Shapley values: " + str(sum(phi_edges)) + "\n")
+                saveFile.write("\nSum of Shapley values: " + str(sum(phi_edges)) + "\n\n")
                 
+
+        if MINIMAL_SETS:
+            pert_pos, inf = edgeshaper_explainer.compute_pertinent_positivite_set(verbose=True)
+            min_top_k, fid = edgeshaper_explainer.compute_minimal_top_k_set(verbose=True)
+
+            with open(INFO_EXPLANATIONS, "a+") as saveFile:
+                saveFile.write("Minimal top k set edge index:\n")
+                saveFile.write(str(min_top_k.tolist()) + "\n\n")
+                saveFile.write("FID+: " + str(fid) + "\n\n")
+
+                saveFile.write("Pertinent positive set edge index:\n")
+                saveFile.write(str(pert_pos.tolist()) + "\n\n")
+                saveFile.write("FID-: " + str(inf) + "\n\n")
+
         if VISUALIZATION:
             VISUALIZATION_SAVE_PATH_COMPLETE = SAVE_PATH + "/"  + test_cpd.smiles
 
             if not os.path.exists(VISUALIZATION_SAVE_PATH_COMPLETE):
                 os.makedirs(VISUALIZATION_SAVE_PATH_COMPLETE)
 
-            visualize_explanations(test_cpd, phi_edges, VISUALIZATION_SAVE_PATH_COMPLETE)
+            # visualize_explanations(test_cpd, phi_edges, VISUALIZATION_SAVE_PATH_COMPLETE)
+            edgeshaper_explainer.visualize_molecule_explanations(test_cpd.smiles, save_path = VISUALIZATION_SAVE_PATH_COMPLETE, pertinent_positive=True, minimal_top_k=True)
