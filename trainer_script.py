@@ -78,9 +78,7 @@ if __name__ == "__main__":
     start = time()
     
     args = None
-    with open("parameters.yml") as paramFile:
-    # The FullLoader parameter handles the conversion from YAML
-    # scalar values to Python the dictionary format
+    with open("parameters.yml") as paramFile:  
         args = yaml.load(paramFile, Loader=yaml.FullLoader)
 
 
@@ -95,12 +93,6 @@ if __name__ == "__main__":
     BATCH_SIZE = args["trainer"]["BATCH_SIZE"]
     EPOCHS = args["trainer"]["EPOCHS"]
     SEED    = args["trainer"]["SEED"]
-
-
-    if not len(sys.argv) > 1:
-        print_usage()
-        print('ERROR: Not enough arguments provided.')
-        sys.exit(1)
         
 
     if SMILES_FIELD_NAME is None:

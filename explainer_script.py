@@ -113,8 +113,6 @@ if __name__ == "__main__":
     # SEED = args.SEED
     args = None
     with open("parameters.yml") as paramFile:
-    # The FullLoader parameter handles the conversion from YAML
-    # scalar values to Python the dictionary format
         args = yaml.load(paramFile, Loader=yaml.FullLoader)
 
 
