@@ -3,6 +3,7 @@ import argparse
 import yaml
 import sys
 
+from time import time, strftime, gmtime
 from tqdm import tqdm
 
 import torch
@@ -15,7 +16,6 @@ from pysmiles import read_smiles
 from src.utils import *
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
 
 def print_usage():
     print(' ')
@@ -75,6 +75,8 @@ def parse_args():
 
 
 if __name__ == "__main__":
+    start = time()
+    
     args = None
     with open("parameters.yml") as paramFile:
     # The FullLoader parameter handles the conversion from YAML
@@ -211,4 +213,10 @@ if __name__ == "__main__":
     #save the model
     if MODEL_SAVE_PATH is not None:
         save_model(model, MODEL_SAVE_PATH)
+        print("Model saved to {}".format(MODEL_SAVE_PATH))
+    
+    end = time()
+    elapsed = end - start
+    
+    print("Elapsed time : {}".format(strftime("%Hh%Mm%Ss", gmtime(elapsed))))
 

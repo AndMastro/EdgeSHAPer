@@ -4,6 +4,8 @@ import os
 import sys
 import yaml
 
+from time import time, strftime, gmtime
+
 import torch
 from torch_geometric.data import  Data
 from torchdrug import data
@@ -92,7 +94,7 @@ def parse_args():
 
 
 if __name__ == "__main__":
-
+    start = time()
     # parse arguments
 
     # args = parse_args()
@@ -244,3 +246,8 @@ if __name__ == "__main__":
 
             # visualize_explanations(test_cpd, phi_edges, VISUALIZATION_SAVE_PATH_COMPLETE)
             edgeshaper_explainer.visualize_molecule_explanations(test_cpd.smiles, save_path = VISUALIZATION_SAVE_PATH_COMPLETE, pertinent_positive=True, minimal_top_k=True)
+
+    end = time()
+    elapsed = end - start
+    
+    print("Elapsed time : {}".format(strftime("%Hh%Mm%Ss", gmtime(elapsed))))
