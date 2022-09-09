@@ -360,7 +360,8 @@ class Edgeshaper():
             img_expl.save(save_path + "/" + "EdgeSHAPer_explanations_heatmap.png", dpi = (300,300))
 
         if pertinent_positive:
-            assert(self.pertinent_positive_set is not None)
+            if self.pertinent_positive_set is None:
+                self.compute_pertinent_positivite_set()
 
             rdkit_bonds_phi_pertinent_set = [0]*num_bonds
             pertinent_set_edge_index = self.pertinent_positive_set
@@ -388,7 +389,8 @@ class Edgeshaper():
                 img_pert_pos.save(save_path + "/" + "EdgeSHAPer_pertinent_positive_set_heatmap.png", dpi = (300,300))
 
         if minimal_top_k:
-            assert(self.minimal_top_k_set is not None)
+            if self.minimal_top_k_set is None:
+                self.compute_minimal_top_k_set()
 
             rdkit_bonds_phi_pertinent_set = [0]*num_bonds
             pertinent_set_edge_index = self.minimal_top_k_set

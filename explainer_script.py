@@ -22,11 +22,11 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def print_usage():
     print(' ')
-    print('usage: python explainer_script.py --MODEL_PATH --DATA_PATH --MOLECULES_TO_EXPLAIN --TARGET_CLASS --MINIMAL_SETS --SAVE_PATH --SAMPLING_STEPS --VISUALIZATION_SAVE_PATH --TOLERANCE --SEED')
+    print('usage: python explainer_script.py --MODEL_PATH --DATA_FILE --MOLECULES_TO_EXPLAIN --TARGET_CLASS --MINIMAL_SETS --SAVE_PATH --SAMPLING_STEPS --VISUALIZATION_SAVE_PATH --TOLERANCE --SEED')
     print('-----------------------------------------------------------------')
     print('MODEL_PATH: path in which your model is located.')
 
-    print('DATA_PATH: path in which your .csv dataset file is located.')
+    print('DATA_FILE: path in which your .csv dataset file is located.')
     print('    default: "experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv."')
 
     print('MOLECULES_TO_EXPLAIN: path in which your .txt file with the molecules to explain is located.')
@@ -66,7 +66,7 @@ def parse_args():
     parser.add_argument('--MODEL_PATH', type=str, required=True,
             help='path in which your model is located')   
 
-    parser.add_argument('--DATA_PATH', type=str, default="experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv.",
+    parser.add_argument('--DATA_FILE', type=str, default="experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv.",
                     help='path in which your .csv dataset file is located (default: "experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv.\\"')
 
     parser.add_argument('--MOLECULES_TO_EXPLAIN', type=str, required=True, help='path in which your .txt file with the molecules to explain is located (default: "TBD")')
@@ -100,7 +100,7 @@ if __name__ == "__main__":
     # args = parse_args()
 
     # MODEL_PATH = args.MODEL_PATH
-    # DATA_PATH = args.DATA_PATH
+    # DATA_FILE = args.DATA_FILE
     # MOLECULES_TO_EXPLAIN = args.MOLECULES_TO_EXPLAIN
     # TARGET_CLASS = args.TARGET_CLASS
     # SMILES_FIELD_NAME = args.SMILES_FIELD_NAME
@@ -116,8 +116,8 @@ if __name__ == "__main__":
         args = yaml.load(paramFile, Loader=yaml.FullLoader)
 
 
-    MODEL_PATH = args["explainer"]["MODEL_PATH"]
-    DATA_PATH = args["explainer"]["DATA_PATH"]
+    MODEL_PATH = args["explainer"]["MODEL"]
+    DATA_FILE = args["explainer"]["DATA_FILE"]
     MOLECULES_TO_EXPLAIN = args["explainer"]["MOLECULES_TO_EXPLAIN"]
     TARGET_CLASS = args["explainer"]["TARGET_CLASS"]
     SMILES_FIELD_NAME = args["explainer"]["SMILES_FIELD_NAME"]
@@ -144,10 +144,10 @@ if __name__ == "__main__":
 
     # load data
 
-    df_data = load_data(DATA_PATH, SMILES_FIELD_NAME, LABEL_FIELD_NAME)
+    df_data = load_data(DATA_FILE, SMILES_FIELD_NAME, LABEL_FIELD_NAME)
     
     target_fields = [LABEL_FIELD_NAME]
-    chembl_dataset = ChEMBL(path = DATA_PATH, smiles_field = SMILES_FIELD_NAME, target_fields = target_fields)
+    chembl_dataset = ChEMBL(path = DATA_FILE, smiles_field = SMILES_FIELD_NAME, target_fields = target_fields)
 
     #create edge index for each molecule
     smiles = chembl_dataset.smiles_list
