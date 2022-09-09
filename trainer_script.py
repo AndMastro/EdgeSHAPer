@@ -86,6 +86,7 @@ if __name__ == "__main__":
     TRAIN_DATA_FILE = args["trainer"]["TRAIN_DATA_FILE"]
     VALIDATION_DATA_FILE    = args["trainer"]["VALIDATION_DATA_FILE"]
     TEST_DATA_FILE       = args["trainer"]["TEST_DATA_FILE"]
+    SAVE_FOLDER_DATA_SPLIT = args["trainer"]["SAVE_FOLDER_DATA_SPLIT"]
     SMILES_FIELD_NAME    = args["trainer"]["SMILES_FIELD_NAME"]
     LABEL_FIELD_NAME       = args["trainer"]["LABEL_FIELD_NAME"]
     MODEL_SAVE_FOLDER = args["trainer"]["MODEL_SAVE_FOLDER"]
@@ -141,7 +142,7 @@ if __name__ == "__main__":
     #splitting the dataset
     train_data, val_data, test_data = None, None, None
     
-    if TRAIN_DATA_FILE is None:
+    if TRAIN_DATA_FILE is None and VALIDATION_DATA_FILE is None and TEST_DATA_FILE is None:
         lengths = [int(0.8 * len(chembl_dataset)), int(0.1 * len(chembl_dataset))]
         lengths += [len(chembl_dataset) - sum(lengths)]
 
@@ -150,11 +151,30 @@ if __name__ == "__main__":
         val_data = dataset[lengths[0]+1:lengths[0] + lengths[1]+1]
         test_data = dataset[lengths[0] + lengths[1] + 1: ]
        
-    else:
+    elif TRAIN_DATA_FILE is not None and VALIDATION_DATA_FILE is not None and TEST_DATA_FILE is not None:
         #TBD load from files
-        pass
-    #create dataloaders
+        print("Not implemented yet.")
+        sys.exit(1)
+    else:
+        print("ERROR: Please provide either all or none of the following: TRAIN_DATA_FILE, VALIDATION_DATA_FILE, TEST_DATA_FILE.")
+        sys.exit(1) 
+    
+    #save data split
+    if SAVE_FOLDER_DATA_SPLIT is not None:
+        if not os.path.exists(SAVE_FOLDER_DATA_SPLIT):
+            os.makedirs(SAVE_FOLDER_DATA_SPLIT)
 
+        with open(os.path.join(SAVE_FOLDER_DATA_SPLIT, "training.txt"), "w+") as trainFile:
+            for i in range(len(train_data)):
+                trainFile.write(train_data[i].smiles + "\n")
+        with open(os.path.join(SAVE_FOLDER_DATA_SPLIT, "validation.txt"), "w+") as valFile:
+            for i in range(len(val_data)):
+                valFile.write(val_data[i].smiles + "\n")
+        with open(os.path.join(SAVE_FOLDER_DATA_SPLIT, "test.txt"), "w+") as testFile:
+            for i in range(len(test_data)):
+                testFile.write(test_data[i].smiles + "\n")        
+
+    #create dataloaders
     train_loader = DataLoader(train_data, batch_size=BATCH_SIZE)
     val_loader = DataLoader(val_data, batch_size=BATCH_SIZE)
     test_loader = DataLoader(test_data, batch_size=BATCH_SIZE)

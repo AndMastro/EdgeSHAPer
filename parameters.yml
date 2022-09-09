@@ -3,6 +3,7 @@ trainer:
   TRAIN_DATA_FILE: null #list of molecules to use as train set
   VALIDATION_DATA_FILE: null
   TEST_DATA_FILE: null
+  SAVE_FOLDER_DATA_SPLIT: null
   SMILES_FIELD_NAME: "nonstereo_aromatic_smiles"
   LABEL_FIELD_NAME: "label"
   MODEL_SAVE_FOLDER: "protocol/models"
