@@ -1,0 +1,28 @@
+trainer:
+  DATA_FILE: "experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv" #data location
+  TRAIN_DATA_FILE: null #list of molecules to use as train set
+  VALIDATION_DATA_FILE: null
+  TEST_DATA_FILE: null
+  SAVE_FOLDER_DATA_SPLIT: null
+  SMILES_FIELD_NAME: "nonstereo_aromatic_smiles"
+  LABEL_FIELD_NAME: "label"
+  MODEL_SAVE_FOLDER: "protocol/models"
+  HIDDEN_CHANNELS: 256
+  BATCH_SIZE: 32
+  EPOCHS: 100
+  SEED: 42
+
+explainer:
+  MODEL: "protocol/models/model_2022_09_06-17_29_37.ckpt"
+  DATA_FILE: "experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv"
+  MOLECULES_TO_EXPLAIN: "protocol/molecules_to_explain.txt"
+  TARGET_CLASS: 0
+  SMILES_FIELD_NAME: "nonstereo_aromatic_smiles"
+  LABEL_FIELD_NAME: "label"
+  MINIMAL_SETS: True
+  SAVE_FOLDER_PATH: "protocol/results"
+  HIDDEN_CHANNELS: 256
+  SAMPLING_STEPS: 100
+  VISUALIZATION: True
+  TOLERANCE: null
+  SEED: 42
