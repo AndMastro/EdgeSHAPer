@@ -20,7 +20,7 @@ explainer:
   SMILES_FIELD_NAME: "nonstereo_aromatic_smiles"
   LABEL_FIELD_NAME: "label"
   MINIMAL_SETS: True
-  SAVE_PATH: "protocol/results"
+  SAVE_FOLDER_PATH: "protocol/results"
   HIDDEN_CHANNELS: 256
   SAMPLING_STEPS: 100
   VISUALIZATION: True

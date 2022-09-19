@@ -22,7 +22,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def print_usage():
     print(' ')
-    print('usage: python explainer_script.py --MODEL_PATH --DATA_FILE --MOLECULES_TO_EXPLAIN --TARGET_CLASS --MINIMAL_SETS --SAVE_PATH --SAMPLING_STEPS --VISUALIZATION_SAVE_PATH --TOLERANCE --SEED')
+    print('usage: python explainer_script.py --MODEL_PATH --DATA_FILE --MOLECULES_TO_EXPLAIN --TARGET_CLASS --MINIMAL_SETS --SAVE_FOLDER_PATH --SAMPLING_STEPS --VISUALIZATION_SAVE_FOLDER_PATH --TOLERANCE --SEED')
     print('-----------------------------------------------------------------')
     print('MODEL_PATH: path in which your model is located.')
 
@@ -41,7 +41,7 @@ def print_usage():
     print('MINIMAL_SETS: boolean indicating whether to compute minimal informative sets.')
     print('    default: False')
 
-    print('SAVE_PATH: path in which the explanations will be saved.')
+    print('SAVE_FOLDER_PATH: path in which the explanations will be saved.')
     print('    default: "results"')
 
     print('SAMPLING_STEPS: number of Monte Carlo sampling steps to perform.')
@@ -81,7 +81,7 @@ def parse_args():
 
     parser.add_argument('--MINIMAL_SETS', type=bool, default=False, help='boolean indicating whether to compute minimal informative sets (default: False)')
 
-    parser.add_argument('--SAVE_PATH', type=str, default="results", help='path in which the explanations will be saved (optional, default: "TBD")')
+    parser.add_argument('--SAVE_FOLDER_PATH', type=str, default="results", help='path in which the explanations will be saved (optional, default: "TBD")')
 
     parser.add_argument('--SAMPLING_STEPS', type=int, default=100, help='number of Monte Carlo sampling steps to perform (default: 100)')
 
@@ -106,7 +106,7 @@ if __name__ == "__main__":
     # SMILES_FIELD_NAME = args.SMILES_FIELD_NAME
     # LABEL_FIELD_NAME = args.LABEL_FIELD_NAME
     # MINIMAL_SETS = args.MINIMAL_SETS
-    # SAVE_PATH = args.SAVE_PATH
+    # SAVE_FOLDER_PATH = args.SAVE_FOLDER_PATH
     # SAMPLING_STEPS = args.SAMPLING_STEPS
     # VISUALIZATION = args.VISUALIZATION
     # TOLERANCE = args.TOLERANCE
@@ -123,7 +123,7 @@ if __name__ == "__main__":
     SMILES_FIELD_NAME = args["explainer"]["SMILES_FIELD_NAME"]
     LABEL_FIELD_NAME = args["explainer"]["LABEL_FIELD_NAME"]
     MINIMAL_SETS = args["explainer"]["MINIMAL_SETS"]
-    SAVE_PATH = args["explainer"]["SAVE_PATH"]
+    SAVE_FOLDER_PATH = args["explainer"]["SAVE_FOLDER_PATH"]
     SAMPLING_STEPS = args["explainer"]["SAMPLING_STEPS"]
     HIDDEN_CHANNELS = args["explainer"]["HIDDEN_CHANNELS"]
     VISUALIZATION = args["explainer"]["VISUALIZATION"]
@@ -194,10 +194,10 @@ if __name__ == "__main__":
         # explanation = explainer.explain()
         # if MINIMAL_SETS:
         #     explanation = explainer.compute_minimal_sets(explanation)
-        # if SAVE_PATH is not None:
-        #     explainer.save_explanation(explanation, SAVE_PATH)
-        # if VISUALIZATION_SAVE_PATH is not None:
-        #     explainer.visualize(explanation, VISUALIZATION_SAVE_PATH)
+        # if SAVE_FOLDER_PATH is not None:
+        #     explainer.save_explanation(explanation, SAVE_FOLDER_PATH)
+        # if VISUALIZATION_SAVE_FOLDER_PATH is not None:
+        #     explainer.visualize(explanation, VISUALIZATION_SAVE_FOLDER_PATH)
 
         print("Explaining test compound: ", dataset[test_index].smiles)
         test_cpd = dataset[test_index].to(device)
@@ -207,11 +207,11 @@ if __name__ == "__main__":
         phi_edges = edgeshaper_explainer.explain(M = SAMPLING_STEPS, target_class = TARGET_CLASS, P = None, deviation = TOLERANCE, log_odds = False, seed = SEED)
         # print("Shapley values for edges: ", phi_edges)
 
-        if SAVE_PATH is not None:
-            SAVE_PATH_COMPLETE = SAVE_PATH + "/"  + test_cpd.smiles
-            if not os.path.exists(SAVE_PATH_COMPLETE):
-                os.makedirs(SAVE_PATH_COMPLETE)
-            INFO_EXPLANATIONS = SAVE_PATH_COMPLETE + "/info_explanations.txt"
+        if SAVE_FOLDER_PATH is not None:
+            SAVE_FOLDER_PATH_COMPLETE = SAVE_FOLDER_PATH + "/"  + test_cpd.smiles
+            if not os.path.exists(SAVE_FOLDER_PATH_COMPLETE):
+                os.makedirs(SAVE_FOLDER_PATH_COMPLETE)
+            INFO_EXPLANATIONS = SAVE_FOLDER_PATH_COMPLETE + "/info_explanations.txt"
             
 
             with open(INFO_EXPLANATIONS, "w+") as saveFile:
@@ -238,13 +238,13 @@ if __name__ == "__main__":
                 saveFile.write("FID-: " + str(inf) + "\n\n")
 
         if VISUALIZATION:
-            VISUALIZATION_SAVE_PATH_COMPLETE = SAVE_PATH + "/"  + test_cpd.smiles
+            VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE = SAVE_FOLDER_PATH + "/"  + test_cpd.smiles
 
-            if not os.path.exists(VISUALIZATION_SAVE_PATH_COMPLETE):
-                os.makedirs(VISUALIZATION_SAVE_PATH_COMPLETE)
+            if not os.path.exists(VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE):
+                os.makedirs(VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE)
 
-            # visualize_explanations(test_cpd, phi_edges, VISUALIZATION_SAVE_PATH_COMPLETE)
-            edgeshaper_explainer.visualize_molecule_explanations(test_cpd.smiles, save_path = VISUALIZATION_SAVE_PATH_COMPLETE, pertinent_positive=True, minimal_top_k=True)
+            # visualize_explanations(test_cpd, phi_edges, VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE)
+            edgeshaper_explainer.visualize_molecule_explanations(test_cpd.smiles, SAVE_FOLDER_PATH = VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE, pertinent_positive=True, minimal_top_k=True)
 
     end = time()
     elapsed = end - start
