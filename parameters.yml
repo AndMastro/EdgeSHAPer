@@ -21,6 +21,7 @@ explainer:
   LABEL_FIELD_NAME: "label"
   MINIMAL_SETS: True
   SAVE_PATH: "protocol/results"
+  HIDDEN_CHANNELS: 256
   SAMPLING_STEPS: 100
   VISUALIZATION: True
   TOLERANCE: null

@@ -125,6 +125,7 @@ if __name__ == "__main__":
     MINIMAL_SETS = args["explainer"]["MINIMAL_SETS"]
     SAVE_PATH = args["explainer"]["SAVE_PATH"]
     SAMPLING_STEPS = args["explainer"]["SAMPLING_STEPS"]
+    HIDDEN_CHANNELS = args["explainer"]["HIDDEN_CHANNELS"]
     VISUALIZATION = args["explainer"]["VISUALIZATION"]
     TOLERANCE = args["explainer"]["TOLERANCE"]
     SEED = args["explainer"]["SEED"]
@@ -173,7 +174,7 @@ if __name__ == "__main__":
 
     dataset = ChEMBLDatasetPyG(".", data_list = data_list)
     # load model
-    model = GCN(node_features_dim = chembl_dataset.node_feature_dim, num_classes =dataset.num_classes, hidden_channels=256).to(device)
+    model = GCN(node_features_dim = chembl_dataset.node_feature_dim, num_classes =dataset.num_classes, hidden_channels=HIDDEN_CHANNELS).to(device)
     model.load_state_dict(torch.load(MODEL_PATH))
     model.to(device)
 
@@ -214,7 +215,7 @@ if __name__ == "__main__":
             
 
             with open(INFO_EXPLANATIONS, "w+") as saveFile:
-                saveFile.write("Explaining class " + str(TARGET_CLASS) + " for compound: " + test_cpd.smiles + "\n")
+                saveFile.write("Explaining class " + str(TARGET_CLASS) + " for compound: " + test_cpd.smiles + "\n\n")
 
                 saveFile.write("Shapley values for edges:\n")
                 for i in range(len(phi_edges)):
