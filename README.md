@@ -4,6 +4,8 @@
 
 This is the official implementation for [**EdgeSHAPer: Bond-Centric Shapley Value-Based Explanation Method for Graph Neural Networks**](https://www.cell.com/iscience/fulltext/S2589-0042(22)01315-3).
 
+This branch contains also the protocol-version implementation of EdgeSHAPer. In the ```protocol``` folder, it is possible to find the results of the execution of the scripts in the root folder. This branch is up to date with ```main```.
+
 The methodology relies on Shapley values approximations to determine edge importance for GNN prediction. It finds its application in the context of medicinal chemistry, but begin general-purpose it can be applied to many graph classification GNN-based tasks which require explanability.
 
 EdgeSHAPer relies on PyTorch. It was tested with Python 3.8, PyTorch 1.10, CUDA 10.2 and PyTorch Geometric 2.0. We believe different vesions are fine as well, but we cannot fully guarantee it.
