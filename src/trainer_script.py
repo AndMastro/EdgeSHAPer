@@ -78,7 +78,7 @@ if __name__ == "__main__":
     start = time()
     
     args = None
-    with open("parameters.yml") as paramFile:  
+    with open("../parameters.yml") as paramFile:  
         args = yaml.load(paramFile, Loader=yaml.FullLoader)
 
 
