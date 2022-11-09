@@ -7,7 +7,8 @@ import numpy as np
 from numpy.random import default_rng
 
 import matplotlib.pyplot as plt
-from tqdm import tqdm
+# from tqdm import tqdm
+from tqdm.notebook import tqdm
 
 from rdkit import Chem
 from rdkit.Chem import Draw
