@@ -144,7 +144,7 @@ class Edgeshaper():
                     V_j_plus = out_prob[0][target_class].item()
                 else:
                     
-                    out_prob = out
+                    out_prob = out #out prob variable now containts the regression output
                 
                     V_j_plus = out_prob[0][0].item()
 
