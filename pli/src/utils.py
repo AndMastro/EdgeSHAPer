@@ -242,13 +242,13 @@ class GNN7L_Sage(torch.nn.Module):
 class GNN7L_GraphConv(torch.nn.Module):
     def __init__(self, node_features_dim, hidden_channels, num_classes):
         super().__init__()
-        self.conv1 = GraphConv(node_features_dim, hidden_channels, aggr='mean')
-        self.conv2 = GraphConv(hidden_channels, hidden_channels, aggr='mean')
-        self.conv3 = GraphConv(hidden_channels, hidden_channels, aggr='mean')
-        self.conv4 = GraphConv(hidden_channels, hidden_channels, aggr='mean')
-        self.conv5 = GraphConv(hidden_channels, hidden_channels, aggr='mean')
-        self.conv6 = GraphConv(hidden_channels, hidden_channels, aggr='mean')
-        self.conv7 = GraphConv(hidden_channels, hidden_channels, aggr='mean')
+        self.conv1 = GraphConv(node_features_dim, hidden_channels, aggr='max')
+        self.conv2 = GraphConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv3 = GraphConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv4 = GraphConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv5 = GraphConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv6 = GraphConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv7 = GraphConv(hidden_channels, hidden_channels, aggr='max')
         self.lin = Linear(hidden_channels, num_classes)
 
     def forward(self, x, edge_index, batch, edge_weight = None):
