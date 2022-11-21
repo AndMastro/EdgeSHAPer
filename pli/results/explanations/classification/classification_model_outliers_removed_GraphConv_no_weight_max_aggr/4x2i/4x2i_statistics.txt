@@ -1,0 +1,23 @@
+Interaction name: 4x2i
+
+Predicted class: 0
+Predicted probability: 0.7675223350524902
+Sum of phi edges: 0.21462874246508634
+
+Pertinent positive set edge index: tensor([[14],
+        [ 0]], device='cuda:0')
+
+Number of pertinent positive edges connecting protein pseudo-atoms: 0
+Number of pertinent positive edges connecting ligand pseudo-atoms: 1
+Number of pertinent positive edges connecting protein and ligand pseudo-atoms: 0
+
+Minimal top k set edge index: tensor([[14, 20, 21],
+        [ 0, 14,  0]], device='cuda:0')
+
+Number of minimal top k edges connecting protein pseudo-atoms: 0
+Number of minimal top k edges connecting ligand pseudo-atoms: 2
+Number of minimal top k edges connecting protein and ligand pseudo-atoms: 1
+
+Number of relevant edges connecting protein pseudo-atoms: 3
+Number of relevant edges connecting ligand pseudo-atoms: 19
+Number of relevant edges connecting protein and ligand pseudo-atoms: 9

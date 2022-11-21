@@ -1,3 +1,0 @@
-Number of relevant edges connecting protein atoms: 3
-Number of relevant edges connecting ligand atoms: 7
-Number of relevant edges connecting protein and ligand atoms: 16

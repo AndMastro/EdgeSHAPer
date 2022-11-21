@@ -1,0 +1,29 @@
+Interaction name: 5j6d
+
+Predicted class: 1
+Predicted probability: 0.7914252877235413
+Sum of phi edges: 0.45864312771707755
+
+Pertinent positive set edge index: tensor([[24, 46, 39,  7,  0, 38, 12, 12, 48, 48,  4, 12, 13, 32,  4, 38, 31, 11,
+         63, 17, 12, 14,  8, 32,  4, 22, 40, 13, 51, 31, 25, 40, 11,  7, 38, 45,
+          8, 24,  1, 67, 60, 14,  2,  2,  3, 38,  8, 27, 24, 41,  0, 28,  5, 38,
+         18, 18,  2, 39, 24, 19,  9, 20, 30, 23, 31,  1, 24],
+        [60, 41,  3, 46, 10,  7,  9, 10, 51, 57, 33, 24,  8, 11, 35, 12,  2, 45,
+         13, 16,  0, 51,  2, 25, 16, 57, 26, 51, 45, 32,  7, 20,  2,  9, 24,  5,
+          3, 61, 41, 20, 41, 31,  5, 13, 13, 32,  6, 13, 10, 46, 47, 19, 13, 25,
+         28, 19,  8, 35,  7, 22,  7, 26, 31, 15, 29,  9, 14]], device='cuda:0')
+
+Number of pertinent positive edges connecting protein pseudo-atoms: 5
+Number of pertinent positive edges connecting ligand pseudo-atoms: 41
+Number of pertinent positive edges connecting protein and ligand pseudo-atoms: 12
+
+Minimal top k set edge index: tensor([[24, 46],
+        [60, 41]], device='cuda:0')
+
+Number of minimal top k edges connecting protein pseudo-atoms: 1
+Number of minimal top k edges connecting ligand pseudo-atoms: 0
+Number of minimal top k edges connecting protein and ligand pseudo-atoms: 1
+
+Number of relevant edges connecting protein pseudo-atoms: 8
+Number of relevant edges connecting ligand pseudo-atoms: 90
+Number of relevant edges connecting protein and ligand pseudo-atoms: 44

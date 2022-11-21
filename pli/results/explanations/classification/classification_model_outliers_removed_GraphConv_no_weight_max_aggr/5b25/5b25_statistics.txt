@@ -1,0 +1,27 @@
+Interaction name: 5b25
+
+Predicted class: 1
+Predicted probability: 0.9881861209869385
+Sum of phi edges: 0.7344786764681344
+
+Pertinent positive set edge index: tensor([[ 2, 30,  3,  1, 30,  0, 25,  4,  2,  5,  4, 24,  1,  5,  0, 50,  4, 50,
+         30, 20,  1,  1, 36, 50,  1,  0, 29,  0,  5, 29, 26,  0, 34, 31, 19, 43,
+         17, 19,  7,  4, 28, 50, 47],
+        [ 5, 37,  5, 21,  1, 10, 37, 25,  4,  9, 22, 47, 15,  2, 28, 31, 17, 49,
+          2, 32,  7, 14,  9, 29, 30, 18, 50, 26, 12, 15, 17, 16, 19, 47, 24, 16,
+         26, 34,  1, 29, 10, 41, 24]], device='cuda:0')
+
+Number of pertinent positive edges connecting protein pseudo-atoms: 4
+Number of pertinent positive edges connecting ligand pseudo-atoms: 21
+Number of pertinent positive edges connecting protein and ligand pseudo-atoms: 9
+
+Minimal top k set edge index: tensor([[ 2, 30,  3],
+        [ 5, 37,  5]], device='cuda:0')
+
+Number of minimal top k edges connecting protein pseudo-atoms: 0
+Number of minimal top k edges connecting ligand pseudo-atoms: 2
+Number of minimal top k edges connecting protein and ligand pseudo-atoms: 0
+
+Number of relevant edges connecting protein pseudo-atoms: 4
+Number of relevant edges connecting ligand pseudo-atoms: 50
+Number of relevant edges connecting protein and ligand pseudo-atoms: 31

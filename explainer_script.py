@@ -225,7 +225,7 @@ if __name__ == "__main__":
                 
 
         if MINIMAL_SETS:
-            pert_pos, inf = edgeshaper_explainer.compute_pertinent_positivite_set(verbose=True)
+            pert_pos, inf = edgeshaper_explainer.compute_pertinent_positive_set(verbose=True)
             min_top_k, fid = edgeshaper_explainer.compute_minimal_top_k_set(verbose=True)
 
             with open(INFO_EXPLANATIONS, "a+") as saveFile:

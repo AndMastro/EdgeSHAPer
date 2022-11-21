@@ -1,3 +1,0 @@
-Avg number of edges in protein: 4.6
-Avg number of edges in ligand: 47.0
-Avg number of edges in between: 25.0

@@ -295,6 +295,8 @@ class Edgeshaper():
                 break
 
         self.phi_edges = phi_edges
+        self.target_class = target_class
+        self.explained = True    
         return phi_edges
 
     def compute_original_predicted_probability(self):
@@ -306,9 +308,12 @@ class Edgeshaper():
 
         self.original_pred_prob = original_pred_prob
 
-    def compute_pertinent_positivite_set(self, verbose = False):
+    def compute_pertinent_positive_set(self, verbose = False):
         assert(self.explained) #make sure that the explanation has been computed
         
+        if self.target_class is None:
+            raise Exception("Minimal informative sets are not defined for regression problems.")
+
         if self.original_pred_prob is None:
             self.compute_original_predicted_probability()
 
@@ -334,10 +339,18 @@ class Edgeshaper():
         self.pertinent_positive_set = reduced_edge_index
         self.infidelity = infidelity
         return reduced_edge_index, infidelity
-        
+
+    #for legacy with old code, we keep the mispelled function which is now deprecated but calls the correct one
+    def compute_pertinent_positivite_set(self, verbose = False):
+        print("WARNING: compute_pertinent_positivite_set is now deprecated, use compute_pertinent_positive_set instead.")
+        return self.compute_pertinent_positive_set(verbose)
+
     def compute_minimal_top_k_set(self, verbose = False):
         assert(self.explained) #make sure that the explanation has been computed
         
+        if self.target_class is None:
+            raise Exception("Minimal informative sets are not defined for regression problems.")
+            
         if self.original_pred_prob is None:
             self.compute_original_predicted_probability()
 

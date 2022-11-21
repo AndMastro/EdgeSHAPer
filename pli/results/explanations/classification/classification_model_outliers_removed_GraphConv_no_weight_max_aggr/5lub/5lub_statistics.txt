@@ -1,0 +1,23 @@
+Interaction name: 5lub
+
+Predicted class: 0
+Predicted probability: 0.8547316193580627
+Sum of phi edges: 0.28218732750232745
+
+Pertinent positive set edge index: tensor([[12],
+        [ 0]], device='cuda:0')
+
+Number of pertinent positive edges connecting protein pseudo-atoms: 0
+Number of pertinent positive edges connecting ligand pseudo-atoms: 1
+Number of pertinent positive edges connecting protein and ligand pseudo-atoms: 0
+
+Minimal top k set edge index: tensor([[12,  2],
+        [ 0, 11]], device='cuda:0')
+
+Number of minimal top k edges connecting protein pseudo-atoms: 0
+Number of minimal top k edges connecting ligand pseudo-atoms: 2
+Number of minimal top k edges connecting protein and ligand pseudo-atoms: 0
+
+Number of relevant edges connecting protein pseudo-atoms: 0
+Number of relevant edges connecting ligand pseudo-atoms: 20
+Number of relevant edges connecting protein and ligand pseudo-atoms: 2

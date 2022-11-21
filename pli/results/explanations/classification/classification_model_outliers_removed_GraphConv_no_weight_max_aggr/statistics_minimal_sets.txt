@@ -1,0 +1,12 @@
+Avg number of edges in protein: 2.875
+Avg number of edges in ligand: 38.5
+Avg number of edges in between: 16.875
+
+Avg number of minimal top k edges in protein: 0.375
+Avg number of minimal top k edges in ligand: 2.25
+Avg number of minimal top k edges in between: 1.875
+
+Avg number of perinent positive edges in protein: 2.556
+Avg number of perinent positive edges in ligand: 22.222
+Avg number of perinent positive edges in between: 11.111
+

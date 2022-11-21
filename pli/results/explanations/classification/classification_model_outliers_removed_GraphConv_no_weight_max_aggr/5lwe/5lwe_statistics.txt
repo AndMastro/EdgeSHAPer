@@ -1,0 +1,34 @@
+Interaction name: 5lwe
+
+Predicted class: 1
+Predicted probability: 0.8504166007041931
+Sum of phi edges: 0.6273979155719286
+
+Pertinent positive set edge index: tensor([[49, 26, 28,  2,  2, 30, 29, 25, 16,  1,  2, 37,  1, 30, 11, 12, 40, 23,
+         13, 10, 26,  0, 12, 17,  3, 25, 27, 35, 15,  3,  8, 14,  4, 20, 21, 17,
+          1,  8, 24, 37, 15, 38, 29,  0, 22,  7, 12, 37, 11, 37, 17,  4, 12, 10,
+         13,  8,  0, 17, 10, 17, 11, 23,  4, 19,  1, 14, 31, 15, 13],
+        [24,  5, 37, 15, 14, 17,  3, 26, 24, 21, 16, 11, 10, 15, 19, 25, 17, 22,
+         44, 44, 25, 10, 10, 24, 17, 12,  1, 44,  5, 24, 49,  5, 16,  6, 47, 16,
+         27,  9, 15, 12, 22, 16,  4,  1, 18, 19, 30,  8,  9, 39,  2, 29, 20, 26,
+         22, 34,  5, 15,  5, 40, 21, 15, 17, 25,  5, 18, 20, 23, 37]],
+       device='cuda:0')
+
+Number of pertinent positive edges connecting protein pseudo-atoms: 3
+Number of pertinent positive edges connecting ligand pseudo-atoms: 36
+Number of pertinent positive edges connecting protein and ligand pseudo-atoms: 19
+
+Minimal top k set edge index: tensor([[49, 26, 28,  2,  2, 30, 29, 25, 16,  1,  2, 37,  1, 30, 11, 12, 40, 23,
+         13, 10, 26,  0, 12, 17,  3, 25, 27, 35, 15,  3,  8, 14,  4, 20, 21, 17,
+          1,  8, 24, 37, 15, 38, 29,  0],
+        [24,  5, 37, 15, 14, 17,  3, 26, 24, 21, 16, 11, 10, 15, 19, 25, 17, 22,
+         44, 44, 25, 10, 10, 24, 17, 12,  1, 44,  5, 24, 49,  5, 16,  6, 47, 16,
+         27,  9, 15, 12, 22, 16,  4,  1]], device='cuda:0')
+
+Number of minimal top k edges connecting protein pseudo-atoms: 2
+Number of minimal top k edges connecting ligand pseudo-atoms: 22
+Number of minimal top k edges connecting protein and ligand pseudo-atoms: 14
+
+Number of relevant edges connecting protein pseudo-atoms: 7
+Number of relevant edges connecting ligand pseudo-atoms: 50
+Number of relevant edges connecting protein and ligand pseudo-atoms: 35

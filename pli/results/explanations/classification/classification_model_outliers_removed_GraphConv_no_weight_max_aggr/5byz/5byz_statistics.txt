@@ -1,0 +1,44 @@
+Interaction name: 5byz
+
+Predicted class: 1
+Predicted probability: 0.996346652507782
+Sum of phi edges: 0.9958844896405934
+
+Pertinent positive set edge index: tensor([[ 3, 21, 24,  3, 42,  0, 22, 14,  9, 16, 17, 24,  1, 17,  5,  0, 14,  7,
+         39, 35, 21,  4, 26, 43,  8,  4, 18, 13, 24, 11, 23, 31, 26, 21,  5,  7,
+          3,  6, 18, 35, 38, 11,  3, 25,  2, 37,  3, 17,  6, 22, 39, 19,  8, 34,
+         16, 20, 20,  6,  3, 15, 12, 27, 41, 19, 33, 16, 23, 22, 10],
+        [18,  6,  0,  9, 26, 12, 21, 20, 18,  0,  1,  3, 20, 19,  7,  3, 12,  5,
+         13, 42, 22, 26, 42, 10, 38, 12, 19, 20, 26, 41, 10, 19, 24, 15, 14, 22,
+          4, 26,  2, 32, 16, 34, 16,  0, 18, 15, 24, 20,  1,  6, 41, 18, 39, 12,
+         11, 39, 13, 21, 11,  7, 13,  6, 39, 31,  8, 38, 18, 15, 38]],
+       device='cuda:0')
+
+Number of pertinent positive edges connecting protein pseudo-atoms: 5
+Number of pertinent positive edges connecting ligand pseudo-atoms: 30
+Number of pertinent positive edges connecting protein and ligand pseudo-atoms: 18
+
+Minimal top k set edge index: tensor([[ 3, 21, 24,  3, 42,  0, 22, 14,  9, 16, 17, 24,  1, 17,  5,  0, 14,  7,
+         39, 35, 21,  4, 26, 43,  8,  4, 18, 13, 24, 11, 23, 31, 26, 21,  5,  7,
+          3,  6, 18, 35, 38, 11,  3, 25,  2, 37,  3, 17,  6, 22, 39, 19,  8, 34,
+         16, 20, 20,  6,  3, 15, 12, 27, 41, 19, 33, 16, 23, 22, 10, 11, 31, 10,
+          2, 12, 34, 40,  1, 36, 39, 19,  6, 19, 10,  2, 36, 26, 16, 43,  0, 10,
+         34,  6, 10, 32, 14, 15,  9,  2, 19, 17, 38,  9, 10, 21,  8, 43, 14, 12,
+         11, 32, 12, 33, 14, 21, 26, 18, 17, 12,  5, 11, 18, 15, 20,  8,  6, 11,
+         31, 19, 41, 18, 16, 12, 12, 10],
+        [18,  6,  0,  9, 26, 12, 21, 20, 18,  0,  1,  3, 20, 19,  7,  3, 12,  5,
+         13, 42, 22, 26, 42, 10, 38, 12, 19, 20, 26, 41, 10, 19, 24, 15, 14, 22,
+          4, 26,  2, 32, 16, 34, 16,  0, 18, 15, 24, 20,  1,  6, 41, 18, 39, 12,
+         11, 39, 13, 21, 11,  7, 13,  6, 39, 31,  8, 38, 18, 15, 38, 16, 21,  8,
+         25, 14, 41, 16,  6, 32, 20, 20,  5, 12,  2, 23, 19,  4, 31, 15, 16, 18,
+         11, 22, 31, 21, 19, 37, 29, 24, 35, 43,  8,  8, 43, 32,  9, 17,  1, 42,
+         35, 35, 20, 17, 37, 31,  6, 10, 33, 32, 26,  0,  8, 43,  4, 31, 15,  3,
+          8,  9, 11,  9, 35,  3,  4, 30]], device='cuda:0')
+
+Number of minimal top k edges connecting protein pseudo-atoms: 7
+Number of minimal top k edges connecting ligand pseudo-atoms: 40
+Number of minimal top k edges connecting protein and ligand pseudo-atoms: 31
+
+Number of relevant edges connecting protein pseudo-atoms: 5
+Number of relevant edges connecting ligand pseudo-atoms: 28
+Number of relevant edges connecting protein and ligand pseudo-atoms: 18
