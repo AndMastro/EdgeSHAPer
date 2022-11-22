@@ -318,6 +318,7 @@ class Edgeshaper():
             self.compute_original_predicted_probability()
 
         self.model.eval()
+        infidelity = None
         important_edges_ranking = np.argsort(-np.array(self.phi_edges))
         for i in range(1, important_edges_ranking.shape[0]+1):
             reduced_edge_index = torch.index_select(self.edge_index, dim = 1, index = torch.LongTensor(important_edges_ranking[0:i]).to(self.device))
@@ -355,6 +356,7 @@ class Edgeshaper():
             self.compute_original_predicted_probability()
 
         self.model.eval()
+        fidelity = None
         pertinent_set_indices = []
         pertinent_set_edge_index = None
         important_edges_ranking = np.argsort(-np.array(self.phi_edges))

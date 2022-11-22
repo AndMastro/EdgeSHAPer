@@ -1,0 +1,11 @@
+Number of pertinent positive edges connecting protein pseudo-atoms: 0
+Number of pertinent positive edges connecting ligand pseudo-atoms: 1
+Number of pertinent positive edges connecting protein and ligand pseudo-atoms: 0
+
+Number of minimal top k edges connecting protein pseudo-atoms: 1
+Number of minimal top k edges connecting ligand pseudo-atoms: 10
+Number of minimal top k edges connecting protein and ligand pseudo-atoms: 4
+
+Number of relevant edges connecting protein atoms: 5
+Number of relevant edges connecting ligand atoms: 45
+Number of relevant edges connecting protein and ligand atoms: 20
