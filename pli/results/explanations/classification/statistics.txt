@@ -1,0 +1,19 @@
+Avg number of edgse in protein: 11.35
+Avg number of edgse in ligand: 105.0
+Avg number of edgse in between: 52.7
+
+Avg number of relevant edges in protein: 3.95 (34.8%)
+Avg number of relevant edges in ligand: 50.95 (48.5%)
+Avg number of relevant edges in between: 27.4 (52.0%)
+
+Avg number of minimal top k edges in protein: 0.95 (8.4%)
+Avg number of minimal top k edges in ligand: 15.25 (14.5%)
+Avg number of minimal top k edges in between: 6.95 (13.2%)
+
+Avg number of pertinent positive edges in protein: 2.05 (18.1%)
+Avg number of pertinent positive edges in ligand: 26.35 (25.1%)
+Avg number of pertinent positive edges in between: 12.45 (23.6%)
+
+Avg FID+: 0.522
+Avg FID-: 0.245
+Avg TW: 0.588

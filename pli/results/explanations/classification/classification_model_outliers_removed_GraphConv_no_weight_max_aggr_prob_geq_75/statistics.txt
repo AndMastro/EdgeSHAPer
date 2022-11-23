@@ -1,0 +1,12 @@
+Avg number of relevant edges in protein: 4.7
+Avg number of relevant edges in ligand: 54.4
+Avg number of relevant edges in between: 30.5
+
+Avg number of minimal top k edges in protein: 0.6
+Avg number of minimal top k edges in ligand: 6.6
+Avg number of minimal top k edges in between: 3.6
+
+Avg number of pertinent positive edges in protein: 2.6
+Avg number of pertinent positive edges in ligand: 26.8
+Avg number of pertinent positive edges in between: 12.1
+

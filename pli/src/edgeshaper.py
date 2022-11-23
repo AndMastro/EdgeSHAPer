@@ -60,6 +60,7 @@ class Edgeshaper():
         self.minimal_top_k_set = None
         self.fidelity = None
         self.infidelity = None
+        self.trustuworthiness = None
 
         self.original_pred_prob = None
 
@@ -386,6 +387,25 @@ class Edgeshaper():
         self.fidelity = fidelity
 
         return pertinent_set_edge_index, fidelity
+
+
+    def compute_trustworthiness(self, verbose = False):
+        ''' 
+        Computes the Trustworthiness (TW) of the explanation. The TW metric is defined as an harmonic mean of the fidelity and reverse of the infidelity. 
+        '''
+
+        assert(self.explained) #make sure that the explanation has been computed
+
+        assert(self.fidelity is not None) #make sure that the fidelity has been computed
+        assert(self.infidelity is not None) #make sure that the infidelity has been computed
+
+        TW = 2* ((self.fidelity*(1-self.infidelity))/(self.fidelity+(1-self.infidelity)))
+        self.trustworthiness = TW
+
+        if verbose:
+            print("Trustworthiness: ", self.trustuworthiness)
+
+        return self.trustworthiness
 
     def visualize_molecule_explanations(self, smiles, save_path=None, pertinent_positive = False, minimal_top_k = False):
         assert(self.explained) #make sure that the explanation has been computed
