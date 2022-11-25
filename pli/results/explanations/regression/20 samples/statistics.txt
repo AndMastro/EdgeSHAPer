@@ -1,0 +1,7 @@
+Avg number of edgse in protein: 11.35
+Avg number of edgse in ligand: 105.0
+Avg number of edgse in between: 52.7
+Avg number of relevant edges in protein: 5.2 (45.8%)
+Avg number of relevant edges in ligand: 37.6 (35.8%)
+Avg number of relevant edges in between: 14.45 (27.4%)
+
