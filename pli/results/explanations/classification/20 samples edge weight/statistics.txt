@@ -1,0 +1,37 @@
+Statistics for GraphConv w/ edge weights (classification)
+
+Avg number of edges in protein: 14.9
+Avg number of edges in ligand: 123.4
+Avg number of edges in between: 61.65
+Avg number of edges in graph: 199.95
+
+Avg total number of relevant edges: 65.8 (32.9% of total edges)
+
+Avg number of relevant edges in protein: 3.95 (26.5%)
+% w.r.t. total number of relevant edges: 6.0%
+Avg number of relevant edges in ligand: 14.3 (11.6%)
+% w.r.t. total number of relevant edges: 21.7%
+Avg number of relevant edges in between: 47.55 (77.1%)
+% w.r.t. total number of relevant edges: 72.3%
+
+Avg total number of minimal top-k edges: 70.6 (35.3%)
+
+Avg number of minimal top-k edges in protein: 5.15 (34.6%)
+% w.r.t. total number of minimal top-k edges: 7.3%
+Avg number of minimal top-k edges in ligand: 23.9 (19.4%)
+% w.r.t. total number of minimal top-k edges: 33.9%
+Avg number of minimal top-k edges in between: 41.55 (67.4%)
+% w.r.t. total number of minimal top-k edges: 58.9%
+
+Avg total number of pertinent positive edges: 59.75 (29.9%)
+
+Avg number of pertinent positive edges in protein: 3.55 (23.8%)
+% w.r.t. total number of pertinent positive edges: 5.9%
+Avg number of pertinent positive edges in ligand: 10.95 (8.9%)
+% w.r.t. total number of pertinent positive edges: 18.3%
+Avg number of pertinent positive edges in between: 45.25 (73.4%)
+% w.r.t. total number of pertinent positive edges: 75.7%
+
+Avg FID+: 0.365
+Avg FID-: 0.218
+Avg TW: 0.477

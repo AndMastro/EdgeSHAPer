@@ -319,7 +319,7 @@ class Edgeshaper():
             self.compute_original_predicted_probability()
 
         self.model.eval()
-        infidelity = None
+        infidelity = 1 #None it was none, last edit since it remains none if the class does not change, so we put 1
         important_edges_ranking = np.argsort(-np.array(self.phi_edges))
         for i in range(1, important_edges_ranking.shape[0]+1):
             reduced_edge_index = torch.index_select(self.edge_index, dim = 1, index = torch.LongTensor(important_edges_ranking[0:i]).to(self.device))
@@ -357,7 +357,7 @@ class Edgeshaper():
             self.compute_original_predicted_probability()
 
         self.model.eval()
-        fidelity = None
+        fidelity = 0 #it was None, last edit since it remains none if the class does not change, so we put 0
         pertinent_set_indices = []
         pertinent_set_edge_index = None
         important_edges_ranking = np.argsort(-np.array(self.phi_edges))
@@ -399,7 +399,13 @@ class Edgeshaper():
         assert(self.fidelity is not None) #make sure that the fidelity has been computed
         assert(self.infidelity is not None) #make sure that the infidelity has been computed
 
-        TW = 2* ((self.fidelity*(1-self.infidelity))/(self.fidelity+(1-self.infidelity)))
+        TW = None
+        
+        if self.fidelity+(1-self.infidelity) == 0:
+            TW = 0
+        else:
+            TW = 2* ((self.fidelity*(1-self.infidelity))/(self.fidelity+(1-self.infidelity)))
+
         self.trustworthiness = TW
 
         if verbose:

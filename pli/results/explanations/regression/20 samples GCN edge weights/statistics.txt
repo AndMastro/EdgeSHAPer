@@ -1,0 +1,16 @@
+Statistics for GCN w/ edge weights (regression)
+
+Avg number of edges in protein: 11.35
+Avg number of edges in ligand: 105.0
+Avg number of edges in between: 52.7
+Avg number of edges in graph: 169.05
+
+Avg number of total relevant edges: 92.85 (54.9% of total edges)
+
+Avg number of relevant edges in protein: 2.95 (26.0%)
+% w.r.t. total number of relevant edges: 3.2%
+Avg number of relevant edges in ligand: 67.05 (63.9%)
+% w.r.t. total number of relevant edges: 72.2%
+Avg number of relevant edges in between: 22.85 (43.4%)
+% w.r.t. total number of relevant edges: 24.6%
+
