@@ -36,8 +36,8 @@ For any clarification on how to use the tool, feel free to drop an [email](mailt
 
 ## Citation
 
-If you use our work, please cite our paper 😊
+If you use our work, please cite our papers 😊
 
-Mastropietro, A., Pasculli, G., Feldmann, C., Rodríguez-Pérez, R., Bajorath,
-J., EdgeSHAPer: Bond-Centric Shapley Value-Based Explanation Method for Graph Neural Networks,
-ISCIENCE (2022), doi: https://doi.org/10.1016/j.isci.2022.105043
+Mastropietro, A., Pasculli, G., Feldmann, C., Rodríguez-Pérez, R., Bajorath, J., EdgeSHAPer: Bond-Centric Shapley Value-Based Explanation Method for Graph Neural Networks, ISCIENCE (2022), doi: https://doi.org/10.1016/j.isci.2022.105043
+
+Mastropietro, Andrea, Giuseppe Pasculli, and Jürgen Bajorath. "Protocol to explain graph neural network predictions using an edge-centric Shapley value-based approach." STAR Protocols 3.4 (2022): 101887.
