@@ -1,0 +1,116 @@
+Interaction name: 5ep7
+
+Predicted class: 0
+Predicted probability: 0.8417293429374695
+Sum of phi edges: -0.03048454225063324
+
+Interaction statistics:
+
+Number of total edges connecting protein pseudo-atoms: 0
+Number of total edges connecting ligand pseudo-atoms: 27
+Number of total edges connecting protein and ligand pseudo-atoms: 6
+
+Pertinent positive set edge index: tensor([[7],
+        [5]], device='cuda:0')
+
+FID- using pertinent positive set: -0.024335265159606934
+
+Number of pertinent positive edges connecting protein pseudo-atoms: 0
+Number of pertinent positive edges connecting ligand pseudo-atoms: 1 (3.7%)
+% w.r.t. total number of pertinent positive edges: 100.0%)
+Number of pertinent positive edges connecting protein and ligand pseudo-atoms: 0 (0.0%)
+% w.r.t. total number of pertinent positive edges: 0.0%)
+
+Minimal top k set edge index: tensor([[ 7,  7,  4,  2,  3,  4,  5,  6,  7,  6,  9,  6,  8,  8,  6,  8,  3,  1,
+          9,  9,  2,  3,  8,  6,  5,  6, 10,  8,  6,  6,  4, 10,  2,  9,  7,  7,
+          9, 11,  7,  0,  9, 10,  1,  5,  7,  9,  4, 10,  3,  9,  2,  4,  3, 10,
+          5,  6, 12, 13,  6,  6,  8, 12,  8, 11, 13,  1],
+        [ 5,  2,  9,  7,  6, 10,  7,  5,  3, 10,  4,  2, 10,  9,  9,  4,  7,  6,
+          8,  3,  9,  9,  7,  8,  6,  4,  9,  6,  7,  1,  6,  6,  6,  6,  6,  9,
+          7,  0,  8, 11, 10,  8,  4,  9, 10,  2,  8,  7,  2,  5,  3,  1,  5,  4,
+          3,  3,  8,  8, 12, 13, 13,  6, 12,  1,  6, 11]], device='cuda:0')
+
+FID+ using minimal top-k set: 0
+
+Number of minimal top-k edges connecting protein pseudo-atoms: 0
+Number of minimal top-k edges connecting ligand pseudo-atoms: 18 (66.7%)
+% w.r.t. total number of minimal top-k edges: 100.0%)
+Number of minimal top-k edges connecting protein and ligand pseudo-atoms: 0 (0.0%)
+% w.r.t. total number of minimal top-k edges: 0.0%)
+
+Trustworthiness of the explanation: 0.0
+
+Number of relevant edges connecting protein pseudo-atoms: 0
+Number of relevant edges connecting ligand pseudo-atoms: 27 (100.0%)
+% w.r.t. total number of relevant edges: 96.4%)
+Number of relevant edges connecting protein and ligand pseudo-atoms: 1 (16.7%)
+% w.r.t. total number of relevant edges: 3.6%)
+
+Shapley values for edges: 
+
+(0,11): -9.415626525878907e-05
+(1,4): -0.00010633528232574463
+(1,6): 0.00020153284072875976
+(1,11): -0.008898195624351502
+(2,3): -0.0002065896987915039
+(2,6): -4.470348358154297e-08
+(2,7): 0.0014521211385726928
+(2,9): 0.00011182308197021484
+(3,2): -0.00017973780632019043
+(3,5): -0.0002461928129196167
+(3,6): 0.0011817669868469237
+(3,7): 0.00023141741752624512
+(3,9): 0.0001111537218093872
+(4,1): -0.0002320045232772827
+(4,6): 5.263090133666992e-07
+(4,8): -0.00014656960964202882
+(4,9): 0.0019256615638732911
+(4,10): 0.001098563075065613
+(5,3): -0.00027378201484680177
+(5,6): 6.669938564300537e-05
+(5,7): 0.0007990580797195434
+(5,9): -0.0001301586627960205
+(6,1): 1.6885995864868163e-06
+(6,2): 0.00041094422340393066
+(6,3): -0.0016092628240585328
+(6,4): 6.299316883087158e-05
+(6,5): 0.0007791578769683838
+(6,7): 6.629228591918945e-06
+(6,8): 8.669614791870117e-05
+(6,9): 0.00025749087333679197
+(6,10): 0.0005758291482925415
+(6,12): -0.0026672381162643434
+(6,13): -0.0028080087900161743
+(7,2): 0.0027579963207244873
+(7,3): 0.0005761736631393433
+(7,5): 0.0028894788026809694
+(7,6): -6.645917892456055e-07
+(7,8): -8.917808532714844e-05
+(7,9): -4.698038101196289e-06
+(7,10): -0.00013741791248321532
+(8,4): 0.000252152681350708
+(8,6): 2.0005106925964355e-05
+(8,7): 9.167909622192382e-05
+(8,9): 0.00034576416015625
+(8,10): 0.0003999108076095581
+(8,12): -0.004588516950607299
+(8,13): -0.0032744568586349485
+(9,2): -0.00014498353004455567
+(9,3): 0.00012153387069702148
+(9,4): 0.0004441964626312256
+(9,5): -0.00018005609512329102
+(9,6): -1.329183578491211e-07
+(9,7): -3.0059218406677246e-05
+(9,8): 0.00017032861709594726
+(9,10): -9.647488594055175e-05
+(10,4): -0.00026675760746002196
+(10,6): 0.0
+(10,7): -0.0001558619737625122
+(10,8): -9.982287883758545e-05
+(10,9): 3.191709518432617e-05
+(11,0): -4.066765308380127e-05
+(11,1): -0.006203586459159851
+(12,6): -0.0033784884214401244
+(12,8): -0.0021931767463684083
+(13,6): -0.006833924651145935
+(13,8): -0.0026302295923233032

@@ -1,0 +1,34 @@
+Avg number of edges in protein: 13.045
+Avg number of edges in ligand: 103.864
+Avg number of edges in interaction: 54.182
+
+Avg total number of relevant edges: 80.455 (47.0%)
+
+Avg number of relevant edges in protein: 4.318 (33.1%)
+% w.r.t. total number of relevant edges: 5.4%
+Avg number of relevant edges in ligand: 46.182 (44.5%)
+% w.r.t. total number of relevant edges: 57.4%
+Avg number of relevant edges in interaction: 29.955 (55.3%)
+% w.r.t. total number of relevant edges: 37.2%
+
+Avg total number of minimal top-k edges: 119.409 (69.8%)
+
+Avg number of minimal top-k edges in protein: 8.091 (62.0%)
+% w.r.t. total number of minimal top-k edges: 6.8%
+Avg number of minimal top-k edges in ligand: 68.5 (66.0%)
+% w.r.t. total number of minimal top-k edges: 57.4%
+Avg number of minimal top-k edges in interaction: 42.818 (79.0%)
+% w.r.t. total number of minimal top-k edges: 35.9%
+
+Avg total number of pertinent positive edges: 5.091 (3.0%)
+
+Avg number of pertinent positive edges in protein: 0.273 (2.1%)
+% w.r.t. total number of pertinent positive edges: 5.4%
+Avg number of pertinent positive edges in ligand: 2.818 (2.7%)
+% w.r.t. total number of pertinent positive edges: 55.4%
+Avg number of pertinent positive edges in interaction: 2.0 (3.7%)
+% w.r.t. total number of pertinent positive edges: 39.3%
+
+Avg FID+: 0.091
+Avg FID-: 0.402
+Avg TW: 0.112
