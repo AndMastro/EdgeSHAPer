@@ -1,5 +1,6 @@
 Interaction name: 5byz
 
+Affinity: 7.38
 Predicted class: 1
 Predicted probability: 0.996346652507782
 Sum of phi edges: 0.6714794756472111

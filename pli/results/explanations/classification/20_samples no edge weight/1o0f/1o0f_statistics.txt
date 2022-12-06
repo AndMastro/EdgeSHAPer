@@ -1,5 +1,6 @@
 Interaction name: 1o0f
 
+Affinity: 5.3
 Predicted class: 0
 Predicted probability: 0.7691522240638733
 Sum of phi edges: 0.06952265840256587

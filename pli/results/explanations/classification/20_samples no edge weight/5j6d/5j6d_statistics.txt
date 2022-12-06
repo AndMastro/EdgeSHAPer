@@ -1,5 +1,6 @@
 Interaction name: 5j6d
 
+Affinty: 8.22
 Predicted class: 1
 Predicted probability: 0.7914252877235413
 Sum of phi edges: 0.7920343005849467

@@ -1,5 +1,6 @@
 Interaction name: 5ep7
 
+Affinity: 5.4
 Predicted class: 0
 Predicted probability: 0.862148642539978
 Sum of phi edges: 0.12138652940047905

@@ -1,4 +1,4 @@
-Statistics for GraphConv w/out edge weights (classification)
+Statistics for GraphConv w/out edge weights (classification threshold 8)
 
 Avg number of edges in protein: 9.4
 Avg number of edges in ligand: 87.1

@@ -1,5 +1,6 @@
 Interaction name: 5q0p
 
+Affinity: 7.41
 Predicted class: 1
 Predicted probability: 0.879014790058136
 Sum of phi edges: 0.5788966276496651

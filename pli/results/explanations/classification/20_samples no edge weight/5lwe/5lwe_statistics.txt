@@ -1,5 +1,6 @@
 Interaction name: 5lwe
 
+Affinity: 9.96
 Predicted class: 1
 Predicted probability: 0.8504165410995483
 Sum of phi edges: 0.6273979736119512

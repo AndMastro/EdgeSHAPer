@@ -1,5 +1,6 @@
 Interaction name: 1epq
 
+Affinity: 8.19
 Predicted class: 1
 Predicted probability: 0.9975712895393372
 Sum of phi edges: 0.8187637635692961

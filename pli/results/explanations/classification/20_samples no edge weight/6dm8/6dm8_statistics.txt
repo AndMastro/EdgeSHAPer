@@ -1,5 +1,6 @@
 Interaction name: 6dm8
 
+Affinity: 7.28
 Predicted class: 1
 Predicted probability: 0.9973151087760925
 Sum of phi edges: 0.7191186174005266

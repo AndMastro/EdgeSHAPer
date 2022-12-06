@@ -1,3 +1,5 @@
+Threshold 6 GraphConv no edge weights (Classification)
+
 Avg number of edges in protein: 13.045
 Avg number of edges in ligand: 103.864
 Avg number of edges in interaction: 54.182

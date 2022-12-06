@@ -1,5 +1,6 @@
 Interaction name: 4x2i
 
+Affinity: 6.46
 Predicted class: 0
 Predicted probability: 0.7675223350524902
 Sum of phi edges: 0.01220284905138647
