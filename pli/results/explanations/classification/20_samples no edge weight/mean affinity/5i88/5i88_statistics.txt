@@ -1,0 +1,124 @@
+Interaction name: 5i88
+
+Affinity: 6.599999904632568
+Predicted class: 0
+Predicted probability: 0.828636646270752
+Sum of phi edges: 0.04196588736027479
+
+Interaction statistics:
+
+Number of total edges connecting protein pseudo-atoms: 3
+Number of total edges connecting ligand pseudo-atoms: 24
+Number of total edges connecting protein and ligand pseudo-atoms: 11
+
+Pertinent positive set edge index: tensor([[ 0],
+        [11]], device='cuda:0')
+
+FID- using pertinent positive set: 0.0261918306350708
+
+Number of pertinent positive edges connecting protein pseudo-atoms: 0 (0.0%)
+% w.r.t. total number of pertinent positive edges: 0.0%)
+Number of pertinent positive edges connecting ligand pseudo-atoms: 0 (0.0%)
+% w.r.t. total number of pertinent positive edges: 0.0%)
+Number of pertinent positive edges connecting protein and ligand pseudo-atoms: 1 (9.1%)
+% w.r.t. total number of pertinent positive edges: 100.0%)
+
+Minimal top k set edge index: tensor([[ 0, 11, 10,  3,  9, 17,  5,  8, 10,  3, 16,  7],
+        [11,  0,  5, 15,  1, 18, 19,  1,  8, 14, 19,  9]], device='cuda:0')
+
+FID+ using minimal top-k set: 0.38450759649276733
+
+Number of minimal top-k edges connecting protein pseudo-atoms: 2 (66.7%)
+% w.r.t. total number of minimal top-k edges: 20.0%)
+Number of minimal top-k edges connecting ligand pseudo-atoms: 4 (16.7%)
+% w.r.t. total number of minimal top-k edges: 40.0%)
+Number of minimal top-k edges connecting protein and ligand pseudo-atoms: 4 (36.4%)
+% w.r.t. total number of minimal top-k edges: 40.0%)
+
+Trustworthiness of the explanation: 0.5513248805016938
+
+Number of relevant edges connecting protein pseudo-atoms: 2 (66.7%)
+% w.r.t. total number of relevant edges: 14.3%)
+Number of relevant edges connecting ligand pseudo-atoms: 8 (33.3%)
+% w.r.t. total number of relevant edges: 57.1%)
+Number of relevant edges connecting protein and ligand pseudo-atoms: 4 (36.4%)
+% w.r.t. total number of relevant edges: 28.6%)
+
+Shapley values for edges: 
+
+(0,2): 0.0011616757512092591
+(0,11): 0.03389637872576714
+(1,7): -0.01057027131319046
+(1,8): -0.00832038626074791
+(1,9): -0.01800962135195732
+(2,0): -0.010568041801452637
+(2,12): 0.0030994683504104613
+(3,13): 0.0003419788181781769
+(3,14): 0.00823651671409607
+(3,15): 0.02190755173563957
+(4,5): -0.000880855917930603
+(4,6): -0.0009654992818832397
+(4,7): 0.002643126845359802
+(4,8): -0.001917404979467392
+(4,9): 0.0020308613777160643
+(4,10): -0.003059285134077072
+(5,4): 0.002511887550354004
+(5,6): -0.0060975968837738035
+(5,7): -0.0036023272573947906
+(5,8): -0.009623161852359771
+(5,9): -0.004036155939102173
+(5,10): 0.004692961424589157
+(5,14): -0.002202524095773697
+(5,15): 0.0020721390843391418
+(5,18): 0.003377704918384552
+(5,19): 0.010745267868041992
+(6,4): -0.002682739198207855
+(6,5): -0.0011918705701828003
+(6,7): 0.0025544138252735138
+(6,8): -0.004113455563783646
+(6,9): -0.0022476029396057127
+(7,1): 0.002692228090018034
+(7,4): 0.0006122878193855286
+(7,5): -0.007236207723617554
+(7,6): -0.003491756021976471
+(7,8): 0.00015019267797470093
+(7,9): 0.006201200857758522
+(7,10): -0.0026838672161102295
+(7,16): -0.002919958531856537
+(8,1): 0.01013854905962944
+(8,4): 0.0006011258065700531
+(8,5): -0.007743420749902725
+(8,6): 0.00551827996969223
+(8,7): 0.0008734485507011413
+(8,9): 0.00568675123155117
+(8,10): -0.0001746964454650879
+(8,17): -0.001430477797985077
+(9,1): 0.012367673963308335
+(9,4): -0.0010567283630371093
+(9,5): -0.00446141242980957
+(9,6): -0.008081496357917786
+(9,7): 0.0013004961609840394
+(9,8): -0.00025384604930877685
+(9,10): -0.002560797929763794
+(10,4): 0.0037591610103845595
+(10,5): 0.02437545582652092
+(10,7): 0.0034347690641880037
+(10,8): 0.009454735219478608
+(10,9): -0.0007137244939804077
+(11,0): 0.030554765462875368
+(11,12): 0.00022799104452133178
+(12,2): -0.0022739726305007935
+(12,11): -0.009724395275115967
+(13,3): -0.0012861314415931703
+(14,3): -0.006031356155872345
+(14,5): -0.008882527649402618
+(15,3): -0.005086914841085672
+(15,5): -0.004783623218536377
+(16,7): -0.007278065085411072
+(16,19): 0.00789064794778824
+(17,8): 2.7491748332977296e-05
+(17,18): 0.012349557280540466
+(18,5): -0.00940845400094986
+(18,17): -0.005352412164211273
+(19,5): -0.002044467031955719
+(19,16): -0.00047334447503089906

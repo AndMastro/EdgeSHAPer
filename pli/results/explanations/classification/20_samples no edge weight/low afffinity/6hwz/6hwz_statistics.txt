@@ -1,0 +1,99 @@
+Interaction name: 6hwz
+
+Affinity: 5.170000076293945
+Predicted class: 0
+Predicted probability: 0.8065181970596313
+Sum of phi edges: 0.030993604063987733
+
+Interaction statistics:
+
+Number of total edges connecting protein pseudo-atoms: 1
+Number of total edges connecting ligand pseudo-atoms: 20
+Number of total edges connecting protein and ligand pseudo-atoms: 3
+
+Pertinent positive set edge index: tensor([[1],
+        [9]], device='cuda:0')
+
+FID- using pertinent positive set: -0.007475435733795166
+
+Number of pertinent positive edges connecting protein pseudo-atoms: 0 (0.0%)
+% w.r.t. total number of pertinent positive edges: 0.0%)
+Number of pertinent positive edges connecting ligand pseudo-atoms: 0 (0.0%)
+% w.r.t. total number of pertinent positive edges: 0.0%)
+Number of pertinent positive edges connecting protein and ligand pseudo-atoms: 1 (33.3%)
+% w.r.t. total number of pertinent positive edges: 100.0%)
+
+Minimal top k set edge index: tensor([[1, 7, 8, 6, 3, 4, 5, 6, 6, 4, 5, 6, 6, 0, 4, 5, 0, 0, 1, 2, 5, 2, 0, 2,
+         0, 3, 2, 4, 1, 0, 4, 4, 5, 3, 2, 5, 1, 3, 3, 1, 3, 3, 1, 8, 3, 1, 7, 9],
+        [9, 8, 7, 1, 8, 2, 0, 4, 3, 5, 6, 0, 5, 4, 3, 2, 5, 6, 2, 5, 4, 4, 2, 0,
+         1, 2, 3, 1, 5, 3, 6, 0, 3, 0, 1, 1, 0, 6, 4, 6, 7, 5, 3, 3, 1, 4, 3, 1]],
+       device='cuda:0')
+
+FID+ using minimal top-k set: 0
+
+Number of minimal top-k edges connecting protein pseudo-atoms: 1 (100.0%)
+% w.r.t. total number of minimal top-k edges: 6.7%)
+Number of minimal top-k edges connecting ligand pseudo-atoms: 12 (60.0%)
+% w.r.t. total number of minimal top-k edges: 80.0%)
+Number of minimal top-k edges connecting protein and ligand pseudo-atoms: 2 (66.7%)
+% w.r.t. total number of minimal top-k edges: 13.3%)
+
+Trustworthiness of the explanation: 0.0
+
+Number of relevant edges connecting protein pseudo-atoms: 1 (100.0%)
+% w.r.t. total number of relevant edges: 16.7%)
+Number of relevant edges connecting ligand pseudo-atoms: 4 (20.0%)
+% w.r.t. total number of relevant edges: 66.7%)
+Number of relevant edges connecting protein and ligand pseudo-atoms: 1 (33.3%)
+% w.r.t. total number of relevant edges: 16.7%)
+
+Shapley values for edges: 
+
+(0,1): 4.8082470893859867e-05
+(0,2): 7.645130157470704e-05
+(0,3): -0.00021626830101013184
+(0,4): 0.000490763783454895
+(0,5): 0.00036324203014373777
+(0,6): 0.00017698168754577638
+(1,0): -0.0006225252151489258
+(1,2): 0.0001378995180130005
+(1,3): -0.0012344455718994141
+(1,4): -0.0015576672554016113
+(1,5): -0.00010340929031372071
+(1,6): -0.0007582181692123414
+(1,9): 0.02146378457546234
+(2,0): 7.353901863098144e-05
+(2,1): -0.0004234713315963745
+(2,3): -2.4222135543823242e-05
+(2,4): 0.00010200977325439453
+(2,5): 0.00013655781745910644
+(3,0): -0.0003347593545913696
+(3,1): -0.001555466651916504
+(3,2): 3.7404894828796384e-05
+(3,4): -0.0006865555047988891
+(3,5): -0.0011174529790878296
+(3,6): -0.0006828081607818604
+(3,7): -0.0008743828535079956
+(3,8): 0.0023023080825805664
+(4,0): -0.00024333417415618895
+(4,1): -9.811580181121826e-05
+(4,2): 0.0017430514097213745
+(4,3): 0.000456351637840271
+(4,5): 0.0009593003988265991
+(4,6): -0.00023143589496612548
+(5,0): 0.0013943874835968017
+(5,1): -0.0005845749378204346
+(5,2): 0.0004162544012069702
+(5,3): -0.00027120351791381836
+(5,4): 0.00011948049068450927
+(5,6): 0.0009443730115890503
+(6,0): 0.0008049875497817994
+(6,1): 0.005003961324691772
+(6,3): 0.001193041205406189
+(6,4): 0.0012472110986709594
+(6,5): 0.0006692051887512207
+(7,3): -0.001796283721923828
+(7,8): 0.00553395926952362
+(8,3): -0.0012801885604858398
+(8,7): 0.005297492146492004
+(9,1): -0.005501688122749328
