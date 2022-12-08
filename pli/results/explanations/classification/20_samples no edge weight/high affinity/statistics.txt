@@ -1,3 +1,5 @@
+High Affinity (8,)
+
 Avg number of edges in protein: 12.2
 Avg number of edges in ligand: 107.9
 Avg number of edges in interaction: 54.4
