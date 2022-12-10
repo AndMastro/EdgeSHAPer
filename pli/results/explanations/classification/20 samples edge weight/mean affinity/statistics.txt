@@ -1,3 +1,5 @@
+Mean Affinity
+
 Avg number of edges in protein: 14.45
 Avg number of edges in ligand: 132.15
 Avg number of edges in interaction: 75.35
