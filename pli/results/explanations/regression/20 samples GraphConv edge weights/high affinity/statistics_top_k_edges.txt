@@ -1,3 +1,5 @@
+High affinity
+
 Top k edges statistics
 
 Top 5 relevant edges
