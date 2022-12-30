@@ -1,0 +1,78 @@
+Interaction name: 6hwz
+
+Affinity: 5.170000076293945
+Predicted value: 4.989975929260254
+Sum of phi edges: -0.0703012275695801
+
+Interaction statistics:
+
+Number of total edges connecting protein pseudo-atoms: 1
+Number of total edges connecting ligand pseudo-atoms: 20
+Number of total edges connecting protein and ligand pseudo-atoms: 3
+
+Relevant edges considering edges with phi >= -0.0029292178153991696:
+Number of relevant edges connecting protein pseudo-atoms: 0 (0.0%)
+% w.r.t. total number of relevant edges: 0.0%)
+Number of relevant edges connecting ligand pseudo-atoms: 8 (40.0%)
+% w.r.t. total number of relevant edges: 80.0%)
+Number of relevant edges connecting protein and ligand pseudo-atoms: 2 (66.7%)
+% w.r.t. total number of relevant edges: 20.0%)
+
+Relevant edges considering edges with absolute values of phi >= mean of absolute value of phi: 0.007046587069829305)
+Number of relevant edges connecting protein pseudo-atoms: 0 (0.0%)
+% w.r.t. total number of relevant edges: 0.0%)
+Number of relevant edges connecting ligand pseudo-atoms: 9 (45.0%)
+% w.r.t. total number of relevant edges: 100.0%)
+Number of relevant edges connecting protein and ligand pseudo-atoms: 0 (0.0%)
+% w.r.t. total number of relevant edges: 0.0%)
+
+Shapley values for edges: 
+
+(0,1): -0.002233619689941406
+(0,2): 0.0016299772262573242
+(0,3): -0.004295878410339356
+(0,4): 0.0061895656585693355
+(0,5): -0.00552818775177002
+(0,6): 0.005823283195495605
+(1,0): -0.0018327713012695312
+(1,2): -0.0026071929931640626
+(1,3): -0.0016007661819458009
+(1,4): -0.002681980133056641
+(1,5): 0.004126086235046387
+(1,6): 0.0035057353973388674
+(1,9): 0.009057602882385253
+(2,0): -0.01925529956817627
+(2,1): 0.0033588361740112304
+(2,3): 0.006066145896911621
+(2,4): -0.007961421012878419
+(2,5): -0.01168954849243164
+(3,0): -0.010725870132446289
+(3,1): -0.005676078796386719
+(3,2): -0.0029314708709716796
+(3,4): -0.00621856689453125
+(3,5): -0.008120031356811523
+(3,6): 0.0019911718368530273
+(3,7): -0.003859224319458008
+(3,8): -0.0004043388366699219
+(4,0): -0.0053786754608154295
+(4,1): 0.008391613960266114
+(4,2): -0.0038676738739013674
+(4,3): 0.0014099359512329101
+(4,5): -0.00406287670135498
+(4,6): -0.00029507160186767576
+(5,0): 0.0019150447845458984
+(5,1): -0.0009113311767578125
+(5,2): 0.0009499168395996093
+(5,3): -0.0018663740158081055
+(5,4): -0.0029132843017578127
+(5,6): 0.0008640432357788086
+(6,0): 0.006692137718200684
+(6,1): -0.015612649917602538
+(6,3): -0.007290587425231933
+(6,4): 0.011745262145996093
+(6,5): 0.004447851181030273
+(7,3): 0.0008524799346923828
+(7,8): -0.004752044677734375
+(8,3): -0.0019200611114501952
+(8,7): -0.0002767658233642578
+(9,1): -0.0025482749938964843

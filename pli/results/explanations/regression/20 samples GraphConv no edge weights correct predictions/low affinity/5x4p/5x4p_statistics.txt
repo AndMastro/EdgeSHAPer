@@ -1,0 +1,66 @@
+Interaction name: 5x4p
+
+Affinity: 5.03000020980835
+Predicted value: 5.643178462982178
+Sum of phi edges: 0.3526229381561279
+
+Interaction statistics:
+
+Number of total edges connecting protein pseudo-atoms: 0
+Number of total edges connecting ligand pseudo-atoms: 15
+Number of total edges connecting protein and ligand pseudo-atoms: 4
+
+Relevant edges considering edges with phi >= 0.01855910200821726:
+Number of relevant edges connecting protein pseudo-atoms: 0
+Number of relevant edges connecting ligand pseudo-atoms: 5 (33.3%)
+% w.r.t. total number of relevant edges: 71.4%)
+Number of relevant edges connecting protein and ligand pseudo-atoms: 2 (50.0%)
+% w.r.t. total number of relevant edges: 28.6%)
+
+Relevant edges considering edges with absolute values of phi >= mean of absolute value of phi: 0.039997018512926606)
+Number of relevant edges connecting protein pseudo-atoms: 0
+Number of relevant edges connecting ligand pseudo-atoms: 6 (40.0%)
+% w.r.t. total number of relevant edges: 85.7%)
+Number of relevant edges connecting protein and ligand pseudo-atoms: 1 (25.0%)
+% w.r.t. total number of relevant edges: 14.3%)
+
+Shapley values for edges: 
+
+(0,1): 0.10667684555053711
+(0,4): 0.014950823783874512
+(0,6): 0.047769780158996585
+(1,0): 0.018558979034423828
+(1,3): 0.02156247615814209
+(1,4): -0.013383641242980956
+(1,6): 0.014196887016296386
+(1,7): 0.06952829360961914
+(2,3): -0.006376829147338867
+(2,5): -0.0025851821899414065
+(2,7): 0.0013173341751098633
+(3,1): -0.027698750495910644
+(3,2): -0.00819117546081543
+(3,5): -0.003422083854675293
+(3,7): -0.003281831741333008
+(4,0): -0.05502505302429199
+(4,1): -0.03037822723388672
+(4,6): 0.13667846202850342
+(4,7): 0.002504720687866211
+(4,8): 0.004636964797973633
+(5,2): -0.015289897918701173
+(5,3): -0.012390155792236329
+(5,7): -0.009702944755554199
+(5,8): -0.031521034240722653
+(6,0): -0.058168888092041016
+(6,1): -0.039854516983032225
+(6,4): -0.016858134269714355
+(6,9): 0.046421217918396
+(7,1): -0.03502223491668701
+(7,2): 0.0028286170959472656
+(7,3): 0.04884430408477783
+(7,4): 0.047028822898864744
+(7,5): 0.004093313217163086
+(7,8): -0.002160067558288574
+(8,4): 0.029862585067749022
+(8,5): 0.007754893302917481
+(8,7): 0.014427537918090821
+(9,6): 0.08429072856903076
