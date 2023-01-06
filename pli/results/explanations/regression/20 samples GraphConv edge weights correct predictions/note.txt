@@ -1,0 +1,4 @@
+Results for undirected and directed ARE THE SAME
+since directions have been already considered 
+(we sum the Shapley values of both directions to
+obtain the Shapley value of an edge)
