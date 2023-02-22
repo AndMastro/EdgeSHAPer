@@ -208,13 +208,13 @@ class GNN7L_Sage(torch.nn.Module):
 
     def __init__(self, node_features_dim, hidden_channels, num_classes):
         super().__init__()
-        self.conv1 = SAGEConv(node_features_dim, hidden_channels, aggr='max')
-        self.conv2 = SAGEConv(hidden_channels, hidden_channels, aggr='max')
-        self.conv3 = SAGEConv(hidden_channels, hidden_channels, aggr='max')
-        self.conv4 = SAGEConv(hidden_channels, hidden_channels, aggr='max')
-        self.conv5 = SAGEConv(hidden_channels, hidden_channels, aggr='max')
-        self.conv6 = SAGEConv(hidden_channels, hidden_channels, aggr='max')
-        self.conv7 = SAGEConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv1 = SAGEConv(node_features_dim, hidden_channels, aggr='mean') #max
+        self.conv2 = SAGEConv(hidden_channels, hidden_channels, aggr='mean')
+        self.conv3 = SAGEConv(hidden_channels, hidden_channels, aggr='mean')
+        self.conv4 = SAGEConv(hidden_channels, hidden_channels, aggr='mean')
+        self.conv5 = SAGEConv(hidden_channels, hidden_channels, aggr='mean')
+        self.conv6 = SAGEConv(hidden_channels, hidden_channels, aggr='mean')
+        self.conv7 = SAGEConv(hidden_channels, hidden_channels, aggr='mean')
         self.lin = Linear(hidden_channels, num_classes)
         # self.lin2 = Linear(hidden_channels, num_classes)
         # self.flattener = torch.nn.Flatten()
