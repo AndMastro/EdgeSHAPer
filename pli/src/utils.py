@@ -12,7 +12,7 @@ import networkx as nx
 
 import torch
 from torch_geometric.data import InMemoryDataset
-from torch_geometric.nn import GCNConv, Linear, GraphConv, SAGEConv, global_mean_pool, global_max_pool, global_add_pool
+from torch_geometric.nn import GCNConv, Linear, GraphConv, SAGEConv, GINEConv, GATConv, global_mean_pool, global_max_pool, global_add_pool
 import torch.nn.functional as F
 
 from rdkit_heatmaps import mapvalues2mol
@@ -261,6 +261,69 @@ class GNN7L_GraphConv(torch.nn.Module):
         x = F.relu(self.conv5(x, edge_index, edge_weight = edge_weight))
         x = F.relu(self.conv6(x, edge_index, edge_weight = edge_weight))
         x = self.conv7(x, edge_index, edge_weight = edge_weight)
+        
+        x = global_add_pool(x, batch)
+        
+        x = F.dropout(x, training=self.training)
+        x = self.lin(x)
+
+        return x
+    
+
+#TODO: fix
+class GNN7L_GINE(torch.nn.Module):
+    def __init__(self, node_features_dim, hidden_channels, num_classes):
+        super().__init__()
+        self.conv1 = GINEConv(node_features_dim, hidden_channels, aggr='max') #max
+        self.conv2 = GINEConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv3 = GINEConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv4 = GINEConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv5 = GINEConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv6 = GINEConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv7 = GINEConv(hidden_channels, hidden_channels, aggr='max')
+        self.lin = Linear(hidden_channels, num_classes)
+
+    def forward(self, x, edge_index, batch, edge_weight = None):
+        
+
+        x = F.relu(self.conv1(x, edge_index, edge_weight = edge_weight))
+        x = F.relu(self.conv2(x, edge_index, edge_weight = edge_weight))
+        x = F.relu(self.conv3(x, edge_index, edge_weight = edge_weight))
+        x = F.relu(self.conv4(x, edge_index, edge_weight = edge_weight))
+        x = F.relu(self.conv5(x, edge_index, edge_weight = edge_weight))
+        x = F.relu(self.conv6(x, edge_index, edge_weight = edge_weight))
+        x = self.conv7(x, edge_index, edge_weight = edge_weight)
+        
+        x = global_add_pool(x, batch)
+        
+        x = F.dropout(x, training=self.training)
+        x = self.lin(x)
+
+        return x    
+    
+
+class GNN7L_GAT(torch.nn.Module):
+    def __init__(self, node_features_dim, hidden_channels, num_classes):
+        super().__init__()
+        self.conv1 = GATConv(node_features_dim, hidden_channels, edge_dim = 1) #max
+        self.conv2 = GATConv(hidden_channels, hidden_channels, edge_dim = 1)
+        self.conv3 = GATConv(hidden_channels, hidden_channels, edge_dim = 1)
+        self.conv4 = GATConv(hidden_channels, hidden_channels, edge_dim = 1)
+        self.conv5 = GATConv(hidden_channels, hidden_channels, edge_dim = 1)
+        self.conv6 = GATConv(hidden_channels, hidden_channels, edge_dim = 1)
+        self.conv7 = GATConv(hidden_channels, hidden_channels, edge_dim = 1)
+        self.lin = Linear(hidden_channels, num_classes)
+
+    def forward(self, x, edge_index, batch, edge_weight = None):
+        
+
+        x = F.relu(self.conv1(x, edge_index, edge_attr = edge_weight))
+        x = F.relu(self.conv2(x, edge_index, edge_attr = edge_weight))
+        x = F.relu(self.conv3(x, edge_index, edge_attr = edge_weight))
+        x = F.relu(self.conv4(x, edge_index, edge_attr = edge_weight))
+        x = F.relu(self.conv5(x, edge_index, edge_attr = edge_weight))
+        x = F.relu(self.conv6(x, edge_index, edge_attr = edge_weight))
+        x = self.conv7(x, edge_index, edge_attr = edge_weight)
         
         x = global_add_pool(x, batch)
         
