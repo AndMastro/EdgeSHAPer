@@ -270,7 +270,7 @@ class GNN7L_GraphConv(torch.nn.Module):
         return x
     
 
-#TODO: fix
+#TODO: fix, add MLP
 class GNN7L_GINE(torch.nn.Module):
     def __init__(self, node_features_dim, hidden_channels, num_classes):
         super().__init__()
