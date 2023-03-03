@@ -12,7 +12,7 @@ import networkx as nx
 
 import torch
 from torch_geometric.data import InMemoryDataset
-from torch_geometric.nn import GCNConv, Linear, GraphConv, SAGEConv, GINEConv, GATConv, global_mean_pool, global_max_pool, global_add_pool
+from torch_geometric.nn import MLP, GCNConv, Linear, GraphConv, SAGEConv, GINConv, GINEConv, GATConv, global_mean_pool, global_max_pool, global_add_pool
 import torch.nn.functional as F
 
 from rdkit_heatmaps import mapvalues2mol
@@ -270,38 +270,169 @@ class GNN7L_GraphConv(torch.nn.Module):
         return x
     
 
-#TODO: fix, add MLP
-class GNN7L_GINE(torch.nn.Module):
-    def __init__(self, node_features_dim, hidden_channels, num_classes):
+class GINE(torch.nn.Module):
+    def __init__(self, node_features_dim, hidden_channels, num_classes, edge_emb_dim = 1):
         super().__init__()
-        self.conv1 = GINEConv(node_features_dim, hidden_channels, aggr='max') #max
-        self.conv2 = GINEConv(hidden_channels, hidden_channels, aggr='max')
-        self.conv3 = GINEConv(hidden_channels, hidden_channels, aggr='max')
-        self.conv4 = GINEConv(hidden_channels, hidden_channels, aggr='max')
-        self.conv5 = GINEConv(hidden_channels, hidden_channels, aggr='max')
-        self.conv6 = GINEConv(hidden_channels, hidden_channels, aggr='max')
-        self.conv7 = GINEConv(hidden_channels, hidden_channels, aggr='max')
+        
+        # self.conv1 = GINEConv(torch.nn.Sequential(
+        #     torch.nn.Linear(node_features_dim + edge_emb_dim, hidden_channels),
+        #     torch.nn.BatchNorm1d(hidden_channels),
+        #     torch.nn.ReLU(),
+        #     torch.nn.Linear(hidden_channels, hidden_channels),
+        #     torch.nn.BatchNorm1d(hidden_channels),
+        #     torch.nn.ReLU(),
+        # ), edge_dim = edge_emb_dim)
+
+        # self.conv1 = GINEConv(MLP(in_channels = node_features_dim + edge_emb_dim, 
+        #                                hidden_channels= hidden_channels, out_chennels = hidden_channels, 
+        #                                 num_layers = 4, dropout =[0, 0, 0, 0.5]), 
+        #                       edge_dim = edge_emb_dim)
+    
+        self.conv1 = GINEConv(torch.nn.Sequential(
+            torch.nn.Linear(node_features_dim, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ), edge_dim = edge_emb_dim)
+        
+        self.conv2 = GINEConv(torch.nn.Sequential(
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ), edge_dim = edge_emb_dim)
+        
+        self.conv3 = GINEConv(torch.nn.Sequential(
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ), edge_dim = edge_emb_dim)
+        
+        self.conv4 = GINEConv(torch.nn.Sequential(
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ), edge_dim = edge_emb_dim)
+
         self.lin = Linear(hidden_channels, num_classes)
 
     def forward(self, x, edge_index, batch, edge_weight = None):
         
+        # print(x.shape)
+        # print(edge_index.shape)
+        # print(edge_weight.shape)
+        # print(batch.shape)
+        # print(batch)
+        edge_attr = torch.unsqueeze(edge_weight, dim=1)
 
-        x = F.relu(self.conv1(x, edge_index, edge_weight = edge_weight))
-        x = F.relu(self.conv2(x, edge_index, edge_weight = edge_weight))
-        x = F.relu(self.conv3(x, edge_index, edge_weight = edge_weight))
-        x = F.relu(self.conv4(x, edge_index, edge_weight = edge_weight))
-        x = F.relu(self.conv5(x, edge_index, edge_weight = edge_weight))
-        x = F.relu(self.conv6(x, edge_index, edge_weight = edge_weight))
-        x = self.conv7(x, edge_index, edge_weight = edge_weight)
+        x = F.relu(self.conv1(x, edge_index, edge_attr = edge_attr))
+        # print(x.shape)
+        x = F.relu(self.conv2(x, edge_index, edge_attr = edge_attr))
+        # print(x.shape)
+        x = F.relu(self.conv3(x, edge_index, edge_attr = edge_attr))
+        # print(x.shape)
+        x = self.conv4(x, edge_index, edge_attr = edge_attr)
+        # print(x.shape)
         
         x = global_add_pool(x, batch)
+        # print(x.shape)
         
         x = F.dropout(x, training=self.training)
+        # print(x.shape)
         x = self.lin(x)
+        # print(x.shape)
 
         return x    
     
+class GIN(torch.nn.Module):
+    def __init__(self, node_features_dim, hidden_channels, num_classes, edge_emb_dim = 1):
+        super().__init__()
+        
+        # self.conv1 = GINEConv(torch.nn.Sequential(
+        #     torch.nn.Linear(node_features_dim + edge_emb_dim, hidden_channels),
+        #     torch.nn.BatchNorm1d(hidden_channels),
+        #     torch.nn.ReLU(),
+        #     torch.nn.Linear(hidden_channels, hidden_channels),
+        #     torch.nn.BatchNorm1d(hidden_channels),
+        #     torch.nn.ReLU(),
+        # ), edge_dim = edge_emb_dim)
 
+        # self.conv1 = GINEConv(MLP(in_channels = node_features_dim + edge_emb_dim, 
+        #                                hidden_channels= hidden_channels, out_chennels = hidden_channels, 
+        #                                 num_layers = 4, dropout =[0, 0, 0, 0.5]), 
+        #                       edge_dim = edge_emb_dim)
+    
+        self.conv1 = GINConv(torch.nn.Sequential(
+            torch.nn.Linear(node_features_dim, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ))
+        
+        self.conv2 = GINConv(torch.nn.Sequential(
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ))
+        
+        self.conv3 = GINConv(torch.nn.Sequential(
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ))
+        
+        self.conv4 = GINConv(torch.nn.Sequential(
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ))
+
+        self.lin = Linear(hidden_channels, num_classes)
+
+    def forward(self, x, edge_index, batch, edge_weight = None):
+        
+        # print(x.shape)
+        x = F.relu(self.conv1(x, edge_index))
+        # print(x.shape)
+        x = F.relu(self.conv2(x, edge_index))
+        # print(x.shape)
+        x = F.relu(self.conv3(x, edge_index))
+        
+        # print(x.shape)
+        x = self.conv4(x, edge_index)
+        # print(x.shape)
+        
+        x = global_add_pool(x, batch)
+        # print(x.shape)
+        
+        x = F.dropout(x, training=self.training)
+        # print(x.shape)
+        x = self.lin(x)
+        # print(x.shape)
+
+        return x    
+    
 class GNN7L_GAT(torch.nn.Module):
     def __init__(self, node_features_dim, hidden_channels, num_classes):
         super().__init__()
