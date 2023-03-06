@@ -1,0 +1,77 @@
+Top k edges statistics
+
+Top 5 relevant edges
+
+Avg number of edges in protein: 6.7
+Avg number of edges in ligand: 80.0
+Avg number of edges in interaction: 33.45
+
+Avg total number of relevant edges: 5.0 (4.2%)
+
+Avg number of relevant edges in protein: 1.35 (20.1%)
+% w.r.t. total number of relevant edges: 27.0%
+Avg number of relevant edges in ligand: 2.95 (3.7%)
+% w.r.t. total number of relevant edges: 59.0%
+Avg number of relevant edges in interaction: 0.7 (2.1%)
+% w.r.t. total number of relevant edges: 14.0%
+
+Top 10 relevant edges
+
+Avg number of edges in protein: 6.7
+Avg number of edges in ligand: 80.0
+Avg number of edges in interaction: 33.45
+
+Avg total number of relevant edges: 10.0 (8.3%)
+
+Avg number of relevant edges in protein: 1.75 (26.1%)
+% w.r.t. total number of relevant edges: 17.5%
+Avg number of relevant edges in ligand: 6.8 (8.5%)
+% w.r.t. total number of relevant edges: 68.0%
+Avg number of relevant edges in interaction: 1.45 (4.3%)
+% w.r.t. total number of relevant edges: 14.5%
+
+Top 15 relevant edges
+
+Avg number of edges in protein: 6.7
+Avg number of edges in ligand: 80.0
+Avg number of edges in interaction: 33.45
+
+Avg total number of relevant edges: 15.0 (12.5%)
+
+Avg number of relevant edges in protein: 2.15 (32.1%)
+% w.r.t. total number of relevant edges: 14.3%
+Avg number of relevant edges in ligand: 10.55 (13.2%)
+% w.r.t. total number of relevant edges: 70.3%
+Avg number of relevant edges in interaction: 2.3 (6.9%)
+% w.r.t. total number of relevant edges: 15.3%
+
+Top 20 relevant edges
+
+Avg number of edges in protein: 6.7
+Avg number of edges in ligand: 80.0
+Avg number of edges in interaction: 33.45
+
+Avg total number of relevant edges: 20.0 (16.6%)
+
+Avg number of relevant edges in protein: 2.45 (36.6%)
+% w.r.t. total number of relevant edges: 12.3%
+Avg number of relevant edges in ligand: 14.3 (17.9%)
+% w.r.t. total number of relevant edges: 71.5%
+Avg number of relevant edges in interaction: 3.2 (9.6%)
+% w.r.t. total number of relevant edges: 16.0%
+
+Top 25 relevant edges
+
+Avg number of edges in protein: 6.7
+Avg number of edges in ligand: 80.0
+Avg number of edges in interaction: 33.45
+
+Avg total number of relevant edges: 25.0 (20.8%)
+
+Avg number of relevant edges in protein: 2.65 (39.6%)
+% w.r.t. total number of relevant edges: 10.6%
+Avg number of relevant edges in ligand: 17.85 (22.3%)
+% w.r.t. total number of relevant edges: 71.4%
+Avg number of relevant edges in interaction: 4.15 (12.4%)
+% w.r.t. total number of relevant edges: 16.6%
+
