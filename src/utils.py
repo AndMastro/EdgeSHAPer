@@ -1,3 +1,6 @@
+### Module implementing utiles functions ###
+### Author: Andrea Mastropietro © All rights reserved ###
+
 import torch
 import numpy as np
 import random
@@ -12,8 +15,7 @@ import networkx as nx
 
 import torch
 from torch_geometric.data import InMemoryDataset
-from torch_geometric.nn import GCNConv, Linear
-from torch_geometric.nn import global_mean_pool
+from torch_geometric.nn import GCNConv, Linear, GraphConv, SAGEConv, GINConv, GINEConv, GATConv, global_mean_pool, global_add_pool
 import torch.nn.functional as F
 
 from rdkit_heatmaps import mapvalues2mol
@@ -45,7 +47,7 @@ def load_data(DATA_PATH, SMILES_FIELD_NAME, LABEL_FIELD_NAME):
     return df_data
 
 
-def save_model(model, MODEL_SAVE_PATH):
+def save_model(model, MODEL_SAVE_PATH, model_name = None, timestamp = False):
     '''
     Save the trained model.
     '''
@@ -55,10 +57,15 @@ def save_model(model, MODEL_SAVE_PATH):
     if not os.path.exists(MODEL_SAVE_PATH):
         os.makedirs(MODEL_SAVE_PATH)
 
-    MODEL_PATH = MODEL_SAVE_PATH + "/model_" + current_time + ".ckpt"
+    if not model_name:
+        MODEL_PATH = MODEL_SAVE_PATH + "/model_" + current_time + ".ckpt"
+    else:
+        MODEL_PATH = MODEL_SAVE_PATH + "/model_" + model_name + ".ckpt"
+        if timestamp:
+            MODEL_PATH = MODEL_SAVE_PATH + "/model_" + model_name + "_" + current_time + ".ckpt"
     torch.save(model.state_dict(), MODEL_PATH)
 
-def create_edge_index(mol):
+def create_edge_index(mol, weighted=False):
     """
     Create edge index for a molecule.
     """
@@ -66,6 +73,12 @@ def create_edge_index(mol):
     row = torch.from_numpy(adj.row.astype(np.int64)).to(torch.long)
     col = torch.from_numpy(adj.col.astype(np.int64)).to(torch.long)
     edge_index = torch.stack([row, col], dim=0)
+
+    if weighted:
+        weights = torch.from_numpy(adj.data.astype(np.float32))
+        edge_weight = torch.FloatTensor(weights)
+        return edge_index, edge_weight
+
     return edge_index
 
 def visualize_explanations(test_cpd, phi_edges, SAVE_PATH=None):
@@ -156,20 +169,254 @@ class GCN(torch.nn.Module):
         self.conv4 = GCNConv(hidden_channels, hidden_channels)
         self.lin = Linear(hidden_channels, num_classes)
 
-    def forward(self, x, edge_index, batch):
-        # 1. Obtain node embeddings 
-        x = self.conv1(x.float(), edge_index)
+    def forward(self, x, edge_index, batch, edge_weight = None):
+        
+        x = self.conv1(x.float(), edge_index, edge_weight=edge_weight)
         x = x.relu()
-        x = self.conv2(x, edge_index)
+        x = self.conv2(x, edge_index, edge_weight=edge_weight)
         x = x.relu()
-        x = self.conv3(x, edge_index)
+        x = self.conv3(x, edge_index, edge_weight=edge_weight)
         x = x.relu()
-        x = self.conv4(x, edge_index)
-        # 2. Readout layer
+        x = self.conv4(x, edge_index, edge_weight=edge_weight)
+       
         x = global_mean_pool(x, batch)  
 
-        # 3. Apply a final classifier
         x = F.dropout(x, p=0.5, training=self.training)
         x = self.lin(x)
         
+        return x
+
+
+#### classes and fuctions for PLI ####
+
+class PLIDataset(InMemoryDataset):
+    '''
+    Class for the PyG version of the PLI dataset.
+    '''
+    def __init__(self, root, transform=None, pre_transform=None, pre_filter=None, data_list = None):
+        super().__init__(root, transform, pre_transform, pre_filter)
+        
+        self.data_list = data_list
+
+        data_list = self.data_list
+
+        if self.pre_filter is not None:
+            data_list = [data for data in data_list if self.pre_filter(data)]
+
+        if self.pre_transform is not None:
+            data_list = [self.pre_transform(data) for data in data_list]
+
+        self.data, self.slices = self.collate(data_list)
+
+class GraphSAGE(torch.nn.Module):
+
+    def __init__(self, node_features_dim, hidden_channels, num_classes):
+        super().__init__()
+        self.conv1 = SAGEConv(node_features_dim, hidden_channels, aggr='mean') #max
+        self.conv2 = SAGEConv(hidden_channels, hidden_channels, aggr='mean')
+        self.conv3 = SAGEConv(hidden_channels, hidden_channels, aggr='mean')
+        self.conv4 = SAGEConv(hidden_channels, hidden_channels, aggr='mean')
+        self.conv5 = SAGEConv(hidden_channels, hidden_channels, aggr='mean')
+        self.conv6 = SAGEConv(hidden_channels, hidden_channels, aggr='mean')
+        self.conv7 = SAGEConv(hidden_channels, hidden_channels, aggr='mean')
+        self.lin = Linear(hidden_channels, num_classes)
+        
+
+    def forward(self, x, edge_index, batch, edge_weight = None):
+       
+
+        x = F.relu(self.conv1(x, edge_index))
+        x = F.relu(self.conv2(x, edge_index))
+        x = F.relu(self.conv3(x, edge_index))
+        x = F.relu(self.conv4(x, edge_index))
+        x = F.relu(self.conv5(x, edge_index))
+        x = F.relu(self.conv6(x, edge_index))
+        x = self.conv7(x, edge_index)
+        
+        x = global_add_pool(x, batch)
+        
+        x = F.dropout(x, training=self.training)
+        x = self.lin(x)
+
+        return x
+
+
+class GC_GNN(torch.nn.Module):
+    def __init__(self, node_features_dim, hidden_channels, num_classes):
+        super().__init__()
+        self.conv1 = GraphConv(node_features_dim, hidden_channels, aggr='max')
+        self.conv2 = GraphConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv3 = GraphConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv4 = GraphConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv5 = GraphConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv6 = GraphConv(hidden_channels, hidden_channels, aggr='max')
+        self.conv7 = GraphConv(hidden_channels, hidden_channels, aggr='max')
+        self.lin = Linear(hidden_channels, num_classes)
+
+    def forward(self, x, edge_index, batch, edge_weight = None):
+        
+
+        x = F.relu(self.conv1(x, edge_index, edge_weight = edge_weight))
+        x = F.relu(self.conv2(x, edge_index, edge_weight = edge_weight))
+        x = F.relu(self.conv3(x, edge_index, edge_weight = edge_weight))
+        x = F.relu(self.conv4(x, edge_index, edge_weight = edge_weight))
+        x = F.relu(self.conv5(x, edge_index, edge_weight = edge_weight))
+        x = F.relu(self.conv6(x, edge_index, edge_weight = edge_weight))
+        x = self.conv7(x, edge_index, edge_weight = edge_weight)
+        
+        x = global_add_pool(x, batch)
+        
+        x = F.dropout(x, training=self.training)
+        x = self.lin(x)
+
+        return x
+    
+
+class GINE(torch.nn.Module):
+    def __init__(self, node_features_dim, hidden_channels, num_classes, edge_emb_dim = 1):
+        super().__init__()
+        
+    
+        self.conv1 = GINEConv(torch.nn.Sequential(
+            torch.nn.Linear(node_features_dim, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ), edge_dim = edge_emb_dim)
+        
+        self.conv2 = GINEConv(torch.nn.Sequential(
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ), edge_dim = edge_emb_dim)
+        
+        self.conv3 = GINEConv(torch.nn.Sequential(
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ), edge_dim = edge_emb_dim)
+        
+        self.conv4 = GINEConv(torch.nn.Sequential(
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ), edge_dim = edge_emb_dim)
+
+        self.lin = Linear(hidden_channels, num_classes)
+
+    def forward(self, x, edge_index, batch, edge_weight = None):
+        
+        
+        edge_attr = torch.unsqueeze(edge_weight, dim=1)
+
+        x = F.relu(self.conv1(x, edge_index, edge_attr = edge_attr))
+        x = F.relu(self.conv2(x, edge_index, edge_attr = edge_attr))
+        x = F.relu(self.conv3(x, edge_index, edge_attr = edge_attr))
+        x = self.conv4(x, edge_index, edge_attr = edge_attr)
+        
+        x = global_add_pool(x, batch)
+        
+        x = F.dropout(x, training=self.training)
+
+        x = self.lin(x)
+
+        return x    
+    
+class GIN(torch.nn.Module):
+    def __init__(self, node_features_dim, hidden_channels, num_classes, edge_emb_dim = 1):
+        super().__init__()
+        
+        self.conv1 = GINConv(torch.nn.Sequential(
+            torch.nn.Linear(node_features_dim, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ))
+        
+        self.conv2 = GINConv(torch.nn.Sequential(
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ))
+        
+        self.conv3 = GINConv(torch.nn.Sequential(
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ))
+        
+        self.conv4 = GINConv(torch.nn.Sequential(
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.BatchNorm1d(hidden_channels),
+            torch.nn.ReLU(),
+        ))
+
+        self.lin = Linear(hidden_channels, num_classes)
+
+    def forward(self, x, edge_index, batch, edge_weight = None):
+        
+
+        x = F.relu(self.conv1(x, edge_index))
+        x = F.relu(self.conv2(x, edge_index))
+        x = F.relu(self.conv3(x, edge_index))
+        x = self.conv4(x, edge_index)
+    
+        x = global_add_pool(x, batch)
+        
+        x = F.dropout(x, training=self.training)
+
+        x = self.lin(x)
+
+        return x    
+    
+class GAT(torch.nn.Module):
+    def __init__(self, node_features_dim, hidden_channels, num_classes):
+        super().__init__()
+        self.conv1 = GATConv(node_features_dim, hidden_channels, edge_dim = 1) #max
+        self.conv2 = GATConv(hidden_channels, hidden_channels, edge_dim = 1)
+        self.conv3 = GATConv(hidden_channels, hidden_channels, edge_dim = 1)
+        self.conv4 = GATConv(hidden_channels, hidden_channels, edge_dim = 1)
+        self.conv5 = GATConv(hidden_channels, hidden_channels, edge_dim = 1)
+        self.conv6 = GATConv(hidden_channels, hidden_channels, edge_dim = 1)
+        self.conv7 = GATConv(hidden_channels, hidden_channels, edge_dim = 1)
+        self.lin = Linear(hidden_channels, num_classes)
+
+    def forward(self, x, edge_index, batch, edge_weight = None):
+        
+
+        x = F.relu(self.conv1(x, edge_index, edge_attr = edge_weight))
+        x = F.relu(self.conv2(x, edge_index, edge_attr = edge_weight))
+        x = F.relu(self.conv3(x, edge_index, edge_attr = edge_weight))
+        x = F.relu(self.conv4(x, edge_index, edge_attr = edge_weight))
+        x = F.relu(self.conv5(x, edge_index, edge_attr = edge_weight))
+        x = F.relu(self.conv6(x, edge_index, edge_attr = edge_weight))
+        x = self.conv7(x, edge_index, edge_attr = edge_weight)
+        
+        x = global_add_pool(x, batch)
+        
+        x = F.dropout(x, training=self.training)
+        x = self.lin(x)
+
         return x
