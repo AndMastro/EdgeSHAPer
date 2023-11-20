@@ -46,6 +46,9 @@ If you use our work, please cite our papers 😊
 
 * Mastropietro, A., Pasculli, G., & Bajorath, J. (2022). Protocol to explain graph neural network predictions using an edge-centric Shapley value-based approach. STAR Protocols, 3(4), 101887, doi: https://doi.org/10.1016/j.xpro.2022.101887
 
+For the work/results on protein-ligand interaction, check out and cite the Nature Machine Intelligence paper 🧠
 
+* Mastropietro, A., Pasculli, G. & Bajorath, J. [Learning characteristics of graph neural networks predicting protein–ligand affinities](https://rdcu.be/dqZlS
+). Nat Mach Intell (2023). https://doi.org/10.1038/s42256-023-00756-9 
 
 Special thanks to [Simone Fiacco](https://www.linkedin.com/in/simone-fiacco-27bb5a25a/) for creating the EdgeSHAPer logo.
