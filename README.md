@@ -34,6 +34,8 @@ edges_explanations = edgeshaper(model, x, edge_index, M = 100, target_class = TA
 
 The code above shows a basic usage of EdgeSHAPer to obtain explanations in terms of Shapley values for the edges of the graph under study. ```M``` is the number of Monte Carlo sampling steps to perform to obtain an approximation of the Shapley values. In the source file details on additional parameters can be found. 
 
+For more functions, classes and advanced usage and visualization, see our [STAR Protocols publication](https://doi.org/10.1016/j.xpro.2022.101887) with detailed explanations on how to use our tool.
+
 The method works for graph classification tasks, but a node classification extension is planned in the future.
 
 For any clarification on how to use the tool, feel free to drop an [email](mailto:mastropietro@diag.uniroma1.it).
