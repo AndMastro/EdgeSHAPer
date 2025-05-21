@@ -491,7 +491,7 @@ class Edgeshaper():
 
             rdkit_bonds_phi_pertinent_set = [0]*num_bonds
             pertinent_set_edge_index = self.minimal_top_k_set
-            for i in range(pertinent_set_edge_index.shape[0]):
+            for i in range(pertinent_set_edge_index.shape[1]):
                 
                 init_atom = pertinent_set_edge_index[0][i].item()
                 end_atom = pertinent_set_edge_index[1][i].item()
