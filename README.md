@@ -95,10 +95,10 @@ edgeshaper_explainer.visualize_molecule_explanations(
 An example of feature importance mapping looks like:
 
 <p align="center">
-  <img src="experiments\results\explanations\single\P14416_P42336\Target 1 vs Random\CC(C)C(=O)NC1CCc2ccc(CCN3CCN(c4nsc5ccccc45)CC3)cc21\EdgeSHAPer_MC_100_train_FULL_heatmap.png" alt="EdgeSHAPer explanation example" width="30%">
+  <img src="experiments\results\explanations\single\P14416_P42336\Target 1 vs Random\CC(C)C(=O)NC1CCc2ccc(CCN3CCN(c4nsc5ccccc45)CC3)cc21\EdgeSHAPer_MC_100_train_FULL_heatmap.png" alt="EdgeSHAPer explanation example" width="50%">
 </p>
 
-Red edges indicate positive contribution to class prediction (active compound, in our case), and blue edges indicated negative contriution, opposing the prediction. 
+Red edges indicate positive contribution to class prediction (active compound, in our case), and blue edges indicate negative contriution, opposing the prediction. 
 
 
 
