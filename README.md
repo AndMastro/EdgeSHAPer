@@ -110,7 +110,7 @@ In the ```experiments``` folder it is possible to find and also reproduce the ex
 
 ## 📧 Contacs and more
 
-For any clarification on how to use the tool, feel free to drop an [email](mailto:mastropietro@diag.uniroma1.it).
+For any clarification on how to use the tool, feel free to drop an [email](mailto:mastropietro@bit.uni-bonn.de).
 <!-- For more information, see our [STAR Protocols publication](https://doi.org/10.1016/j.xpro.2022.101887) with detailed explanations on how to use our tool. -->
 
 The method works for graph classification tasks, but a node classification extension is planned in the future.
