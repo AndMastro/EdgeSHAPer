@@ -4,16 +4,18 @@ import yaml
 import sys
 
 from time import time, strftime, gmtime
-from tqdm import tqdm
+from tqdm.auto import tqdm
 
 import torch
 from torch_geometric.data import  Data
 from torch_geometric.loader import DataLoader
 
-from torchdrug import data
+# from torchdrug import data
 from pysmiles import read_smiles
 
 from src.utils import *
+from rdkit import Chem
+import pandas as pd
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -43,35 +45,6 @@ def print_usage():
     print(' (optional, default: None)')
     print(' ')
 
-def parse_args():
-    '''
-    Parse the terminal arguments.
-    '''
-    parser = argparse.ArgumentParser(description='Set needed arguments for the training script.')
-    parser.add_argument('--DATA_FILE', type=str, default="experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv.",
-                    help='path in which your .csv dataset file is located (default: "experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv.\\"')
-    parser.add_argument('--TRAIN_DATA_FILE', type=str, default=None,
-                    help='location in which your training .txt file is located (default: None).\\')
-    parser.add_argument('--VALIDATION_DATA_FILE', type=str, default=None,
-                    help='location in which your validation .txt file is located (default: None).\\')
-    parser.add_argument('--TEST_DATA_FILE', type=str, default=None,
-                    help='location in which your test .txt file is located(default: None).\\')
-    parser.add_argument('--SMILES_FIELD_NAME', type=str, default=None,
-                help='column name for the SMILES field\\')
-    parser.add_argument('--LABEL_FIELD_NAME', type=str, default=None,
-                help='column name for the label field\\')
-    parser.add_argument('--MODEL_SAVE_FOLDER', type=str, default="experiments/models",
-                help='location in which the trained model will be saved. (default: "experiments/models")\\.')
-    parser.add_argument('--HIDDEN_CHANNELS', type=int, default=32,
-        help='HIDDEN_CHANNELS :number of hidden channels for the GCN (default: 256).\\')            
-    parser.add_argument('--BATCH_SIZE', type=int, default=32,
-        help='BATCH_SIZE :batch size for the training (default: 32).\\')
-    parser.add_argument('--EPOCHS', type=int, default=100,
-        help='EPOCHS :number of epochs for which the model will be trained (default: 100).\\')
-    parser.add_argument('--SEED', type=int, default=None,
-    help='seed for the random number generator (default: 42).\\')               
-
-    return parser.parse_args()
 
 
 if __name__ == "__main__":
@@ -95,7 +68,11 @@ if __name__ == "__main__":
     EPOCHS = args["trainer"]["EPOCHS"]
     SEED    = args["trainer"]["SEED"]
         
+    print("TRAIN_DATA_FILE: {}".format(TRAIN_DATA_FILE))
+    print("VALIDATION_DATA_FILE: {}".format(VALIDATION_DATA_FILE))
+    print("TEST_DATA_FILE: {}".format(TEST_DATA_FILE))
 
+    
     if SMILES_FIELD_NAME is None:
         print_usage()
         print('ERROR: SMILES_FIELD_NAME is not provided.')
@@ -114,28 +91,50 @@ if __name__ == "__main__":
     
     # instantiate custom class from TorchDrug
     target_fields = [LABEL_FIELD_NAME]
-    chembl_dataset = ChEMBL(path = DATA_FILE, smiles_field = SMILES_FIELD_NAME, target_fields = target_fields)
-
+    # chembl_dataset = ChEMBL(path = DATA_FILE, smiles_field = SMILES_FIELD_NAME, target_fields = target_fields)
+    df = pd.read_csv(DATA_FILE)
+    smiles_list = df[SMILES_FIELD_NAME].tolist()
+    labels_list = df[LABEL_FIELD_NAME].tolist()
+    
     #create edge index for each molecule
-    smiles = chembl_dataset.smiles_list
+    
+    
     mols = []
-    for i in tqdm(range(len(smiles))):
-        mols.append(read_smiles(smiles[i]))
+    for i in tqdm(range(len(smiles_list))):
+        # print("Reading SMILES: {}".format(smiles[i]))
+        # print("numner of characters in SMILES: {}".format(len(smiles[i])))
+        mols.append(read_smiles(smiles_list[i]))
 
     edge_index_list = []
     for mol in tqdm(mols):
         edge_index_list.append(create_edge_index(mol))
 
-    mols_torchdrug_format = []
-    for i in tqdm(range(len(smiles))):
-        mols_torchdrug_format.append(data.Molecule.from_smiles(smiles[i], with_hydrogen = False))
+    feature_list = []
+    for i in tqdm(range(len(smiles_list))):
+        mol = Chem.MolFromSmiles(smiles_list[i])
+        
+        # Add atom features using RDKit
+        atom_features = []
+        for atom in mol.GetAtoms():
+            features = [
+                atom.GetAtomicNum(),
+                atom.GetDegree(),
+                atom.GetFormalCharge(),
+                atom.GetHybridization(),
+                atom.GetIsAromatic(),
+                atom.GetTotalNumHs(),
+            ]
+            atom_features.append(features)
+        atom_features_tensor = torch.tensor(atom_features, dtype=torch.float)
+        feature_list.append(atom_features_tensor)
 
+    node_feature_dim = feature_list[0].shape[1] if feature_list else 0
     #instantiating the dataset
     data_list = []
-    y = torch.LongTensor(chembl_dataset.targets[LABEL_FIELD_NAME]).to(device)
+    y = torch.LongTensor(labels_list).to(device)
 
     for i in tqdm(range(len(mols))):
-        data_list.append(Data(x = mols_torchdrug_format[i].node_feature, edge_index = edge_index_list[i], y = y[i], smiles = chembl_dataset.smiles_list[i]))
+        data_list.append(Data(x = feature_list[i], edge_index = edge_index_list[i], y = y[i], smiles = smiles_list[i]))
 
     dataset = ChEMBLDatasetPyG(".", data_list = data_list)
 
@@ -143,8 +142,8 @@ if __name__ == "__main__":
     train_data, val_data, test_data = None, None, None
     
     if TRAIN_DATA_FILE is None and VALIDATION_DATA_FILE is None and TEST_DATA_FILE is None:
-        lengths = [int(0.8 * len(chembl_dataset)), int(0.1 * len(chembl_dataset))]
-        lengths += [len(chembl_dataset) - sum(lengths)]
+        lengths = [int(0.8 * len(data_list)), int(0.1 * len(data_list))]
+        lengths += [len(data_list) - sum(lengths)]
 
         dataset = dataset.shuffle()
         train_data = dataset[:lengths[0]]
@@ -180,7 +179,7 @@ if __name__ == "__main__":
     test_loader = DataLoader(test_data, batch_size=BATCH_SIZE)
 
     #model instantiation
-    model = GCN(node_features_dim = chembl_dataset.node_feature_dim, num_classes =dataset.num_classes, hidden_channels=256).to(device)
+    model = GCN(node_features_dim = node_feature_dim, num_classes =dataset.num_classes, hidden_channels=256).to(device)
     
     #training the network
     lr = lr=1e-3
@@ -213,14 +212,30 @@ if __name__ == "__main__":
         return correct / len(loader.dataset)  # Derive ratio of correct predictions.
 
 
+    best_val_acc = 0.0
+    best_model_state = None
+    best_epoch = 0
+    print("🚀 Training the model...")
     for epoch in range(epochs):
         train()
         train_acc = test(train_loader)
         val_acc = test(val_loader)
-        print(f'Epoch: {epoch:03d}, Train Acc: {train_acc:.4f}, Val Acc: {val_acc:.4f}')
+        # print(f'Epoch: {epoch:03d}, Train Acc: {train_acc:.4f}, Val Acc: {val_acc:.4f}')
+        tqdm.write(f'\rEpoch: {epoch:03d}, Train Acc: {train_acc:.4f}, Val Acc: {val_acc:.4f}', end='')
+
+        if val_acc > best_val_acc:
+            best_val_acc = val_acc
+            best_epoch = epoch
+            best_model_state = model.state_dict()
+
+    # Load best model before testing
+    if best_model_state is not None:
+        model.load_state_dict(best_model_state)
+        print(f'\nBest model found at epoch {best_epoch} with validation accuracy: {best_val_acc:.4f}')
+        
 
     test_acc = test(test_loader)    
-    print(f'Test Acc: {test_acc:.4f}')
+    print(f'Test accuracy with the best model: {test_acc:.4f}')
 
     #save the model
     if MODEL_SAVE_FOLDER is not None:

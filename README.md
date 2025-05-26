@@ -6,6 +6,9 @@
 
 # EdgeSHAPer: Bond-Centric Shapley Value-Based Explanation Method for Graph Neural Networks
 
+> 🚧 **Work in Progress**  
+> ⚠️ This branch is under active development to update EdgeSHAPer to the latest package versions and introduce new functionalities. Stay tuned for updates!
+
 This is the official implementation for [**EdgeSHAPer: Bond-Centric Shapley Value-Based Explanation Method for Graph Neural Networks**](https://www.cell.com/iscience/fulltext/S2589-0042(22)01315-3).
 
 The methodology relies on Shapley values approximations to determine edge importance for GNN prediction. It finds its application in the context of medicinal chemistry, but being general-purpose it can be applied to many graph classification GNN-based tasks which require explainability.

@@ -1,6 +1,6 @@
 trainer:
   DATA_FILE: "experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv" #data location
-  TRAIN_DATA_FILE: null #list of molecules to use as train set
+  TRAIN_DATA_FILE: null #None #list of molecules to use as train set
   VALIDATION_DATA_FILE: null
   TEST_DATA_FILE: null
   SAVE_FOLDER_DATA_SPLIT: null

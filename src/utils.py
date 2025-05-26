@@ -23,19 +23,21 @@ from rdkit_heatmaps.utils import transform2png
 from rdkit import Chem
 from rdkit.Chem import Draw
 
-from torchdrug import data
-from torchdrug.core import Registry as R
+# from torchdrug import data
+# from torchdrug.core import Registry as R
 
 # functions
 def set_all_seeds(SEED):
     '''
     Set all seeds for reproducibility.
     '''
+    random.seed(SEED)
+    np.random.seed(SEED)
     torch.manual_seed(SEED)
     torch.cuda.manual_seed(SEED)
-    # torch.backends.cudnn.deterministic = True
-    np.random.seed(SEED)
-    random.seed(SEED)
+    torch.cuda.manual_seed_all(SEED)
+    torch.backends.cudnn.deterministic = True
+    
 
 def load_data(DATA_PATH, SMILES_FIELD_NAME, LABEL_FIELD_NAME):
     '''
@@ -69,7 +71,7 @@ def create_edge_index(mol, weighted=False):
     """
     Create edge index for a molecule.
     """
-    adj = nx.to_scipy_sparse_matrix(mol).tocoo()
+    adj = nx.to_scipy_sparse_array(mol).tocoo() #nx.to_scipy_sparse_matrix(mol).tocoo()
     row = torch.from_numpy(adj.row.astype(np.int64)).to(torch.long)
     col = torch.from_numpy(adj.col.astype(np.int64)).to(torch.long)
     edge_index = torch.stack([row, col], dim=0)
@@ -123,19 +125,19 @@ def visualize_explanations(test_cpd, phi_edges, SAVE_PATH=None):
     return img  
 #classes
 
-@R.register("datasets.ChEMBL")
-class ChEMBL(data.MoleculeDataset):
-    '''
-    Class for the molecule dataset.
-    '''
-    def __init__(self, path, smiles_field, target_fields, verbose=1, **kwargs):
+# @R.register("datasets.ChEMBL")
+# class ChEMBL(data.MoleculeDataset):
+#     '''
+#     Class for the molecule dataset.
+#     '''
+#     def __init__(self, path, smiles_field, target_fields, verbose=1, **kwargs):
     
-        self.path = path
-        self.smiles_field = smiles_field
-        self.target_fields= target_fields
+#         self.path = path
+#         self.smiles_field = smiles_field
+#         self.target_fields= target_fields
 
-        self.load_csv(self.path, smiles_field=self.smiles_field, target_fields=self.target_fields,
-                    verbose=verbose, **kwargs)
+#         self.load_csv(self.path, smiles_field=self.smiles_field, target_fields=self.target_fields,
+#                     verbose=verbose, **kwargs)
 
 class ChEMBLDatasetPyG(InMemoryDataset):
     '''
