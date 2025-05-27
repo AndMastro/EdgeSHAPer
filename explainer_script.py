@@ -1,20 +1,20 @@
-### run this script to obtain explanations for given molecules using a pretrained model ###
-import argparse
+### Andrea Mastropietro © all rights reserve
+# run this script to obtain explanations for given molecules using a pretrained model ###
+
 import os
 import sys
-import yaml
-
 from time import time, strftime, gmtime
 
-import torch
-from torch_geometric.data import  Data
-from torchdrug import data
 
+import yaml
+import pandas as pd
+from tqdm.auto import tqdm
 from pysmiles import read_smiles
 
-from tqdm import tqdm
+import torch
+from torch_geometric.data import Data
 
-#custom modules
+# Custom module imports
 from src.utils import *
 from src.edgeshaper import *
 
@@ -57,60 +57,10 @@ def print_usage():
     print('    (optional, default: None')
    
 
-def parse_args():
-    '''
-    Parse the terminal arguments.
-    '''
-    parser = argparse.ArgumentParser(description='Set needed arguments for the explainer script.')
-
-    parser.add_argument('--MODEL_PATH', type=str, required=True,
-            help='path in which your model is located')   
-
-    parser.add_argument('--DATA_FILE', type=str, default="experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv.",
-                    help='path in which your .csv dataset file is located (default: "experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv.\\"')
-
-    parser.add_argument('--MOLECULES_TO_EXPLAIN', type=str, required=True, help='path in which your .txt file with the molecules to explain is located (default: "TBD")')
-
-    parser.add_argument('--TARGET_CLASS', type=int, default=0, help='target class for which the explanations will be computed (default: 0)')
-
-    parser.add_argument('--SMILES_FIELD_NAME', type=str, default=None, required=True,
-                help='column name for the SMILES field\\')
-
-    parser.add_argument('--LABEL_FIELD_NAME', type=str, default=None,required=True,
-                help='column name for the label field\\')
-
-    parser.add_argument('--MINIMAL_SETS', type=bool, default=False, help='boolean indicating whether to compute minimal informative sets (default: False)')
-
-    parser.add_argument('--SAVE_FOLDER_PATH', type=str, default="results", help='path in which the explanations will be saved (optional, default: "TBD")')
-
-    parser.add_argument('--SAMPLING_STEPS', type=int, default=100, help='number of Monte Carlo sampling steps to perform (default: 100)')
-
-    parser.add_argument('--VISUALIZATION', type=bool, default=False, help=' if to save visualization (optional, default: False)')
-
-    parser.add_argument('--TOLERANCE', type=float, default=None, help='desired deviation between predicted probability and sum of Shapley values (optional, default: None)')
-
-    parser.add_argument('--SEED', type=int, default=None, help='seed for the random number generator (optional, default: None)')
-    return parser.parse_args()
-
 
 if __name__ == "__main__":
     start = time()
-    # parse arguments
-
-    # args = parse_args()
-
-    # MODEL_PATH = args.MODEL_PATH
-    # DATA_FILE = args.DATA_FILE
-    # MOLECULES_TO_EXPLAIN = args.MOLECULES_TO_EXPLAIN
-    # TARGET_CLASS = args.TARGET_CLASS
-    # SMILES_FIELD_NAME = args.SMILES_FIELD_NAME
-    # LABEL_FIELD_NAME = args.LABEL_FIELD_NAME
-    # MINIMAL_SETS = args.MINIMAL_SETS
-    # SAVE_FOLDER_PATH = args.SAVE_FOLDER_PATH
-    # SAMPLING_STEPS = args.SAMPLING_STEPS
-    # VISUALIZATION = args.VISUALIZATION
-    # TOLERANCE = args.TOLERANCE
-    # SEED = args.SEED
+    
     args = None
     with open("parameters.yml") as paramFile:
         args = yaml.load(paramFile, Loader=yaml.FullLoader)
@@ -130,10 +80,7 @@ if __name__ == "__main__":
     TOLERANCE = args["explainer"]["TOLERANCE"]
     SEED = args["explainer"]["SEED"]
     
-    # if not len(sys.argv) > 1:
-    #     print_usage()
-    #     print('ERROR: Not enough arguments provided.')
-    #     sys.exit(1)
+    
 
     if MODEL_PATH is None:
         print_usage()
@@ -147,34 +94,53 @@ if __name__ == "__main__":
 
     df_data = load_data(DATA_FILE, SMILES_FIELD_NAME, LABEL_FIELD_NAME)
     
-    target_fields = [LABEL_FIELD_NAME]
-    chembl_dataset = ChEMBL(path = DATA_FILE, smiles_field = SMILES_FIELD_NAME, target_fields = target_fields)
+    df = pd.read_csv(DATA_FILE)
+    smiles_list = df[SMILES_FIELD_NAME].tolist()
+    labels_list = df[LABEL_FIELD_NAME].tolist()
 
     #create edge index for each molecule
-    smiles = chembl_dataset.smiles_list
+    
     mols = []
-    for i in tqdm(range(len(smiles))):
-        mols.append(read_smiles(smiles[i]))
+    for i in tqdm(range(len(smiles_list))):
+        mols.append(read_smiles(smiles_list[i]))
 
     edge_index_list = []
     for mol in tqdm(mols):
         edge_index_list.append(create_edge_index(mol))
 
     #check if those steps are necessary!!!!### we could get rid of the CHEMbl dataset
-    mols_torchdrug_format = []
-    for i in tqdm(range(len(smiles))):
-        mols_torchdrug_format.append(data.Molecule.from_smiles(smiles[i], with_hydrogen = False))
+    feature_list = []
+    for i in tqdm(range(len(smiles_list))):
+        mol = Chem.MolFromSmiles(smiles_list[i])
+
+        # Add atom features using RDKit
+        atom_features = []
+        for atom in mol.GetAtoms():
+            features = [
+                atom.GetAtomicNum(),
+                atom.GetDegree(),
+                atom.GetFormalCharge(),
+                atom.GetHybridization(),
+                atom.GetIsAromatic(),
+                atom.GetTotalNumHs(),
+            ]
+            atom_features.append(features)
+        atom_features_tensor = torch.tensor(atom_features, dtype=torch.float)
+        feature_list.append(atom_features_tensor)
+
+    node_feature_dim = feature_list[0].shape[1] if feature_list else 0
 
     #instantiating the dataset
     data_list = []
-    y = torch.LongTensor(chembl_dataset.targets[LABEL_FIELD_NAME]).to(device)
+    y = torch.LongTensor(labels_list).to(device)
 
     for i in tqdm(range(len(mols))):
-        data_list.append(Data(x = mols_torchdrug_format[i].node_feature, edge_index = edge_index_list[i], y = y[i], smiles = chembl_dataset.smiles_list[i]))
+        data_list.append(Data(x = feature_list[i], edge_index = edge_index_list[i], y = y[i], smiles = smiles_list[i]))
 
     dataset = ChEMBLDatasetPyG(".", data_list = data_list)
+
     # load model
-    model = GCN(node_features_dim = chembl_dataset.node_feature_dim, num_classes =dataset.num_classes, hidden_channels=HIDDEN_CHANNELS).to(device)
+    model = GCN(node_features_dim = node_feature_dim, num_classes =dataset.num_classes, hidden_channels=HIDDEN_CHANNELS).to(device)
     model.load_state_dict(torch.load(MODEL_PATH))
     model.to(device)
 
@@ -185,8 +151,10 @@ if __name__ == "__main__":
     
     test_cpd_indices = []
     for molecule in molecules_to_explain:
-        test_cpd_indices.append(chembl_dataset.smiles_list.index(molecule)) #check if this is correct
+        test_cpd_indices.append(smiles_list.index(molecule)) #check if this is correct
 
+    fidelities = []
+    infidelities = []
     #explain the molecules
     for test_index in test_cpd_indices:
         #good idea to define an explainer class, see if we want to implement it
@@ -225,8 +193,11 @@ if __name__ == "__main__":
                 
 
         if MINIMAL_SETS:
-            pert_pos, inf = edgeshaper_explainer.compute_pertinent_positivite_set(verbose=True)
+            pert_pos, inf = edgeshaper_explainer.compute_pertinent_positive_set(verbose=True)
             min_top_k, fid = edgeshaper_explainer.compute_minimal_top_k_set(verbose=True)
+
+            fidelities.append(fid)
+            infidelities.append(inf)
 
             with open(INFO_EXPLANATIONS, "a+") as saveFile:
                 saveFile.write("Minimal top k set edge index:\n")
@@ -244,9 +215,13 @@ if __name__ == "__main__":
                 os.makedirs(VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE)
 
             # visualize_explanations(test_cpd, phi_edges, VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE)
-            edgeshaper_explainer.visualize_molecule_explanations(test_cpd.smiles, SAVE_FOLDER_PATH = VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE, pertinent_positive=True, minimal_top_k=True)
+            edgeshaper_explainer.visualize_molecule_explanations(test_cpd.smiles, save_path = VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE, pertinent_positive=True, minimal_top_k=True)
+
+    if MINIMAL_SETS:
+        print("\nAverage FID+: ", sum(fidelities) / len(fidelities))
+        print("Average FID-: ", sum(infidelities) / len(infidelities))
 
     end = time()
-    elapsed = end - start
+    elapsed = end - start 
     
-    print("Elapsed time : {}".format(strftime("%Hh%Mm%Ss", gmtime(elapsed))))
+    print("\nElapsed time : {}".format(strftime("%Hh%Mm%Ss", gmtime(elapsed))))

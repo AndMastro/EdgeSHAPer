@@ -13,14 +13,14 @@ trainer:
   SEED: 42
 
 explainer:
-  MODEL: "protocol/models/model_2022_09_06-17_29_37.ckpt"
+  MODEL: "protocol/models/model_last_model_2025_05_27-18_03_41.ckpt"
   DATA_FILE: "experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv"
   MOLECULES_TO_EXPLAIN: "protocol/molecules_to_explain.txt"
   TARGET_CLASS: 0
   SMILES_FIELD_NAME: "nonstereo_aromatic_smiles"
   LABEL_FIELD_NAME: "label"
   MINIMAL_SETS: True
-  SAVE_FOLDER_PATH: "protocol/results"
+  SAVE_FOLDER_PATH: "protocol/results/model_last_model_2025_05_27-18_03_41"
   HIDDEN_CHANNELS: 256
   SAMPLING_STEPS: 100
   VISUALIZATION: True

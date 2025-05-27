@@ -36,7 +36,7 @@ def set_all_seeds(SEED):
     torch.manual_seed(SEED)
     torch.cuda.manual_seed(SEED)
     torch.cuda.manual_seed_all(SEED)
-    torch.backends.cudnn.deterministic = True
+    #torch.backends.cudnn.deterministic = True
     
 
 def load_data(DATA_PATH, SMILES_FIELD_NAME, LABEL_FIELD_NAME):

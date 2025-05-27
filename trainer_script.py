@@ -89,8 +89,7 @@ if __name__ == "__main__":
     # Load the dataset
     df_data = load_data(DATA_FILE, SMILES_FIELD_NAME, LABEL_FIELD_NAME)
     
-    # instantiate custom class from TorchDrug
-    target_fields = [LABEL_FIELD_NAME]
+    
     # chembl_dataset = ChEMBL(path = DATA_FILE, smiles_field = SMILES_FIELD_NAME, target_fields = target_fields)
     df = pd.read_csv(DATA_FILE)
     smiles_list = df[SMILES_FIELD_NAME].tolist()
@@ -101,8 +100,7 @@ if __name__ == "__main__":
     
     mols = []
     for i in tqdm(range(len(smiles_list))):
-        # print("Reading SMILES: {}".format(smiles[i]))
-        # print("numner of characters in SMILES: {}".format(len(smiles[i])))
+        # Read the SMILES string 
         mols.append(read_smiles(smiles_list[i]))
 
     edge_index_list = []
@@ -228,18 +226,23 @@ if __name__ == "__main__":
             best_epoch = epoch
             best_model_state = model.state_dict()
 
+    # Save the last model 
+    last_model_state = model.state_dict()
+    if MODEL_SAVE_FOLDER is not None:
+        save_model(model, MODEL_SAVE_FOLDER, model_name="last_model", timestamp=True)
+        print(f"\nLast model saved to {MODEL_SAVE_FOLDER}")
+
     # Load best model before testing
     if best_model_state is not None:
         model.load_state_dict(best_model_state)
         print(f'\nBest model found at epoch {best_epoch} with validation accuracy: {best_val_acc:.4f}')
         
-
     test_acc = test(test_loader)    
     print(f'Test accuracy with the best model: {test_acc:.4f}')
 
     #save the model
     if MODEL_SAVE_FOLDER is not None:
-        save_model(model, MODEL_SAVE_FOLDER)
+        save_model(model, MODEL_SAVE_FOLDER, model_name="best_model", timestamp=True)
         print("Model saved to {}".format(MODEL_SAVE_FOLDER))
     
     end = time()
