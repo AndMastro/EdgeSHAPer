@@ -65,7 +65,7 @@ class Edgeshaper():
 
         self.original_pred_prob = None
 
-    def explain(self, M = 100, target_class = 0, P = None, deviation = None, log_odds = False, seed = None):
+    def explain(self, M = 100, target_class = 0, P = None, deviation = None, log_odds = False, seed = None, progress_bar = True):
         """ Compute edge importance using EdgeSHAPer algorithm.
             M (int): number of Monte Carlo sampling steps to perform.
             target_class (int, optional): index of the class prediction to explain. Defaults to class 0. None if the model is a regression model.
@@ -98,7 +98,7 @@ class Edgeshaper():
             graph_density = num_edges/max_num_edges
             P = graph_density
 
-        for j in tqdm(range(num_edges)):
+        for j in tqdm(range(num_edges), disable = not progress_bar):
             marginal_contrib = 0
             for i in range(M):
                 E_z_mask = rng.binomial(1, P, num_edges)
@@ -309,6 +309,8 @@ class Edgeshaper():
         original_pred_prob = out_prob[0][self.target_class].item()
 
         self.original_pred_prob = original_pred_prob
+
+        return self.original_pred_prob
 
     def compute_pertinent_positive_set(self, verbose = False):
         assert(self.explained) #make sure that the explanation has been computed

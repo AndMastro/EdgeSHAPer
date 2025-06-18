@@ -38,6 +38,9 @@ def set_all_seeds(SEED):
     torch.cuda.manual_seed_all(SEED)
     #torch.backends.cudnn.deterministic = True
     
+def shuffle_list_with_numpy(data, rng):
+    idx = rng.permutation(len(data))
+    return [data[i] for i in idx]
 
 def load_data(DATA_PATH, SMILES_FIELD_NAME, LABEL_FIELD_NAME):
     '''

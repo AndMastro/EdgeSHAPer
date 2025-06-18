@@ -1,5 +1,6 @@
-### Andrea Mastropietro © all rights reserve
-# run this script to obtain explanations for given molecules using a pretrained model ###
+### Andrea Mastropietro 2022 © All rights reserved ###
+### This script is used to explain molecules using a pretrained model.
+### It uses the Edgeshaper explainer to compute Shapley values for edges in the molecular graph.
 
 import os
 import sys
@@ -17,45 +18,10 @@ from torch_geometric.data import Data
 # Custom module imports
 from src.utils import *
 from src.edgeshaper import *
+import os
+import numpy as np
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-def print_usage():
-    print(' ')
-    print('usage: python explainer_script.py --MODEL_PATH --DATA_FILE --MOLECULES_TO_EXPLAIN --TARGET_CLASS --MINIMAL_SETS --SAVE_FOLDER_PATH --SAMPLING_STEPS --VISUALIZATION_SAVE_FOLDER_PATH --TOLERANCE --SEED')
-    print('-----------------------------------------------------------------')
-    print('MODEL_PATH: path in which your model is located.')
-
-    print('DATA_FILE: path in which your .csv dataset file is located.')
-    print('    default: "experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv."')
-
-    print('MOLECULES_TO_EXPLAIN: path in which your .txt file with the molecules to explain is located.')
-    print('    default: "TBD"')
-
-    print('TARGET_CLASS: target class for which the explanations will be computed.')
-    print('    default: 0')
-
-    print('SMILES_FIELD_NAME :column name for the SMILES field.')
-    print('LABEL_FIELD_NAME :column name for the label field.')
-
-    print('MINIMAL_SETS: boolean indicating whether to compute minimal informative sets.')
-    print('    default: False')
-
-    print('SAVE_FOLDER_PATH: path in which the explanations will be saved.')
-    print('    default: "results"')
-
-    print('SAMPLING_STEPS: number of Monte Carlo sampling steps to perform.')
-    print('    default: 100')
-
-    print('VISUALIZATION: if to sve visualizations.')
-    print('    (optional, default: False)')
-
-    print('TOLERANCE: desired deviation between predicted probability and sum of Shapley values.')
-    print('    (optional, default: None')
-
-    print('SEED: seed for the random number generator.')
-    print('    (optional, default: None')
-   
 
 
 if __name__ == "__main__":
@@ -68,6 +34,7 @@ if __name__ == "__main__":
 
     MODEL_PATH = args["explainer"]["MODEL"]
     DATA_FILE = args["explainer"]["DATA_FILE"]
+    TEST_DATA_FILE = args["explainer"]["TEST_DATA_FILE"]
     MOLECULES_TO_EXPLAIN = args["explainer"]["MOLECULES_TO_EXPLAIN"]
     TARGET_CLASS = args["explainer"]["TARGET_CLASS"]
     SMILES_FIELD_NAME = args["explainer"]["SMILES_FIELD_NAME"]
@@ -80,12 +47,6 @@ if __name__ == "__main__":
     TOLERANCE = args["explainer"]["TOLERANCE"]
     SEED = args["explainer"]["SEED"]
     
-    
-
-    if MODEL_PATH is None:
-        print_usage()
-        print('ERROR: No model path provided.')
-        sys.exit(1)
     
     if SEED is not None:
         set_all_seeds(SEED)
@@ -139,41 +100,82 @@ if __name__ == "__main__":
 
     dataset = ChEMBLDatasetPyG(".", data_list = data_list)
 
+    test_data = []
+    if TEST_DATA_FILE is None:
+        lengths = [int(0.8 * len(data_list)), int(0.1 * len(data_list))]
+        lengths += [len(data_list) - sum(lengths)]
+
+        dataset = dataset.shuffle()
+        train_data = dataset[:lengths[0]]
+        val_data = dataset[lengths[0]+1:lengths[0] + lengths[1]+1]
+        test_data = dataset[lengths[0] + lengths[1] + 1: ]
+       
+    else:
+        test_molecules = []
+        with open(TEST_DATA_FILE, 'r') as f:
+            test_molecules = f.read().splitlines()
+        for data_sample in dataset:
+            if data_sample.smiles in test_molecules:
+                test_data.append(data_sample)
+
+        rng = np.random.default_rng(SEED)
+        test_data = shuffle_list_with_numpy(test_data, rng)
+
     # load model
-    model = GCN(node_features_dim = node_feature_dim, num_classes =dataset.num_classes, hidden_channels=HIDDEN_CHANNELS).to(device)
+    model = GCN(node_features_dim = node_feature_dim, num_classes = dataset.num_classes, hidden_channels=HIDDEN_CHANNELS).to(device)
     model.load_state_dict(torch.load(MODEL_PATH))
     model.to(device)
 
     #read list of molecules to explain
-
-    with open(MOLECULES_TO_EXPLAIN, 'r') as f:
-        molecules_to_explain = f.read().splitlines()
-    
+    molecules_to_explain = []
     test_cpd_indices = []
-    for molecule in molecules_to_explain:
-        test_cpd_indices.append(smiles_list.index(molecule)) #check if this is correct
+    if isinstance(MOLECULES_TO_EXPLAIN, int):
+        print("Selecting {} test molecules predicted as class 0 (active) by the model to be explained...".format(MOLECULES_TO_EXPLAIN))
+        # Select the first MOLECULES_TO_EXPLAIN molecules predicted as class 0 (active) by the model
+        if MOLECULES_TO_EXPLAIN <= 0:
+            raise ValueError("MOLECULES_TO_EXPLAIN must be a positive integer.")
+        model.eval()
+        count = 0
+        with torch.no_grad():
+            for i, data in enumerate(test_data):
+
+                if data.y == 0:  
+                    data = data.to(device)
+                    batch = torch.zeros(data.x.shape[0], dtype=int, device=data.x.device)
+                    out = model(data.x, data.edge_index, batch=batch)
+                    out_prob = F.softmax(out, dim = 1)
+
+                    # print("Compound: ", data.smiles, " - Out prob: ", out_prob, " - Predicted class: ", torch.argmax(out_prob[0]).item())
+
+                    pred = torch.argmax(out_prob[0]).item()
+                    if pred == 0:
+                        molecules_to_explain.append(data.smiles)
+                        count += 1
+                        test_cpd_indices.append(i)
+                        if count >= MOLECULES_TO_EXPLAIN:
+                            break
+    elif os.path.exists(MOLECULES_TO_EXPLAIN):
+        with open(MOLECULES_TO_EXPLAIN, 'r') as f:
+            molecules_to_explain = f.read().splitlines()
+    else:
+        raise ValueError("MOLECULES_TO_EXPLAIN must be an integer or a valid file path.")
+
+    print("Molecules to explain: ", molecules_to_explain)
+    
 
     fidelities = []
     infidelities = []
     #explain the molecules
-    for test_index in test_cpd_indices:
-        #good idea to define an explainer class, see if we want to implement it
-        # explainer = Explainer(model, dataset, test_index, SAMPLING_STEPS, TOLERANCE)
-        # explanation = explainer.explain()
-        # if MINIMAL_SETS:
-        #     explanation = explainer.compute_minimal_sets(explanation)
-        # if SAVE_FOLDER_PATH is not None:
-        #     explainer.save_explanation(explanation, SAVE_FOLDER_PATH)
-        # if VISUALIZATION_SAVE_FOLDER_PATH is not None:
-        #     explainer.visualize(explanation, VISUALIZATION_SAVE_FOLDER_PATH)
+    for test_index in tqdm(test_cpd_indices):
 
-        print("Explaining test compound: ", dataset[test_index].smiles)
-        test_cpd = dataset[test_index].to(device)
+        print("Explaining test compound: ", test_data[test_index].smiles)
+        assert test_data[test_index].smiles in molecules_to_explain, "The test compound smiles is not in the list of molecules to explain."
 
-        # phi_edges = edgeshaper(model, test_cpd.x, test_cpd.edge_index, M = SAMPLING_STEPS, target_class = TARGET_CLASS, P = None, deviation = TOLERANCE, log_odds = False, seed = SEED, device = device)
+        test_cpd = test_data[test_index].to(device)
+
         edgeshaper_explainer = Edgeshaper(model, test_cpd.x, test_cpd.edge_index, device = device)
-        phi_edges = edgeshaper_explainer.explain(M = SAMPLING_STEPS, target_class = TARGET_CLASS, P = None, deviation = TOLERANCE, log_odds = False, seed = SEED)
-        # print("Shapley values for edges: ", phi_edges)
+        phi_edges = edgeshaper_explainer.explain(M = SAMPLING_STEPS, target_class = TARGET_CLASS, P = None, deviation = TOLERANCE, log_odds = False, seed = SEED, progress_bar = False)
+        original_prob = edgeshaper_explainer.compute_original_predicted_probability()
 
         if SAVE_FOLDER_PATH is not None:
             SAVE_FOLDER_PATH_COMPLETE = SAVE_FOLDER_PATH + "/"  + test_cpd.smiles
@@ -190,6 +192,7 @@ if __name__ == "__main__":
                     saveFile.write("(" + str(test_cpd.edge_index[0][i].item()) + "," + str(test_cpd.edge_index[1][i].item()) + "): " + str(phi_edges[i]) + "\n")
 
                 saveFile.write("\nSum of Shapley values: " + str(sum(phi_edges)) + "\n\n")
+                saveFile.write("Original predicted probability: " + str(original_prob) + "\n\n")
                 
 
         if MINIMAL_SETS:
@@ -214,7 +217,6 @@ if __name__ == "__main__":
             if not os.path.exists(VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE):
                 os.makedirs(VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE)
 
-            # visualize_explanations(test_cpd, phi_edges, VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE)
             edgeshaper_explainer.visualize_molecule_explanations(test_cpd.smiles, save_path = VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE, pertinent_positive=True, minimal_top_k=True)
 
     if MINIMAL_SETS:

@@ -1,5 +1,4 @@
 #import needed libraries
-import argparse
 import yaml
 import sys
 
@@ -10,7 +9,6 @@ import torch
 from torch_geometric.data import  Data
 from torch_geometric.loader import DataLoader
 
-# from torchdrug import data
 from pysmiles import read_smiles
 
 from src.utils import *
@@ -18,33 +16,6 @@ from rdkit import Chem
 import pandas as pd
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-def print_usage():
-    print(' ')
-    print('usage: python trainer_script.py --DATA_FILE --TRAIN_DATA_FILE --VALIDATION_DATA_FILE --TEST_DATA_FILE --SMILES_FIELD_NAME --LABEL_FIELD_NAME --MODEL_SAVE_FOLDER --SEED')
-    print('-----------------------------------------------------------------')
-    print('DATA_FILE:path in which your .csv dataset file is located.')
-    print('   (default: "experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv."')
-    print('TRAIN_DATA_FILE :location in which your training .txt file is located.')
-    print('  (default: "experiments/data/train_val_test_splits/P14416_P42336_target_1_vs_random_cpds/training.txt")')
-    print('VALIDATION_DATA_FILE :location in which your validation .txt file is located (optional). If this is not provided, the validation set will be obtained as the 10% of the training set')
-    print('  (default: "experiments/data/train_val_test_splits/P14416_P42336_target_1_vs_random_cpds/validation.txt")')
-    print('TEST_DATA_FILE :location in which your test .txt file is located.')
-    print('  (default: "experiments/data/train_val_test_splits/P14416_P42336_target_1_vs_random_cpds/test.txt")')
-    print('SMILES_FIELD_NAME :column name for the SMILES field.')
-    print('LABEL_FIELD_NAME :column name for the label field.')
-    print('MODEL_SAVE_FOLDER :location in which the trained model will be saved.')
-    print('  (default: "experiments/models")')
-    print('HIDDEN_CHANNELS :number of hidden channels for the GCN.')
-    print('  (default: 256)')
-    print('BATCH_SIZE :batch size for the training.')
-    print('  (default: 32)')
-    print('EPOCHS :number of epochs for which the model will be trained.')
-    print('  (default: 100)')
-    print('SEED :seed for the random number generator for reproducible results.')
-    print(' (optional, default: None)')
-    print(' ')
-
 
 
 if __name__ == "__main__":
@@ -72,16 +43,6 @@ if __name__ == "__main__":
     print("VALIDATION_DATA_FILE: {}".format(VALIDATION_DATA_FILE))
     print("TEST_DATA_FILE: {}".format(TEST_DATA_FILE))
 
-    
-    if SMILES_FIELD_NAME is None:
-        print_usage()
-        print('ERROR: SMILES_FIELD_NAME is not provided.')
-        exit(1)
-
-    if LABEL_FIELD_NAME is None:
-        print_usage()
-        print('ERROR: LABEL_FIELD_NAME is not provided.')
-        exit(1)
         
     if SEED is not None:
         set_all_seeds(SEED)
@@ -137,7 +98,7 @@ if __name__ == "__main__":
     dataset = ChEMBLDatasetPyG(".", data_list = data_list)
 
     #splitting the dataset
-    train_data, val_data, test_data = None, None, None
+    train_data, val_data, test_data = [], [], []
     
     if TRAIN_DATA_FILE is None and VALIDATION_DATA_FILE is None and TEST_DATA_FILE is None:
         lengths = [int(0.8 * len(data_list)), int(0.1 * len(data_list))]
@@ -146,12 +107,39 @@ if __name__ == "__main__":
         dataset = dataset.shuffle()
         train_data = dataset[:lengths[0]]
         val_data = dataset[lengths[0]+1:lengths[0] + lengths[1]+1]
-        test_data = dataset[lengths[0] + lengths[1] + 1: ]
+        test_data = dataset[lengths[0] + lengths[1] + 1:]
        
     elif TRAIN_DATA_FILE is not None and VALIDATION_DATA_FILE is not None and TEST_DATA_FILE is not None:
-        #TBD load from files
-        print("Not implemented yet.")
-        sys.exit(1)
+        print("Loading training data from {}".format(TRAIN_DATA_FILE))
+        train_molecules = []
+        with open(TRAIN_DATA_FILE, 'r') as f:
+            train_molecules = f.read().splitlines()
+        for data_sample in dataset:
+            if data_sample.smiles in train_molecules:
+                train_data.append(data_sample)
+
+        print("Loading validation data from {}".format(VALIDATION_DATA_FILE))
+        val_molecules = []
+        with open(VALIDATION_DATA_FILE, 'r') as f:
+            val_molecules = f.read().splitlines()
+        for data_sample in dataset:
+            if data_sample.smiles in val_molecules:
+                val_data.append(data_sample)
+        
+        print("Loading test data from {}".format(TEST_DATA_FILE))
+        test_molecules = []
+        with open(TEST_DATA_FILE, 'r') as f:
+            test_molecules = f.read().splitlines()
+        for data_sample in dataset:
+            if data_sample.smiles in test_molecules:
+                test_data.append(data_sample)
+
+        rng = np.random.default_rng(SEED)
+
+        train_data = shuffle_list_with_numpy(train_data, rng)
+        val_data = shuffle_list_with_numpy(val_data, rng)
+        test_data = shuffle_list_with_numpy(test_data, rng)
+
     else:
         print("ERROR: Please provide either all or none of the following: TRAIN_DATA_FILE, VALIDATION_DATA_FILE, TEST_DATA_FILE.")
         sys.exit(1) 
@@ -172,7 +160,7 @@ if __name__ == "__main__":
                 testFile.write(test_data[i].smiles + "\n")        
 
     #create dataloaders
-    train_loader = DataLoader(train_data, batch_size=BATCH_SIZE)
+    train_loader = DataLoader(train_data, batch_size=BATCH_SIZE, shuffle=True)
     val_loader = DataLoader(val_data, batch_size=BATCH_SIZE)
     test_loader = DataLoader(test_data, batch_size=BATCH_SIZE)
 
@@ -180,7 +168,7 @@ if __name__ == "__main__":
     model = GCN(node_features_dim = node_feature_dim, num_classes =dataset.num_classes, hidden_channels=256).to(device)
     
     #training the network
-    lr = lr=1e-3
+    lr = 1e-3
 
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     epochs = EPOCHS
@@ -230,7 +218,7 @@ if __name__ == "__main__":
     last_model_state = model.state_dict()
     if MODEL_SAVE_FOLDER is not None:
         save_model(model, MODEL_SAVE_FOLDER, model_name="last_model", timestamp=True)
-        print(f"\nLast model saved to {MODEL_SAVE_FOLDER}")
+        print(f"\n💾 Last model saved to {MODEL_SAVE_FOLDER}")
 
     # Load best model before testing
     if best_model_state is not None:
@@ -243,10 +231,10 @@ if __name__ == "__main__":
     #save the model
     if MODEL_SAVE_FOLDER is not None:
         save_model(model, MODEL_SAVE_FOLDER, model_name="best_model", timestamp=True)
-        print("Model saved to {}".format(MODEL_SAVE_FOLDER))
+        print(f"🏆 Best model saved to {MODEL_SAVE_FOLDER}")
     
     end = time()
     elapsed = end - start
     
-    print("Elapsed time : {}".format(strftime("%Hh%Mm%Ss", gmtime(elapsed))))
+    print("⏰ Elapsed time : {}".format(strftime("%Hh%Mm%Ss", gmtime(elapsed))))
 

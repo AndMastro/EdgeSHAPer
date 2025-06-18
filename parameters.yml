@@ -1,9 +1,9 @@
 trainer:
   DATA_FILE: "experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv" #data location
-  TRAIN_DATA_FILE: null #None #list of molecules to use as train set
-  VALIDATION_DATA_FILE: null
-  TEST_DATA_FILE: null
-  SAVE_FOLDER_DATA_SPLIT: null
+  TRAIN_DATA_FILE: null #"experiments/data/train_val_test_splits/P14416_P42336_target_1_vs_random_cpds/training.txt" #None #list of molecules to use as train set
+  VALIDATION_DATA_FILE: null #"experiments/data/train_val_test_splits/P14416_P42336_target_1_vs_random_cpds/validation.txt"
+  TEST_DATA_FILE: null #"experiments/data/train_val_test_splits/P14416_P42336_target_1_vs_random_cpds/test.txt"
+  SAVE_FOLDER_DATA_SPLIT: "data/data_splits"
   SMILES_FIELD_NAME: "nonstereo_aromatic_smiles"
   LABEL_FIELD_NAME: "label"
   MODEL_SAVE_FOLDER: "protocol/models"
@@ -13,14 +13,15 @@ trainer:
   SEED: 42
 
 explainer:
-  MODEL: "protocol/models/model_last_model_2025_05_27-18_03_41.ckpt"
+  MODEL: "protocol/models/model_best_model_2025_06_18-11_25_24.ckpt"
   DATA_FILE: "experiments/data/chembl29_predicting_target_P14416_P42336_target_1_vs_random_cpds.csv"
-  MOLECULES_TO_EXPLAIN: "protocol/molecules_to_explain.txt"
+  TEST_DATA_FILE: "data/data_splits/test.txt" #list of molecules to use as test set (explained molecules should be in this set). If None, the test set will be the same as the data file but this could lead to the explanatons of samples that were used to train the model.
+  MOLECULES_TO_EXPLAIN: 5 # "protocol/molecules_to_explain.txt" #either an integer or a file with a list of molecules to explain
   TARGET_CLASS: 0
   SMILES_FIELD_NAME: "nonstereo_aromatic_smiles"
   LABEL_FIELD_NAME: "label"
   MINIMAL_SETS: True
-  SAVE_FOLDER_PATH: "protocol/results/model_last_model_2025_05_27-18_03_41"
+  SAVE_FOLDER_PATH: "protocol/results/model_best_model_2025_06_18-11_25_24"
   HIDDEN_CHANNELS: 256
   SAMPLING_STEPS: 100
   VISUALIZATION: True
