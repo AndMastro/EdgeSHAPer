@@ -53,7 +53,7 @@ For more advanced usage, metrics, and visualizations, we suggest using the ``Edg
 ```python
 from edgeshaper import Edgeshaper
 
-TOLERANCE = False  # or a float value, e.g., 1e-3
+TOLERANCE = None  # or a float value, e.g., 1e-3
 SEED = 42  # seed used for random number generators
 
 edgeshaper_explainer = Edgeshaper(model, x, edge_index, device=device)
