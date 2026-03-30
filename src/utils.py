@@ -27,16 +27,41 @@ from rdkit.Chem import Draw
 # from torchdrug.core import Registry as R
 
 # functions
-def set_all_seeds(SEED):
-    '''
-    Set all seeds for reproducibility.
-    '''
+def set_reproducibility(SEED, deterministic_cudnn = False, benchmark_cudnn = False, strict = False):
+    """
+    Set random seeds and configure PyTorch for reproducibility.
+    
+    Args:
+        SEED: Integer seed value for all random number generators
+        deterministic_cudnn: If True, use deterministic algorithms in cuDNN (it may impact performance)
+        benchmark_cudnn: If True, enable cuDNN auto-tuner (set False for reproducibility)
+        strict: If True, enforce deterministic behavior strictly for PyTorch (raises error if only non-deterministic algorithms are available, it may impact performance as deterministic variants tend to have worse performance that non-deterministic ones)
+    """
+    os.environ["PYTHONHASHSEED"] = str(SEED)
     random.seed(SEED)
     np.random.seed(SEED)
     torch.manual_seed(SEED)
-    torch.cuda.manual_seed(SEED)
-    torch.cuda.manual_seed_all(SEED)
-    #torch.backends.cudnn.deterministic = True
+    
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(SEED)
+        torch.cuda.manual_seed_all(SEED)
+
+    torch.backends.cudnn.deterministic = deterministic_cudnn
+    torch.backends.cudnn.benchmark = benchmark_cudnn
+    torch.use_deterministic_algorithms(strict)
+
+    # for DataLoader workers: create different but reproducible seeds
+    def worker_init_fn(worker_id):
+        worker_seed = SEED + worker_id
+        np.random.seed(worker_seed)
+        random.seed(worker_seed)
+        try:
+            import torch
+            torch.manual_seed(worker_seed)
+        except Exception:
+            pass
+
+    return worker_init_fn
     
 def shuffle_list_with_numpy(data, rng):
     idx = rng.permutation(len(data))

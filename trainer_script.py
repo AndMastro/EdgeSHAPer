@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
         
     if SEED is not None:
-        set_all_seeds(SEED)
+        set_reproducibility(SEED)
 
     # Load the dataset
     df_data = load_data(DATA_FILE, SMILES_FIELD_NAME, LABEL_FIELD_NAME)

@@ -49,7 +49,7 @@ if __name__ == "__main__":
     
     
     if SEED is not None:
-        set_all_seeds(SEED)
+        set_reproducibility(SEED)
 
     # load data
 
@@ -130,7 +130,7 @@ if __name__ == "__main__":
     molecules_to_explain = []
     test_cpd_indices = []
     if isinstance(MOLECULES_TO_EXPLAIN, int):
-        print("Selecting {} test molecules predicted as class 0 (active) by the model to be explained...".format(MOLECULES_TO_EXPLAIN))
+        print("ℹ️ Selecting {} test molecules predicted as class 0 (active) by the model to be explained...".format(MOLECULES_TO_EXPLAIN))
         # Select the first MOLECULES_TO_EXPLAIN molecules predicted as class 0 (active) by the model
         if MOLECULES_TO_EXPLAIN <= 0:
             raise ValueError("MOLECULES_TO_EXPLAIN must be a positive integer.")
@@ -168,7 +168,7 @@ if __name__ == "__main__":
     #explain the molecules
     for test_index in tqdm(test_cpd_indices):
 
-        print("Explaining test compound: ", test_data[test_index].smiles)
+        print("🔍 Explaining test compound: ", test_data[test_index].smiles)
         assert test_data[test_index].smiles in molecules_to_explain, "The test compound smiles is not in the list of molecules to explain."
 
         test_cpd = test_data[test_index].to(device)
@@ -220,10 +220,10 @@ if __name__ == "__main__":
             edgeshaper_explainer.visualize_molecule_explanations(test_cpd.smiles, save_path = VISUALIZATION_SAVE_FOLDER_PATH_COMPLETE, pertinent_positive=True, minimal_top_k=True)
 
     if MINIMAL_SETS:
-        print("\nAverage FID+: ", sum(fidelities) / len(fidelities))
-        print("Average FID-: ", sum(infidelities) / len(infidelities))
+        print("📈 Average FID+: ", sum(fidelities) / len(fidelities))
+        print("📉 Average FID-: ", sum(infidelities) / len(infidelities))
 
     end = time()
     elapsed = end - start 
     
-    print("\nElapsed time : {}".format(strftime("%Hh%Mm%Ss", gmtime(elapsed))))
+    print("\n⏰Elapsed time : {}".format(strftime("%Hh%Mm%Ss", gmtime(elapsed))))
