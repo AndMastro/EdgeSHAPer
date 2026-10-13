@@ -301,6 +301,183 @@ class Edgeshaper():
         self.explained = True    
         return phi_edges
 
+    def explain_batch(self, M = 100, target_class = 0, P = None, deviation = None, log_odds = False, seed = None, description = None, batch_size = 100, progress_bar = True):
+        """ Compute edge importance using EdgeSHAPer algorithm.
+            M (int): number of Monte Carlo sampling steps to perform.
+            target_class (int, optional): index of the class prediction to explain. Defaults to class 0. None if the model is a regression model.
+            P (float, optional): probablity of an edge to exist in the random graph. Defaults to the original graph density.
+            deviation (float, optional): deviation gap from sum of Shapley values and predicted output prob. If ```None```, M sampling
+                steps are computed, otherwise the procedure stops when the desired approxiamtion ```deviation``` is reached. However, after M steps
+                the procedure always terminates.
+            log_odds (bool, optional). Default is ```False```. If ```True```, use log odds instead of probabilty as Value for Shapley values approximation.
+            seed (float, optional): seed used for the random number generator.
+            description (String): string added to the save path
+            batch_size (int): explanations is done in batches, faster computation.
+        Returns:
+                list: list of Shapley values for the edges computed by EdgeSHAPer. The order of the edges is the same as in ```self.edge_index```.
+        """
+
+        if deviation is not None:
+            raise Exception("explaination with deviation not implemented")
+
+        if target_class is None:
+            raise Exception("Target class not specified")
+
+        if M%batch_size != 0:
+            batch_size = int(np.ceil(M / np.ceil(M / batch_size)))
+            print("Adjusted batch size to {} to be a divisor of M".format(batch_size))
+
+
+        rng = default_rng(seed = seed)
+        rng_torch = torch.Generator()
+
+        rng_torch.manual_seed(seed)
+
+        self.model.eval()
+        phi_edges = []
+
+        num_nodes = self.x.shape[0]
+        num_edges = self.edge_index.shape[1]
+
+        # E -> [2,num_edges*batch_size] -> E = [E1,E2,...,E_batch_size]
+        E = self.edge_index.repeat(1,batch_size)
+
+        if P == None:
+            max_num_edges = num_nodes*(num_nodes-1)
+            graph_density = num_edges/max_num_edges
+            P = graph_density
+
+        for j in tqdm(range(num_edges), disable = not progress_bar):
+            marginal_contrib = 0
+            for i in range(int(M/batch_size)):
+                # E_z_mask -> [batch_size*num_edges] -> E_z_mask = [E_z_mask_1,...,E_z_mask_batch_size]
+                    # I don't use this version in order to have the classic and PARALLELIZE version with the same result
+                    # E_z_mask = torch.tensor(rng.binomial(1, P, num_edges*batch_size), dtype=torch.int32)
+                E_z_mask = torch.tensor([rng.binomial(1, P, num_edges) for _ in range(batch_size)], dtype=torch.int32).flatten()
+
+                # E_mask -> [batch_size*num_edges] -> E_mask = [E_mask_1,...,E_mask_batch_size]
+                E_mask = torch.ones(batch_size * num_edges, dtype=torch.int32)
+
+
+                # pi -> [batch_size*num_edges]
+                pi = torch.cat([torch.randperm(num_edges, generator = rng_torch) for _ in range(batch_size)], dim=0)
+                # pi = torch.cat([torch.randperm(num_edges) for _ in range(batch_size)], dim=0)
+
+
+                # E_j_plus_index -> [batch_size*num_edges] -> E_j_plus_index = [E_j_plus_index_1,...,E_j_plus_index_batch_size]
+                E_j_plus_index = torch.ones(batch_size*num_edges, dtype=torch.int)
+                # E_j_minus_index -> [batch_size*num_edges] -> E_j_minus_index = [E_j_minus_index_1,...,E_j_minus_index_batch_size]
+                E_j_minus_index = torch.ones(batch_size*num_edges, dtype=torch.int)
+
+                # selected_edge_index -> (array([id_1,id_2,...,id_batch_size])) (la presenza delle parentesi è importante)
+                selected_edge_index = np.where(pi == j)
+
+                # selected_edge_index -> [1, batch_size]
+                selected_edge_index = torch.tensor(selected_edge_index)
+                # selected_edge_index -> [batch_size]
+                selected_edge_index = selected_edge_index.squeeze()
+                # selected_edge_index -> [num_edges*batch_size] -> [id_1,...,id_1,id_2,...id_2,...,id_batch_size,...,id_batch_size]
+                selected_edge_index = selected_edge_index.repeat_interleave(num_edges)
+
+                # k_values -> [num_edges*batch_size] -> [0,1,...,num_edges,...,num_edges*(batch_size)-1]
+                k_values = torch.arange(num_edges*batch_size)
+
+                # add_to_pi -> [num_edges*batch_size] -> [0,...,0,num_edges,...,num_edges,...,(batch_size-1)*num_edges,...,(batch_size-1)*num_edges]
+                        # add_to_pi = torch.tensor([i*num_edges for i in range(batch_size) for _ in range(num_edges)])
+                add_to_pi = torch.arange(start=0, end=batch_size*num_edges, step=num_edges).repeat_interleave(num_edges)
+
+                # pi contains batch_size permutations the edges, but in each batch the edge index are different hence we add an offset
+                pi_add = pi + add_to_pi
+
+                # also the indices of the nodes change through the different batches (hence we add an offset)
+
+                    # add_to_edge_index = torch.tensor([i*self.x.shape[0] for i in range(batch_size)]).repeat_interleave(num_edges)
+                # add_to_edge_index -> [batch_size] -> [0,num_nodes,2*num_nodes,...,(batch_size-1)*num_nodes]
+                add_to_edge_index = torch.arange(start=0, end=batch_size*num_nodes, step=num_nodes)
+                # add_to_edge_index -> [batch_size*num_edges] -> [0,...,0,num_nodes,...,num_edges,...,(batch_size-1)*num_nodes,...,(batch_size-1)*num_nodes]
+                add_to_edge_index = add_to_edge_index.repeat_interleave(num_edges)
+                # add_to_edge_index -> [2,batch_size*num_edges] ->
+                #       [[0,...,0,num_nodes,...,num_edges,...,(batch_size-1)*num_nodes,...,(batch_size-1)*num_nodes],
+                #       [0,...,0,num_nodes,...,num_edges,...,(batch_size-1)*num_nodes,...,(batch_size-1)*num_nodes]]
+                add_to_edge_index = add_to_edge_index.repeat(2,1).to(self.device)
+
+                E_j_plus_index[pi_add] = torch.where(k_values <= selected_edge_index, E_mask[pi_add], E_z_mask[pi_add])
+                E_j_minus_index[pi_add] = torch.where(k_values < selected_edge_index, E_mask[pi_add], E_z_mask[pi_add])
+
+                # we compute marginal contributions
+
+                retained_indices_plus = torch.LongTensor(torch.nonzero(E_j_plus_index).tolist()).to(self.device).squeeze()
+
+                # remember that E consider the same indices for the nodes of batch 1 and batch 2 and so on
+                # hence we add the offset for each batch
+                E_j_plus = torch.index_select(E+add_to_edge_index, dim = 1, index = retained_indices_plus)
+
+                edge_weight_j_plus = None
+                # edge_type_j_plus = None
+
+                if self.edge_weight is not None:
+                    edge_weight_j_plus = torch.index_select(self.edge_weight.repeat(batch_size,1), dim = 0, index = retained_indices_plus)
+                #TODO: think about implementing edge type for heterogeneous graphs
+                # if self.edge_type is not None:
+                #     edge_type_j_plus  = torch.index_select(self.edge_type.repeat(batch_size), dim = 0, index = retained_indices_plus)
+
+                # batch -> [batch_size] -> [0,1,...,batch_size-1]
+                batch = torch.arange(batch_size, dtype=int, device=self.x.device)
+                # batch -> [batch_size*num_nodes] -> [0,...,0,...,batch_size-1,...,batch_size-1]
+                batch = batch.repeat_interleave(num_nodes)
+
+                # out = self.model(self.x.repeat(batch_size,1), E_j_plus, batch=batch, edge_weight=edge_weight_j_plus, edge_type=edge_type_j_plus)
+                out = self.model(self.x.repeat(batch_size,1), E_j_plus, batch=batch, edge_weight=edge_weight_j_plus)
+
+
+                out_prob = None
+                V_j_plus = None
+
+                if target_class is not None:
+                    if not log_odds:
+                        out_prob = F.softmax(out, dim = 1)
+                    else:
+                        out_prob = out #out prob variable now containts log_odds
+
+                    V_j_plus = torch.sum(out_prob[:,target_class]).item()
+
+                # without edge j
+                retained_indices_minus = torch.LongTensor(torch.nonzero(E_j_minus_index).tolist()).to(self.device).squeeze()
+
+                E_j_minus = torch.index_select(E+add_to_edge_index, dim = 1, index = retained_indices_minus)
+
+                edge_weight_j_minus = None
+                # edge_type_j_minus = None
+
+                if self.edge_weight is not None:
+                    edge_weight_j_minus = torch.index_select(self.edge_weight.repeat(batch_size,1), dim = 0, index = retained_indices_minus)
+                # if self.edge_type is not None:
+                #     edge_type_j_minus  = torch.index_select(self.edge_type.repeat(batch_size), dim = 0, index = retained_indices_minus)
+
+                # out = self.model(self.x.repeat(batch_size,1), E_j_minus, batch=batch, edge_weight=edge_weight_j_minus, edge_type=edge_type_j_minus)
+                out = self.model(self.x.repeat(batch_size,1), E_j_minus, batch=batch, edge_weight=edge_weight_j_minus)
+
+                V_j_minus = None
+
+                if target_class is not None:
+                    if not log_odds:
+                        out_prob = F.softmax(out, dim = 1)
+                    else:
+                        out_prob = out #out prob variable now containts log_odds
+
+                    V_j_minus = torch.sum(out_prob[:,target_class]).item()
+
+                marginal_contrib += (V_j_plus - V_j_minus)
+
+                print_stuff = False
+
+            phi_edges.append(marginal_contrib/M)
+
+        self.target_class = target_class
+        self.explained = True
+        self.phi_edges = phi_edges
+        return phi_edges
+        
     def compute_original_predicted_probability(self):
         self.model.eval()
         batch = torch.zeros(self.x.shape[0], dtype=int, device=self.x.device)
@@ -312,6 +489,7 @@ class Edgeshaper():
 
         return self.original_pred_prob
 
+    #TODO: check if egde_weights work correctly in the following two methods, if not modify them accordingly
     def compute_pertinent_positive_set(self, verbose = False):
         assert(self.explained) #make sure that the explanation has been computed
         
@@ -738,7 +916,7 @@ def edgeshaper_deviation(model, x, E, M = 100, target_class = 0, P = None, devia
             
                 V_j_minus = out_prob[0][0].item()
 
-            phi_edges_current[j] += (V_j_minus - V_j_minus)
+            phi_edges_current[j] += (V_j_plus - V_j_minus)
 
         
         phi_edges = [elem / (i+1) for elem in phi_edges_current]
