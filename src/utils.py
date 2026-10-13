@@ -23,19 +23,49 @@ from rdkit_heatmaps.utils import transform2png
 from rdkit import Chem
 from rdkit.Chem import Draw
 
-from torchdrug import data
-from torchdrug.core import Registry as R
+# from torchdrug import data
+# from torchdrug.core import Registry as R
 
 # functions
-def set_all_seeds(SEED):
-    '''
-    Set all seeds for reproducibility.
-    '''
-    torch.manual_seed(SEED)
-    torch.cuda.manual_seed(SEED)
-    # torch.backends.cudnn.deterministic = True
-    np.random.seed(SEED)
+def set_reproducibility(SEED, deterministic_cudnn = False, benchmark_cudnn = False, strict = False):
+    """
+    Set random seeds and configure PyTorch for reproducibility.
+    
+    Args:
+        SEED: Integer seed value for all random number generators
+        deterministic_cudnn: If True, use deterministic algorithms in cuDNN (it may impact performance)
+        benchmark_cudnn: If True, enable cuDNN auto-tuner (set False for reproducibility)
+        strict: If True, enforce deterministic behavior strictly for PyTorch (raises error if only non-deterministic algorithms are available, it may impact performance as deterministic variants tend to have worse performance that non-deterministic ones)
+    """
+    os.environ["PYTHONHASHSEED"] = str(SEED)
     random.seed(SEED)
+    np.random.seed(SEED)
+    torch.manual_seed(SEED)
+    
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(SEED)
+        torch.cuda.manual_seed_all(SEED)
+
+    torch.backends.cudnn.deterministic = deterministic_cudnn
+    torch.backends.cudnn.benchmark = benchmark_cudnn
+    torch.use_deterministic_algorithms(strict)
+
+    # for DataLoader workers: create different but reproducible seeds
+    def worker_init_fn(worker_id):
+        worker_seed = SEED + worker_id
+        np.random.seed(worker_seed)
+        random.seed(worker_seed)
+        try:
+            import torch
+            torch.manual_seed(worker_seed)
+        except Exception:
+            pass
+
+    return worker_init_fn
+    
+def shuffle_list_with_numpy(data, rng):
+    idx = rng.permutation(len(data))
+    return [data[i] for i in idx]
 
 def load_data(DATA_PATH, SMILES_FIELD_NAME, LABEL_FIELD_NAME):
     '''
@@ -69,7 +99,7 @@ def create_edge_index(mol, weighted=False):
     """
     Create edge index for a molecule.
     """
-    adj = nx.to_scipy_sparse_matrix(mol).tocoo()
+    adj = nx.to_scipy_sparse_array(mol).tocoo() #nx.to_scipy_sparse_matrix(mol).tocoo()
     row = torch.from_numpy(adj.row.astype(np.int64)).to(torch.long)
     col = torch.from_numpy(adj.col.astype(np.int64)).to(torch.long)
     edge_index = torch.stack([row, col], dim=0)
@@ -123,19 +153,19 @@ def visualize_explanations(test_cpd, phi_edges, SAVE_PATH=None):
     return img  
 #classes
 
-@R.register("datasets.ChEMBL")
-class ChEMBL(data.MoleculeDataset):
-    '''
-    Class for the molecule dataset.
-    '''
-    def __init__(self, path, smiles_field, target_fields, verbose=1, **kwargs):
+# @R.register("datasets.ChEMBL")
+# class ChEMBL(data.MoleculeDataset):
+#     '''
+#     Class for the molecule dataset.
+#     '''
+#     def __init__(self, path, smiles_field, target_fields, verbose=1, **kwargs):
     
-        self.path = path
-        self.smiles_field = smiles_field
-        self.target_fields= target_fields
+#         self.path = path
+#         self.smiles_field = smiles_field
+#         self.target_fields= target_fields
 
-        self.load_csv(self.path, smiles_field=self.smiles_field, target_fields=self.target_fields,
-                    verbose=verbose, **kwargs)
+#         self.load_csv(self.path, smiles_field=self.smiles_field, target_fields=self.target_fields,
+#                     verbose=verbose, **kwargs)
 
 class ChEMBLDatasetPyG(InMemoryDataset):
     '''
